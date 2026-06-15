@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { SignUpPage } from './components/SignUpPage';
 import { OnboardingWizard } from './components/OnboardingWizard';
 import { Dashboard } from './components/Dashboard';
+import { PlatformAdminAuth } from './components/platform-admin/PlatformAdminAuth';
+import { PlatformAdminConsole } from './components/platform-admin/PlatformAdminConsole';
 
 type PlanTier = 'starter' | 'pro' | 'enterprise';
-type AppView = 'signup' | 'onboarding' | 'dashboard';
+type AppView = 'signup' | 'onboarding' | 'dashboard' | 'platform-auth' | 'platform-admin';
 
 interface TenantData {
   businessName: string;
@@ -30,6 +32,7 @@ export default function App() {
             setTenant(data);
             setView('onboarding');
           }}
+          onPlatformAdmin={() => setView('platform-auth')}
         />
       )}
       {view === 'onboarding' && (
@@ -39,7 +42,13 @@ export default function App() {
         />
       )}
       {view === 'dashboard' && (
-        <Dashboard tenant={tenant} />
+        <Dashboard tenant={tenant} onPlatformAdmin={() => setView('platform-auth')} />
+      )}
+      {view === 'platform-auth' && (
+        <PlatformAdminAuth onAuthenticated={() => setView('platform-admin')} />
+      )}
+      {view === 'platform-admin' && (
+        <PlatformAdminConsole onExit={() => setView(tenant.businessName ? 'dashboard' : 'signup')} />
       )}
     </div>
   );

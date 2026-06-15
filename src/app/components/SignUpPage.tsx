@@ -13,6 +13,7 @@ interface SignUpForm {
 
 interface SignUpPageProps {
   onSuccess: (data: SignUpForm) => void;
+  onPlatformAdmin?: () => void;
 }
 
 const plans = [
@@ -59,7 +60,7 @@ function generateSlug(name: string): string {
   return RESERVED_SUBDOMAINS.includes(base) ? `${base}shop` : base;
 }
 
-export function SignUpPage({ onSuccess }: SignUpPageProps) {
+export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
   const [form, setForm] = useState<SignUpForm>({
     businessName: '',
     ownerName: '',
@@ -394,6 +395,13 @@ export function SignUpPage({ onSuccess }: SignUpPageProps) {
             Already have an account?{' '}
             <button style={{ color: '#C0392B', fontWeight: 600 }}>Sign in</button>
           </p>
+          {onPlatformAdmin && (
+            <p className="mt-3 text-center">
+              <button onClick={onPlatformAdmin} style={{ fontSize: '0.7rem', color: '#D1D5DB', letterSpacing: '0.06em' }}>
+                ⬡ Platform Admin
+              </button>
+            </p>
+          )}
         </div>
       </div>
     </div>

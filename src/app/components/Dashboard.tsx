@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush } from 'lucide-react';
+import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush, Car, ShieldAlert, ClipboardList } from 'lucide-react';
 import { SettingsPage } from './SettingsPage';
 import { PlanManagement } from './PlanManagement';
 import { DataImportPage } from './DataImportPage';
@@ -14,9 +14,12 @@ import NotificationsModule from './notifications/NotificationsModule';
 import { BillingModule } from './billing/BillingModule';
 import ReportingModule from './reporting/ReportingModule';
 import BrandingModule from './branding/BrandingModule';
+import FleetModule from './fleet/FleetModule';
+import RecallModule from './recall/RecallModule';
+import { InspectionModule } from './inspection/InspectionModule';
 
 type PlanTier = 'starter' | 'pro' | 'enterprise';
-type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding';
+type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding' | 'fleet' | 'recall' | 'inspection';
 
 interface TenantData {
   businessName: string;
@@ -27,6 +30,7 @@ interface TenantData {
 
 interface DashboardProps {
   tenant: TenantData;
+  onPlatformAdmin?: () => void;
 }
 
 const NAV_ITEMS: { id: DashboardSection; label: string; icon: typeof Settings; group?: string }[] = [
@@ -34,6 +38,9 @@ const NAV_ITEMS: { id: DashboardSection; label: string; icon: typeof Settings; g
   { id: 'bookings', label: 'Bookings & Schedule', icon: CalendarDays, group: 'operations' },
   { id: 'fieldservice',  label: 'Field Service',  icon: HardHat, group: 'operations' },
   { id: 'distributors', label: 'Distributors',   icon: Truck,      group: 'operations' },
+  { id: 'fleet',        label: 'Fleet & B2B',    icon: Car,        group: 'operations' },
+  { id: 'recall',      label: 'Recall & Compliance', icon: ShieldAlert,   group: 'operations' },
+  { id: 'inspection',  label: 'Inspections',         icon: ClipboardList, group: 'operations' },
   { id: 'marketing',       label: 'Marketing',       icon: Megaphone,  group: 'operations' },
   { id: 'notifications',  label: 'Notifications',   icon: Bell,       group: 'operations' },
   { id: 'reporting',      label: 'Reporting',        icon: BarChart2,   group: 'operations' },
@@ -52,7 +59,7 @@ const PLAN_COLOR: Record<PlanTier, string> = {
   enterprise: '#1A1A1A',
 };
 
-export function Dashboard({ tenant }: DashboardProps) {
+export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
   const [section, setSection] = useState<DashboardSection>('home');
   const [plan, setPlan] = useState<PlanTier>(tenant.planTier);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -128,6 +135,16 @@ export function Dashboard({ tenant }: DashboardProps) {
               {slug}.tdforge.app
             </span>
           </a>
+          {onPlatformAdmin && (
+            <button
+              onClick={onPlatformAdmin}
+              className="mt-2 w-full flex items-center gap-2 px-3 py-1.5 rounded-[6px] text-xs"
+              style={{ color: '#9CA3AF', background: 'transparent', border: '1px solid #F3F4F6' }}
+              title="Platform Admin Console"
+            >
+              <span style={{ fontSize: '0.65rem', color: '#D1D5DB', fontWeight: 600, letterSpacing: '0.08em' }}>⬡ Platform Admin</span>
+            </button>
+          )}
         </div>
       </aside>
 
@@ -204,23 +221,31 @@ export function Dashboard({ tenant }: DashboardProps) {
         </header>
 
         {/* Content area */}
-        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-auto">
-          {section === 'home' && <OverviewSection tenant={tenant} plan={plan} onNavigate={setSection} />}
-          {section === 'bookings' && <BookingModule />}
-          {section === 'fieldservice' && <FieldServiceModule />}
-          {section === 'distributors' && <DistributorModule />}
-          {section === 'marketing'       && <MarketingModule />}
-          {section === 'notifications'   && <NotificationsModule />}
-          {section === 'reporting'       && <ReportingModule />}
-          {section === 'branding'        && <BrandingModule currentPlan={plan} />}
-          {section === 'billing'         && <BillingModule currentPlan={plan} onPlanChange={p => setPlan(p)} />}
-          {section === 'storefront' && <CartCheckoutPage />}
-          {section === 'orders' && <RefundManager />}
-          {section === 'settings' && <SettingsPage planTier={plan} />}
-          {section === 'plan' && <PlanManagement currentPlan={plan} onPlanChange={p => setPlan(p)} />}
-          {section === 'import' && <DataImportPage />}
-          {section === 'lifecycle' && <LifecycleManagement />}
-        </main>
+        {section === 'inspection' ? (
+          <div className="flex-1 overflow-hidden">
+            <InspectionModule />
+          </div>
+        ) : (
+          <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-auto">
+            {section === 'home' && <OverviewSection tenant={tenant} plan={plan} onNavigate={setSection} />}
+            {section === 'bookings' && <BookingModule />}
+            {section === 'fieldservice' && <FieldServiceModule />}
+            {section === 'distributors' && <DistributorModule />}
+            {section === 'marketing'       && <MarketingModule />}
+            {section === 'notifications'   && <NotificationsModule />}
+            {section === 'reporting'       && <ReportingModule />}
+            {section === 'branding'        && <BrandingModule currentPlan={plan} />}
+            {section === 'billing'         && <BillingModule currentPlan={plan} onPlanChange={p => setPlan(p)} />}
+            {section === 'storefront' && <CartCheckoutPage />}
+            {section === 'orders' && <RefundManager />}
+            {section === 'settings' && <SettingsPage planTier={plan} />}
+            {section === 'plan' && <PlanManagement currentPlan={plan} onPlanChange={p => setPlan(p)} />}
+            {section === 'import' && <DataImportPage />}
+            {section === 'lifecycle' && <LifecycleManagement />}
+            {section === 'fleet'     && <FleetModule />}
+            {section === 'recall'    && <RecallModule />}
+          </main>
+        )}
       </div>
     </div>
   );
