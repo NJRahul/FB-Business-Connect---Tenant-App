@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush, Car, ShieldAlert, ClipboardList } from 'lucide-react';
+import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush, Car, ShieldAlert, ClipboardList, Repeat2, Code2, CircleDot } from 'lucide-react';
 import { SettingsPage } from './SettingsPage';
 import { PlanManagement } from './PlanManagement';
 import { DataImportPage } from './DataImportPage';
@@ -17,9 +17,12 @@ import BrandingModule from './branding/BrandingModule';
 import FleetModule from './fleet/FleetModule';
 import RecallModule from './recall/RecallModule';
 import { InspectionModule } from './inspection/InspectionModule';
+import { RecurringPlansModule } from './recurring-plans/RecurringPlansModule';
+import { OpenPlatformModule } from './open-platform/OpenPlatformModule';
+import { TiresModule } from './tires/TiresModule';
 
 type PlanTier = 'starter' | 'pro' | 'enterprise';
-type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding' | 'fleet' | 'recall' | 'inspection';
+type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding' | 'fleet' | 'recall' | 'inspection' | 'recurring-plans' | 'open-platform' | 'tires';
 
 interface TenantData {
   businessName: string;
@@ -41,6 +44,9 @@ const NAV_ITEMS: { id: DashboardSection; label: string; icon: typeof Settings; g
   { id: 'fleet',        label: 'Fleet & B2B',    icon: Car,        group: 'operations' },
   { id: 'recall',      label: 'Recall & Compliance', icon: ShieldAlert,   group: 'operations' },
   { id: 'inspection',  label: 'Inspections',         icon: ClipboardList, group: 'operations' },
+  { id: 'tires',            label: 'Tires Industry Pack',        icon: CircleDot, group: 'operations' },
+  { id: 'recurring-plans', label: 'Service Plans & Memberships', icon: Repeat2, group: 'operations' },
+  { id: 'open-platform',  label: 'Open Platform',              icon: Code2,   group: 'operations' },
   { id: 'marketing',       label: 'Marketing',       icon: Megaphone,  group: 'operations' },
   { id: 'notifications',  label: 'Notifications',   icon: Bell,       group: 'operations' },
   { id: 'reporting',      label: 'Reporting',        icon: BarChart2,   group: 'operations' },
@@ -244,6 +250,9 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
             {section === 'lifecycle' && <LifecycleManagement />}
             {section === 'fleet'     && <FleetModule />}
             {section === 'recall'    && <RecallModule />}
+            {section === 'tires'           && <TiresModule />}
+            {section === 'recurring-plans' && <RecurringPlansModule />}
+            {section === 'open-platform'   && <OpenPlatformModule />}
           </main>
         )}
       </div>
@@ -308,6 +317,8 @@ function OverviewSection({ tenant, plan, onNavigate }: { tenant: TenantData; pla
           { title: 'Reporting & Analytics', desc: 'Live ops, revenue trends, KPIs, customer cohorts, funnel, leaderboard, and platform observability', icon: '📊', action: () => onNavigate('reporting'), cta: 'Open Reporting' },
           { title: 'White-Label Branding', desc: 'Logo, colors, custom domain + SSL, email sender DKIM/SPF/DMARC, and brand consistency across all touchpoints', icon: '🎨', action: () => onNavigate('branding'), cta: 'Open Branding' },
           { title: 'Import Customer Data', desc: 'Upload your existing customer list from CSV or XLSX', icon: '📋', action: () => onNavigate('import'), cta: 'Start Import' },
+          { title: 'Service Plans & Memberships', desc: 'Recurring membership plans, per-vehicle enrollment, entitlement consumption, and subscription P&L', icon: '🔄', action: () => onNavigate('recurring-plans'), cta: 'Open Plans' },
+          { title: 'Open Platform', desc: 'REST API, webhooks, Zapier, visual workflow automation, and developer portal', icon: '🔌', action: () => onNavigate('open-platform'), cta: 'Open Platform' },
         ].map(item => (
           <div key={item.title} className="bg-white rounded-[8px] p-5" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB' }}>
             <span style={{ fontSize: '1.75rem' }}>{item.icon}</span>
