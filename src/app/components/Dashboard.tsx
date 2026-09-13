@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush, Car, ShieldAlert, ClipboardList, Repeat2, Code2, CircleDot } from 'lucide-react';
+import { Settings, DollarSign, Upload, Activity, Wrench, Bell, ChevronDown, Menu, X, Globe, CheckCircle2, AlertTriangle, ShoppingCart, RotateCcw, CalendarDays, HardHat, Truck, Megaphone, BarChart2, Paintbrush, Car, ShieldAlert, ClipboardList, Repeat2, Code2, CircleDot, Landmark, ShieldCheck } from 'lucide-react';
 import { SettingsPage } from './SettingsPage';
 import { PlanManagement } from './PlanManagement';
 import { DataImportPage } from './DataImportPage';
@@ -20,9 +20,11 @@ import { InspectionModule } from './inspection/InspectionModule';
 import { RecurringPlansModule } from './recurring-plans/RecurringPlansModule';
 import { OpenPlatformModule } from './open-platform/OpenPlatformModule';
 import { TiresModule } from './tires/TiresModule';
+import { BankingModule } from './banking/BankingModule';
+import { InsuranceModule } from './insurance/InsuranceModule';
 
 type PlanTier = 'starter' | 'pro' | 'enterprise';
-type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding' | 'fleet' | 'recall' | 'inspection' | 'recurring-plans' | 'open-platform' | 'tires';
+type DashboardSection = 'home' | 'settings' | 'plan' | 'billing' | 'import' | 'lifecycle' | 'storefront' | 'orders' | 'bookings' | 'fieldservice' | 'distributors' | 'marketing' | 'notifications' | 'reporting' | 'branding' | 'fleet' | 'recall' | 'inspection' | 'recurring-plans' | 'open-platform' | 'tires' | 'banking' | 'insurance';
 
 interface TenantData {
   businessName: string;
@@ -53,6 +55,8 @@ const NAV_ITEMS: { id: DashboardSection; label: string; icon: typeof Settings; g
   { id: 'branding',       label: 'Branding',          icon: Paintbrush,  group: 'operations' },
   { id: 'storefront', label: 'Cart & Checkout', icon: ShoppingCart, group: 'commerce' },
   { id: 'orders', label: 'Order Management', icon: RotateCcw, group: 'commerce' },
+  { id: 'banking',   label: 'Business Banking', icon: Landmark,    group: 'admin' },
+  { id: 'insurance', label: 'Insurance',        icon: ShieldCheck, group: 'admin' },
   { id: 'settings', label: 'Settings',     icon: Settings,    group: 'admin' },
   { id: 'billing',  label: 'Billing & Plan', icon: DollarSign, group: 'admin' },
   { id: 'import', label: 'Data Import', icon: Upload, group: 'admin' },
@@ -253,6 +257,8 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
             {section === 'tires'           && <TiresModule />}
             {section === 'recurring-plans' && <RecurringPlansModule />}
             {section === 'open-platform'   && <OpenPlatformModule />}
+            {section === 'banking'         && <BankingModule tenant={tenant} />}
+            {section === 'insurance'       && <InsuranceModule tenant={tenant} />}
           </main>
         )}
       </div>
