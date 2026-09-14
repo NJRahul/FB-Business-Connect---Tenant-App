@@ -430,7 +430,7 @@ export function CampaignsView() {
           { label: 'Total Opens', value: campaigns.reduce((s, c) => s + c.opens, 0).toLocaleString(), color: '#27AE60', bg: '#D1FAE5' },
           { label: 'Total Clicks', value: campaigns.reduce((s, c) => s + c.clicks, 0).toLocaleString(), color: '#7C3AED', bg: '#EDE9FE' },
           { label: 'Attributed Bookings', value: campaigns.reduce((s, c) => s + c.bookings, 0), color: '#D97706', bg: '#FEF3C7' },
-          { label: 'Attributed Revenue', value: `$${campaigns.reduce((s, c) => s + c.revenue, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Attributed Revenue', value: `R ${campaigns.reduce((s, c) => s + c.revenue, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, border: '1px solid #E5E7EB', borderRadius: 12, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: s.color }}>{s.value}</div>
@@ -484,7 +484,7 @@ export function CampaignsView() {
                         {[
                           { label: 'Opens', value: c.sent > 0 ? `${Math.round((c.opens / c.sent) * 100)}%` : '—' },
                           { label: 'Clicks', value: c.sent > 0 ? `${Math.round((c.clicks / c.sent) * 100)}%` : '—' },
-                          { label: 'Revenue', value: `$${c.revenue.toLocaleString('en-US', { minimumFractionDigits: 0 })}`, red: true },
+                          { label: 'Revenue', value: `R ${c.revenue.toLocaleString('en-US', { minimumFractionDigits: 0 })}`, red: true },
                         ].map(m => (
                           <div key={m.label} style={{ textAlign: 'right' }}>
                             <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: (m as { red?: boolean }).red ? '#C0392B' : '#1A1A1A' }}>{m.value}</div>

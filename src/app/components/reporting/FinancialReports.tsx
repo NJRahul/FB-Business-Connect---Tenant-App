@@ -4,12 +4,12 @@ import { DAILY_REVENUE, REVENUE_BY_SERVICE, REFUNDS, RECONCILIATION, TECH_STATS 
 import type { ReportPeriod } from './types';
 
 function fmtMoney(cents: number) {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function fmtK(cents: number) {
   const d = cents / 100;
-  return d >= 1000 ? `$${(d / 1000).toFixed(1)}k` : `$${d.toFixed(0)}`;
+  return d >= 1000 ? `R ${(d / 1000).toFixed(1)}k` : `R ${d.toFixed(0)}`;
 }
 
 function LineChart({ data, color = '#C0392B', h = 120 }: { data: { label: string; value: number }[]; color?: string; h?: number }) {

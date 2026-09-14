@@ -647,8 +647,8 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
   const isMobile = state.industryPack === 'tires_mobile';
 
   const planRec = !state.teamSize ? null
-    : ['just-me', '2-5'].includes(state.teamSize) ? 'Starter ($49/mo)'
-    : state.teamSize === '6-20' ? 'Pro ($149/mo)'
+    : ['just-me', '2-5'].includes(state.teamSize) ? 'Starter (R 3,499/mo)'
+    : state.teamSize === '6-20' ? 'Pro (R 8,999/mo)'
     : 'Enterprise — Talk to Sales';
 
   return (
@@ -1069,7 +1069,7 @@ function Step5({ state, setState }: { state: WizardState; setState: React.Dispat
               Your customers pay through your storefront. FB Business Connect deposits the money directly into your bank account, minus a small platform fee.
             </p>
             <div className="grid grid-cols-2 gap-3 mb-5">
-              {[['2.9% + $0.30', 'Per transaction (card)'], ['0.5%', 'Platform fee (Starter)'], ['2 business days', 'Standard payout speed'], ['$0', 'Setup cost']].map(([v, l]) => (
+              {[['2.9% + R 5.50', 'Per transaction (card)'], ['0.5%', 'Platform fee (Starter)'], ['2 business days', 'Standard payout speed'], ['R 0', 'Setup cost']].map(([v, l]) => (
                 <div key={l} className="p-3 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
                   <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>{v}</p>
                   <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '2px' }}>{l}</p>
@@ -1559,7 +1559,7 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
           <div className="px-3 py-4">
             <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '0.75rem', marginBottom: '8px' }}>{isTire ? 'Featured Tires' : 'Our Services'}</p>
             <div className="grid grid-cols-2 gap-2">
-              {(isTire ? [['🔵', 'Michelin Defender 2', '$189/tire'], ['🟡', 'Goodyear Assurance', '$165/tire']] : state.industryPack === 'hvac' ? [['❄️', 'AC Tune-Up', '$149'], ['🔥', 'Furnace Install', '$1,500']] : state.industryPack === 'electrical' ? [['💡', 'Outlet Install', '$199'], ['⚡', 'EV Charger', '$699']] : state.industryPack === 'plumbing' ? [['🚿', 'Drain Cleaning', '$149'], ['🚽', 'Toilet Replace', '$349']] : state.industryPack === 'cleaning' ? [['✨', 'Deep Cleaning', '$299'], ['🏠', 'Move-Out Clean', '$399']] : state.industryPack === 'pest_control' ? [['🐛', 'Pest Treatment', '$149'], ['🐭', 'Rodent Control', '$249']] : [['🔧', 'Full Service', '$149'], ['⚡', 'Emergency Visit', '$95']]).map(([icon, name, price]) => (
+              {(isTire ? [['🔵', 'Michelin Defender 2', 'R 3,499/tyre'], ['🟡', 'Goodyear Assurance', 'R 2,999/tyre']] : state.industryPack === 'hvac' ? [['❄️', 'AC Tune-Up', 'R 2,699'], ['🔥', 'Furnace Install', 'R 27,500']] : state.industryPack === 'electrical' ? [['💡', 'Outlet Install', 'R 3,699'], ['⚡', 'EV Charger', 'R 12,999']] : state.industryPack === 'plumbing' ? [['🚿', 'Drain Cleaning', 'R 2,699'], ['🚽', 'Toilet Replace', 'R 6,499']] : state.industryPack === 'cleaning' ? [['✨', 'Deep Cleaning', 'R 5,499'], ['🏠', 'Move-Out Clean', 'R 7,499']] : state.industryPack === 'pest_control' ? [['🐛', 'Pest Treatment', 'R 2,699'], ['🐭', 'Rodent Control', 'R 4,599']] : [['🔧', 'Full Service', 'R 2,699'], ['⚡', 'Emergency Visit', 'R 1,799']]).map(([icon, name, price]) => (
                 <div key={name} className="p-2.5 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
                   <span style={{ fontSize: '1.25rem' }}>{icon}</span>
                   <p style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '0.6875rem', marginTop: '4px', lineHeight: 1.3 }}>{name}</p>

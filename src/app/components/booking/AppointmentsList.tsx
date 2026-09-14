@@ -61,7 +61,7 @@ function fmtDate(iso: string) {
 function fmtTime(iso: string) {
   return new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
 }
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 type FilterTab = 'all' | 'today' | 'upcoming' | 'active' | 'completed' | 'cancelled';
 

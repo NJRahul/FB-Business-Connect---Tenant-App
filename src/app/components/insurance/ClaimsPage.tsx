@@ -117,11 +117,11 @@ function ClaimCard({ claim }: { claim: InsuranceClaim }) {
             )}
             <span style={{ color: '#6B7280' }}>Reserve amount</span>
             <span style={{ fontWeight: 700, color: '#1A1A1A', fontVariantNumeric: 'tabular-nums' }}>
-              {claim.reserve_amount > 0 ? `$${(claim.reserve_amount / 100).toLocaleString()}` : '—'}
+              {claim.reserve_amount > 0 ? `R ${(claim.reserve_amount / 100).toLocaleString()}` : '—'}
             </span>
             <span style={{ color: '#6B7280' }}>Payout</span>
             <span style={{ fontWeight: 700, color: claim.payout_amount > 0 ? '#1A1A1A' : '#9CA3AF', fontVariantNumeric: 'tabular-nums' }}>
-              {claim.payout_amount > 0 ? `$${(claim.payout_amount / 100).toLocaleString()}` : 'Pending'}
+              {claim.payout_amount > 0 ? `R ${(claim.payout_amount / 100).toLocaleString()}` : 'Pending'}
             </span>
           </div>
 

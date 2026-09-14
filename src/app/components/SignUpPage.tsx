@@ -20,7 +20,7 @@ const plans = [
   {
     id: 'starter' as PlanTier,
     name: 'Starter',
-    price: '$49',
+    price: 'R 3,499',
     period: '/mo',
     description: 'Perfect for single-location shops',
     features: ['1 location', '500 customer records', 'Basic tire catalog', 'Email support', 'Standard storefront'],
@@ -30,7 +30,7 @@ const plans = [
   {
     id: 'pro' as PlanTier,
     name: 'Pro',
-    price: '$149',
+    price: 'R 2,699',
     period: '/mo',
     description: 'For growing multi-location businesses',
     features: ['Up to 5 locations', 'Unlimited customers', 'Custom pricing & markup', 'Multi-location routing', 'SMS + email campaigns', 'Phone & email support'],

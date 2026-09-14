@@ -10,7 +10,7 @@ import { MOCK_FLEET_INVOICES, MOCK_PRICING_MENUS, MOCK_PRICING_TIERS } from './m
 type Tab = 'overview' | 'vehicles' | 'pricing' | 'invoices' | 'statement' | 'activity';
 
 function cents(c: number) {
-  return `$${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function pct(retail: number, agreed: number) {

@@ -13,7 +13,7 @@ const TERMS_LABEL: Record<PaymentTerms, string> = {
   net_15: 'Net 15', net_30: 'Net 30', net_45: 'Net 45', net_60: 'Net 60', immediate: 'Immediate',
 };
 
-function cents(c: number) { return `$${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`; }
+function cents(c: number) { return `R ${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`; }
 
 function AgingIndicator({ aging }: { aging: FleetAccount['aging'] }) {
   const overdue = (aging['61_90'] || 0) + (aging['90_plus'] || 0);

@@ -23,7 +23,7 @@ const TABS: { id: BookingTab; label: string; icon: typeof Activity }[] = [
   { id: 'hub', label: 'Customer Hub', icon: UserCircle },
 ];
 
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 const TODAY = '2026-06-14';
 

@@ -27,7 +27,7 @@ function ProductPageBadgePreview({ rebate }: { rebate: Rebate }) {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>
-              {rebate.manufacturer} {rebate.amountType === 'fixed' ? `$${rebate.amount}` : `${rebate.amount}%`} Off
+              {rebate.manufacturer} {rebate.amountType === 'fixed' ? `R ${rebate.amount}` : `${rebate.amount}%`} Off
             </div>
             <div style={{ fontSize: 12, color: '#6B7280', marginTop: 3 }}>{rebate.name}</div>
             <div style={{ display: 'flex', gap: 6, marginTop: 6 }}>
@@ -62,7 +62,7 @@ function MailInFormModal({ rebate, onClose }: { rebate: Rebate; onClose: () => v
         {step === 'form' ? (
           <div style={{ padding: 20 }}>
             <div style={{ background: '#F0F7FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 13, color: '#1D4ED8' }}>
-              Rebate amount: <strong>{rebate.amountType === 'fixed' ? `$${rebate.amount}` : `${rebate.amount}% off`}</strong> · Expires: {rebate.endDate}
+              Rebate amount: <strong>{rebate.amountType === 'fixed' ? `R ${rebate.amount}` : `${rebate.amount}% off`}</strong> · Expires: {rebate.endDate}
             </div>
             {[
               { label: 'Customer Name', placeholder: 'Maria Santos' },
@@ -121,7 +121,7 @@ function RebateCard({ rebate, onMailIn, onTogglePublish }: { rebate: Rebate; onM
             {expired && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#FEF2F2', color: '#DC2626', fontSize: 10, fontWeight: 600 }}>Expired</span>}
           </div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>
-            {rebate.manufacturer} · {rebate.amountType === 'fixed' ? `$${rebate.amount}` : `${rebate.amount}%`} off · {rebate.startDate} → {rebate.endDate}
+            {rebate.manufacturer} · {rebate.amountType === 'fixed' ? `R ${rebate.amount}` : `${rebate.amount}%`} off · {rebate.startDate} → {rebate.endDate}
           </div>
           <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 3 }}>
             Eligible SKUs: {rebate.eligibleSkus.length} · Categories: {rebate.eligibleCategories.join(', ')}
@@ -167,8 +167,8 @@ export function RebatesView() {
         {[
           { label: 'Active Rebates', value: rebates.filter(r => r.active).length, color: '#1A1A1A' },
           { label: 'Platform Published', value: rebates.filter(r => r.active && r.platformPublished).length, color: '#16A34A' },
-          { label: 'Claimed (30d)', value: `$${claimedTotal}`, color: '#2563EB' },
-          { label: 'Pending Claim', value: `$${pendingTotal}`, color: '#D97706' },
+          { label: 'Claimed (30d)', value: `R ${claimedTotal}`, color: '#2563EB' },
+          { label: 'Pending Claim', value: `R ${pendingTotal}`, color: '#D97706' },
         ].map(s => (
           <div key={s.label} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 9, padding: '14px 16px' }}>
             <div style={{ fontSize: 22, fontWeight: 700, color: s.color }}>{s.value}</div>

@@ -119,7 +119,7 @@ export function UsageView({ currentPlan }: Props) {
           { label: 'Used this period',  value: used.toLocaleString(),                                       sub: 'of ' + (included?.toLocaleString() ?? 'unlimited'),  color: pct >= 100 ? '#DC2626' : pct >= 80 ? '#D97706' : '#2563EB' },
           { label: 'Days remaining',    value: `${daysInPeriod - daysElapsed}`,                             sub: 'in billing period',                                   color: '#374151' },
           { label: 'Projected month-end',value: projected.toLocaleString(),                                  sub: included ? `${Math.round((projected / included) * 100)}% of inclusion` : 'of unlimited', color: projected > (included ?? Infinity) ? '#DC2626' : '#374151' },
-          { label: 'Projected overage', value: projectedOverage > 0 ? `$${projectedCost.toFixed(2)}` : '$0.00', sub: projectedOverage > 0 ? `${projectedOverage.toLocaleString()} extra SMS` : 'No overage expected', color: projectedOverage > 0 ? '#DC2626' : '#15803D' },
+          { label: 'Projected overage', value: projectedOverage > 0 ? `R ${projectedCost.toFixed(2)}` : 'R 0.00', sub: projectedOverage > 0 ? `${projectedOverage.toLocaleString()} extra SMS` : 'No overage expected', color: projectedOverage > 0 ? '#DC2626' : '#15803D' },
         ].map(s => (
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '14px 18px', background: '#fff' }}>
             <div style={{ fontSize: 11, color: '#9CA3AF', marginBottom: 6, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{s.label}</div>

@@ -3,7 +3,7 @@ import { TrendingUp, TrendingDown, BarChart2, DollarSign, Users, Wrench, ArrowUp
 import { PLAN_PNL, PLAN_ENROLLMENTS } from './mockData';
 import type { PlanPnLRow } from './types';
 
-function fmtMoney(n: number) { return `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`; }
+function fmtMoney(n: number) { return `R ${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`; }
 
 function NetBadge({ net }: { net: number }) {
   if (net >= 0) {

@@ -4,7 +4,7 @@ import type { FleetSession, FleetSessionVehicleWork } from './types';
 import { MOCK_FLEET_SESSIONS, MOCK_FLEET_ACCOUNTS } from './mockData';
 
 function cents(c: number) {
-  return `$${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 interface Props {

@@ -246,8 +246,8 @@ export function CustomerMembershipView() {
               Other plans available for your vehicle.
             </p>
             {[
-              { name: 'Tire Care Plan — Premium', price: '$229.99 / yr', highlight: 'More rotations + flat repair' },
-              { name: 'TPMS Shield', price: '$49.99 / yr', highlight: 'Sensor coverage' },
+              { name: 'Tire Care Plan — Premium', price: 'R 4,299 / yr', highlight: 'More rotations + flat repair' },
+              { name: 'TPMS Shield', price: 'R 899 / yr', highlight: 'Sensor coverage' },
             ].map(p => (
               <div key={p.name} className="flex items-center justify-between py-2.5" style={{ borderBottom: '1px solid #F3F4F6' }}>
                 <div>

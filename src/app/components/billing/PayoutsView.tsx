@@ -11,7 +11,7 @@ const STATUS_META: Record<PayoutStatus, { label: string; color: string; bg: stri
 };
 
 function fmtMoney(cents: number) {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function fmtDate(iso: string) {

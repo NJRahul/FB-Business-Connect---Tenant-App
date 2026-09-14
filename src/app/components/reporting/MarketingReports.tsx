@@ -3,7 +3,7 @@ import { TrendingUp, Mail, MessageSquare, ChevronDown, ChevronRight } from 'luci
 import { CAMPAIGN_STATS } from './mockData';
 
 function fmtMoney(n: number) {
-  return `$${n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  return `R ${n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function pct(num: number, den: number) {

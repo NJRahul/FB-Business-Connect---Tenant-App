@@ -40,7 +40,7 @@ function PlanBadge({ tier }: { tier: PlanTier }) {
 
 function formatMRR(cents: number) {
   if (cents === 0) return '—';
-  return `$${(cents / 100).toFixed(0)}/mo`;
+  return `R ${(cents / 100).toFixed(0)}/mo`;
 }
 
 function timeAgo(iso: string) {

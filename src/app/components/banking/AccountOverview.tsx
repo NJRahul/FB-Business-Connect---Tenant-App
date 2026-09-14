@@ -249,7 +249,7 @@ export function AccountOverview({ account, vaults: initialVaults }: Props) {
     if (vaults.length >= 10) return;
     setVaults(prev => [...prev, {
       id: `v${Date.now()}`, shop_id: 'shop1', account_id: account.id,
-      name: 'New Vault', balance_cached: 0, currency: 'USD',
+      name: 'New Vault', balance_cached: 0, currency: 'ZAR',
       is_default: false, sort_order: prev.length,
     }]);
   }

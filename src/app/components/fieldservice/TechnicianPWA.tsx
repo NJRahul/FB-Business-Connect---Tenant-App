@@ -27,7 +27,7 @@ const NEXT_COLOR: Partial<Record<VisitState, string>> = {
 };
 
 function fmtTime(iso: string) { return new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }); }
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 // ─── Signature Pad ────────────────────────────────────────────────────────────
 function SignaturePad({ onSave, onClose }: { onSave: (data: string) => void; onClose: () => void }) {
@@ -482,7 +482,7 @@ export function TechnicianPWA() {
             <p style={{ color: '#6B7280', fontSize: '0.6875rem' }}>Jobs done</p>
           </div>
           <div>
-            <p style={{ color: '#27AE60', fontWeight: 700, fontSize: '1rem', fontFamily: 'Sora, sans-serif' }}>{totalRevenue > 0 ? `$${totalRevenue.toFixed(0)}` : '$0'}</p>
+            <p style={{ color: '#27AE60', fontWeight: 700, fontSize: '1rem', fontFamily: 'Sora, sans-serif' }}>{totalRevenue > 0 ? `R ${totalRevenue.toFixed(0)}` : 'R 0'}</p>
             <p style={{ color: '#6B7280', fontSize: '0.6875rem' }}>Revenue</p>
           </div>
           <div>

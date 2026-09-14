@@ -9,7 +9,7 @@ import type { Visit } from './types';
 
 function fmtDate(iso: string) { return new Date(iso).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }); }
 function fmtTime(iso: string) { return new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }); }
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 type HubSection = 'appointments' | 'history' | 'vehicles' | 'invoices' | 'warranties' | 'account';
 

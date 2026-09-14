@@ -4,7 +4,7 @@ import type { ApprovalRequest } from './types';
 import { MOCK_APPROVALS } from './mockData';
 
 function cents(c: number) {
-  return `$${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(c / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 export function FleetApprovalsView() {

@@ -100,7 +100,7 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
             <div>
               <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Install Address</p>
               <p style={{ color: '#1A1A1A', fontWeight: 500, fontSize: '0.9375rem', marginTop: '4px' }}>{order.vehicle.address || '123 Main St'}</p>
-              <p style={{ color: '#6B7280', fontSize: '0.875rem' }}>{order.vehicle.city || 'Johannesburg'}, {order.vehicle.state} {order.vehicle.zip || ''2000''}</p>
+              <p style={{ color: '#6B7280', fontSize: '0.875rem' }}>{order.vehicle.city || 'Johannesburg'}, {order.vehicle.state} {order.vehicle.zip || '2000'}</p>
             </div>
             <div>
               <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vehicle</p>

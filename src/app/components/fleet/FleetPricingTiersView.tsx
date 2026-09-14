@@ -71,7 +71,7 @@ export function FleetPricingTiersView() {
               <p style={{ fontSize: '0.825rem', color: '#6B7280', marginBottom: 12, lineHeight: 1.5 }}>{tier.description}</p>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl font-bold" style={{ color: '#C0392B' }}>
-                  {tier.discountType === 'percentage' ? `${tier.discountValue}%` : `$${tier.discountValue}`}
+                  {tier.discountType === 'percentage' ? `${tier.discountValue}%` : `R ${tier.discountValue}`}
                 </span>
                 <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>
                   {tier.discountType === 'percentage' ? 'off retail' : 'flat discount'}

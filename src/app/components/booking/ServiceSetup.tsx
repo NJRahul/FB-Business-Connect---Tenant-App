@@ -12,7 +12,7 @@ const DAY_FULL = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 
 type SetupTab = 'services' | 'technicians' | 'calendar';
 
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 // ─── Service Type Card ────────────────────────────────────────────────────────
 

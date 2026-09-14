@@ -182,7 +182,7 @@ function StepConfirm({ plan, tier, billing, vehicle }: { plan: ServicePlan; tier
 
         {[
           { label: 'Vehicle', value: vehicle, icon: Car },
-          { label: 'Price', value: `$${tier.price.toFixed(2)} / ${plan.billingCadence}`, icon: CreditCard },
+          { label: 'Price', value: `R ${tier.price.toFixed(2)} / ${plan.billingCadence}`, icon: CreditCard },
           { label: 'Payment', value: billing === 'card' ? 'Credit / Debit Card (Stripe)' : 'ACH Bank Transfer', icon: PayIcon },
           { label: 'Term Start', value: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), icon: null },
           { label: 'Term End', value: (() => { const d = new Date(); d.setMonth(d.getMonth() + plan.termMonths); return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); })(), icon: null },

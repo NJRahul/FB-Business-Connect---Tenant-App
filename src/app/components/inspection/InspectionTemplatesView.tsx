@@ -3,7 +3,7 @@ import { Plus, GripVertical, ChevronDown, ChevronRight, Settings, Copy, ArrowLef
 import type { InspectionTemplate, TemplateItemConfig, PhotoRequirement, ItemStatus } from './types';
 import { MOCK_TEMPLATES } from './mockData';
 
-const cents = (c: number) => c ? `$${(c / 100).toFixed(2)}` : '—';
+const cents = (c: number) => c ? `R ${(c / 100).toFixed(2)}` : '—';
 
 function ServiceTypeBadge({ type }: { type: string }) {
   const colors: Record<string, { bg: string; color: string }> = {

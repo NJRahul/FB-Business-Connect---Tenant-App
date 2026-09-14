@@ -73,7 +73,7 @@ export function InspectionAnalyticsView() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <StatCard icon={<ClipboardList className="w-5 h-5" />} label="Total Inspections" value={String(totalInspections)} sub="Last 30 days" />
         <StatCard icon={<TrendingUp className="w-5 h-5" />} label="Avg Attach Rate" value={`${avgAttachRate}%`} sub="Recommendations approved" highlight />
-        <StatCard icon={<DollarSign className="w-5 h-5" />} label="Inspection Revenue" value={`$${(totalRevenue / 100).toLocaleString()}`} sub="Approved services" highlight />
+        <StatCard icon={<DollarSign className="w-5 h-5" />} label="Inspection Revenue" value={`R ${(totalRevenue / 100).toLocaleString()}`} sub="Approved services" highlight />
         <StatCard icon={<Clock className="w-5 h-5" />} label="Avg Inspection Time" value={`${avgTime}m`} sub="Per inspection" />
       </div>
 

@@ -160,7 +160,7 @@ export function RefundManager() {
     setRefundAmount('');
     setRefundReason('');
     setCustomReason('');
-    setSuccessMsg(`Refund of $${amount.toFixed(2)} processed. Customer notified via email${selectedOrder ? ' + SMS' : ''}.`);
+    setSuccessMsg(`Refund of R ${amount.toFixed(2)} processed. Customer notified via email${selectedOrder ? ' + SMS' : ''}.`);
     setTimeout(() => setSuccessMsg(''), 5000);
   };
 
@@ -256,7 +256,7 @@ export function RefundManager() {
                 {[
                   { label: 'Customer', value: selectedOrder.customer, icon: User },
                   { label: 'Appointment', value: selectedOrder.slot, icon: Clock },
-                  { label: 'Amount Paid', value: `$${selectedOrder.paid.toFixed(2)}`, icon: DollarSign },
+                  { label: 'Amount Paid', value: `R ${selectedOrder.paid.toFixed(2)}`, icon: DollarSign },
                   { label: 'Payment', value: selectedOrder.paymentMethod, icon: CheckCircle2 },
                 ].map(item => {
                   const Icon = item.icon;
@@ -353,7 +353,7 @@ export function RefundManager() {
                   className="py-2.5 rounded-[8px] font-semibold transition-all"
                   style={{ border: refundType === t ? '2px solid #C0392B' : '2px solid #E5E7EB', background: refundType === t ? '#FDEDEC' : '#fff', color: refundType === t ? '#C0392B' : '#6B7280', fontSize: '0.9375rem' }}
                 >
-                  {t === 'full' ? `Full — $${availableRefund.toFixed(2)}` : 'Partial amount'}
+                  {t === 'full' ? `Full — R ${availableRefund.toFixed(2)}` : 'Partial amount'}
                 </button>
               ))}
             </div>

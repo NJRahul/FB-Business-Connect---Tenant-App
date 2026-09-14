@@ -3,7 +3,7 @@ import { TrendingUp, TrendingDown, Minus, Star, RefreshCw, Maximize2, X } from '
 import { TECH_STATS } from './mockData';
 
 function fmtMoney(cents: number) {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function RankChange({ delta }: { delta: number }) {

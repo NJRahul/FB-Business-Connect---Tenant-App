@@ -44,7 +44,7 @@ function MountBalanceTab() {
                   {s.included && <span style={{ marginLeft: 6, fontSize: 10, fontWeight: 700, color: '#16A34A', background: '#F0FDF4', padding: '1px 6px', borderRadius: 99 }}>Included</span>}
                 </td>
                 <td style={{ padding: '12px 14px', color: '#374151', fontWeight: 600 }}>
-                  {s.included ? <span style={{ color: '#16A34A' }}>Free</span> : `$${bundleMode === 'bundle' ? s.bundlePrice : s.basePrice}`}
+                  {s.included ? <span style={{ color: '#16A34A' }}>Free</span> : `R ${bundleMode === 'bundle' ? s.bundlePrice : s.basePrice}`}
                 </td>
                 <td style={{ padding: '12px 14px', color: '#6B7280' }}>{s.time}</td>
                 <td style={{ padding: '12px 14px' }}>

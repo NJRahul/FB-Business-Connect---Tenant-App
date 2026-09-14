@@ -3,7 +3,7 @@ import { AlertTriangle, RefreshCw, Clock, TrendingUp, Users, Package, CheckCircl
 import { DAILY_REVENUE, TECH_STATS, AT_RISK_VISITS, LIVE_VISITS } from './mockData';
 
 function fmtMoney(cents: number) {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function Sparkline({ values, color = '#C0392B', h = 40 }: { values: number[]; color?: string; h?: number }) {

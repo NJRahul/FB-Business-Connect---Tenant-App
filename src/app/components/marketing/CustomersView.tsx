@@ -43,7 +43,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
         <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 18 }}>
             {[
-              { label: 'Lifetime Value', value: `$${customer.ltv.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, color: '#C0392B' },
+              { label: 'Lifetime Value', value: `R ${customer.ltv.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, color: '#C0392B' },
               { label: 'Total Visits', value: customer.visitCount, color: '#2980B9' },
               { label: 'Last Visit', value: customer.lastVisitDate ?? '—', color: '#1A1A1A' },
               { label: 'Member Since', value: customer.createdAt.slice(0, 7), color: '#1A1A1A' },
@@ -180,7 +180,7 @@ export function CustomersView() {
           { label: 'Total Customers', value: customers.length, color: '#2980B9', bg: '#EBF5FB' },
           { label: 'Email Opted-In', value: emailOptCount, color: '#27AE60', bg: '#D1FAE5' },
           { label: 'SMS Opted-In', value: smsOptCount, color: '#7C3AED', bg: '#EDE9FE' },
-          { label: 'Total LTV', value: `$${customers.reduce((s, c) => s + c.ltv, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Total LTV', value: `R ${customers.reduce((s, c) => s + c.ltv, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, border: '1px solid #E5E7EB', borderRadius: 12, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 26, fontWeight: 800, color: s.color }}>{s.value}</div>

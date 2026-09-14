@@ -173,7 +173,7 @@ export function EnrollmentsView() {
         {[
           { label: 'Active Enrollments', value: stats.active, color: '#16A34A', bg: '#DCFCE7' },
           { label: 'Past Due', value: stats.past_due, color: '#D97706', bg: '#FEF3C7' },
-          { label: 'Est. MRR', value: `$${stats.mrr.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Est. MRR', value: `R ${stats.mrr.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
         ].map(s => (
           <div key={s.label} className="bg-white rounded-[10px] p-4" style={{ border: '1px solid #E5E7EB', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
             <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</p>

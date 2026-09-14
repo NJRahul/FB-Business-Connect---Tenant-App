@@ -99,7 +99,7 @@ export const SEGMENTS: Segment[] = [
   },
   {
     id: 'seg-4', shopId: 'shop-1', name: 'High-Value (LTV > $1,000)', description: 'Customers with lifetime value over $1,000',
-    filters: [{ id: 'f1', field: 'ltv', fieldLabel: 'Lifetime Value', operator: 'gt', value: 1000, valueLabel: '$1,000' }],
+    filters: [{ id: 'f1', field: 'ltv', fieldLabel: 'Lifetime Value', operator: 'gt', value: 1000, valueLabel: 'R 18,500' }],
     memberCount: 3, lastComputedAt: '2026-06-14T10:00:00', isTemplate: true, createdAt: '2026-01-01T00:00:00',
   },
   {

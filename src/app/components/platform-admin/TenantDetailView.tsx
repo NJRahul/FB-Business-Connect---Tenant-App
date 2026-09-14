@@ -85,7 +85,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
         archive: 'Tenant archived.', delete: 'Permanent deletion queued.',
         extend_trial: `Trial extended by ${extendDays} days.`,
         discount: `Discount code ${discountCode} applied.`,
-        credit: `$${creditAmount} SLA credit applied.`,
+        credit: `R ${creditAmount} SLA credit applied.`,
       };
       showToast(labels[act!] || 'Action completed.');
       setActionModal({ action: null });
@@ -148,7 +148,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
           <div className="flex flex-col gap-6">
             {/* Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              <StatCard label="MRR" value={tenantState.mrrCents === 0 ? '—' : `$${(tenantState.mrrCents / 100).toFixed(0)}`} sub="monthly recurring" />
+              <StatCard label="MRR" value={tenantState.mrrCents === 0 ? '—' : `R ${(tenantState.mrrCents / 100).toFixed(0)}`} sub="monthly recurring" />
               <StatCard label="Locations" value={String(tenantState.locationCount)} />
               <StatCard label="Technicians" value={String(tenantState.technicianCount)} />
               <StatCard label="Plan" value={tenantState.planTier.charAt(0).toUpperCase() + tenantState.planTier.slice(1)} />

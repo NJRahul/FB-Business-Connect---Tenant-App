@@ -127,7 +127,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
     const promo = VALID_PROMOS[promoInput.toUpperCase()];
     if (!promo) { setPromoError('Code not found.'); return; }
     if (new Date(promo.expiresAt) < new Date()) { setPromoError('This code has expired.'); return; }
-    if (tiresSubtotal < promo.minCart) { setPromoError(`Minimum cart value of $${promo.minCart} required.`); return; }
+    if (tiresSubtotal < promo.minCart) { setPromoError(`Minimum cart value of R ${promo.minCart} required.`); return; }
 
     setAppliedPromo({ code: promoInput.toUpperCase(), discount: promo.discount, type: promo.type });
     setPromoInput('');
@@ -310,7 +310,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                     <Tag size={14} style={{ color: '#27AE60' }} />
                     <span style={{ color: '#15803D', fontWeight: 600, fontSize: '0.875rem' }}>{appliedPromo.code}</span>
                     <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>
-                      ({appliedPromo.type === 'percent' ? `${appliedPromo.discount}% off` : `$${appliedPromo.discount} off`})
+                      ({appliedPromo.type === 'percent' ? `${appliedPromo.discount}% off` : `R ${appliedPromo.discount} off`})
                     </span>
                   </div>
                   <button onClick={() => setAppliedPromo(null)} style={{ color: '#9CA3AF' }}>
@@ -364,7 +364,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                         value={overrideAmount}
                         onChange={e => setOverrideAmount(e.target.value)}
                         style={{ ...inputStyle, width: '90px', flex: 'none' }}
-                        placeholder="$0.00"
+                        placeholder="R 0.00"
                       />
                       <input
                         value={overrideReason}
@@ -400,8 +400,8 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
             <div className="px-5 py-4 space-y-2 border-b" style={{ borderColor: '#E5E7EB' }}>
               {[
                 { label: `Tires subtotal (${totalTires} tires)`, amount: tiresSubtotal, color: '#1A1A1A' },
-                { label: `Install fee ($${INSTALL_FEE_PER_TIRE}/tire)`, amount: installFee, color: '#6B7280' },
-                { label: `Disposal fee ($${DISPOSAL_FEE_PER_TIRE}/tire)`, amount: disposalFee, color: '#6B7280' },
+                { label: `Install fee (R ${INSTALL_FEE_PER_TIRE}/tire)`, amount: installFee, color: '#6B7280' },
+                { label: `Disposal fee (R ${DISPOSAL_FEE_PER_TIRE}/tire)`, amount: disposalFee, color: '#6B7280' },
                 ...(calloutFeeApplies ? [{ label: 'Trip charge', amount: 75, color: '#F39C12' }] : []),
                 ...(appliedPromo ? [{ label: `Promo (${appliedPromo.code})`, amount: -promoDiscount, color: '#27AE60' }] : []),
                 ...(overrideSubmitted && managerDiscount > 0 ? [{ label: 'Manager discount', amount: -managerDiscount, color: '#E74C3C' }] : []),
@@ -481,7 +481,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                   Verifying prices & availability...
                 </>
               ) : (
-                `Proceed to Checkout — $${(grandTotal + (calloutFeeApplies ? 75 : 0)).toFixed(2)}`
+                `Proceed to Checkout — R ${(grandTotal + (calloutFeeApplies ? 75 : 0)).toFixed(2)}`
               )}
             </button>
             <p className="mt-2 text-center" style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>

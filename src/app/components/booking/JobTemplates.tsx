@@ -3,7 +3,7 @@ import { Plus, Pencil, Trash2, Zap, Package, Clock, DollarSign, X, Check } from 
 import { JOB_TEMPLATES, ADDON_SERVICES } from './mockData';
 import type { JobTemplate } from './types';
 
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 interface Props {
   onUseTemplate?: (template: JobTemplate) => void;

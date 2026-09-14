@@ -116,9 +116,9 @@ export function CashPosition({ account, vaults }: Props) {
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={chartData} barSize={6} barGap={2}>
               <XAxis dataKey="date" tick={{ fontSize: 10, fill: '#9CA3AF' }} tickLine={false} axisLine={false} interval={4} />
-              <YAxis tick={{ fontSize: 10, fill: '#9CA3AF' }} tickLine={false} axisLine={false} tickFormatter={v => `$${(v/1000).toFixed(0)}k`} />
+              <YAxis tick={{ fontSize: 10, fill: '#9CA3AF' }} tickLine={false} axisLine={false} tickFormatter={v => `R ${(v/1000).toFixed(0)}k`} />
               <Tooltip
-                formatter={(val: number) => [`$${val.toFixed(2)}`, '']}
+                formatter={(val: number) => [`R ${val.toFixed(2)}`, '']}
                 contentStyle={{ fontSize: 12, border: '1px solid #E5E7EB', borderRadius: 6 }}
               />
               <Bar dataKey="inflow"  fill="#27AE60" radius={[2,2,0,0]} />

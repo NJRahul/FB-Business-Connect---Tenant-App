@@ -120,7 +120,7 @@ function DetailPanel({ visit, onClose, onReassign }: {
           { label: 'Technician', value: visit.technicianName },
           { label: 'Address', value: visit.serviceAddress },
           { label: 'Vehicle', value: `${visit.vehicle.year} ${visit.vehicle.make} ${visit.vehicle.model}` },
-          { label: 'Total', value: `$${visit.totalPrice.toFixed(2)}` },
+          { label: 'Total', value: `R ${visit.totalPrice.toFixed(2)}` },
         ].map(r => (
           <div key={r.label} className="flex justify-between py-2" style={{ borderBottom: '1px solid #F3F4F6' }}>
             <span style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{r.label}</span>

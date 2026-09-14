@@ -132,8 +132,8 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
               </span>
             </div>
             <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '4px' }}>
-              {currentPlan === 'starter' && 'Renews monthly · $49/mo'}
-              {currentPlan === 'pro' && 'Renews monthly · $149/mo'}
+              {currentPlan === 'starter' && 'Renews monthly · R 3,499/mo'}
+              {currentPlan === 'pro' && 'Renews monthly · R 8,999/mo'}
               {currentPlan === 'enterprise' && 'Annual contract · Custom pricing'}
             </p>
           </div>
@@ -182,7 +182,7 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
                 <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: plan.color, fontSize: '1.0625rem' }}>{plan.name}</span>
               </div>
               <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1.625rem', fontFamily: 'Sora, sans-serif' }}>
-                {plan.price ? `$${plan.price}` : 'Custom'}
+                {plan.price ? `R ${plan.price}` : 'Custom'}
                 {plan.price && <span style={{ color: '#9CA3AF', fontWeight: 400, fontSize: '0.875rem' }}>/mo</span>}
               </p>
               <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '4px', marginBottom: '16px' }}>{plan.description}</p>

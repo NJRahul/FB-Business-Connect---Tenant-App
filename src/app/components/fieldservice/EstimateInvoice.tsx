@@ -6,7 +6,7 @@ import {
 import { INVOICES } from './mockData';
 import type { Invoice, InvoiceLine, InvoiceStatus } from './types';
 
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 function fmtDate(iso: string) { return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
 
 const STATUS_STYLE: Record<InvoiceStatus, { bg: string; color: string; label: string; icon: React.ReactNode }> = {

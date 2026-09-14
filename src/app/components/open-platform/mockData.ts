@@ -105,8 +105,8 @@ export const WORKFLOWS: Workflow[] = [
     name: 'Post-Visit Follow-Up',
     triggerType: 'visit.completed',
     conditions: [
-      { id: 'c1', logic: 'AND', field: 'customer.ltv', operator: '>', value: '$500' },
-      { id: 'c2', logic: 'AND', field: 'visit.total', operator: '>', value: '$100' },
+      { id: 'c1', logic: 'AND', field: 'customer.ltv', operator: '>', value: 'R 9,250' },
+      { id: 'c2', logic: 'AND', field: 'visit.total', operator: '>', value: 'R 1,850' },
     ],
     actions: [
       { id: 'a1', type: 'send_email', config: { template: 'Post-Visit Thank You', delay: '1h' } },
@@ -123,7 +123,7 @@ export const WORKFLOWS: Workflow[] = [
     name: 'Win-Back: Lapsed Customers',
     triggerType: 'customer.no_visit_180d',
     conditions: [
-      { id: 'c1', logic: 'AND', field: 'customer.ltv', operator: '>', value: '$200' },
+      { id: 'c1', logic: 'AND', field: 'customer.ltv', operator: '>', value: 'R 3,700' },
     ],
     actions: [
       { id: 'a1', type: 'send_sms', config: { template: "We miss you — 15% off your next visit", delay: '0' } },

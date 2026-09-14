@@ -60,7 +60,7 @@ function ReferralCodeCard({ codeId }: { codeId: string }) {
           <div style={{ fontSize: 12, color: '#9CA3AF', marginBottom: 4 }}>Referral Code for {rc.customerName}</div>
           <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 32, letterSpacing: 2, color: '#C0392B' }}>{rc.code}</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>
-            Reward: {rc.rewardType === 'fixed_credit' ? `$${rc.rewardValue} credit` : rc.rewardType === 'pct_discount' ? `${rc.rewardValue}% off` : 'Free service'}
+            Reward: {rc.rewardType === 'fixed_credit' ? `R ${rc.rewardValue} credit` : rc.rewardType === 'pct_discount' ? `${rc.rewardValue}% off` : 'Free service'}
           </div>
         </div>
         <CopyButton text={rc.code} />
@@ -71,8 +71,8 @@ function ReferralCodeCard({ codeId }: { codeId: string }) {
         {[
           { label: 'Link Uses', value: rc.uses },
           { label: 'Conversions', value: rc.conversions },
-          { label: 'Rewards Earned', value: `$${rc.rewardsEarned}` },
-          { label: 'Available', value: `$${rc.rewardsAvailable}` },
+          { label: 'Rewards Earned', value: `R ${rc.rewardsEarned}` },
+          { label: 'Available', value: `R ${rc.rewardsAvailable}` },
         ].map(s => (
           <div key={s.label} style={{ padding: '14px 20px', borderRight: '1px solid #F3F4F6', textAlign: 'center' }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 22, color: '#1A1A1A' }}>{s.value}</div>
@@ -285,7 +285,7 @@ export default function ReferralsView() {
         {[
           { label: 'Active Codes', value: REFERRAL_CODES.length, icon: Gift, sub: 'customers enrolled' },
           { label: 'Total Conversions', value: totalConversions, icon: TrendingUp, sub: 'purchased after referral' },
-          { label: 'Rewards Issued', value: `$${totalRewards}`, icon: CheckCircle, sub: 'all time' },
+          { label: 'Rewards Issued', value: `R ${totalRewards}`, icon: CheckCircle, sub: 'all time' },
           { label: 'ID.me Verified', value: idMeVerified, icon: Shield, sub: 'discount-eligible members' },
         ].map(s => (
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 20px', background: '#fff' }}>

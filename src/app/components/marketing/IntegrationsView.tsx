@@ -358,9 +358,9 @@ function LSASection() {
             {[
               { label: 'Total Leads', value: lsa.leads },
               { label: 'Booked', value: lsa.booked },
-              { label: 'Cost / Lead', value: `$${lsa.costPerLead.toFixed(2)}` },
-              { label: 'Cost / Booked Job', value: `$${lsa.costPerBookedJob.toFixed(2)}` },
-              { label: 'Attributed Revenue', value: `$${lsa.attributedRevenue.toLocaleString()}` },
+              { label: 'Cost / Lead', value: `R ${lsa.costPerLead.toFixed(2)}` },
+              { label: 'Cost / Booked Job', value: `R ${lsa.costPerBookedJob.toFixed(2)}` },
+              { label: 'Attributed Revenue', value: `R ${lsa.attributedRevenue.toLocaleString()}` },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center', padding: '12px 0', border: '1px solid #F3F4F6', borderRadius: 8, background: '#F9FAFB' }}>
                 <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 20, color: '#1A1A1A' }}>{s.value}</div>

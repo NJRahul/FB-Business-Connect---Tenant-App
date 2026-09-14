@@ -3,7 +3,7 @@ import { Lock } from 'lucide-react';
 import { CUSTOMER_STATS, COHORT_DATA } from './mockData';
 
 function fmtMoney(n: number) {
-  return `$${n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  return `R ${n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function TagPill({ tag }: { tag: string }) {

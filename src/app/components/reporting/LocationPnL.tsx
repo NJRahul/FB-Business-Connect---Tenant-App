@@ -3,7 +3,7 @@ import { Lock } from 'lucide-react';
 import { LOCATION_PNL } from './mockData';
 
 function fmtMoney(cents: number) {
-  return `$${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function pct(n: number, d: number) {

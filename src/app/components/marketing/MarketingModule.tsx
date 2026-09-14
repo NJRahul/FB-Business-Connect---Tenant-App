@@ -81,8 +81,8 @@ function OverviewDashboard() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
         {[
           { label: 'Total Customers', value: totalCustomers, sub: `${emailOptIn} email · ${smsOptIn} SMS opted-in` },
-          { label: 'Customer LTV', value: `$${totalLtv.toLocaleString(undefined, { maximumFractionDigits: 0 })}`, sub: 'combined lifetime value' },
-          { label: 'Active Campaigns', value: activeCampaigns, sub: `${sentCampaigns.length} sent · $${totalRevenue.toLocaleString()} attributed` },
+          { label: 'Customer LTV', value: `R ${totalLtv.toLocaleString(undefined, { maximumFractionDigits: 0 })}`, sub: 'combined lifetime value' },
+          { label: 'Active Campaigns', value: activeCampaigns, sub: `${sentCampaigns.length} sent · R ${totalRevenue.toLocaleString()} attributed` },
           { label: 'Avg Review Rating', value: avgRating.toFixed(1) + ' ★', sub: `${REVIEWS.length} total reviews` },
         ].map(s => (
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 20px', background: '#fff' }}>
@@ -108,7 +108,7 @@ function OverviewDashboard() {
           },
           {
             icon: Megaphone, title: 'Campaigns',
-            lines: [`${activeCampaigns} active`, `$${totalRevenue.toLocaleString()} attributed revenue`],
+            lines: [`${activeCampaigns} active`, `R ${totalRevenue.toLocaleString()} attributed revenue`],
             color: '#C0392B', bg: '#FDEDEC',
           },
           {
@@ -123,7 +123,7 @@ function OverviewDashboard() {
           },
           {
             icon: Plug, title: 'Integrations',
-            lines: [`${gbpConnected} GBP · ${lsaConnected} LSA connected`, `$${lsaRevenue.toLocaleString()} LSA attributed revenue`],
+            lines: [`${gbpConnected} GBP · ${lsaConnected} LSA connected`, `R ${lsaRevenue.toLocaleString()} LSA attributed revenue`],
             color: '#0F766E', bg: '#F0FDFA',
           },
         ].map(m => (
@@ -177,7 +177,7 @@ function OverviewDashboard() {
                   </td>
                   <td style={{ padding: '12px 16px', fontSize: 13, color: '#6B7280' }}>{c.bookings}</td>
                   <td style={{ padding: '12px 16px', fontSize: 13, fontWeight: 600, color: c.revenue > 0 ? '#15803D' : '#9CA3AF' }}>
-                    {c.revenue > 0 ? `$${c.revenue.toLocaleString()}` : '—'}
+                    {c.revenue > 0 ? `R ${c.revenue.toLocaleString()}` : '—'}
                   </td>
                 </tr>
               );

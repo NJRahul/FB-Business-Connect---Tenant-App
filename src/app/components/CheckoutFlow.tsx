@@ -98,7 +98,7 @@ const PAYMENT_METHODS: { id: PaymentMethodId; label: string; icon: string; categ
 const DEPOSIT_OPTIONS = [
   { id: 'full' as DepositMode, label: 'Full Payment', desc: 'Pay the full amount now', multiplier: 1 },
   { id: 'deposit25' as DepositMode, label: '25% Deposit', desc: 'Pay 25% now, remainder at visit', multiplier: 0.25 },
-  { id: 'book-now-pay-later' as DepositMode, label: 'Book Now, Pay Later', desc: '$0 now — full amount due at visit', multiplier: 0 },
+  { id: 'book-now-pay-later' as DepositMode, label: 'Book Now, Pay Later', desc: 'R 0 now — full amount due at visit', multiplier: 0 },
 ];
 
 const inputStyle: React.CSSProperties = {
@@ -735,7 +735,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                 ) : dueNow === 0 ? (
                   '📅 Confirm Booking — $0 Due Now'
                 ) : (
-                  `🔒 Pay Now — $${dueNow.toFixed(2)}`
+                  `🔒 Pay Now — R ${dueNow.toFixed(2)}`
                 )}
               </button>
               <p className="text-center" style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '8px' }}>

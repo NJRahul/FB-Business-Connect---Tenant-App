@@ -33,7 +33,7 @@ function RuleCard({ rule, onEdit, onDelete }: { rule: CommissionRule; onEdit: (r
         </div>
       </div>
       <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 20, fontWeight: 800, color: '#C0392B' }}>
-        {rule.type === 'fixed_per_service' ? `$${rule.value}` : `${rule.value}%`}
+        {rule.type === 'fixed_per_service' ? `R ${rule.value}` : `${rule.value}%`}
       </div>
       <div style={{ display: 'flex', gap: 6 }}>
         <button onClick={() => onEdit(rule)} style={{ padding: '6px', border: '1px solid #E5E7EB', borderRadius: 6, cursor: 'pointer', background: '#fff' }}>
@@ -163,7 +163,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 24 }}>
         {[
-          { label: 'Total Payout This Period', value: `$${totalPayout.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Total Payout This Period', value: `R ${totalPayout.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
           { label: 'Active Rules', value: rules.length, color: '#2980B9', bg: '#EBF5FB' },
           { label: 'Technicians Earning', value: Object.keys(byTech).length, color: '#27AE60', bg: '#D1FAE5' },
         ].map(s => (

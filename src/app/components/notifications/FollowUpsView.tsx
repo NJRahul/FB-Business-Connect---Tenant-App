@@ -43,7 +43,7 @@ export function FollowUpsView() {
           { label: 'Queued',           value: counts.queued,                     color: '#2563EB' },
           { label: 'Sent',             value: counts.sent,                       color: '#15803D' },
           { label: 'Cancelled',        value: counts.cancelled,                  color: '#9CA3AF' },
-          { label: 'Attributed Revenue', value: `$${totalAttributed.toLocaleString()}`, color: '#15803D' },
+          { label: 'Attributed Revenue', value: `R ${totalAttributed.toLocaleString()}`, color: '#15803D' },
         ].map(s => (
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 20px', background: '#fff' }}>
             <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 6 }}>{s.label}</div>

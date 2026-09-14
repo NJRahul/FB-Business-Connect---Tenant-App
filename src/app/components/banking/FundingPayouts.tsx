@@ -154,7 +154,7 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         to_vault_id: type === 'vault_to_vault' ? toVault : undefined,
         counterparty_id: type !== 'vault_to_vault' ? counterparty : undefined,
         amount: amountCents,
-        currency: 'USD',
+        currency: 'ZAR',
         memo: memo || undefined,
         scheduled_for: scheduleFor || undefined,
         idempotency_key: newIdempotencyKey(),

@@ -15,7 +15,7 @@ const WEEKDAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function addDays(d: Date, n: number) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
 function toDateStr(d: Date) { return d.toISOString().slice(0, 10); }
 function fmtTime(iso: string) { return new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }); }
-function fmtMoney(n: number) { return `$${n.toFixed(2)}`; }
+function fmtMoney(n: number) { return `R ${n.toFixed(2)}`; }
 
 type Step = 1 | 2 | 3 | 4 | 5 | 6;
 const STEP_LABELS = ['Customer', 'Vehicle', 'Service', 'Add-ons', 'Date & Time', 'Payment'];

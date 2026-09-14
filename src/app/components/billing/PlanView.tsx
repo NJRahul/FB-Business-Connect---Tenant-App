@@ -10,8 +10,8 @@ const PLAN_ICONS: Record<PlanTier, React.ElementType> = { starter: Zap, pro: Sta
 const PLAN_COLORS: Record<PlanTier, string> = { starter: '#6B7280', pro: '#C0392B', enterprise: '#1A1A1A' };
 
 const PLAN_FEATURES = [
-  { label: 'Monthly price',          starter: '$199/mo',       pro: '$499/mo',       enterprise: 'Custom' },
-  { label: 'Annual price (−15%)',    starter: '$169/mo',       pro: '$424/mo',       enterprise: 'Custom' },
+  { label: 'Monthly price',          starter: 'R 3,499/mo',    pro: 'R 8,999/mo',    enterprise: 'Custom' },
+  { label: 'Annual price (−15%)',    starter: 'R 2,974/mo',    pro: 'R 7,649/mo',    enterprise: 'Custom' },
   { label: 'Locations',              starter: '1',             pro: 'Up to 5',       enterprise: 'Unlimited' },
   { label: 'Customer records',       starter: '500',           pro: 'Unlimited',     enterprise: 'Unlimited' },
   { label: 'SMS inclusion/mo',       starter: '1,000',         pro: '10,000',        enterprise: 'Unlimited' },
