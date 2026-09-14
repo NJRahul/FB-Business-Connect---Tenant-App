@@ -9,7 +9,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-1', shopId: 'shop-1', firstName: 'James', lastName: 'Calloway',
     email: 'james.calloway@email.com', phone: '(214) 555-0142',
-    addresses: ['412 Maple St, Irving, TX 75038'],
+    addresses: ['12 Sandton Drive, Sandton, GP 2196'],
     vehicles: [{ year: '2019', make: 'Honda', model: 'Accord', trim: 'EX' }, { year: '2021', make: 'Ford', model: 'Explorer', trim: 'XLT' }],
     ltv: 1842.50, lastVisitDate: '2026-06-14', visitCount: 9,
     tags: ['high-value', 'fleet-adjacent', 'all-season'],
@@ -20,7 +20,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-2', shopId: 'shop-1', firstName: 'Maria', lastName: 'Reyes',
     email: 'maria.reyes@email.com', phone: '(469) 555-0278',
-    addresses: ['8821 Oak Ave, Dallas, TX 75001'],
+    addresses: ['45 Long Street, Cape Town, WC 8001'],
     vehicles: [{ year: '2021', make: 'Toyota', model: 'Camry', trim: 'SE' }],
     ltv: 654.30, lastVisitDate: '2026-06-14', visitCount: 4,
     tags: ['regular', 'all-season'],
@@ -32,7 +32,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-3', shopId: 'shop-1', firstName: 'Robert', lastName: 'Kim',
     email: 'robert.kim@email.com', phone: '(972) 555-0501',
-    addresses: ['2200 Commerce Dr, Carrollton, TX 75006'],
+    addresses: ['88 Commissioner Street, Johannesburg, GP 2001'],
     vehicles: [{ year: '2022', make: 'BMW', model: '5 Series', trim: '530i' }],
     ltv: 2910.00, lastVisitDate: '2025-12-08', visitCount: 14,
     tags: ['high-value', 'performance', 'lapsed'],
@@ -44,7 +44,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-4', shopId: 'shop-1', firstName: 'Patricia', lastName: 'Owens',
     email: 'p.owens@email.com', phone: '(214) 555-0945',
-    addresses: ['123 Main St, Dallas, TX 75001'],
+    addresses: ['123 Main Road, Johannesburg, GP 2001'],
     vehicles: [{ year: '2018', make: 'BMW', model: '3 Series', trim: '330i' }],
     ltv: 389.20, lastVisitDate: '2026-06-14', visitCount: 3,
     tags: ['new-customer'],
@@ -55,7 +55,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-5', shopId: 'shop-1', firstName: 'Marcus', lastName: 'Webb',
     email: 'marcus.w@email.com', phone: '(469) 555-0773',
-    addresses: ['6200 Gaston Ave, Dallas, TX 75214'],
+    addresses: ['62 Somerset Road, Green Point, WC 8005'],
     vehicles: [{ year: '2020', make: 'Jeep', model: 'Wrangler', trim: 'Sport' }],
     ltv: 731.40, lastVisitDate: '2025-08-22', visitCount: 6,
     tags: ['lapsed', 'truck-suv'],
@@ -67,7 +67,7 @@ export const CUSTOMERS: MarketingCustomer[] = [
   {
     id: 'mc-6', shopId: 'shop-1', firstName: 'Sandra', lastName: 'Torres',
     email: 'sandra.t@email.com', phone: '(972) 555-0234',
-    addresses: ['900 Prudential Dr, Dallas, TX 75201'],
+    addresses: ['5 Fredman Drive, Sandton, GP 2196'],
     vehicles: [{ year: '2023', make: 'Toyota', model: 'Highlander', trim: 'Limited' }],
     ltv: 1205.80, lastVisitDate: '2025-11-30', visitCount: 8,
     tags: ['high-value', 'suv', 'all-season'],

@@ -71,7 +71,7 @@ export function InvoicesView() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
         {[
           { label: 'Total Billed (YTD)',  value: fmtMoney(totalPaid), sub: `${INVOICES.filter(i => i.status === 'paid').length} invoices paid`, color: '#1A1A1A' },
-          { label: 'Tax Collected (YTD)', value: fmtMoney(taxPaid),   sub: 'Via Stripe Tax — US state rules',                                   color: '#6B7280' },
+          { label: 'VAT Collected (YTD)', value: fmtMoney(taxPaid),   sub: 'Via Stripe Tax — South African VAT (15%)',                        color: '#6B7280' },
           { label: 'Next Invoice',        value: fmtMoney(INVOICES[0].amount), sub: `Due ${fmtDate(INVOICES[0].currentPeriodEnd || INVOICES[0].createdAt)}`, color: '#2563EB' },
         ].map(s => (
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 20px', background: '#fff' }}>
@@ -86,7 +86,7 @@ export function InvoicesView() {
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '10px 14px', borderRadius: 8, background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
         <FileText size={14} color="#2563EB" style={{ marginTop: 2, flexShrink: 0 }} />
         <div style={{ fontSize: 12, color: '#1E40AF' }}>
-          <strong>Tax &amp; compliance:</strong> FB Business Connect uses Stripe Tax to calculate and collect US state sales tax automatically. 1099-K reports are issued per IRS thresholds via Stripe. Your EIN and business address on file are used for all tax documents.
+          <strong>Tax &amp; compliance:</strong> FB Business Connect uses Stripe Tax to calculate and collect South African VAT (15%) automatically. VAT returns are submitted per SARS requirements via Stripe. Your Tax Reference Number and business address on file are used for all tax documents.
         </div>
       </div>
 
@@ -168,7 +168,7 @@ export function InvoicesView() {
 
       {/* 1099-K notice */}
       <div style={{ padding: '14px 18px', borderRadius: 8, background: '#F9FAFB', border: '1px solid #E5E7EB', fontSize: 12, color: '#6B7280' }}>
-        <strong style={{ color: '#374151' }}>1099-K Tax Forms:</strong> If your Stripe Connect account processes over $600 in gross payments during a calendar year, Stripe will issue a 1099-K per IRS requirements. Forms are available in your Stripe Dashboard under Tax Documents.
+        <strong style={{ color: '#374151' }}>SARS VAT Returns:</strong> If your Stripe Connect account is VAT-registered, Stripe will provide transaction reports to support your VAT201 submissions to SARS. Tax documents are available in your Stripe Dashboard under Tax Documents.
       </div>
     </div>
   );

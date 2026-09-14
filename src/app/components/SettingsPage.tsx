@@ -14,15 +14,10 @@ type SettingsTab = 'profile' | 'service-area' | 'hours' | 'timezone' | 'holidays
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const US_TIMEZONES = [
-  { value: 'America/New_York', label: 'Eastern Time (ET)' },
-  { value: 'America/Chicago', label: 'Central Time (CT)' },
-  { value: 'America/Denver', label: 'Mountain Time (MT)' },
-  { value: 'America/Los_Angeles', label: 'Pacific Time (PT)' },
-  { value: 'America/Anchorage', label: 'Alaska Time (AKT)' },
-  { value: 'Pacific/Honolulu', label: 'Hawaii Time (HT)' },
+  { value: 'Africa/Johannesburg', label: 'South Africa Standard Time (SAST)' },
 ];
 
-const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+const US_STATES = ['GP','WC','KZN','EC','FS','LP','MP','NC','NW'];
 
 const DEFAULT_HOURS: Record<string, { open: string; close: string; closed: boolean }> = {
   Monday: { open: '08:00', close: '17:00', closed: false },
@@ -36,16 +31,17 @@ const DEFAULT_HOURS: Record<string, { open: string; close: string; closed: boole
 
 const FEDERAL_HOLIDAYS = [
   "New Year's Day — Jan 1",
-  "Martin Luther King Jr. Day — Jan 20",
-  "Presidents' Day — Feb 17",
-  "Memorial Day — May 26",
-  "Juneteenth — Jun 19",
-  "Independence Day — Jul 4",
-  "Labor Day — Sep 1",
-  "Columbus Day — Oct 13",
-  "Veterans Day — Nov 11",
-  "Thanksgiving Day — Nov 27",
+  "Human Rights Day — Mar 21",
+  "Good Friday — Apr (variable)",
+  "Family Day — Apr (variable)",
+  "Freedom Day — Apr 27",
+  "Workers' Day — May 1",
+  "Youth Day — Jun 16",
+  "National Women's Day — Aug 9",
+  "Heritage Day — Sep 24",
+  "Day of Reconciliation — Dec 16",
   "Christmas Day — Dec 25",
+  "Day of Goodwill — Dec 26",
 ];
 
 const inputStyle = {
@@ -64,22 +60,22 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
 
   const [profile, setProfile] = useState({
-    businessName: 'Acme Tire & Auto',
+    businessName: 'Acme Tyre & Auto',
     ownerName: 'John Smith',
     legalEntity: 'LLC',
     ein: '',
-    address: '123 Main St',
-    city: 'Austin',
-    state: 'TX',
-    zip: '78701',
-    phone: '(512) 555-0100',
-    supportEmail: 'support@acmetire.com',
+    address: '123 Main Road',
+    city: 'Johannesburg',
+    state: 'GP',
+    zip: '2000',
+    phone: '+27 11 555 0100',
+    supportEmail: 'support@acmetyre.co.za',
   });
 
-  const [serviceZips, setServiceZips] = useState<string[]>(['78701', '78702', '78703', '78704', '78705']);
+  const [serviceZips, setServiceZips] = useState<string[]>(['2000', '2001', '2090', '2091', '2092']);
   const [zipInput, setZipInput] = useState('');
   const [hours, setHours] = useState(DEFAULT_HOURS);
-  const [timezone, setTimezone] = useState('America/Chicago');
+  const [timezone, setTimezone] = useState('Africa/Johannesburg');
   const [holidays, setHolidays] = useState<string[]>(FEDERAL_HOLIDAYS.slice(0, 5));
   const [customHoliday, setCustomHoliday] = useState('');
 
@@ -156,14 +152,14 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                   </select>
                 </div>
                 <div>
-                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>EIN (Encrypted)</label>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Tax Reference Number (Encrypted)</label>
                   <div className="relative mt-1.5">
                     <input
                       type="password"
                       value={profile.ein}
                       onChange={e => setProfile(p => ({ ...p, ein: e.target.value }))}
                       style={{ ...inputStyle, display: 'block' }}
-                      placeholder="XX-XXXXXXX"
+                      placeholder="XXXXXXXXX"
                     />
                     <Lock size={12} className="absolute right-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} />
                   </div>
@@ -186,7 +182,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>State</label>
+                    <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Province</label>
                     <select
                       value={profile.state}
                       onChange={e => setProfile(p => ({ ...p, state: e.target.value }))}
@@ -196,7 +192,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                     </select>
                   </div>
                   <div>
-                    <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>ZIP</label>
+                    <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Postal Code</label>
                     <input
                       value={profile.zip}
                       onChange={e => setProfile(p => ({ ...p, zip: e.target.value }))}
@@ -244,7 +240,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
 
         {activeTab === 'service-area' && (
           <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-            <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Service Area ZIP Codes</h3>
+            <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Service Area Postal Codes</h3>
             <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '20px' }}>
               Customers outside your service area see a contact prompt instead of booking.
             </p>
@@ -253,17 +249,17 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                 value={zipInput}
                 onChange={e => setZipInput(e.target.value.replace(/\D/g, '').slice(0, 5))}
                 onKeyDown={e => {
-                  if (e.key === 'Enter' && zipInput.length === 5 && !serviceZips.includes(zipInput)) {
+                  if (e.key === 'Enter' && zipInput.length === 4 && !serviceZips.includes(zipInput)) {
                     setServiceZips(z => [...z, zipInput]);
                     setZipInput('');
                   }
                 }}
                 style={{ ...inputStyle, width: '140px', flex: 'none' }}
-                placeholder="ZIP code"
+                placeholder="Postal code"
               />
               <button
                 onClick={() => {
-                  if (zipInput.length === 5 && !serviceZips.includes(zipInput)) {
+                  if (zipInput.length === 4 && !serviceZips.includes(zipInput)) {
                     setServiceZips(z => [...z, zipInput]);
                     setZipInput('');
                   }
@@ -271,7 +267,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                 className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white"
                 style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
               >
-                <Plus size={14} /> Add ZIP
+                <Plus size={14} /> Add postal code
               </button>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -286,7 +282,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
               ))}
             </div>
             <p className="mt-4" style={{ color: '#27AE60', fontSize: '0.8125rem', fontWeight: 500 }}>
-              ✓ Serving {serviceZips.length} ZIP codes
+              ✓ Serving {serviceZips.length} postal codes
             </p>
           </div>
         )}

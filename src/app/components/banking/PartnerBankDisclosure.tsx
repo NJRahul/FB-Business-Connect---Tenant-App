@@ -12,9 +12,9 @@ export function PartnerBankDisclosure() {
       }}
     >
       <strong style={{ color: '#6B7280' }}>Partner Bank Disclosure:</strong>{' '}
-      FB Business Connect Banking services are provided by Evolve Bank &amp; Trust, Member FDIC. FB Business Connect is not a bank.
-      Business deposit accounts are FDIC insured up to $250,000 per depositor, per insured bank.
-      Debit cards are issued by Evolve Bank &amp; Trust pursuant to a license from Visa U.S.A. Inc.
+      FB Business Connect Banking services are provided by our partner bank, registered and regulated by the South African Reserve Bank (SARB). FB Business Connect is not a bank.
+      Business deposit accounts are protected under the South African Deposit Insurance Scheme (DIS) up to R100,000 per depositor.
+      Debit cards are issued by our partner bank pursuant to a licence from Visa International.
       Use of business accounts and cards is subject to the{' '}
       <span style={{ color: '#6B7280', textDecoration: 'underline', cursor: 'pointer' }}>
         Deposit Account Agreement

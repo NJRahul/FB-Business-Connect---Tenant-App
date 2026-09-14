@@ -189,7 +189,7 @@ export function FleetAccountsView({ onSelect }: Props) {
                   style={{ border: '1px solid #E5E7EB', color: '#1A1A1A', background: '#F9FAFB' }} />
               </div>
               <div>
-                <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em' }}>EIN</label>
+                <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tax Ref. No.</label>
                 <input value={ein} onChange={e => setEin(e.target.value)} placeholder="12-3456789"
                   className="w-full mt-1 px-3 py-2.5 rounded-lg text-sm outline-none"
                   style={{ border: '1px solid #E5E7EB', color: '#1A1A1A', background: '#F9FAFB' }} />

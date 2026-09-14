@@ -181,7 +181,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
             </div>
             <div>
               <p style={{ color: '#fff', fontWeight: 600, fontSize: '0.875rem' }}>Mike Rodriguez</p>
-              <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Rodriguez Tire — 4 locations, TX</p>
+              <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Rodriguez Tyre — 4 locations, GP</p>
             </div>
           </div>
         </div>

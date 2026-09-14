@@ -105,18 +105,14 @@ interface WizardState {
 // ─── Constants ──────────────────────────────────────────────────────────────
 
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+const US_STATES = ['GP','WC','KZN','EC','FS','LP','MP','NC','NW'];
 const US_TIMEZONES = [
-  { value: 'America/New_York', label: 'Eastern (ET)' },
-  { value: 'America/Chicago', label: 'Central (CT)' },
-  { value: 'America/Denver', label: 'Mountain (MT)' },
-  { value: 'America/Los_Angeles', label: 'Pacific (PT)' },
-  { value: 'America/Anchorage', label: 'Alaska (AKT)' },
-  { value: 'Pacific/Honolulu', label: 'Hawaii (HT)' },
+  { value: 'Africa/Johannesburg', label: 'South Africa Standard Time (SAST)' },
 ];
 const FEDERAL_HOLIDAYS = [
-  "New Year's Day — Jan 1", "Memorial Day — May 26", "Independence Day — Jul 4",
-  "Labor Day — Sep 1", "Thanksgiving — Nov 27", "Christmas — Dec 25",
+  "New Year's Day — Jan 1", "Human Rights Day — Mar 21", "Freedom Day — Apr 27",
+  "Workers' Day — May 1", "Youth Day — Jun 16", "National Women's Day — Aug 9",
+  "Heritage Day — Sep 24", "Day of Reconciliation — Dec 16", "Christmas Day — Dec 25", "Day of Goodwill — Dec 26",
 ];
 const DISTRIBUTORS = [
   { id: 'atd', name: 'ATD — American Tire Distributors', logo: '🚛' },
@@ -261,13 +257,13 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
   const [state, setState] = useState<WizardState>({
     industryPack: null, industryLabel: '',
     legalName: tenant.businessName, displayName: tenant.businessName,
-    legalEntity: 'LLC', ein: '', address: '', city: '', stateCode: 'TX', zip: '',
+    legalEntity: 'LLC', ein: '', address: '', city: '', stateCode: 'GP', zip: '',
     phone: '', supportEmail: tenant.email, website: '', yearEstablished: '',
     serviceBays: '', teamSize: '',
     operationsType: null, serviceAreaType: 'zips', serviceZips: [], zipInput: '',
     serviceRadius: '25', locationCount: '1',
     hours: DEFAULT_HOURS, emergencyHours: false, weekendService: false,
-    timezone: 'America/Chicago', holidays: FEDERAL_HOLIDAYS.slice(0, 4),
+    timezone: 'Africa/Johannesburg', holidays: FEDERAL_HOLIDAYS.slice(0, 4),
     stripeConnected: false,
     catalogSource: null, connectedDistributors: [],
     serviceTypes: [],
@@ -675,9 +671,9 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
             </select>
           </div>
           <div>
-            <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>EIN / Tax ID <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(encrypted)</span></label>
+            <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Tax Reference Number / Tax ID <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(encrypted)</span></label>
             <div className="relative mt-1.5">
-              <input type="password" value={state.ein} onChange={e => setState(s => ({ ...s, ein: e.target.value }))} style={{ ...inp, display: 'block' }} placeholder="XX-XXXXXXX" />
+              <input type="password" value={state.ein} onChange={e => setState(s => ({ ...s, ein: e.target.value }))} style={{ ...inp, display: 'block' }} placeholder="XXXXXXXXX" />
               <Lock size={12} className="absolute right-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} />
             </div>
           </div>
@@ -697,19 +693,19 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>State</label>
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Province</label>
               <select value={state.stateCode} onChange={e => setState(s => ({ ...s, stateCode: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
                 {US_STATES.map(s => <option key={s}>{s}</option>)}
               </select>
             </div>
             <div>
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>ZIP</label>
-              <input value={state.zip} onChange={e => setState(s => ({ ...s, zip: e.target.value.replace(/\D/g, '').slice(0, 5) }))} style={{ ...inp, marginTop: '6px', display: 'block' }} maxLength={5} />
+              <input value={state.zip} onChange={e => setState(s => ({ ...s, zip: e.target.value.replace(/\D/g, '').slice(0, 4) }))} style={{ ...inp, marginTop: '6px', display: 'block' }} maxLength={5} />
             </div>
           </div>
           <div>
             <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Primary Phone</label>
-            <div className="relative mt-1.5"><Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} /><input value={state.phone} onChange={e => setState(s => ({ ...s, phone: e.target.value }))} style={{ ...inp, display: 'block', paddingLeft: '32px' }} placeholder="(512) 555-0100" /></div>
+            <div className="relative mt-1.5"><Phone size={14} className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} /><input value={state.phone} onChange={e => setState(s => ({ ...s, phone: e.target.value }))} style={{ ...inp, display: 'block', paddingLeft: '32px' }} placeholder="+27 11 555 0100" /></div>
           </div>
           <div>
             <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Support Email</label>
@@ -841,7 +837,7 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
 function Step3({ state, setState }: { state: WizardState; setState: React.Dispatch<React.SetStateAction<WizardState>> }) {
   const addZip = () => {
     const z = state.zipInput.trim();
-    if (/^\d{5}$/.test(z) && !state.serviceZips.includes(z)) {
+    if (/^d{4}$/.test(z) && !state.serviceZips.includes(z)) {
       setState(s => ({ ...s, serviceZips: [...s.serviceZips, z], zipInput: '' }));
     }
   };
@@ -885,14 +881,14 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
           <div className="flex gap-2 mb-4">
             {(['zips', 'radius'] as const).map(t => (
               <button key={t} onClick={() => setState(s => ({ ...s, serviceAreaType: t }))} className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all" style={{ background: state.serviceAreaType === t ? '#C0392B' : '#F3F4F6', color: state.serviceAreaType === t ? '#fff' : '#6B7280' }}>
-                {t === 'zips' ? '📍 ZIP Codes' : '📏 Radius'}
+                {t === 'zips' ? '📍 Postal Codes' : '📏 Radius'}
               </button>
             ))}
           </div>
           {state.serviceAreaType === 'zips' ? (
             <>
               <div className="flex gap-2 mb-3">
-                <input value={state.zipInput} onChange={e => setState(s => ({ ...s, zipInput: e.target.value.replace(/\D/g, '').slice(0, 5) }))} onKeyDown={e => e.key === 'Enter' && addZip()} style={{ ...inp, width: '140px', flex: 'none' }} placeholder="ZIP code" />
+                <input value={state.zipInput} onChange={e => setState(s => ({ ...s, zipInput: e.target.value.replace(/\D/g, '').slice(0, 4) }))} onKeyDown={e => e.key === 'Enter' && addZip()} style={{ ...inp, width: '140px', flex: 'none' }} placeholder="Postal code" />
                 <button onClick={addZip} className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#C0392B', whiteSpace: 'nowrap' }}>
                   <Plus size={13} /> Add ZIP
                 </button>
@@ -904,7 +900,7 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
                     <button onClick={() => setState(s => ({ ...s, serviceZips: s.serviceZips.filter(v => v !== z) }))}><X size={11} style={{ color: '#F5B7B1' }} /></button>
                   </span>
                 ))}
-                {state.serviceZips.length === 0 && <p style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>No ZIP codes added yet</p>}
+                {state.serviceZips.length === 0 && <p style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>No postal codes added yet</p>}
               </div>
             </>
           ) : (
@@ -1628,7 +1624,7 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
             </div>
             <div>
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Service Area Summary</label>
-              <input value={state.serviceAreaText} onChange={e => setState(s => ({ ...s, serviceAreaText: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="Serving the greater Austin, TX area" />
+              <input value={state.serviceAreaText} onChange={e => setState(s => ({ ...s, serviceAreaText: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="Serving the greater Johannesburg, GP area" />
             </div>
           </div>
         </div>

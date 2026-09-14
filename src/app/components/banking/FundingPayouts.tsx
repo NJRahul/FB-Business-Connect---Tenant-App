@@ -64,7 +64,7 @@ function InboundTab({ routingFull, accountFull }: { routingFull: string; account
         </div>
         <div className="p-5 space-y-3">
           {[
-            { label: 'Bank name',        value: 'Evolve Bank & Trust' },
+            { label: 'Bank name',        value: 'our partner bank' },
             { label: 'Routing number',   value: routingFull },
             { label: 'Account number',   value: accountFull },
             { label: 'Account type',     value: 'Checking' },

@@ -388,7 +388,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                   </div>
                   <div>
                     <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>City</label>
-                    <input value={vehicle.city} onChange={e => setVehicle(v => ({ ...v, city: e.target.value }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="Austin" />
+                    <input value={vehicle.city} onChange={e => setVehicle(v => ({ ...v, city: e.target.value }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="Johannesburg" />
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
@@ -399,7 +399,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                     </div>
                     <div>
                       <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>ZIP</label>
-                      <input value={vehicle.zip} onChange={e => setVehicle(v => ({ ...v, zip: e.target.value.replace(/\D/g, '').slice(0, 5) }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="78701" maxLength={5} />
+                      <input value={vehicle.zip} onChange={e => setVehicle(v => ({ ...v, zip: e.target.value.replace(/\D/g, '').slice(0, 4) }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="2000" maxLength={5} />
                     </div>
                   </div>
                 </div>
@@ -599,7 +599,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                             </div>
                             <div className="col-span-1">
                               <label style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600 }}>ZIP</label>
-                              <input value={cardFields.name} onChange={e => setCardFields(f => ({ ...f, name: e.target.value }))} style={{ ...inputStyle, marginTop: '4px', display: 'block' }} placeholder="78701" maxLength={5} />
+                              <input value={cardFields.name} onChange={e => setCardFields(f => ({ ...f, name: e.target.value }))} style={{ ...inputStyle, marginTop: '4px', display: 'block' }} placeholder="2000" maxLength={5} />
                             </div>
                           </div>
                           <div>

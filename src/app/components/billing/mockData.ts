@@ -166,7 +166,7 @@ export const CONNECT_ACCOUNT: StripeConnectAccount = {
   payoutEnabled: true,
   chargesEnabled: true,
   defaultCurrency: 'usd',
-  country: 'US',
+  country: 'ZA',
   businessName: "Rudimax Tire & Auto",
 };
 

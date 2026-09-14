@@ -73,7 +73,7 @@ function StepBusinessInfo({ data, onChange }: { data: BusinessInfo; onChange: (d
             { value: 'partnership', label: 'Partnership' },
           ]} />
         </Field>
-        <Field label="EIN"><Input value={data.ein} onChange={set('ein')} placeholder="XX-XXXXXXX" /></Field>
+        <Field label="Tax Reference Number"><Input value={data.ein} onChange={set('ein')} placeholder="XXXXXXXXX" /></Field>
         <Field label="State of operations">
           <Select value={data.state} onChange={set('state')} options={[
             'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY',

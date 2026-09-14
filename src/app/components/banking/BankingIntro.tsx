@@ -30,8 +30,8 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
               </h2>
               <p style={{ color: '#6B7280', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: 24 }}>
                 {!isUS
-                  ? 'FB Business Connect Banking is currently available to US-based businesses only.'
-                  : 'An Employer Identification Number (EIN) is required to open a business bank account.'}
+                  ? 'FB Business Connect Banking is currently available to South Africa-based businesses only.'
+                  : 'A CIPC Registration Number is required to open a business bank account.'}
                 {' '}Join the waitlist and we'll notify you when it's ready.
               </p>
               {waitlistSubmitted ? (
@@ -87,7 +87,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
           {/* Feature highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             {[
-              { icon: Building2,   title: 'FDIC-Insured Account', desc: 'Business checking with routing & account number, up to $250k FDIC coverage.' },
+              { icon: Building2,   title: 'SARB-Regulated Account', desc: 'Business cheque account with branch code & account number, covered under the Deposit Insurance Scheme (DIS).' },
               { icon: CreditCard,  title: 'Technician Cards',      desc: 'Issue virtual and physical cards per tech or truck with configurable spend controls.' },
               { icon: ShieldCheck, title: 'Auto-Reconciliation',   desc: 'Card spend matched to visit IDs, purchase orders, and invoices automatically.' },
             ].map(f => (
@@ -123,11 +123,11 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
             <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 10 }}>What you'll need for the application</p>
             <div className="space-y-2">
               {[
-                'EIN (Employer Identification Number)',
+                'CIPC Registration Number',
                 'Legal business name and entity type',
-                'Business formation state and date',
+                'Business registration province and date',
                 'Physical business address (no PO boxes)',
-                'Name, date of birth, and SSN for all owners with ≥25% stake',
+                'Name, date of birth, and SA ID Number for all owners with ≥25% stake',
                 'Estimated monthly revenue',
               ].map(item => (
                 <div key={item} className="flex items-center gap-2">
@@ -137,7 +137,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
               ))}
             </div>
             <p style={{ marginTop: 10, color: '#6B7280', fontSize: '0.8125rem' }}>
-              SSN is collected securely via our partner's encrypted form — it is never stored on FB Business Connect servers.
+              SA ID Numbers are collected securely via our partner's encrypted form — they are never stored on FB Business Connect servers.
             </p>
           </div>
 

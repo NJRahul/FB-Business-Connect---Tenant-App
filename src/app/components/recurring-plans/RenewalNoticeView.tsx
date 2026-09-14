@@ -116,7 +116,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
           <div style={{ background: '#F9FAFB', borderTop: '1px solid #E5E7EB', padding: '20px 32px', textAlign: 'center' }}>
             <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#9CA3AF', fontSize: '0.875rem' }}>FB Business Connect Auto Shop</p>
             <p style={{ color: '#D1D5DB', fontSize: '0.75rem', marginTop: '4px' }}>
-              123 Main St · Anytown, TX 75001 · <a href="#" style={{ color: '#D1D5DB' }}>Unsubscribe</a> · <a href="#" style={{ color: '#D1D5DB' }}>Privacy Policy</a>
+              123 Main Road · Johannesburg, GP 2001 · <a href="#" style={{ color: '#D1D5DB' }}>Unsubscribe</a> · <a href="#" style={{ color: '#D1D5DB' }}>Privacy Policy</a>
             </p>
           </div>
         </div>

@@ -59,7 +59,7 @@ interface WizardState {
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+const US_STATES = ['GP','WC','KZN','EC','FS','LP','MP','NC','NW'];
 
 const ENTITY_TYPES: { value: EntityType; label: string }[] = [
   { value: 'sole_proprietor', label: 'Sole Proprietor' },
@@ -92,7 +92,7 @@ function blankOwner(): OwnerInfo {
   return {
     id: Math.random().toString(36).slice(2),
     full_name: '', dob: '', ssn_token: '',
-    address: { line1: '', city: '', state: '', zip: '', country: 'US' },
+    address: { line1: '', city: '', state: '', zip: '', country: 'ZA' },
     ownership_pct: '', is_control_person: false,
     email: '', phone: '',
   };
@@ -147,8 +147,8 @@ function HostedSSNField({ onToken }: { onToken: (token: string) => void }) {
   const [tokenized, setTokenized] = useState(false);
 
   function handleBlur() {
-    if (raw.replace(/\D/g, '').length === 9) {
-      const fakeToken = `ssn_tok_${Math.random().toString(36).slice(2)}`;
+    if (raw.replace(/\D/g, '').length === 13) {
+      const fakeToken = `said_tok_${Math.random().toString(36).slice(2)}`;
       onToken(fakeToken);
       setTokenized(true);
       setRaw(''); // clear raw value immediately
@@ -159,7 +159,7 @@ function HostedSSNField({ onToken }: { onToken: (token: string) => void }) {
     return (
       <div className="flex items-center gap-2 px-3 py-2 rounded-[6px]" style={{ border: '1px solid #27AE60', background: '#F0FDF4' }}>
         <CheckCircle2 size={16} style={{ color: '#27AE60' }} />
-        <span style={{ color: '#15803D', fontSize: '0.9375rem' }}>SSN captured (encrypted)</span>
+        <span style={{ color: '#15803D', fontSize: '0.9375rem' }}>SA ID Number captured (encrypted)</span>
       </div>
     );
   }
@@ -172,8 +172,8 @@ function HostedSSNField({ onToken }: { onToken: (token: string) => void }) {
           value={raw}
           onChange={e => setRaw(e.target.value)}
           onBlur={handleBlur}
-          placeholder="XXX-XX-XXXX"
-          maxLength={11}
+          placeholder="XXXXXXXXXXXXX"
+          maxLength={13}
           className="w-full px-3 py-2 rounded-[6px]"
           style={{ border: '1.5px solid #F39C12', fontSize: '0.9375rem', outline: 'none', background: '#FFFEF0' }}
           autoComplete="off"
@@ -217,14 +217,14 @@ function Step1({ data, onChange }: { data: BusinessInfo; onChange: (d: Partial<B
           />
         </div>
         <div>
-          <FieldLabel>EIN</FieldLabel>
-          <Input value={data.ein} onChange={v => onChange({ ein: v })} placeholder="12-3456789" />
+          <FieldLabel>CIPC Registration Number</FieldLabel>
+          <Input value={data.ein} onChange={v => onChange({ ein: v })} placeholder="2023/123456/07" />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <FieldLabel>Formation state</FieldLabel>
-          <Select value={data.formation_state} onChange={v => onChange({ formation_state: v })} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="State" />
+          <Select value={data.formation_state} onChange={v => onChange({ formation_state: v })} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="Province" />
         </div>
         <div>
           <FieldLabel>Formation date</FieldLabel>
@@ -241,10 +241,10 @@ function Step1({ data, onChange }: { data: BusinessInfo; onChange: (d: Partial<B
               <Input value={data.address.city} onChange={v => addr('city', v)} placeholder="City" />
             </div>
             <div>
-              <Select value={data.address.state} onChange={v => addr('state', v)} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="ST" />
+              <Select value={data.address.state} onChange={v => addr('state', v)} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="Province" />
             </div>
             <div>
-              <Input value={data.address.zip} onChange={v => addr('zip', v)} placeholder="ZIP" />
+              <Input value={data.address.zip} onChange={v => addr('zip', v)} placeholder="Postal Code" />
             </div>
           </div>
         </div>
@@ -335,7 +335,7 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
             </div>
           </div>
           <div>
-            <FieldLabel>Social Security Number</FieldLabel>
+            <FieldLabel>South African ID Number</FieldLabel>
             <HostedSSNField onToken={token => update(owner.id, { ssn_token: token })} />
           </div>
           <div>
@@ -344,8 +344,8 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
               <Input value={owner.address.line1} onChange={v => updateAddr(owner.id, 'line1', v)} placeholder="Street address" />
               <div className="grid grid-cols-3 gap-2">
                 <Input value={owner.address.city} onChange={v => updateAddr(owner.id, 'city', v)} placeholder="City" />
-                <Select value={owner.address.state} onChange={v => updateAddr(owner.id, 'state', v)} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="ST" />
-                <Input value={owner.address.zip} onChange={v => updateAddr(owner.id, 'zip', v)} placeholder="ZIP" />
+                <Select value={owner.address.state} onChange={v => updateAddr(owner.id, 'state', v)} options={US_STATES.map(s => ({ value: s, label: s }))} placeholder="Province" />
+                <Input value={owner.address.zip} onChange={v => updateAddr(owner.id, 'zip', v)} placeholder="Postal Code" />
               </div>
             </div>
           </div>
@@ -468,8 +468,8 @@ function Step4({ business, owners, disclosures, onChange }: {
         <div className="p-5 space-y-2">
           <div className="flex justify-between"><span style={{ color: '#6B7280' }}>Legal name</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.legal_name || '—'}</span></div>
           <div className="flex justify-between"><span style={{ color: '#6B7280' }}>Entity type</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.entity_type || '—'}</span></div>
-          <div className="flex justify-between"><span style={{ color: '#6B7280' }}>EIN</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.ein ? `**-***${business.ein.slice(-4)}` : '—'}</span></div>
-          <div className="flex justify-between"><span style={{ color: '#6B7280' }}>Formation state</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.formation_state || '—'}</span></div>
+          <div className="flex justify-between"><span style={{ color: '#6B7280' }}>CIPC Reg. No.</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.ein ? `***${business.ein.slice(-4)}` : '—'}</span></div>
+          <div className="flex justify-between"><span style={{ color: '#6B7280' }}>Registration province</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{business.formation_state || '—'}</span></div>
           <div className="flex justify-between"><span style={{ color: '#6B7280' }}>Beneficial owners</span><span style={{ color: '#1A1A1A', fontWeight: 600 }}>{owners.length} person{owners.length !== 1 ? 's' : ''}</span></div>
         </div>
       </div>
@@ -478,9 +478,9 @@ function Step4({ business, owners, disclosures, onChange }: {
       <div className="space-y-3">
         <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>Required disclosures</p>
         {[
-          { key: 'deposit_agreement' as const, label: 'Deposit Account Agreement', detail: 'I have read and agree to the terms of the Deposit Account Agreement, including account fees, transaction limits, and FDIC coverage details.' },
+          { key: 'deposit_agreement' as const, label: 'Deposit Account Agreement', detail: 'I have read and agree to the terms of the Deposit Account Agreement, including account fees, transaction limits, and Deposit Insurance Scheme (DIS) coverage details.' },
           { key: 'esign_consent' as const, label: 'E-Sign Consent', detail: 'I consent to receive disclosures, notices, and account documents electronically.' },
-          { key: 'patriot_act' as const, label: 'USA PATRIOT Act Notice', detail: 'To help the government fight the funding of terrorism and money laundering activities, Federal law requires all financial institutions to obtain, verify, and record information that identifies each person who opens an account.' },
+          { key: 'patriot_act' as const, label: 'FICA Notice (Financial Intelligence Centre Act)', detail: 'To help combat financial crime and money laundering, all financial institutions in South Africa are required by FICA to obtain, verify, and record information that identifies each person who opens an account.' },
         ].map(d => (
           <label key={d.key} className="flex items-start gap-3 cursor-pointer p-4 rounded-[8px]" style={{ border: `1.5px solid ${disclosures[d.key] ? '#27AE60' : '#E5E7EB'}`, background: disclosures[d.key] ? '#F0FDF4' : '#fff' }}>
             <input
@@ -652,7 +652,7 @@ export function KYBWizard({ tenantName, tenantEmail, industryPack, ein, onApprov
       ein,
       formation_state: '',
       formation_date: '',
-      address: { line1: '', city: '', state: '', zip: '', country: 'US' },
+      address: { line1: '', city: '', state: '', zip: '', country: 'ZA' },
       phone: '',
       website: '',
       estimated_monthly_revenue: '',

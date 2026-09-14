@@ -170,7 +170,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             <div className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
               <h3 style={{ fontWeight: 600, fontSize: '0.875rem', color: '#1A1A1A', marginBottom: 14 }}>Account Details</h3>
               {[
-                { label: 'EIN', value: acct.ein || '—' },
+                { label: 'Tax Ref. No.', value: acct.ein || '—' },
                 { label: 'Payment Terms', value: TERMS_LABEL[acct.paymentTerms] },
                 { label: 'Credit Limit', value: cents(acct.creditLimitCents) },
                 { label: 'Outstanding', value: cents(acct.outstandingBalanceCents) },

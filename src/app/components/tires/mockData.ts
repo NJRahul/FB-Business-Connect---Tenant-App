@@ -157,7 +157,7 @@ export const REBATES: Rebate[] = [
     amount: 80, amountType: 'fixed', rebateType: 'mail_in', termsUrl: 'https://michelin.com/rebates', platformPublished: true, active: true, logoColor: '#005594',
   },
   {
-    id: 'reb-002', manufacturer: 'Goodyear', name: 'Goodyear Memorial Day Event', startDate: '2026-05-20', endDate: '2026-06-20',
+    id: 'reb-002', manufacturer: 'Goodyear', name: 'Goodyear Heritage Day Promotion', startDate: '2026-05-20', endDate: '2026-06-20',
     eligibleSkus: ['sku-gyr-225'], eligibleCategories: ['all-season'],
     amount: 60, amountType: 'fixed', rebateType: 'instant', termsUrl: 'https://goodyear.com/rebates', platformPublished: true, active: true, logoColor: '#FFD700',
   },
@@ -175,7 +175,7 @@ export const REBATES: Rebate[] = [
 
 export const REBATE_ATTRIBUTIONS: RebateAttribution[] = [
   { id: 'ra-001', rebateId: 'reb-001', rebateName: 'Michelin Summer Savings', orderId: 'ord-4201', customerName: 'Maria Santos', amount: 80, claimedAt: '2026-06-16T10:30:00Z' },
-  { id: 'ra-002', rebateId: 'reb-002', rebateName: 'Goodyear Memorial Day Event', orderId: 'ord-4199', customerName: 'Alice Park', amount: 60, claimedAt: null },
+  { id: 'ra-002', rebateId: 'reb-002', rebateName: 'Goodyear Heritage Day Promotion', orderId: 'ord-4199', customerName: 'Alice Park', amount: 60, claimedAt: null },
   { id: 'ra-003', rebateId: 'reb-003', rebateName: 'Truck & SUV Rebate Q2', orderId: 'ord-4195', customerName: 'Derek Owens', amount: 100, claimedAt: '2026-06-14T15:20:00Z' },
   { id: 'ra-004', rebateId: 'reb-001', rebateName: 'Michelin Summer Savings', orderId: 'ord-4190', customerName: 'Lisa Brown', amount: 80, claimedAt: null },
 ];
