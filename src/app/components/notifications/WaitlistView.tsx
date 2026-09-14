@@ -64,7 +64,7 @@ function AddModal({ onClose }: AddModalProps) {
         <div style={{ padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
           {[
             { label: 'Customer name',  key: 'customerName',  type: 'text',  placeholder: 'Full name' },
-            { label: 'Phone number',   key: 'customerPhone', type: 'tel',   placeholder: '+1 (555) 000-0000' },
+            { label: 'Phone number',   key: 'customerPhone', type: 'tel',   placeholder: '+1 +27 XX XXX XXXX' },
             { label: 'Service type',   key: 'serviceType',   type: 'text',  placeholder: 'e.g. Oil Change, Brake Service' },
             { label: 'Vehicle',        key: 'vehicleDesc',   type: 'text',  placeholder: 'e.g. 2020 Honda Civic' },
           ].map(f => (

@@ -65,7 +65,7 @@ export const INVOICES: Invoice[] = [
     createdAt: '2026-06-01T08:00:00Z',
     lineItems: [
       { description: 'Pro Plan — Annual (Jun 2026)', amount: 42_400 },
-      { description: 'SMS overage — 2,100 SMS @ $0.0075 (May)', amount: 1_575 },
+      { description: 'SMS overage — 2,100 SMS @ R 0.14 (May)', amount: 1_575 },
       { description: 'Stripe Tax — CA State', amount: 425 },
     ],
   },
@@ -84,7 +84,7 @@ export const INVOICES: Invoice[] = [
     createdAt: '2026-05-01T08:00:00Z',
     lineItems: [
       { description: 'Pro Plan — Annual (May 2026)', amount: 42_400 },
-      { description: 'SMS overage — 800 SMS @ $0.0075 (Apr)', amount: 600 },
+      { description: 'SMS overage — 800 SMS @ R 0.14 (Apr)', amount: 600 },
     ],
   },
   {

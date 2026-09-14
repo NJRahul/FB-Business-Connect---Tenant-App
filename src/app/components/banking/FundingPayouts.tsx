@@ -103,7 +103,7 @@ function InboundTab({ routingFull, accountFull }: { routingFull: string; account
       <div className="rounded-[10px] p-5" style={{ border: '1px solid #E5E7EB' }}>
         <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 4 }}>Mobile check deposit</p>
         <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: 4 }}>Endorse the back: <strong style={{ color: '#1A1A1A' }}>For Mobile Deposit Only – Evolve B&T</strong></p>
-        <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginBottom: 12 }}>Checks up to $10,000. Hold period: 1 business day for first $225, remainder released in 2 business days.</p>
+        <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginBottom: 12 }}>EFTs up to R 180,000. Hold period: 1 business day for first R 4,000, remainder released in 2 business days.</p>
         <div className="flex gap-2 mb-3">
           {(['front','back'] as const).map(side => (
             <button key={side} onClick={() => setCheckSide(side)} className="px-3 py-1.5 rounded-[6px] text-sm font-semibold capitalize"
@@ -389,7 +389,7 @@ function PayoutRouting() {
         <div className="space-y-3">
           {[
             { value: 'standard', label: 'Standard — T+2',  sub: 'Free. Funds arrive in 2 business days.', fee: null },
-            { value: 'instant',  label: 'Instant — Same day', sub: 'Fee: 1.5% of payout (min $0.25).', fee: '1.5%' },
+            { value: 'instant',  label: 'Instant — Same day', sub: 'Fee: 1.5% of payout (min R 5).', fee: '1.5%' },
           ].map(opt => (
             <label key={opt.value} className="flex items-center gap-3 p-4 rounded-[8px] cursor-pointer" style={{ border: `1.5px solid ${speed === opt.value ? '#1A1A1A' : '#E5E7EB'}`, background: speed === opt.value ? '#F9FAFB' : '#fff' }}>
               <input type="radio" name="speed" value={opt.value} checked={speed === opt.value} onChange={() => setSpeed(opt.value as typeof speed)} style={{ accentColor: '#C0392B' }} />

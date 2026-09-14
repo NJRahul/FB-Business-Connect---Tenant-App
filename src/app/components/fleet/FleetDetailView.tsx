@@ -622,7 +622,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             { date: '2026-06-15', event: 'Fleet session started — 2 vehicles in queue', actor: 'Marcus Webb', type: 'session' },
             { date: '2026-06-14', event: 'Invoice INV-2026-0541 issued via session close', actor: 'System', type: 'invoice' },
             { date: '2026-06-14', event: 'Approval request from Carlos Mendez ($845.00)', actor: 'Carlos Mendez', type: 'approval' },
-            { date: '2026-06-01', event: 'Invoice INV-2026-0489 marked paid — ACH $304.56', actor: 'Shop Admin', type: 'payment' },
+            { date: '2026-06-01', event: 'Invoice INV-2026-0489 marked paid — EFT R 5,634.56', actor: 'Shop Admin', type: 'payment' },
             { date: '2026-04-01', event: 'Invoice INV-2026-0422 issued — Net 30 due 2026-05-01', actor: 'System', type: 'invoice' },
           ].map((e, i) => (
             <div key={i} className="flex items-start gap-3 px-4 py-3 rounded-xl" style={{ background: '#fff', border: '1px solid #F3F4F6' }}>

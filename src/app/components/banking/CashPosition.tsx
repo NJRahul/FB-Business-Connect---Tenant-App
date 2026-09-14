@@ -21,8 +21,8 @@ interface Props {
 
 export function CashPosition({ account, vaults }: Props) {
   const [alerts, setAlerts] = useState<AlertRule[]>([
-    { id: 'low_balance',    label: 'Low balance (below $500)',      enabled: true,  threshold: 50000 },
-    { id: 'large_txn',      label: 'Large transaction (over $2,500)', enabled: true, threshold: 250000 },
+    { id: 'low_balance',    label: 'Low balance (below R 9,000)',      enabled: true,  threshold: 50000 },
+    { id: 'large_txn',      label: 'Large transaction (over R 45,000)', enabled: true, threshold: 250000 },
     { id: 'failed_transfer',label: 'Failed or returned transfer',    enabled: true  },
     { id: 'shortfall',      label: 'Projected shortfall before scheduled debit', enabled: false },
     { id: 'card_decline',   label: 'Card decline',                  enabled: true  },

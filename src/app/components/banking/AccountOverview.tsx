@@ -374,7 +374,7 @@ export function AccountOverview({ account, vaults: initialVaults }: Props) {
 
         {/* Live example */}
         <div className="border-t px-5 py-4" style={{ borderColor: '#E5E7EB', background: '#F9FAFB' }}>
-          <p style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#6B7280', marginBottom: 8 }}>Live example — $1,000 deposit</p>
+          <p style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#6B7280', marginBottom: 8 }}>Live example — R 1,000 deposit</p>
           <div className="space-y-1">
             {rules.filter(r => r.active).map(rule => {
               const amt = rule.allocation_type === 'percentage'

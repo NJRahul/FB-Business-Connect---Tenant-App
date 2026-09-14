@@ -40,7 +40,7 @@ function PlatformAdminView() {
     { label: 'Application started', count: 632, pct: 34 },
     { label: 'Submitted',         count: 581, pct: 32 },
     { label: 'Approved',          count: 487, pct: 26 },
-    { label: 'Funded (deposit >$0)', count: 391, pct: 21 },
+    { label: 'Funded (deposit > R 0)', count: 391, pct: 21 },
     { label: 'Active (txn in 30d)', count: 318, pct: 17 },
   ];
 

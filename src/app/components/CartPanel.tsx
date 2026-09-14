@@ -66,7 +66,7 @@ const GBB_PACKAGES = [
 
 const FINANCING = [
   { id: 'affirm', name: 'Affirm', logo: '🔵', monthly: '~$67/mo at 0% for 18 mo', badge: '0% APR' },
-  { id: 'snap', name: 'Snap Finance', logo: '🟢', monthly: 'As low as $42/wk', badge: 'Instant approval' },
+  { id: 'snap', name: 'Snap Finance', logo: '🟢', monthly: 'As low as R 750/wk', badge: 'Instant approval' },
   { id: 'synchrony', name: 'Synchrony', logo: '🔴', monthly: 'No interest for 12 mo', badge: '12-mo deferred' },
 ];
 
@@ -294,7 +294,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
               <div className="mx-5 mt-4 rounded-[8px] p-3 flex items-start gap-2.5" style={{ background: '#FFF7ED', border: '1px solid #FED7AA' }}>
                 <AlertTriangle size={15} style={{ color: '#F39C12', marginTop: '2px', shrink: 0 }} />
                 <div>
-                  <p style={{ color: '#92400E', fontWeight: 600, fontSize: '0.8125rem' }}>Mobile Service Trip Charge: $75.00</p>
+                  <p style={{ color: '#92400E', fontWeight: 600, fontSize: '0.8125rem' }}>Mobile Service Trip Charge: R 1,350.00</p>
                   <p style={{ color: '#92400E', fontSize: '0.75rem', marginTop: '2px', lineHeight: 1.4 }}>
                     A trip charge applies for mobile installation. This covers travel within your service area. This fee cannot be removed.
                   </p>
@@ -434,7 +434,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                     <span style={{ fontSize: '0.875rem', fontWeight: 500, color: '#1A1A1A' }}>
                       💳 Financing options available
                     </span>
-                    <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>As low as $42/wk</span>
+                    <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>As low as R 750/wk</span>
                   </div>
                   {showFinancing ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                 </button>

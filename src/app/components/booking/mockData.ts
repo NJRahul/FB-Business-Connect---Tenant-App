@@ -77,7 +77,7 @@ export const ADDON_SERVICES: AddonService[] = [
 
 export const TECHNICIANS: Technician[] = [
   {
-    id: 'tech-1', name: 'Mike Torres', email: 'mike@fb-business-connect.app', phone: '(555) 201-1111',
+    id: 'tech-1', name: 'Mike Torres', email: 'mike@fb-business-connect.app', phone: '+27 11 201 1111',
     skills: ['Tire Technician', 'TPMS Specialist'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010', '75019'],
@@ -98,7 +98,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-2', name: 'Sarah Chen', email: 'sarah@fb-business-connect.app', phone: '(555) 201-2222',
+    id: 'tech-2', name: 'Sarah Chen', email: 'sarah@fb-business-connect.app', phone: '+27 11 201 2222',
     skills: ['Tire Technician', 'TPMS Specialist', 'Alignment Tech'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010'],
@@ -116,7 +116,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-3', name: 'Carlos Rivera', email: 'carlos@fb-business-connect.app', phone: '(555) 201-3333',
+    id: 'tech-3', name: 'Carlos Rivera', email: 'carlos@fb-business-connect.app', phone: '+27 11 201 3333',
     skills: ['Tire Technician'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010', '75019', '75038'],
@@ -135,7 +135,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-4', name: 'Derek Smith', email: 'derek@fb-business-connect.app', phone: '(555) 201-4444',
+    id: 'tech-4', name: 'Derek Smith', email: 'derek@fb-business-connect.app', phone: '+27 11 201 4444',
     skills: ['Dispatcher'],
     customerFacing: false,
     serviceArea: [],
@@ -201,7 +201,7 @@ export const JOB_TEMPLATES: JobTemplate[] = [
 
 export const CUSTOMERS: CustomerRecord[] = [
   {
-    id: 'cust-1', name: 'James Calloway', email: 'james.calloway@email.com', phone: '(214) 555-0142',
+    id: 'cust-1', name: 'James Calloway', email: 'james.calloway@email.com', phone: '+27 11 555 0142',
     address: '12 Sandton Drive, Sandton, GP 2196',
     vehicles: [
       { year: '2022', make: 'Ford', model: 'F-150', trim: 'XLT', licensePlate: 'TX-ABC123' },
@@ -210,7 +210,7 @@ export const CUSTOMERS: CustomerRecord[] = [
     memberSince: '2024-03-15', totalVisits: 7, totalSpent: 1248.50,
   },
   {
-    id: 'cust-2', name: 'Maria Reyes', email: 'maria.reyes@email.com', phone: '(469) 555-0278',
+    id: 'cust-2', name: 'Maria Reyes', email: 'maria.reyes@email.com', phone: '+27 12 555 0278',
     address: '45 Long Street, Cape Town, WC 8001',
     vehicles: [
       { year: '2021', make: 'Toyota', model: 'Camry', trim: 'SE', licensePlate: 'TX-DEF456' },
@@ -218,7 +218,7 @@ export const CUSTOMERS: CustomerRecord[] = [
     memberSince: '2025-01-08', totalVisits: 3, totalSpent: 349.97,
   },
   {
-    id: 'cust-3', name: 'Terrence Okafor', email: 'tokafor@fleetco.com', phone: '(972) 555-0391',
+    id: 'cust-3', name: 'Terrence Okafor', email: 'tokafor@fleetco.com', phone: '+27 21 555 0391',
     address: '88 Commissioner Street, Johannesburg, GP 2001',
     vehicles: [
       { year: '2023', make: 'Ram', model: '2500', trim: 'Tradesman', licensePlate: 'TX-FLT001', attribute: 'dual-rear-wheel' },
@@ -235,7 +235,7 @@ export const VISITS: Visit[] = [
   // ── Today (in-progress) ──
   {
     id: 'v-001', shopId: 'shop-1', customerId: 'cust-1', customerName: 'James Calloway',
-    customerPhone: '(214) 555-0142', customerEmail: 'james.calloway@email.com',
+    customerPhone: '+27 11 555 0142', customerEmail: 'james.calloway@email.com',
     serviceTypeId: 'st-1', serviceTypeName: '4-Tire Mount & Balance',
     scheduledStart: '2026-06-14T10:00:00', scheduledEnd: '2026-06-14T11:00:00',
     technicianId: 'tech-1', technicianName: 'Mike Torres',
@@ -251,7 +251,7 @@ export const VISITS: Visit[] = [
   // ── Upcoming Mon June 15 ──
   {
     id: 'v-002', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Maria Reyes',
-    customerPhone: '(469) 555-0278', customerEmail: 'maria.reyes@email.com',
+    customerPhone: '+27 12 555 0278', customerEmail: 'maria.reyes@email.com',
     serviceTypeId: 'st-3', serviceTypeName: 'Tire Rotation',
     scheduledStart: '2026-06-15T09:00:00', scheduledEnd: '2026-06-15T09:30:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -264,7 +264,7 @@ export const VISITS: Visit[] = [
   },
   {
     id: 'v-003', shopId: 'shop-1', customerId: 'cust-3', customerName: 'Terrence Okafor',
-    customerPhone: '(972) 555-0391', customerEmail: 'tokafor@fleetco.com',
+    customerPhone: '+27 21 555 0391', customerEmail: 'tokafor@fleetco.com',
     serviceTypeId: 'st-1', serviceTypeName: '4-Tire Mount & Balance',
     scheduledStart: '2026-06-15T10:00:00', scheduledEnd: '2026-06-15T11:30:00',
     technicianId: 'tech-1', technicianName: 'Mike Torres',
@@ -283,7 +283,7 @@ export const VISITS: Visit[] = [
   // ── Parts Pending ──
   {
     id: 'v-004', shopId: 'shop-1', customerId: 'cust-1', customerName: 'James Calloway',
-    customerPhone: '(214) 555-0142', customerEmail: 'james.calloway@email.com',
+    customerPhone: '+27 11 555 0142', customerEmail: 'james.calloway@email.com',
     serviceTypeId: 'st-6', serviceTypeName: 'TPMS Sensor Replacement',
     scheduledStart: '2026-06-17T14:00:00', scheduledEnd: '2026-06-17T14:30:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -298,7 +298,7 @@ export const VISITS: Visit[] = [
   // ── Completed visits ──
   {
     id: 'v-005', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Maria Reyes',
-    customerPhone: '(469) 555-0278', customerEmail: 'maria.reyes@email.com',
+    customerPhone: '+27 12 555 0278', customerEmail: 'maria.reyes@email.com',
     serviceTypeId: 'st-1', serviceTypeName: '4-Tire Mount & Balance',
     scheduledStart: '2026-06-05T11:00:00', scheduledEnd: '2026-06-05T12:00:00',
     technicianId: 'tech-1', technicianName: 'Mike Torres',
@@ -316,7 +316,7 @@ export const VISITS: Visit[] = [
   },
   {
     id: 'v-006', shopId: 'shop-1', customerId: 'cust-3', customerName: 'Terrence Okafor',
-    customerPhone: '(972) 555-0391', customerEmail: 'tokafor@fleetco.com',
+    customerPhone: '+27 21 555 0391', customerEmail: 'tokafor@fleetco.com',
     serviceTypeId: 'st-3', serviceTypeName: 'Tire Rotation',
     scheduledStart: '2026-06-01T08:00:00', scheduledEnd: '2026-06-01T08:30:00',
     technicianId: 'tech-3', technicianName: 'Carlos Rivera',
@@ -330,7 +330,7 @@ export const VISITS: Visit[] = [
   // ── Upcoming later this month ──
   {
     id: 'v-007', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Maria Reyes',
-    customerPhone: '(469) 555-0278', customerEmail: 'maria.reyes@email.com',
+    customerPhone: '+27 12 555 0278', customerEmail: 'maria.reyes@email.com',
     serviceTypeId: 'st-5', serviceTypeName: 'TPMS Reset',
     scheduledStart: '2026-06-18T13:00:00', scheduledEnd: '2026-06-18T13:15:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -344,7 +344,7 @@ export const VISITS: Visit[] = [
   // ── Cancelled ──
   {
     id: 'v-008', shopId: 'shop-1', customerId: 'cust-1', customerName: 'James Calloway',
-    customerPhone: '(214) 555-0142', customerEmail: 'james.calloway@email.com',
+    customerPhone: '+27 11 555 0142', customerEmail: 'james.calloway@email.com',
     serviceTypeId: 'st-7', serviceTypeName: 'Flat Tire Repair',
     scheduledStart: '2026-06-08T15:00:00', scheduledEnd: '2026-06-08T15:30:00',
     technicianId: 'tech-3', technicianName: 'Carlos Rivera',

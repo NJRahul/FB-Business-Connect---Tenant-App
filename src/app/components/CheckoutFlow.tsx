@@ -67,7 +67,7 @@ const MODELS: Record<string, string[]> = {
   default: ['Sedan', 'SUV', 'Truck', 'Van', 'Coupe'],
 };
 const TRIMS = ['Base', 'SE', 'XLE', 'Limited', 'Sport', 'Premier', 'Platinum'];
-const US_STATES = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+const US_STATES = ['GP','WC','KZN','EC','FS','LP','MP','NC','NW'];
 
 const AVAILABLE_DATES = Array.from({ length: 14 }, (_, i) => {
   const d = new Date();
@@ -119,7 +119,7 @@ function formatDate(d: Date): string {
 export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: CheckoutFlowProps) {
   const [step, setStep] = useState<CheckoutStep>(1);
   const [contact, setContact] = useState<ContactInfo>({ fullName: '', email: '', phone: '', smsConsent: false });
-  const [vehicle, setVehicle] = useState<VehicleInfo>({ year: '2022', make: 'Toyota', model: 'RAV4', trim: 'XLE', address: '', city: '', state: 'TX', zip: '' });
+  const [vehicle, setVehicle] = useState<VehicleInfo>({ year: '2022', make: 'Toyota', model: 'RAV4', trim: 'XLE', address: '', city: '', state: 'GP', zip: '' });
   const [slot, setSlot] = useState<SlotInfo | null>(null);
   const [selectedDateIdx, setSelectedDateIdx] = useState<number | null>(null);
   const [holdSeconds, setHoldSeconds] = useState<number | null>(null);
@@ -153,7 +153,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
 
   // Tax estimate on ZIP change
   useEffect(() => {
-    if (vehicle.zip.length === 5) {
+    if (vehicle.zip.length === 4) {
       setTaxEstimate(grandTotal * 0.0825);
     } else {
       setTaxEstimate(null);
@@ -212,7 +212,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
   ];
 
   const canProceedStep1 = contact.fullName && contact.email.includes('@') && contact.phone.length >= 10;
-  const canProceedStep2 = vehicle.year && vehicle.make && vehicle.model && vehicle.address && vehicle.city && vehicle.zip.length === 5;
+  const canProceedStep2 = vehicle.year && vehicle.make && vehicle.model && vehicle.address && vehicle.city && vehicle.zip.length === 4;
   const canProceedStep3 = slot !== null && !holdExpired;
   const canPay = (primaryMethod !== 'card' || (cardFields.number.length >= 16 && cardFields.expiry && cardFields.cvv && cardFields.name));
 
@@ -324,7 +324,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                 </div>
                 <div>
                   <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Phone Number</label>
-                  <input type="tel" value={contact.phone} onChange={e => setContact(c => ({ ...c, phone: e.target.value }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="(512) 555-0100" />
+                  <input type="tel" value={contact.phone} onChange={e => setContact(c => ({ ...c, phone: e.target.value }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="+27 11 555 0100" />
                 </div>
                 <label className="flex items-start gap-2.5 cursor-pointer">
                   <input type="checkbox" checked={contact.smsConsent} onChange={e => setContact(c => ({ ...c, smsConsent: e.target.checked }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
@@ -403,7 +403,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                     </div>
                   </div>
                 </div>
-                {vehicle.zip.length === 5 && (
+                {vehicle.zip.length === 4 && (
                   <p className="mt-3 flex items-center gap-1.5" style={{ color: '#27AE60', fontSize: '0.8125rem', fontWeight: 500 }}>
                     <CheckCircle2 size={14} />
                     ZIP {vehicle.zip} is in our service area · Tax: ~8.25%
@@ -733,7 +733,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                 {processing ? (
                   <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing payment...</>
                 ) : dueNow === 0 ? (
-                  '📅 Confirm Booking — $0 Due Now'
+                  '📅 Confirm Booking — R 0 Due Now'
                 ) : (
                   `🔒 Pay Now — R ${dueNow.toFixed(2)}`
                 )}

@@ -253,7 +253,7 @@ function Step1({ data, onChange }: { data: BusinessInfo; onChange: (d: Partial<B
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <FieldLabel>Business phone</FieldLabel>
-          <Input value={data.phone} onChange={v => onChange({ phone: v })} placeholder="(555) 000-0000" />
+          <Input value={data.phone} onChange={v => onChange({ phone: v })} placeholder="+27 XX XXX XXXX" />
         </div>
         <div>
           <FieldLabel hint="optional">Website</FieldLabel>
@@ -360,7 +360,7 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
             </div>
             <div>
               <FieldLabel>Phone</FieldLabel>
-              <Input value={owner.phone} onChange={v => update(owner.id, { phone: v })} placeholder="(555) 000-0000" />
+              <Input value={owner.phone} onChange={v => update(owner.id, { phone: v })} placeholder="+27 XX XXX XXXX" />
             </div>
           </div>
           <label className="flex items-center gap-2 cursor-pointer">

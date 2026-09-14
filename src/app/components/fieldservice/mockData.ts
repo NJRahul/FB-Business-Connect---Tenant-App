@@ -15,7 +15,7 @@ const NOW_HOUR = 10; // simulate current time as 10:15 AM
 const EXTRA_VISITS = [
   {
     id: 'dv-001', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Maria Reyes',
-    customerPhone: '(469) 555-0278', customerEmail: 'maria.reyes@email.com',
+    customerPhone: '+27 12 555 0278', customerEmail: 'maria.reyes@email.com',
     serviceTypeId: 'st-3', serviceTypeName: 'Tire Rotation',
     scheduledStart: '2026-06-14T08:30:00', scheduledEnd: '2026-06-14T09:00:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -27,7 +27,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-002', shopId: 'shop-1', customerId: 'cust-3', customerName: 'Fleet Dispatch – Unit 7',
-    customerPhone: '(972) 555-0391', customerEmail: 'dispatch@fleetco.com',
+    customerPhone: '+27 21 555 0391', customerEmail: 'dispatch@fleetco.com',
     serviceTypeId: 'st-8', serviceTypeName: 'Mobile Flat Repair',
     scheduledStart: '2026-06-14T09:00:00', scheduledEnd: '2026-06-14T09:45:00',
     technicianId: 'tech-3', technicianName: 'Carlos Rivera',
@@ -40,7 +40,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-003', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Brenda Walsh',
-    customerPhone: '(214) 555-0811', customerEmail: 'bwalsh@email.com',
+    customerPhone: '+27 11 555 0811', customerEmail: 'bwalsh@email.com',
     serviceTypeId: 'st-6', serviceTypeName: 'TPMS Sensor Replacement',
     scheduledStart: '2026-06-14T09:30:00', scheduledEnd: '2026-06-14T10:00:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -53,7 +53,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-004', shopId: 'shop-1', customerId: 'cust-1', customerName: 'James Calloway',
-    customerPhone: '(214) 555-0142', customerEmail: 'james.calloway@email.com',
+    customerPhone: '+27 11 555 0142', customerEmail: 'james.calloway@email.com',
     serviceTypeId: 'st-3', serviceTypeName: 'Tire Rotation',
     scheduledStart: '2026-06-14T11:30:00', scheduledEnd: '2026-06-14T12:00:00',
     technicianId: 'tech-1', technicianName: 'Mike Torres',
@@ -65,7 +65,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-005', shopId: 'shop-1', customerId: 'cust-3', customerName: 'FleetCo – Unit 3',
-    customerPhone: '(972) 555-0391', customerEmail: 'dispatch@fleetco.com',
+    customerPhone: '+27 21 555 0391', customerEmail: 'dispatch@fleetco.com',
     serviceTypeId: 'st-1', serviceTypeName: '4-Tire Mount & Balance',
     scheduledStart: '2026-06-14T11:00:00', scheduledEnd: '2026-06-14T12:00:00',
     technicianId: 'tech-3', technicianName: 'Carlos Rivera',
@@ -79,7 +79,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-006', shopId: 'shop-1', customerId: 'cust-1', customerName: 'Ray Hernandez',
-    customerPhone: '(972) 555-0601', customerEmail: 'ray.h@email.com',
+    customerPhone: '+27 21 555 0601', customerEmail: 'ray.h@email.com',
     serviceTypeId: 'st-1', serviceTypeName: '4-Tire Mount & Balance',
     scheduledStart: '2026-06-14T13:00:00', scheduledEnd: '2026-06-14T14:00:00',
     technicianId: 'tech-1', technicianName: 'Mike Torres',
@@ -96,7 +96,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-007', shopId: 'shop-1', customerId: 'cust-2', customerName: 'Patricia Owens',
-    customerPhone: '(214) 555-0945', customerEmail: 'p.owens@email.com',
+    customerPhone: '+27 11 555 0945', customerEmail: 'p.owens@email.com',
     serviceTypeId: 'st-4', serviceTypeName: 'Tire Balance Only',
     scheduledStart: '2026-06-14T13:30:00', scheduledEnd: '2026-06-14T14:00:00',
     technicianId: 'tech-2', technicianName: 'Sarah Chen',
@@ -108,7 +108,7 @@ const EXTRA_VISITS = [
   },
   {
     id: 'dv-008', shopId: 'shop-1', customerId: 'cust-3', customerName: 'Marcus Webb',
-    customerPhone: '(469) 555-0773', customerEmail: 'marcus.w@email.com',
+    customerPhone: '+27 12 555 0773', customerEmail: 'marcus.w@email.com',
     serviceTypeId: 'st-8', serviceTypeName: 'Mobile Flat Repair',
     scheduledStart: '2026-06-14T15:00:00', scheduledEnd: '2026-06-14T15:45:00',
     technicianId: 'tech-3', technicianName: 'Carlos Rivera',
@@ -223,7 +223,7 @@ export const TRUCK_INVENTORY: TruckInventoryItem[] = [
 export const MID_JOB_AUTHS: MidJobAuth[] = [
   {
     id: 'mja-1', visitId: 'v-001', visitSummary: 'James Calloway – 4-Tire M&B (F-150)',
-    customerName: 'James Calloway', customerPhone: '(214) 555-0142',
+    customerName: 'James Calloway', customerPhone: '+27 11 555 0142',
     proposedBy: 'Mike Torres',
     description: 'Found corrosion on left front wheel hub. Recommend hub cleaning + anti-seize before install.',
     photos: ['📸', '📸'], rootCause: 'Salt/moisture corrosion from winter roads',
@@ -232,7 +232,7 @@ export const MID_JOB_AUTHS: MidJobAuth[] = [
   },
   {
     id: 'mja-2', visitId: 'v-005', visitSummary: 'Maria Reyes – 4-Tire M&B (Camry)',
-    customerName: 'Maria Reyes', customerPhone: '(469) 555-0278',
+    customerName: 'Maria Reyes', customerPhone: '+27 12 555 0278',
     proposedBy: 'Mike Torres',
     description: 'Valve stem on rear right severely cracked. Recommend replacing all 4.',
     photos: ['📸'], rootCause: 'Age-related rubber degradation (~5 years old)',

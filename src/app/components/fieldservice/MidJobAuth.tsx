@@ -251,7 +251,7 @@ function NewAuthModal({ onClose, onCreate }: NewAuthModalProps) {
           {[
             { label: 'Visit', key: 'visitId', type: 'select', options: visits },
             { label: 'Customer Name', key: 'customerName', type: 'text', placeholder: 'e.g. James Calloway' },
-            { label: 'Customer Phone', key: 'customerPhone', type: 'text', placeholder: 'e.g. (555) 200-1111' },
+            { label: 'Customer Phone', key: 'customerPhone', type: 'text', placeholder: 'e.g. +27 11 200 1111' },
             { label: 'Description of Work', key: 'description', type: 'textarea', placeholder: 'What additional work is needed?' },
             { label: 'Root Cause', key: 'rootCause', type: 'text', placeholder: 'e.g. Found corroded caliper during brake inspection' },
             { label: 'Additional Charge ($)', key: 'price', type: 'number', placeholder: '0.00' },

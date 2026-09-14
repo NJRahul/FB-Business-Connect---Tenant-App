@@ -247,7 +247,7 @@ export function ManualBooking({ onComplete }: Props) {
               <div className="grid grid-cols-2 gap-3 mt-4">
                 {[
                   { label: 'Full Name', key: 'customerName' as const, placeholder: 'Jane Smith' },
-                  { label: 'Phone', key: 'customerPhone' as const, placeholder: '(555) 000-0000' },
+                  { label: 'Phone', key: 'customerPhone' as const, placeholder: '+27 XX XXX XXXX' },
                   { label: 'Email', key: 'customerEmail' as const, placeholder: 'jane@email.com' },
                 ].map(f => (
                   <label key={f.key} className={f.key === 'customerEmail' ? 'col-span-2' : ''}>

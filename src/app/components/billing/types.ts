@@ -180,4 +180,4 @@ export const PLAN_CONFIGS: Record<PlanTier, PlanConfig> = {
   },
 };
 
-export const SMS_OVERAGE_RATE = 0.0075; // $0.0075 per SMS over inclusion
+export const SMS_OVERAGE_RATE = 0.0075; // R 0.14 per SMS over inclusion
