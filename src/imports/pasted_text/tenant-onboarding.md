@@ -1,4 +1,4 @@
-You are building TDforge — a multi-tenant SaaS platform for US tire service shops.
+You are building FB Business Connect — a multi-tenant SaaS platform for US tire service shops.
 
 TECH STACK: React + Vite frontend, Supabase (Postgres + RLS), Medusa.js commerce, Stripe Connect, Twilio SMS, Resend email, Tailwind CSS.
 
@@ -28,13 +28,13 @@ Every module must include: TypeScript types, Supabase schema (SQL), React compon
 MODULE PROMPTS
 
 F1 — Tenant Onboarding and Lifecycle
-Build the Tenant Onboarding and Lifecycle module for TDforge.
+Build the Tenant Onboarding and Lifecycle module for FB Business Connect.
 
 WHAT TO BUILD:
 
 1. PUBLIC SIGN-UP PAGE
    - Fields: business name, owner name, email, password, plan tier selector (Starter / Pro / Enterprise)
-   - On submit: create tenant record, generate unique shop_id, assign subdomain (slug from business name, e.g., acmetires.tdforge.app)
+   - On submit: create tenant record, generate unique shop_id, assign subdomain (slug from business name, e.g., acmetires.fb-business-connect.app)
    - Block reserved subdomains: admin, api, www, support, billing, status
    - Send email verification link via Resend
    - Tenant cannot publish storefront until email is verified
@@ -73,7 +73,7 @@ WHAT TO BUILD:
 
 6. DATA MIGRATION AND IMPORT
    - Bulk customer import via CSV/XLSX with field-mapping UI
-   - Column mapping step: map source columns to TDforge fields
+   - Column mapping step: map source columns to FB Business Connect fields
    - Support concatenated field splitting (e.g., "Full Name" → first + last)
    - Per-row outcome report: imported / skipped-duplicate / failed-with-reason
    - Download failed rows for correction and re-import
@@ -96,7 +96,7 @@ DESIGN:
 - Import UI: drag-and-drop zone, column mapping table, results summary with red/green/yellow row counts
 
 F2 — Identity, Roles, and Access Control
-Build the Identity, Roles, and Access Control module for TDforge.
+Build the Identity, Roles, and Access Control module for FB Business Connect.
 
 WHAT TO BUILD:
 
@@ -172,12 +172,12 @@ DESIGN:
 - Staff list: avatar + name + role badge + "Revoke Session" button (red outline)
 
 F3 — Storefront and Catalog
-Build the Storefront and Catalog module for TDforge.
+Build the Storefront and Catalog module for FB Business Connect.
 
 WHAT TO BUILD:
 
 1. STOREFRONT SHELL
-   - Serve each tenant's storefront at their subdomain (acmetires.tdforge.app)
+   - Serve each tenant's storefront at their subdomain (acmetires.fb-business-connect.app)
    - Pro/Enterprise: serve at custom domain (configured in F12)
    - Every page renders: tenant logo, business name, contact info, hours, service area summary, trust signals (reviews, badges, photos)
    - SEO: per-page meta tags, Schema.org LocalBusiness + Product JSON-LD, sitemap.xml per tenant

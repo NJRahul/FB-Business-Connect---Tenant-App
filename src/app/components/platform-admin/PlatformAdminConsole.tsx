@@ -82,7 +82,7 @@ export function PlatformAdminConsole({ onExit }: Props) {
               <Shield size={16} color="#fff" />
             </div>
             <div>
-              <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#F9FAFB', fontSize: '0.9rem' }}>TDForge</p>
+              <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#F9FAFB', fontSize: '0.9rem' }}>FB Business Connect</p>
               <p style={{ fontSize: '0.65rem', color: '#DC2626', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', lineHeight: 1 }}>Platform Admin</p>
             </div>
           </div>

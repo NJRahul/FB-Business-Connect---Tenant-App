@@ -133,7 +133,7 @@ function ControlsDrawer({ card, controls, onClose, onUpdate, onFreeze, onReportL
                 <p style={{ fontFamily: 'monospace', fontSize: '1.125rem', letterSpacing: '0.2em', color: '#1A1A1A', fontWeight: 700 }}>
                   •••• •••• •••• {card.last4}
                 </p>
-                <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: 4 }}>Shown via partner iframe. Not stored on TDforge.</p>
+                <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: 4 }}>Shown via partner iframe. Not stored on FB Business Connect.</p>
               </div>
             ) : (
               <button onClick={() => setShowPANMFA(true)} className="flex items-center gap-2 px-3 py-2 rounded-[6px] font-semibold text-sm" style={{ background: '#F3F4F6', color: '#374151' }}>

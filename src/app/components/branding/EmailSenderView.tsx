@@ -128,7 +128,7 @@ function EmailSenderConfigured({ sender }: { sender: CustomEmailSender }) {
 
         {!allPass && (
           <div style={{ marginTop: 14, padding: '10px 14px', borderRadius: 8, background: '#FFFBEB', border: '1px solid #FDE68A', fontSize: 12, color: '#92400E' }}>
-            Emails will not send from <strong>{sender.domain}</strong> until all three DNS records pass verification. Your default TDForge sender remains active in the meantime.
+            Emails will not send from <strong>{sender.domain}</strong> until all three DNS records pass verification. Your default FB Business Connect sender remains active in the meantime.
           </div>
         )}
       </div>
@@ -176,7 +176,7 @@ function EmailSenderConfigured({ sender }: { sender: CustomEmailSender }) {
         <div style={{ fontWeight: 700, fontSize: 12, color: '#374151', marginBottom: 8 }}>Why these records matter</div>
         {[
           { label: 'DKIM', desc: 'Cryptographic signature proving emails genuinely came from your domain. Required by Gmail and Yahoo for bulk senders.' },
-          { label: 'SPF', desc: 'Authorizes TDForge\'s mail servers to send on your behalf. Prevents spoofing.' },
+          { label: 'SPF', desc: 'Authorizes FB Business Connect\'s mail servers to send on your behalf. Prevents spoofing.' },
           { label: 'DMARC', desc: 'Policy record that tells receiving servers what to do when DKIM or SPF fail. Required for inbox delivery at scale.' },
         ].map(r => (
           <div key={r.label} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
@@ -255,7 +255,7 @@ export function EmailSenderView({ plan }: { plan: BrandingPlanTier }) {
             spfStatus: 'pending',
             dmarcStatus: 'pending',
             active: false,
-            dkimRecord: { ...CUSTOM_EMAIL_SENDER.dkimRecord, host: `tdforge._domainkey.${d}`, status: 'pending' },
+            dkimRecord: { ...CUSTOM_EMAIL_SENDER.dkimRecord, host: `fb-business-connect._domainkey.${d}`, status: 'pending' },
             spfRecord: { ...CUSTOM_EMAIL_SENDER.spfRecord, host: d, status: 'pending' },
             dmarcRecord: { ...CUSTOM_EMAIL_SENDER.dmarcRecord, host: `_dmarc.${d}`, status: 'pending' },
           })}

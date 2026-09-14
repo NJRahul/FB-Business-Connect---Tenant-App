@@ -1,5 +1,5 @@
 F4 — Cart, Checkout, and Payment
-Build the Cart, Checkout, and Payment module for TDforge.
+Build the Cart, Checkout, and Payment module for FB Business Connect.
 
 WHAT TO BUILD:
 
@@ -26,7 +26,7 @@ WHAT TO BUILD:
 
 4. PAYMENT PROCESSING (Stripe Connect)
    - Credit/debit, Apple Pay, Google Pay
-   - Raw card data NEVER touches TDforge servers (Stripe hosted elements)
+   - Raw card data NEVER touches FB Business Connect servers (Stripe hosted elements)
    - 3-D Secure (SCA) supported without abandoning cart
    - Human-readable error messages (not raw processor codes)
    - Tag every payment: order ID, cart, customer, vehicle, booking slot

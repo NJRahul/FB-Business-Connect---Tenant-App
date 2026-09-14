@@ -92,7 +92,7 @@ function DomainConfigured({ domain, plan }: { domain: CustomDomain; plan: Brandi
   }
 
   function release() {
-    if (!window.confirm(`Release ${domain.domain}? Your storefront will immediately fall back to acmetires.tdforge.app.`)) return;
+    if (!window.confirm(`Release ${domain.domain}? Your storefront will immediately fall back to acmetires.fb-business-connect.app.`)) return;
     setReleasing(true);
     setTimeout(() => { setReleasing(false); setReleased(true); }, 900);
   }
@@ -102,7 +102,7 @@ function DomainConfigured({ domain, plan }: { domain: CustomDomain; plan: Brandi
       <div style={{ padding: '20px', border: '1px solid #E5E7EB', borderRadius: 10, background: '#F9FAFB', textAlign: 'center', color: '#6B7280', fontSize: 14 }}>
         <CheckCircle size={24} color="#15803D" style={{ margin: '0 auto 10px', display: 'block' }} />
         <div style={{ fontWeight: 700, color: '#1A1A1A', marginBottom: 4 }}>Domain released</div>
-        Storefront is now serving from <strong>acmetires.tdforge.app</strong>
+        Storefront is now serving from <strong>acmetires.fb-business-connect.app</strong>
       </div>
     );
   }
@@ -179,14 +179,14 @@ function DomainConfigured({ domain, plan }: { domain: CustomDomain; plan: Brandi
       {/* SSL renewal policy */}
       <div style={{ padding: '12px 16px', borderRadius: 8, background: '#EFF6FF', border: '1px solid #BFDBFE', fontSize: 12, color: '#1E40AF' }}>
         <div style={{ fontWeight: 700, marginBottom: 4 }}>SSL Auto-Renewal Policy</div>
-        SSL is automatically renewed 30 days before expiry. If auto-renewal fails: alerts at 14 and 7 days, email to shop admin at 3 days. Storefront falls back to <strong>acmetires.tdforge.app</strong> 24 hours before expiry to stay online.
+        SSL is automatically renewed 30 days before expiry. If auto-renewal fails: alerts at 14 and 7 days, email to shop admin at 3 days. Storefront falls back to <strong>acmetires.fb-business-connect.app</strong> 24 hours before expiry to stay online.
       </div>
 
       {/* Release */}
       <div style={{ border: '1px solid #FCA5A5', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
         <div>
           <div style={{ fontWeight: 600, fontSize: 13, color: '#1A1A1A' }}>Release Custom Domain</div>
-          <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>Storefront immediately falls back to acmetires.tdforge.app. You can re-add the domain anytime.</div>
+          <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>Storefront immediately falls back to acmetires.fb-business-connect.app. You can re-add the domain anytime.</div>
         </div>
         <button onClick={release} disabled={releasing} style={{ flexShrink: 0, padding: '8px 16px', borderRadius: 7, border: '1px solid #FCA5A5', background: '#FEF2F2', color: '#DC2626', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
           {releasing ? 'Releasing…' : 'Release Domain'}
@@ -210,7 +210,7 @@ function AddDomainForm({ onAdd }: { onAdd: (domain: string) => void }) {
     <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', padding: '24px 24px' }}>
       <div style={{ fontWeight: 700, fontSize: 15, color: '#1A1A1A', marginBottom: 6 }}>Connect a Custom Domain</div>
       <div style={{ fontSize: 13, color: '#6B7280', marginBottom: 18 }}>
-        Point your domain to TDForge and we'll provision SSL automatically. Your subdomain stays active as fallback.
+        Point your domain to FB Business Connect and we'll provision SSL automatically. Your subdomain stays active as fallback.
       </div>
       <div style={{ display: 'flex', gap: 10 }}>
         <input
@@ -244,7 +244,7 @@ export function CustomDomainView({ plan }: { plan: BrandingPlanTier }) {
         <Lock size={32} color="#D97706" />
         <div style={{ fontWeight: 700, fontSize: 18, color: '#1A1A1A' }}>Custom Domain — Pro Plan</div>
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 420 }}>
-          Connect your own domain (www.yourshop.com) to your TDForge storefront. Automatic SSL, subdomain fallback, and DNS guidance included.
+          Connect your own domain (www.yourshop.com) to your FB Business Connect storefront. Automatic SSL, subdomain fallback, and DNS guidance included.
         </div>
         <button style={{ padding: '10px 24px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
           Upgrade to Pro
@@ -265,8 +265,8 @@ export function CustomDomainView({ plan }: { plan: BrandingPlanTier }) {
               sslExpiresAt: null,
               sslDaysRemaining: null,
               dnsRecords: [
-                { type: 'CNAME', host: 'www', value: `${d.replace(/^www\./, '').replace(/\./g, '-')}.proxy.tdforge.io`, ttl: 3600, required: true, verified: false },
-                { type: 'TXT', host: '@', value: `tdforge-verify=${Math.random().toString(36).slice(2, 14)}`, ttl: 300, required: true, verified: false },
+                { type: 'CNAME', host: 'www', value: `${d.replace(/^www\./, '').replace(/\./g, '-')}.proxy.fb-business-connect.io`, ttl: 3600, required: true, verified: false },
+                { type: 'TXT', host: '@', value: `fb-business-connect-verify=${Math.random().toString(36).slice(2, 14)}`, ttl: 300, required: true, verified: false },
               ],
               createdAt: new Date().toISOString().slice(0, 10),
             });

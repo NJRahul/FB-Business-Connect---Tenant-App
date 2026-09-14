@@ -46,7 +46,7 @@ export const DISTRIBUTORS: Distributor[] = [
     logoEmoji: '🟢',
     description: 'Regional distributor with daily catalog feed (CSV). Orders placed manually via NTW dealer portal.',
     supportedFeatures: ['Daily CSV catalog feed', 'Manual order placement', 'Order status via email'],
-    referenceDoc: `# NTW Connector Reference\n\n**Feed Format:** CSV with header row. Required columns: SKU, Description, Brand, Size, Category, YourCost, ListPrice, StockQty, LeadTimeDays. Extra columns are ignored.\n**Feed URL:** Authenticated via ?token=<dealer_token> query param. Token expires annually.\n**Schedule:** Feed refreshed nightly at 2:00 AM CT. Pull no more than once per hour (rate-limited at source).\n**Validation Rules:** SKU must match /^[A-Z0-9\\-]{5,20}$/. YourCost must be > 0. StockQty must be integer ≥ 0.\n**Manual Orders:** Log in at ntw-dealer.com > place order > enter order ID and expected ETA in TDForge task queue.`,
+    referenceDoc: `# NTW Connector Reference\n\n**Feed Format:** CSV with header row. Required columns: SKU, Description, Brand, Size, Category, YourCost, ListPrice, StockQty, LeadTimeDays. Extra columns are ignored.\n**Feed URL:** Authenticated via ?token=<dealer_token> query param. Token expires annually.\n**Schedule:** Feed refreshed nightly at 2:00 AM CT. Pull no more than once per hour (rate-limited at source).\n**Validation Rules:** SKU must match /^[A-Z0-9\\-]{5,20}$/. YourCost must be > 0. StockQty must be integer ≥ 0.\n**Manual Orders:** Log in at ntw-dealer.com > place order > enter order ID and expected ETA in FB Business Connect task queue.`,
   },
   {
     id: 'dist-local',

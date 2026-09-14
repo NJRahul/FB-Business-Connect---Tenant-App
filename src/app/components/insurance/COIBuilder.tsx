@@ -10,7 +10,7 @@ function COICard({ cert }: { cert: InsuranceCertificate }) {
   const isExpired = new Date(cert.expires_at) < new Date();
 
   function copyLink() {
-    const url = `https://verify.tdforge.app/coi/${cert.verify_token}`;
+    const url = `https://verify.fb-business-connect.app/coi/${cert.verify_token}`;
     navigator.clipboard.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
   }
 

@@ -86,7 +86,7 @@ export function InvoicesView() {
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '10px 14px', borderRadius: 8, background: '#EFF6FF', border: '1px solid #BFDBFE' }}>
         <FileText size={14} color="#2563EB" style={{ marginTop: 2, flexShrink: 0 }} />
         <div style={{ fontSize: 12, color: '#1E40AF' }}>
-          <strong>Tax &amp; compliance:</strong> TDForge uses Stripe Tax to calculate and collect US state sales tax automatically. 1099-K reports are issued per IRS thresholds via Stripe. Your EIN and business address on file are used for all tax documents.
+          <strong>Tax &amp; compliance:</strong> FB Business Connect uses Stripe Tax to calculate and collect US state sales tax automatically. 1099-K reports are issued per IRS thresholds via Stripe. Your EIN and business address on file are used for all tax documents.
         </div>
       </div>
 

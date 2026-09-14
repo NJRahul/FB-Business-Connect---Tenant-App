@@ -159,7 +159,7 @@ export function CustomerReportView() {
               <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
                 <Shield className="w-4 h-4 text-white" />
               </div>
-              <span className="font-bold text-gray-900">TDForge Inspection Report</span>
+              <span className="font-bold text-gray-900">FB Business Connect Inspection Report</span>
             </div>
             <h1 className="text-xl font-bold text-gray-900">{inspection.vehicle}</h1>
             <p className="text-sm text-gray-500 mt-0.5">Plate {inspection.licensePlate} · Inspected by {inspection.technicianName}</p>
@@ -447,7 +447,7 @@ export function CustomerReportView() {
 
           {/* Legal footer */}
           <p className="text-xs text-gray-400 text-center">
-            By signing, I authorize TDForge Shop to perform the services listed above.<br />
+            By signing, I authorize FB Business Connect Shop to perform the services listed above.<br />
             Signed: {inspection.customerName} · {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
           </p>
         </div>

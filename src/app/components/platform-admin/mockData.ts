@@ -6,7 +6,7 @@ import type {
 
 export const CURRENT_ADMIN: PlatformAdmin = {
   id: 'adm_001',
-  email: 'ops@tdforge.com',
+  email: 'ops@fb-business-connect.com',
   name: 'Alex Rivera',
   role: 'super_admin',
   mfaEnabled: true,
@@ -72,28 +72,28 @@ export const MOCK_TENANTS: Tenant[] = [
 
 export const MOCK_ACCESS_LOGS: CrossTenantAccessLog[] = [
   {
-    id: 'log_001', adminId: 'adm_001', adminEmail: 'ops@tdforge.com', adminName: 'Alex Rivera',
+    id: 'log_001', adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com', adminName: 'Alex Rivera',
     targetShopId: 'shop_001', targetShopName: 'Ace Tire & Auto',
     action: 'view_billing', writtenReason: 'Investigating failed charge report from owner.',
     recordKind: 'billing_subscription', sessionId: 'ses_abc123',
     durationSeconds: 187, createdAt: '2026-06-15T11:30:00Z', piiAccessed: false,
   },
   {
-    id: 'log_002', adminId: 'adm_002', adminEmail: 'support@tdforge.com', adminName: 'Jamie Chen',
+    id: 'log_002', adminId: 'adm_002', adminEmail: 'support@fb-business-connect.com', adminName: 'Jamie Chen',
     targetShopId: 'shop_002', targetShopName: 'Premier Wheel Works',
     action: 'view_customers', writtenReason: 'Debugging duplicate customer import issue. Ticket #4821.',
     recordKind: 'customer_records', sessionId: 'ses_def456',
     durationSeconds: 412, createdAt: '2026-06-14T15:20:00Z', piiAccessed: true,
   },
   {
-    id: 'log_003', adminId: 'adm_001', adminEmail: 'ops@tdforge.com', adminName: 'Alex Rivera',
+    id: 'log_003', adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com', adminName: 'Alex Rivera',
     targetShopId: 'shop_004', targetShopName: 'RoadGrip Auto',
     action: 'suspend_tenant', writtenReason: 'Payment failed 3x. Suspending per dunning policy.',
     recordKind: 'tenant_lifecycle', sessionId: 'ses_ghi789',
     durationSeconds: 45, createdAt: '2026-06-10T09:15:00Z', piiAccessed: false,
   },
   {
-    id: 'log_004', adminId: 'adm_003', adminEmail: 'infra@tdforge.com', adminName: 'Sam Patel',
+    id: 'log_004', adminId: 'adm_003', adminEmail: 'infra@fb-business-connect.com', adminName: 'Sam Patel',
     targetShopId: 'shop_007', targetShopName: 'Metro Alignment Co.',
     action: 'view_appointments', writtenReason: 'Validating booking sync after webhook replay. Ticket #5102.',
     recordKind: 'appointment_data', sessionId: 'ses_jkl012',
@@ -204,12 +204,12 @@ export const MOCK_CREDENTIALS: Credential[] = [
 
 export const MOCK_CREDENTIAL_LOGS: CredentialAccessLog[] = [
   {
-    id: 'cl_001', adminId: 'adm_001', adminEmail: 'ops@tdforge.com', adminName: 'Alex Rivera',
+    id: 'cl_001', adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com', adminName: 'Alex Rivera',
     credentialKey: 'ATD_API_KEY', reason: 'Verifying key validity after ATD reported auth errors.',
     createdAt: '2026-06-14T11:00:00Z',
   },
   {
-    id: 'cl_002', adminId: 'adm_003', adminEmail: 'infra@tdforge.com', adminName: 'Sam Patel',
+    id: 'cl_002', adminId: 'adm_003', adminEmail: 'infra@fb-business-connect.com', adminName: 'Sam Patel',
     credentialKey: 'TWILIO_AUTH_TOKEN', reason: 'Rotating credential as part of Q2 security review.',
     createdAt: '2026-06-15T07:00:00Z',
   },
@@ -217,17 +217,17 @@ export const MOCK_CREDENTIAL_LOGS: CredentialAccessLog[] = [
 
 export const MOCK_TOOL_LOGS: OperationalToolLog[] = [
   {
-    id: 'tl_001', adminId: 'adm_001', adminEmail: 'ops@tdforge.com',
+    id: 'tl_001', adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com',
     toolName: 'replay_webhook', targetShopId: 'shop_001', targetShopName: 'Ace Tire & Auto',
     targetEntity: 'wh_evt_1Kxy9Z2eZvKYlo2C', outcome: 'success', createdAt: '2026-06-15T10:45:00Z',
   },
   {
-    id: 'tl_002', adminId: 'adm_003', adminEmail: 'infra@tdforge.com',
+    id: 'tl_002', adminId: 'adm_003', adminEmail: 'infra@fb-business-connect.com',
     toolName: 'catalog_sync', targetShopId: 'shop_002', targetShopName: 'Premier Wheel Works',
     targetEntity: 'ATD', outcome: 'success', createdAt: '2026-06-14T17:00:00Z',
   },
   {
-    id: 'tl_003', adminId: 'adm_001', adminEmail: 'ops@tdforge.com',
+    id: 'tl_003', adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com',
     toolName: 'reprocess_queue', targetShopId: 'shop_007', targetShopName: 'Metro Alignment Co.',
     targetEntity: 'booking_sync_queue', outcome: 'failed', createdAt: '2026-06-13T12:30:00Z',
   },

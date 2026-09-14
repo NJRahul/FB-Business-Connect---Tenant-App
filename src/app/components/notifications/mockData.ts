@@ -93,7 +93,7 @@ export const TEMPLATES: NotificationTemplate[] = [
   {
     id: 'tpl-nb', shopId: 'shop-1', type: 'new-booking-staff', category: 'transactional-staff',
     channel: 'email', name: 'New Booking (Staff)', subject: 'New booking: {{customer_name}} — {{service_type}}',
-    body: 'A new appointment has been booked.\n\nCustomer: {{customer_name}}\nService: {{service_type}}\nDate: {{appointment_date}} at {{appointment_time}}\nAssigned tech: {{tech_name}}\n\nView in TDForge: {{booking_link}}',
+    body: 'A new appointment has been booked.\n\nCustomer: {{customer_name}}\nService: {{service_type}}\nDate: {{appointment_date}} at {{appointment_time}}\nAssigned tech: {{tech_name}}\n\nView in FB Business Connect: {{booking_link}}',
     locale: 'en', isDefault: true, isCustom: false, createdAt: '2026-01-01T00:00:00Z',
   },
   {
@@ -142,8 +142,8 @@ export const TEMPLATES: NotificationTemplate[] = [
   },
   {
     id: 'tpl-sec', shopId: 'shop-1', type: 'security-alert', category: 'system',
-    channel: 'email', name: 'Security Alert', subject: 'Security alert for your TDForge account',
-    body: 'A new sign-in was detected on your TDForge account from {{location}} at {{time}}.\n\nDevice: {{device}}\n\nIf this was you, no action is needed. If not, reset your password immediately: {{reset_link}}',
+    channel: 'email', name: 'Security Alert', subject: 'Security alert for your FB Business Connect account',
+    body: 'A new sign-in was detected on your FB Business Connect account from {{location}} at {{time}}.\n\nDevice: {{device}}\n\nIf this was you, no action is needed. If not, reset your password immediately: {{reset_link}}',
     locale: 'en', isDefault: true, isCustom: false, createdAt: '2026-01-01T00:00:00Z',
   },
   {
@@ -191,29 +191,29 @@ export const SMS_CONVERSATIONS: SmsConversation[] = [
 
 export const SMS_MESSAGES: SmsMessage[] = [
   // conv-001 — Maria Santos
-  { id: 'msg-001', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'Hi Maria, just confirming your Oil Change appointment tomorrow at 10:00 AM. Let us know if anything changes!', attachments: [], sentAt: '2026-06-13T14:00:00Z', readAt: '2026-06-13T14:05:00Z', senderName: 'TDForge Auto' },
+  { id: 'msg-001', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'Hi Maria, just confirming your Oil Change appointment tomorrow at 10:00 AM. Let us know if anything changes!', attachments: [], sentAt: '2026-06-13T14:00:00Z', readAt: '2026-06-13T14:05:00Z', senderName: 'FB Business Connect Auto' },
   { id: 'msg-002', conversationId: 'conv-001', shopId: 'shop-1', direction: 'inbound', body: 'Hi! Yes that works. Will you need me to drop off the keys?', attachments: [], sentAt: '2026-06-13T14:12:00Z' },
   { id: 'msg-003', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'Yes, you can drop the keys at the front desk. The service usually takes about an hour.', attachments: [], sentAt: '2026-06-13T14:20:00Z', readAt: '2026-06-13T14:22:00Z', senderName: 'Mike Russo' },
   { id: 'msg-004', conversationId: 'conv-001', shopId: 'shop-1', direction: 'inbound', body: 'Perfect. And can I wait there or should I plan to come back?', attachments: [], sentAt: '2026-06-13T14:25:00Z' },
   { id: 'msg-005', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'We have a comfortable waiting area with Wi-Fi! You\'re welcome to stay.', attachments: [], sentAt: '2026-06-13T14:28:00Z', readAt: '2026-06-13T14:30:00Z', senderName: 'Mike Russo' },
-  { id: 'msg-006', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'Hi Maria, your appointment is in 1 hour (10:00 AM). Address: 123 Auto Dr.', attachments: [], sentAt: '2026-06-14T09:00:00Z', readAt: '2026-06-14T09:05:00Z', senderName: 'TDForge Auto' },
+  { id: 'msg-006', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: 'Hi Maria, your appointment is in 1 hour (10:00 AM). Address: 123 Auto Dr.', attachments: [], sentAt: '2026-06-14T09:00:00Z', readAt: '2026-06-14T09:05:00Z', senderName: 'FB Business Connect Auto' },
   { id: 'msg-007', conversationId: 'conv-001', shopId: 'shop-1', direction: 'inbound', body: "On my way! Traffic isn't too bad.", attachments: [], sentAt: '2026-06-14T09:40:00Z' },
   { id: 'msg-008', conversationId: 'conv-001', shopId: 'shop-1', direction: 'outbound', body: "Great, see you soon! We'll be ready for you.", attachments: [], sentAt: '2026-06-14T09:42:00Z', readAt: '2026-06-14T13:44:00Z', senderName: 'Mike Russo' },
   { id: 'msg-009', conversationId: 'conv-001', shopId: 'shop-1', direction: 'inbound', body: 'Thanks! See you then.', attachments: [], sentAt: '2026-06-14T13:45:00Z' },
 
   // conv-002 — James Patel (2 unread)
-  { id: 'msg-010', conversationId: 'conv-002', shopId: 'shop-1', direction: 'outbound', body: 'Hi James, reminder: your Tire Rotation is tomorrow at 2:00 PM. Reply STOP to opt out.', attachments: [], sentAt: '2026-06-13T10:00:00Z', readAt: '2026-06-13T10:05:00Z', senderName: 'TDForge Auto' },
+  { id: 'msg-010', conversationId: 'conv-002', shopId: 'shop-1', direction: 'outbound', body: 'Hi James, reminder: your Tire Rotation is tomorrow at 2:00 PM. Reply STOP to opt out.', attachments: [], sentAt: '2026-06-13T10:00:00Z', readAt: '2026-06-13T10:05:00Z', senderName: 'FB Business Connect Auto' },
   { id: 'msg-011', conversationId: 'conv-002', shopId: 'shop-1', direction: 'inbound', body: 'Hey can I push it back? Something came up.', attachments: [], sentAt: '2026-06-14T10:00:00Z' },
   { id: 'msg-012', conversationId: 'conv-002', shopId: 'shop-1', direction: 'inbound', body: 'Can I reschedule to 3pm instead?', attachments: [], sentAt: '2026-06-14T11:30:00Z' },
 
   // conv-003 — Kevin Brown
-  { id: 'msg-013', conversationId: 'conv-003', shopId: 'shop-1', direction: 'outbound', body: 'Kevin, tech Mike is about 15 minutes away for your appointment. Any questions?', attachments: [], sentAt: '2026-06-14T09:45:00Z', readAt: '2026-06-14T09:48:00Z', senderName: 'TDForge Auto' },
+  { id: 'msg-013', conversationId: 'conv-003', shopId: 'shop-1', direction: 'outbound', body: 'Kevin, tech Mike is about 15 minutes away for your appointment. Any questions?', attachments: [], sentAt: '2026-06-14T09:45:00Z', readAt: '2026-06-14T09:48:00Z', senderName: 'FB Business Connect Auto' },
   { id: 'msg-014', conversationId: 'conv-003', shopId: 'shop-1', direction: 'inbound', body: 'Thanks for the heads up.', attachments: [], sentAt: '2026-06-14T09:50:00Z' },
   { id: 'msg-015', conversationId: 'conv-003', shopId: 'shop-1', direction: 'outbound', body: 'Here is a photo of the brake pad we replaced — your old one was at 2mm.', attachments: [{ id: 'att-001', name: 'brake_pad_before.jpg', type: 'image', emoji: '📷', size: 284000 }], sentAt: '2026-06-14T10:10:00Z', readAt: '2026-06-14T10:12:00Z', senderName: 'Elena Torres' },
   { id: 'msg-016', conversationId: 'conv-003', shopId: 'shop-1', direction: 'inbound', body: "Got it, I'll be there.", attachments: [], sentAt: '2026-06-14T10:15:00Z' },
 
   // conv-004 — Chris Martinez (1 unread)
-  { id: 'msg-017', conversationId: 'conv-004', shopId: 'shop-1', direction: 'outbound', body: 'Hi Chris, your appointment has been cancelled per your request. Rebook anytime: https://tdforge.app/book', attachments: [], sentAt: '2026-06-14T09:00:00Z', readAt: '2026-06-14T09:05:00Z', senderName: 'TDForge Auto' },
+  { id: 'msg-017', conversationId: 'conv-004', shopId: 'shop-1', direction: 'outbound', body: 'Hi Chris, your appointment has been cancelled per your request. Rebook anytime: https://fb-business-connect.app/book', attachments: [], sentAt: '2026-06-14T09:00:00Z', readAt: '2026-06-14T09:05:00Z', senderName: 'FB Business Connect Auto' },
   { id: 'msg-018', conversationId: 'conv-004', shopId: 'shop-1', direction: 'outbound', body: 'Chris, the replacement catalytic converter has arrived. Give us a call to schedule installation.', attachments: [], sentAt: '2026-06-14T09:20:00Z', readAt: '2026-06-14T09:25:00Z', senderName: 'Jake Wilson' },
   { id: 'msg-019', conversationId: 'conv-004', shopId: 'shop-1', direction: 'inbound', body: 'Is the part still under warranty?', attachments: [], sentAt: '2026-06-14T09:30:00Z' },
 ];

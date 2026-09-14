@@ -207,7 +207,7 @@ function EmailProviderSection() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
       <div style={{ padding: '12px 16px', borderRadius: 8, background: '#FFFBEB', border: '1px solid #FDE68A', fontSize: 13, color: '#92400E' }}>
-        Email provider sync is one-way. Customer and segment data flows from TDForge into your provider — not in reverse. Consent status is always managed in TDForge.
+        Email provider sync is one-way. Customer and segment data flows from FB Business Connect into your provider — not in reverse. Consent status is always managed in FB Business Connect.
       </div>
       {providers.map(p => (
         <div key={p.id} style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', padding: '18px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>

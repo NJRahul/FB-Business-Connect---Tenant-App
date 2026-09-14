@@ -331,7 +331,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
           <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#C0392B' }}>
             <Wrench size={16} color="#fff" />
           </div>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>TDforge</span>
+          <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>FB Business Connect</span>
         </div>
 
         <div className="p-4 border-b" style={{ borderColor: '#E5E7EB' }}>
@@ -1070,7 +1070,7 @@ function Step5({ state, setState }: { state: WizardState; setState: React.Dispat
               </div>
             </div>
             <p style={{ color: '#6B7280', fontSize: '0.9375rem', marginBottom: '16px', lineHeight: 1.6 }}>
-              Your customers pay through your storefront. TDforge deposits the money directly into your bank account, minus a small platform fee.
+              Your customers pay through your storefront. FB Business Connect deposits the money directly into your bank account, minus a small platform fee.
             </p>
             <div className="grid grid-cols-2 gap-3 mb-5">
               {[['2.9% + $0.30', 'Per transaction (card)'], ['0.5%', 'Platform fee (Starter)'], ['2 business days', 'Standard payout speed'], ['$0', 'Setup cost']].map(([v, l]) => (
@@ -1576,7 +1576,7 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
       </div>
       <div className="mt-3 flex items-center gap-2 px-3 py-2.5 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
         <Globe size={13} style={{ color: '#9CA3AF', shrink: 0 }} />
-        <span style={{ color: '#C0392B', fontWeight: 600, fontSize: '0.8125rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{slug}.tdforge.app</span>
+        <span style={{ color: '#C0392B', fontWeight: 600, fontSize: '0.8125rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{slug}.fb-business-connect.app</span>
         <button onClick={copyUrl} style={{ color: '#9CA3AF' }}>
           {copied ? <CheckCircle2 size={14} style={{ color: '#27AE60' }} /> : <Copy size={14} />}
         </button>
@@ -1639,7 +1639,7 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
           </div>
           <div className="flex items-center gap-3 p-3 rounded-[6px]" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
             <Globe size={16} style={{ color: '#C0392B', shrink: 0 }} />
-            <span style={{ color: '#C0392B', fontWeight: 700, fontFamily: 'Sora, sans-serif', fontSize: '1rem', flex: 1 }}>{slug}.tdforge.app</span>
+            <span style={{ color: '#C0392B', fontWeight: 700, fontFamily: 'Sora, sans-serif', fontSize: '1rem', flex: 1 }}>{slug}.fb-business-connect.app</span>
             <button onClick={copyUrl} className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold" style={{ border: '1px solid #F5B7B1', color: '#C0392B', background: '#fff' }}>
               {copied ? <CheckCircle2 size={12} style={{ color: '#27AE60' }} /> : <Copy size={12} />}
               {copied ? 'Copied!' : 'Copy'}
@@ -1734,7 +1734,7 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
       <div className="bg-white rounded-[8px] p-6 text-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
         <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif', marginBottom: '8px' }}>Your storefront is ready. Let's go live.</p>
         <p style={{ color: '#6B7280', fontSize: '0.9375rem', marginBottom: '24px' }}>
-          Publishing at: <span style={{ color: '#C0392B', fontWeight: 700 }}>{slug}.tdforge.app</span>
+          Publishing at: <span style={{ color: '#C0392B', fontWeight: 700 }}>{slug}.fb-business-connect.app</span>
         </p>
         <button
           onClick={handlePublish}
@@ -1789,7 +1789,7 @@ function PublishSuccess({ slug, state, onComplete }: { slug: string; state: Wiza
 
         <div className="mt-6 px-6 py-4 rounded-[10px] inline-block" style={{ background: 'rgba(192,57,43,0.2)', border: '2px solid #C0392B' }}>
           <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginBottom: '4px' }}>Your storefront is live at</p>
-          <p style={{ color: '#fff', fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.375rem', letterSpacing: '0.02em' }}>{slug}.tdforge.app</p>
+          <p style={{ color: '#fff', fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.375rem', letterSpacing: '0.02em' }}>{slug}.fb-business-connect.app</p>
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">

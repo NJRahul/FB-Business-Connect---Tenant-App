@@ -281,7 +281,7 @@ function AccountClosure() {
       <div className="p-4 rounded-[8px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
         <p style={{ color: '#991B1B', fontWeight: 700, fontSize: '0.9375rem', marginBottom: 4 }}>Close business bank account</p>
         <p style={{ color: '#7F1D1D', fontSize: '0.875rem', lineHeight: 1.5 }}>
-          This will permanently close your TDforge Banking account. Your remaining balance will be swept to the destination you specify. Statements will remain available for 30 days after closure.
+          This will permanently close your FB Business Connect Banking account. Your remaining balance will be swept to the destination you specify. Statements will remain available for 30 days after closure.
         </p>
       </div>
       <div className="space-y-4">

@@ -113,7 +113,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
               Your shop will be available at:
             </p>
             <p className="mt-1" style={{ color: '#C0392B', fontFamily: 'Sora, sans-serif', fontWeight: 600 }}>
-              {slug}.tdforge.app
+              {slug}.fb-business-connect.app
             </p>
             <p className="mt-2" style={{ color: '#6B7280', fontFamily: 'Inter, sans-serif', fontSize: '0.75rem' }}>
               Storefront publishing is locked until your email is verified.
@@ -146,7 +146,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
             <div className="w-10 h-10 rounded-[8px] flex items-center justify-center" style={{ background: '#C0392B' }}>
               <Wrench size={20} color="#fff" />
             </div>
-            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.375rem' }}>TDforge</span>
+            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.375rem' }}>FB Business Connect</span>
           </div>
           <h1 style={{ fontFamily: 'Sora, sans-serif', color: '#fff', fontSize: '2rem', lineHeight: 1.25, fontWeight: 700 }}>
             The complete platform for tire service shops
@@ -156,7 +156,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
           </p>
           <div className="mt-10 space-y-4">
             {[
-              { icon: '🏪', title: 'Multi-Tenant Storefronts', desc: 'Your own branded shop at yourshop.tdforge.app' },
+              { icon: '🏪', title: 'Multi-Tenant Storefronts', desc: 'Your own branded shop at yourshop.fb-business-connect.app' },
               { icon: '📦', title: 'Live Distributor Inventory', desc: 'Sync stock from major tire distributors every 60 min' },
               { icon: '💳', title: 'Stripe Connect Payouts', desc: 'Fast, automated payouts to your bank account' },
               { icon: '📱', title: 'SMS & Email Campaigns', desc: 'Reach customers with targeted promotions' },
@@ -173,7 +173,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
         </div>
         <div className="rounded-[8px] p-5" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}>
           <p style={{ color: '#fff', fontSize: '0.9375rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-            "TDforge cut our booking admin time by 70%. Our techs see their schedule on their phones, customers book online 24/7."
+            "FB Business Connect cut our booking admin time by 70%. Our techs see their schedule on their phones, customers book online 24/7."
           </p>
           <div className="flex items-center gap-3 mt-4">
             <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: '0.875rem' }}>
@@ -195,7 +195,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
             <div className="w-9 h-9 rounded-[8px] flex items-center justify-center" style={{ background: '#C0392B' }}>
               <Wrench size={18} color="#fff" />
             </div>
-            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.25rem' }}>TDforge</span>
+            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.25rem' }}>FB Business Connect</span>
           </div>
 
           <div className="bg-white rounded-[8px] p-8" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
@@ -229,7 +229,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                 </div>
                 {form.businessName && !errors.businessName && (
                   <p style={{ color: '#6B7280', fontSize: '0.75rem', marginTop: '4px' }}>
-                    Your URL: <span style={{ color: '#C0392B', fontWeight: 600 }}>{slug}.tdforge.app</span>
+                    Your URL: <span style={{ color: '#C0392B', fontWeight: 600 }}>{slug}.fb-business-connect.app</span>
                   </p>
                 )}
                 {errors.businessName && <p style={{ color: '#E74C3C', fontSize: '0.75rem', marginTop: '4px' }}>{errors.businessName}</p>}

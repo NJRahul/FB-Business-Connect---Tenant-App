@@ -1,4 +1,4 @@
-Build the Booking and Parts-Aware Scheduling module for TDforge.
+Build the Booking and Parts-Aware Scheduling module for FB Business Connect.
 
 WHAT TO BUILD:
 

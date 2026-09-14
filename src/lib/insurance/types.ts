@@ -273,7 +273,7 @@ export interface BindInput {
   quote_id: string;
   effective_date: string;
   payment_frequency: PaymentFrequency;
-  payment_method: 'bank_account' | 'card' | 'tdforge_banking';
+  payment_method: 'bank_account' | 'card' | 'fb-business-connect_banking';
   signature_ip: string;
   idempotency_key: string;
 }

@@ -75,7 +75,7 @@ export function OperationalToolsView() {
       setLoading(false);
       const success = Math.random() > 0.15;
       const newLog: OperationalToolLog = {
-        id: `tl_${Date.now()}`, adminId: 'adm_001', adminEmail: 'ops@tdforge.com',
+        id: `tl_${Date.now()}`, adminId: 'adm_001', adminEmail: 'ops@fb-business-connect.com',
         toolName: tool.name, targetShopId: tenantId,
         targetShopName: tenant?.businessName,
         targetEntity: entity || undefined,

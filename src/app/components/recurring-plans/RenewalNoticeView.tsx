@@ -18,7 +18,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
           <div className="w-3 h-3 rounded-full" style={{ background: '#27C93F' }} />
         </div>
         <div className="flex-1 mx-3 px-3 py-1 rounded text-xs" style={{ background: '#fff', border: '1px solid #E5E7EB', color: '#9CA3AF' }}>
-          From: noreply@tdforge.app · Subject: Your membership renews on {fmtDate(enrollment.nextBillingDate)}
+          From: noreply@fb-business-connect.app · Subject: Your membership renews on {fmtDate(enrollment.nextBillingDate)}
         </div>
       </div>
 
@@ -28,7 +28,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
           {/* Brand header */}
           <div style={{ background: '#C0392B', padding: '28px 32px', textAlign: 'center' }}>
             <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.625rem', color: '#fff', letterSpacing: '-0.02em' }}>
-              TDforge
+              FB Business Connect
             </p>
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.875rem', marginTop: '4px' }}>
               Membership Renewal Notice
@@ -114,7 +114,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
 
           {/* Footer */}
           <div style={{ background: '#F9FAFB', borderTop: '1px solid #E5E7EB', padding: '20px 32px', textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#9CA3AF', fontSize: '0.875rem' }}>TDforge Auto Shop</p>
+            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#9CA3AF', fontSize: '0.875rem' }}>FB Business Connect Auto Shop</p>
             <p style={{ color: '#D1D5DB', fontSize: '0.75rem', marginTop: '4px' }}>
               123 Main St · Anytown, TX 75001 · <a href="#" style={{ color: '#D1D5DB' }}>Unsubscribe</a> · <a href="#" style={{ color: '#D1D5DB' }}>Privacy Policy</a>
             </p>

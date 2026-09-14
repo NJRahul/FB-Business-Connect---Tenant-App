@@ -247,9 +247,9 @@ export function DataImportPage() {
             <div className="space-y-5">
               <div className="bg-white rounded-[8px] overflow-hidden" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div className="p-5 border-b" style={{ borderColor: '#E5E7EB' }}>
-                  <h3 style={{ color: '#1A1A1A', fontWeight: 600 }}>Map Source Columns to TDforge Fields</h3>
+                  <h3 style={{ color: '#1A1A1A', fontWeight: 600 }}>Map Source Columns to FB Business Connect Fields</h3>
                   <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '4px' }}>
-                    We detected {SAMPLE_COLUMNS.length} columns in <strong style={{ color: '#1A1A1A' }}>{file?.name}</strong>. Map each to the correct TDforge field.
+                    We detected {SAMPLE_COLUMNS.length} columns in <strong style={{ color: '#1A1A1A' }}>{file?.name}</strong>. Map each to the correct FB Business Connect field.
                   </p>
                 </div>
                 <div className="overflow-x-auto">
@@ -258,7 +258,7 @@ export function DataImportPage() {
                       <tr style={{ borderBottom: '1px solid #E5E7EB', background: '#F9FAFB' }}>
                         <th className="text-left px-5 py-3" style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Source Column</th>
                         <th className="px-3 py-3" style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600 }}></th>
-                        <th className="text-left px-5 py-3" style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>TDforge Field</th>
+                        <th className="text-left px-5 py-3" style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>FB Business Connect Field</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -30,7 +30,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
               </h2>
               <p style={{ color: '#6B7280', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: 24 }}>
                 {!isUS
-                  ? 'TDforge Banking is currently available to US-based businesses only.'
+                  ? 'FB Business Connect Banking is currently available to US-based businesses only.'
                   : 'An Employer Identification Number (EIN) is required to open a business bank account.'}
                 {' '}Join the waitlist and we'll notify you when it's ready.
               </p>
@@ -77,7 +77,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
               <Building2 size={32} color="#fff" />
             </div>
             <h1 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.75rem', fontWeight: 700, marginBottom: 8 }}>
-              TDforge Business Banking
+              FB Business Connect Business Banking
             </h1>
             <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.65, maxWidth: 520, margin: '0 auto' }}>
               A business bank account built into your shop platform. Receive payouts directly, spend with controlled technician cards, and reconcile everything automatically.
@@ -137,7 +137,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
               ))}
             </div>
             <p style={{ marginTop: 10, color: '#6B7280', fontSize: '0.8125rem' }}>
-              SSN is collected securely via our partner's encrypted form — it is never stored on TDforge servers.
+              SSN is collected securely via our partner's encrypted form — it is never stored on FB Business Connect servers.
             </p>
           </div>
 

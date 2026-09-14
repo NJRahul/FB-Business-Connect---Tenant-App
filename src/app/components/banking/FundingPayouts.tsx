@@ -365,14 +365,14 @@ function PayoutRouting() {
         <div className="flex items-center justify-between mb-3">
           <div>
             <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>Shop payout destination</p>
-            <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: 2 }}>Route your TDforge shop payouts directly into your TDforge banking account.</p>
+            <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: 2 }}>Route your FB Business Connect shop payouts directly into your FB Business Connect banking account.</p>
           </div>
           {routed && <span className="px-2 py-1 rounded-full text-xs font-semibold" style={{ background: '#F0FDF4', color: '#27AE60' }}>Active</span>}
         </div>
         {routed ? (
           <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#F0FDF4', border: '1px solid #BBF7D0' }}>
             <CheckCircle2 size={16} style={{ color: '#27AE60' }} />
-            <span style={{ color: '#15803D', fontSize: '0.9375rem', fontWeight: 600 }}>Payouts routing to TDforge Banking ···4471</span>
+            <span style={{ color: '#15803D', fontSize: '0.9375rem', fontWeight: 600 }}>Payouts routing to FB Business Connect Banking ···4471</span>
           </div>
         ) : (
           <button onClick={() => setRouted(true)} className="flex items-center gap-2 px-4 py-2.5 rounded-[8px] font-semibold" style={{ background: '#C0392B', color: '#fff' }}>

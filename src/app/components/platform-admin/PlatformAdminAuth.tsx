@@ -23,11 +23,11 @@ export function PlatformAdminAuth({ onAuthenticated }: Props) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      // Accept ops@tdforge.com / any password for demo
-      if (email === 'ops@tdforge.com') {
+      // Accept ops@fb-business-connect.com / any password for demo
+      if (email === 'ops@fb-business-connect.com') {
         setStep('mfa');
       } else {
-        setError('Invalid credentials. Use ops@tdforge.com for demo.');
+        setError('Invalid credentials. Use ops@fb-business-connect.com for demo.');
       }
     }, 900);
   }
@@ -59,7 +59,7 @@ export function PlatformAdminAuth({ onAuthenticated }: Props) {
             Platform Admin
           </h1>
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: 4 }}>
-            TDForge Internal Operations Console
+            FB Business Connect Internal Operations Console
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export function PlatformAdminAuth({ onAuthenticated }: Props) {
                   type="email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
-                  placeholder="ops@tdforge.com"
+                  placeholder="ops@fb-business-connect.com"
                   autoComplete="username"
                   className="w-full mt-1.5 px-4 py-2.5 rounded-lg text-sm outline-none transition-all"
                   style={{

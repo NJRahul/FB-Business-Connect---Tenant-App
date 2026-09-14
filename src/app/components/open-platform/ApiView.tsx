@@ -47,26 +47,26 @@ type Lang = 'curl' | 'js' | 'python';
 
 const EXAMPLES: Record<string, Record<Lang, string>> = {
   'GET /v1/customers': {
-    curl: `curl https://api.tdforge.com/v1/customers \\
+    curl: `curl https://api.fb-business-connect.com/v1/customers \\
   -H "Authorization: Bearer <token>" \\
   -G \\
   --data-urlencode "limit=25" \\
   --data-urlencode "cursor=curs_abc123"`,
     js: `const resp = await fetch(
-  'https://api.tdforge.com/v1/customers?limit=25',
+  'https://api.fb-business-connect.com/v1/customers?limit=25',
   { headers: { Authorization: 'Bearer <token>' } }
 );
 const { data, next_cursor } = await resp.json();`,
     python: `import httpx
 r = httpx.get(
-    "https://api.tdforge.com/v1/customers",
+    "https://api.fb-business-connect.com/v1/customers",
     headers={"Authorization": "Bearer <token>"},
     params={"limit": 25}
 )
 data = r.json()["data"]`,
   },
   'POST /v1/bookings': {
-    curl: `curl -X POST https://api.tdforge.com/v1/bookings \\
+    curl: `curl -X POST https://api.fb-business-connect.com/v1/bookings \\
   -H "Authorization: Bearer <token>" \\
   -H "Content-Type: application/json" \\
   -H "Idempotency-Key: idem_$(uuidgen)" \\
@@ -77,7 +77,7 @@ data = r.json()["data"]`,
     "scheduled_start": "2026-07-01T09:00:00Z"
   }'`,
     js: `const resp = await fetch(
-  'https://api.tdforge.com/v1/bookings',
+  'https://api.fb-business-connect.com/v1/bookings',
   {
     method: 'POST',
     headers: {
@@ -96,7 +96,7 @@ data = r.json()["data"]`,
 const booking = await resp.json();`,
     python: `import httpx, uuid
 r = httpx.post(
-    "https://api.tdforge.com/v1/bookings",
+    "https://api.fb-business-connect.com/v1/bookings",
     headers={
         "Authorization": "Bearer <token>",
         "Idempotency-Key": str(uuid.uuid4()),
@@ -223,7 +223,7 @@ function EndpointDetail({ endpoint }: { endpoint: ApiEndpoint }) {
         <h4 style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.875rem', marginBottom: '8px' }}>Authentication</h4>
         <div className="p-3 rounded-[8px] text-sm" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
           <p style={{ color: '#374151' }}>
-            <strong>Bearer token:</strong> <code style={{ fontFamily: 'monospace', background: '#F3F4F6', padding: '1px 6px', borderRadius: 4 }}>Authorization: Bearer tdforge_live_sk_****</code>
+            <strong>Bearer token:</strong> <code style={{ fontFamily: 'monospace', background: '#F3F4F6', padding: '1px 6px', borderRadius: 4 }}>Authorization: Bearer fb-business-connect_live_sk_****</code>
           </p>
           <p style={{ color: '#374151', marginTop: 6 }}>
             <strong>OAuth 2.0 client-credentials</strong> also accepted. Token must include scope <code style={{ fontFamily: 'monospace', background: '#F3F4F6', padding: '1px 6px', borderRadius: 4 }}>{endpoint.resource.toLowerCase().slice(0, -1)}s:{endpoint.method === 'GET' ? 'read' : 'write'}</code>.
@@ -395,7 +395,7 @@ function CreateTokenModal({ onClose }: { onClose: () => void }) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [name, setName] = useState('');
   const [created, setCreated] = useState(false);
-  const newToken = 'tdforge_live_sk_9a2f8c4d1e7b3f6a0d5c2e8b4f7a1d';
+  const newToken = 'fb-business-connect_live_sk_9a2f8c4d1e7b3f6a0d5c2e8b4f7a1d';
 
   function toggle(s: string) {
     setSelected(prev => {
@@ -529,7 +529,7 @@ export function ApiView() {
           >
             <div className="p-3 sticky top-0" style={{ background: '#0D1117', borderBottom: '1px solid #1e2938' }}>
               <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#e6edf3', fontSize: '0.875rem' }}>API v1 Reference</p>
-              <p style={{ color: '#8b9cb3', fontSize: '0.6875rem', marginTop: '2px' }}>api.tdforge.com</p>
+              <p style={{ color: '#8b9cb3', fontSize: '0.6875rem', marginTop: '2px' }}>api.fb-business-connect.com</p>
             </div>
             <nav className="p-2">
               {Object.entries(grouped).map(([resource, eps]) => (
@@ -567,7 +567,7 @@ export function ApiView() {
                   style={{ color: '#8b9cb3' }}
                 >
                   <ExternalLink size={11} />
-                  Full docs at developers.tdforge.com
+                  Full docs at developers.fb-business-connect.com
                 </a>
               </div>
             </nav>
@@ -668,7 +668,7 @@ export function ApiView() {
             <p style={{ color: '#374151' }}>
               <strong>Token URL:</strong>{' '}
               <code style={{ fontFamily: 'monospace', background: '#0D1117', color: '#e6edf3', padding: '2px 8px', borderRadius: 4 }}>
-                POST https://auth.tdforge.com/oauth/token
+                POST https://auth.fb-business-connect.com/oauth/token
               </code>
             </p>
           </div>

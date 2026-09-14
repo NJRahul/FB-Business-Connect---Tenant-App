@@ -138,7 +138,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
           <div className="flex items-center gap-2 p-3 rounded-[6px] mb-4" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
             <ExternalLink size={13} style={{ color: '#9CA3AF' }} />
             <span style={{ color: '#6B7280', fontSize: '0.8125rem', flex: 1 }}>
-              Public link: <span style={{ color: '#1D4ED8' }}>tdforge.app/pay/{invoice.publicToken}</span>
+              Public link: <span style={{ color: '#1D4ED8' }}>fb-business-connect.app/pay/{invoice.publicToken}</span>
             </span>
             <button
               onClick={() => { setShowSent(true); setTimeout(() => setShowSent(false), 2000); }}

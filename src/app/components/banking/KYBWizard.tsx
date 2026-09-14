@@ -181,7 +181,7 @@ function HostedSSNField({ onToken }: { onToken: (token: string) => void }) {
       </div>
       <p className="mt-1" style={{ fontSize: '0.75rem', color: '#6B7280' }}>
         <Info size={11} style={{ display: 'inline', marginRight: 4 }} />
-        Encrypted in the partner's iframe — never sent to TDforge servers.
+        Encrypted in the partner's iframe — never sent to FB Business Connect servers.
       </p>
     </div>
   );
@@ -605,7 +605,7 @@ function ApplicationStatusPage({
           {/* Denied CTA */}
           {status === 'denied' && (
             <div className="rounded-[10px] p-5" style={{ border: '1px solid #E5E7EB', background: '#F9FAFB' }}>
-              <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 4 }}>Continue selling without a TDforge account</p>
+              <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 4 }}>Continue selling without a FB Business Connect account</p>
               <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: 12 }}>You can connect an external bank account to receive payouts. Your store stays live and all other features remain available.</p>
               <button onClick={onExternalAccount} className="flex items-center gap-2 px-4 py-2.5 rounded-[8px] font-semibold" style={{ background: '#1A1A1A', color: '#fff', fontSize: '0.9375rem' }}>
                 Set up external bank account <ChevronRight size={16} />

@@ -215,10 +215,10 @@ export const MOCK_POLICIES: InsurancePolicy[] = [
 // ─── Policy documents ─────────────────────────────────────────────────────────
 
 export const MOCK_DOCUMENTS: PolicyDocument[] = [
-  { id: 'doc-1', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'declarations', file_url: 'https://docs.tdforge.app/dec/pol-gl-1-dec.pdf',    version: 1, uploaded_at: '2025-09-10T15:00:00Z' },
-  { id: 'doc-2', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'full_policy',  file_url: 'https://docs.tdforge.app/pol/pol-gl-1-full.pdf',   version: 1, uploaded_at: '2025-09-10T15:05:00Z' },
-  { id: 'doc-3', policy_id: 'pol-gk-1', shop_id: 'shop-demo', doc_type: 'declarations', file_url: 'https://docs.tdforge.app/dec/pol-gk-1-dec.pdf',    version: 1, uploaded_at: '2025-09-01T12:00:00Z' },
-  { id: 'doc-4', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'invoice',      file_url: 'https://docs.tdforge.app/inv/pol-gl-1-inv-oct.pdf', version: 2, uploaded_at: '2026-09-30T08:00:00Z' },
+  { id: 'doc-1', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'declarations', file_url: 'https://docs.fb-business-connect.app/dec/pol-gl-1-dec.pdf',    version: 1, uploaded_at: '2025-09-10T15:00:00Z' },
+  { id: 'doc-2', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'full_policy',  file_url: 'https://docs.fb-business-connect.app/pol/pol-gl-1-full.pdf',   version: 1, uploaded_at: '2025-09-10T15:05:00Z' },
+  { id: 'doc-3', policy_id: 'pol-gk-1', shop_id: 'shop-demo', doc_type: 'declarations', file_url: 'https://docs.fb-business-connect.app/dec/pol-gk-1-dec.pdf',    version: 1, uploaded_at: '2025-09-01T12:00:00Z' },
+  { id: 'doc-4', policy_id: 'pol-gl-1', shop_id: 'shop-demo', doc_type: 'invoice',      file_url: 'https://docs.fb-business-connect.app/inv/pol-gl-1-inv-oct.pdf', version: 2, uploaded_at: '2026-09-30T08:00:00Z' },
 ];
 
 // ─── Certificates ─────────────────────────────────────────────────────────────
@@ -233,7 +233,7 @@ export const MOCK_CERTIFICATES: InsuranceCertificate[] = [
     policy_ids_json: ['pol-gl-1', 'pol-gk-1'],
     additional_insured: 'Westfield Mall Management LLC',
     description_of_operations: 'Tire installation and service at leased commercial premises.',
-    pdf_url: 'https://docs.tdforge.app/coi/abc123def456.pdf',
+    pdf_url: 'https://docs.fb-business-connect.app/coi/abc123def456.pdf',
     verify_token: 'abc123def456',
     fleet_account_id: null,
     issued_by: 'user-owner-1',

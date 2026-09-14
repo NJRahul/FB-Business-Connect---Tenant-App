@@ -41,7 +41,7 @@ const TEMPLATES = [
 ];
 
 function validateSmsLength(text: string): { ok: boolean; charCount: number; segmentCount: number } {
-  const substituted = text.replace(/\{\{[^}]+\}\}/g, '[...]').replace(/\[link\]/g, 'https://tdforge.app/xxx');
+  const substituted = text.replace(/\{\{[^}]+\}\}/g, '[...]').replace(/\[link\]/g, 'https://fb-business-connect.app/xxx');
   const charCount = substituted.length;
   const segmentCount = Math.ceil(charCount / 160);
   return { ok: charCount <= 480, charCount, segmentCount };
@@ -314,7 +314,7 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
             {preview === 'email' && (
               <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10, overflow: 'hidden' }}>
                 <div style={{ background: '#1A1A1A', padding: '12px 16px' }}>
-                  <div style={{ fontSize: 12, color: '#9CA3AF' }}>From: no-reply@tdforge.app</div>
+                  <div style={{ fontSize: 12, color: '#9CA3AF' }}>From: no-reply@fb-business-connect.app</div>
                   <div style={{ color: '#fff', fontWeight: 700, marginTop: 4 }}>{previewBody(subject) || '(no subject)'}</div>
                 </div>
                 <div style={{ padding: 16 }}>

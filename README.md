@@ -1,7 +1,7 @@
 
-  # TDForge
+  # FB Business Connect
 
-  This is a code bundle for TDForge. The original project is available at https://www.figma.com/design/qhhYZoYvTZ5Dox1PhjcJdJ/TDForge.
+  This is a code bundle for FB Business Connect. The original project is available at https://www.figma.com/design/qhhYZoYvTZ5Dox1PhjcJdJ/FB Business Connect.
 
   ## Running the code
 

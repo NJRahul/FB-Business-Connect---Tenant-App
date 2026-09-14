@@ -116,7 +116,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
           <div>
             <h2 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: '1.125rem' }}>{tenantState.businessName}</h2>
             <div className="flex items-center gap-2 mt-0.5">
-              <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#6B7280' }}>{tenantState.subdomain}.tdforge.app</span>
+              <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#6B7280' }}>{tenantState.subdomain}.fb-business-connect.app</span>
               <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold"
                 style={{ background: lc.bg, color: lc.color }}>{tenantState.lifecycleState}</span>
             </div>
@@ -252,7 +252,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
           <div className="rounded-xl p-5" style={{ background: '#111827', border: '1px solid #1F2937' }}>
             <h3 style={{ fontWeight: 600, fontSize: '0.9rem', color: '#F9FAFB', marginBottom: 16 }}>Tenant Settings</h3>
             {[
-              { label: 'Subdomain', value: `${tenantState.subdomain}.tdforge.app` },
+              { label: 'Subdomain', value: `${tenantState.subdomain}.fb-business-connect.app` },
               { label: 'Business Name', value: tenantState.businessName },
               { label: 'Owner', value: `${tenantState.ownerName} (${tenantState.ownerEmail})` },
               { label: 'Plan', value: tenantState.planTier },

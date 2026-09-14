@@ -183,7 +183,7 @@ export function WebhooksView() {
       {/* Endpoint config hint */}
       <div style={{ marginTop: 16, background: '#1A1A1A', borderRadius: 10, padding: '14px 16px' }}>
         <div style={{ fontSize: 12, fontWeight: 600, color: '#9CA3AF', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Webhook Endpoint</div>
-        <div style={{ fontFamily: 'monospace', fontSize: 13, color: '#E5E7EB' }}>POST https://api.tdforge.app/webhooks/distributor/{'{shopId}'}</div>
+        <div style={{ fontFamily: 'monospace', fontSize: 13, color: '#E5E7EB' }}>POST https://api.fb-business-connect.app/webhooks/distributor/{'{shopId}'}</div>
         <div style={{ fontSize: 12, color: '#6B7280', marginTop: 6 }}>Configure this URL in each distributor's dashboard. HMAC secret available in Settings → Distributor → Security.</div>
       </div>
     </div>

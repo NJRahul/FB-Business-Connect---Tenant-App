@@ -46,7 +46,7 @@ export function UsageView() {
         <div className="flex items-center justify-between">
           <div>
             <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: '#e6edf3', fontSize: '1.125rem' }}>
-              developers.tdforge.com
+              developers.fb-business-connect.com
             </p>
             <p style={{ color: '#8b9cb3', fontSize: '0.875rem', marginTop: '4px' }}>
               Full API reference, SDKs, interactive explorer, webhook tester, and workflow cookbook.

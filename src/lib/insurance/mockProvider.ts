@@ -175,7 +175,7 @@ export class MockInsuranceProvider implements InsuranceProvider {
     const token = uuid().replace(/-/g, '').substring(0, 16);
     console.log('[MockInsuranceProvider] generateCOI — policies:', input.policy_ids, 'holder:', input.holder_name);
     return {
-      pdf_url: `https://docs.tdforge.app/coi/${token}.pdf`,
+      pdf_url: `https://docs.fb-business-connect.app/coi/${token}.pdf`,
       verify_token: token,
     };
   }

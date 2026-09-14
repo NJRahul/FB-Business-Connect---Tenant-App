@@ -77,7 +77,7 @@ export const ADDON_SERVICES: AddonService[] = [
 
 export const TECHNICIANS: Technician[] = [
   {
-    id: 'tech-1', name: 'Mike Torres', email: 'mike@tdforge.app', phone: '(555) 201-1111',
+    id: 'tech-1', name: 'Mike Torres', email: 'mike@fb-business-connect.app', phone: '(555) 201-1111',
     skills: ['Tire Technician', 'TPMS Specialist'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010', '75019'],
@@ -98,7 +98,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-2', name: 'Sarah Chen', email: 'sarah@tdforge.app', phone: '(555) 201-2222',
+    id: 'tech-2', name: 'Sarah Chen', email: 'sarah@fb-business-connect.app', phone: '(555) 201-2222',
     skills: ['Tire Technician', 'TPMS Specialist', 'Alignment Tech'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010'],
@@ -116,7 +116,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-3', name: 'Carlos Rivera', email: 'carlos@tdforge.app', phone: '(555) 201-3333',
+    id: 'tech-3', name: 'Carlos Rivera', email: 'carlos@fb-business-connect.app', phone: '(555) 201-3333',
     skills: ['Tire Technician'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010', '75019', '75038'],
@@ -135,7 +135,7 @@ export const TECHNICIANS: Technician[] = [
     ],
   },
   {
-    id: 'tech-4', name: 'Derek Smith', email: 'derek@tdforge.app', phone: '(555) 201-4444',
+    id: 'tech-4', name: 'Derek Smith', email: 'derek@fb-business-connect.app', phone: '(555) 201-4444',
     skills: ['Dispatcher'],
     customerFacing: false,
     serviceArea: [],

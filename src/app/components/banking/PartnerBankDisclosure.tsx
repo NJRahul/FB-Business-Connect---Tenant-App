@@ -12,7 +12,7 @@ export function PartnerBankDisclosure() {
       }}
     >
       <strong style={{ color: '#6B7280' }}>Partner Bank Disclosure:</strong>{' '}
-      TDforge Banking services are provided by Evolve Bank &amp; Trust, Member FDIC. TDforge is not a bank.
+      FB Business Connect Banking services are provided by Evolve Bank &amp; Trust, Member FDIC. FB Business Connect is not a bank.
       Business deposit accounts are FDIC insured up to $250,000 per depositor, per insured bank.
       Debit cards are issued by Evolve Bank &amp; Trust pursuant to a license from Visa U.S.A. Inc.
       Use of business accounts and cards is subject to the{' '}
@@ -23,7 +23,7 @@ export function PartnerBankDisclosure() {
       <span style={{ color: '#6B7280', textDecoration: 'underline', cursor: 'pointer' }}>
         Cardholder Agreement
       </span>
-      . TDforge is a financial technology company, not a bank.
+      . FB Business Connect is a financial technology company, not a bank.
     </div>
   );
 }

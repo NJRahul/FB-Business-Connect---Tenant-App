@@ -1,6 +1,6 @@
-Build the Tenant Onboarding and Lifecycle module for TDforge.
+Build the Tenant Onboarding and Lifecycle module for FB Business Connect.
 
-TDforge is a multi-tenant, multi-industry field-service + commerce SaaS platform.
+FB Business Connect is a multi-tenant, multi-industry field-service + commerce SaaS platform.
 The engine is trade-agnostic. Industry packs (Tires, HVAC, Lawn Care, Pest Control,
 Painting, Roofing, Plumbing, etc.) plug into the engine. Onboarding must work for
 ANY industry — not just tire shops.
@@ -17,7 +17,7 @@ which catalog schema loads, and which default templates appear throughout the pl
 Show a visual grid of industry cards. Each card has:
 - Icon (industry-relevant illustration)
 - Industry name
-- One-line description of what TDforge does for them
+- One-line description of what FB Business Connect does for them
 - "Coming Soon" badge for packs not yet live
 
 AVAILABLE AT LAUNCH (active):
@@ -159,7 +159,7 @@ STEP 5 — PAYOUT SETUP (REQUIRED BEFORE PUBLISH)
 UNIVERSAL — same for all industries:
 - Stripe Connect onboarding
 - Explain: "Your customers pay through your storefront.
-  TDforge deposits the money directly into your bank account,
+  FB Business Connect deposits the money directly into your bank account,
   minus a small platform fee."
 - Show fee structure for selected plan tier
 - Launch Stripe Connect flow (Express or Standard)
@@ -336,7 +336,7 @@ UNIVERSAL (all industries):
 
 SUBDOMAIN CONFIRMATION:
 "Your storefront will be live at:"
-→ [business-name].tdforge.app
+→ [business-name].fb-business-connect.app
 "You can connect your own domain (e.g., www.yourbusiness.com) after publishing. [Pro/Enterprise]"
 
 ═══════════════════════════════════════════════════════════
@@ -548,7 +548,7 @@ STOREFRONT PREVIEW (Step 10):
 - Split screen: left = form inputs, right = live preview iframe
 - Preview updates instantly on color/logo/text change
 - Preview shows mobile viewport by default (toggle desktop/mobile)
-- Live URL shown below preview: "[slug].tdforge.app" with copy button
+- Live URL shown below preview: "[slug].fb-business-connect.app" with copy button
 
 PUBLISH SCREEN:
 - Full-screen celebration: animated confetti in brand colors (red + white)

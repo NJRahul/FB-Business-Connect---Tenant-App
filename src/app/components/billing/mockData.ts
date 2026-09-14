@@ -190,16 +190,16 @@ export const CAPABILITY_DEFINITIONS: CapabilityDefinition[] = [
   { key: 'custom_roles',            label: 'Custom Staff Roles',     description: 'Define granular role-based permissions', category: 'feature',   requiredTier: 'pro',        starterValue: false,          proValue: 'Limited',            enterpriseValue: true },
   { key: 'distributor_multi',       label: 'Multiple Distributors',  description: 'Connect more than one distributor API', category: 'volume',    requiredTier: 'pro',        starterValue: '1',            proValue: '3',                  enterpriseValue: 'Unlimited' },
   { key: 'volume_customer_records', label: 'Customer Record Limit',  description: 'Max number of customer records in the CRM', category: 'volume', requiredTier: 'starter',   starterValue: '500',          proValue: 'Unlimited',          enterpriseValue: 'Unlimited' },
-  { key: 'api_access',              label: 'REST API Access',        description: 'Programmatic access to TDForge platform data', category: 'feature', requiredTier: 'enterprise', starterValue: false,       proValue: false,                enterpriseValue: true },
+  { key: 'api_access',              label: 'REST API Access',        description: 'Programmatic access to FB Business Connect platform data', category: 'feature', requiredTier: 'enterprise', starterValue: false,       proValue: false,                enterpriseValue: true },
   { key: 'saml_sso',               label: 'SAML SSO',               description: 'Single sign-on via SAML 2.0 / OIDC', category: 'feature',      requiredTier: 'enterprise', starterValue: false,          proValue: false,                enterpriseValue: true },
-  { key: 'white_label_invoices',   label: 'White-Label Invoices',   description: 'Remove TDForge branding from customer invoices', category: 'behavior', requiredTier: 'enterprise', starterValue: false,    proValue: false,                enterpriseValue: true },
+  { key: 'white_label_invoices',   label: 'White-Label Invoices',   description: 'Remove FB Business Connect branding from customer invoices', category: 'behavior', requiredTier: 'enterprise', starterValue: false,    proValue: false,                enterpriseValue: true },
   { key: 'dedicated_support',      label: 'Dedicated Support',      description: 'Named account manager + SLA-backed support', category: 'behavior', requiredTier: 'enterprise', starterValue: 'Email',     proValue: 'Phone + Email',      enterpriseValue: 'Dedicated manager' },
   { key: 'sla_guarantee',          label: 'SLA Guarantee',          description: '99.9% uptime SLA with credit for downtime', category: 'behavior', requiredTier: 'enterprise', starterValue: false,        proValue: false,                enterpriseValue: true },
 ];
 
 // Capabilities currently active on this shop (custom domain is configured)
 export const ACTIVE_COMMITMENTS: { key: string; label: string; description: string; resolveAction: string }[] = [
-  { key: 'custom_domain', label: 'Custom Domain Configured', description: 'rudimax.tdforge.app is currently live', resolveAction: 'Remove custom domain in Settings → Storefront' },
+  { key: 'custom_domain', label: 'Custom Domain Configured', description: 'rudimax.fb-business-connect.app is currently live', resolveAction: 'Remove custom domain in Settings → Storefront' },
   { key: 'multi_location', label: '3 Locations Active', description: 'You have 3 locations configured. Starter allows 1.', resolveAction: 'Archive 2 locations in Settings → Locations' },
   { key: 'sms_campaigns', label: 'Active SMS Campaign', description: '"Winter Tire Sale" campaign is in Sending status', resolveAction: 'Pause or archive the campaign in Marketing → Campaigns' },
 ];

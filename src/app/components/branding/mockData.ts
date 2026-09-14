@@ -26,7 +26,7 @@ export const CUSTOM_DOMAIN: CustomDomain = {
     {
       type: 'CNAME',
       host: 'www',
-      value: 'acmetires.proxy.tdforge.io',
+      value: 'acmetires.proxy.fb-business-connect.io',
       ttl: 3600,
       required: true,
       verified: true,
@@ -34,7 +34,7 @@ export const CUSTOM_DOMAIN: CustomDomain = {
     {
       type: 'TXT',
       host: '@',
-      value: 'tdforge-verify=xk8z2pq9m4r7wj5c',
+      value: 'fb-business-connect-verify=xk8z2pq9m4r7wj5c',
       ttl: 300,
       required: true,
       verified: true,
@@ -54,20 +54,20 @@ export const CUSTOM_EMAIL_SENDER: CustomEmailSender = {
   createdAt: '2026-05-10',
   dkimRecord: {
     type: 'TXT',
-    host: 'tdforge._domainkey.acmetires.com',
+    host: 'fb-business-connect._domainkey.acmetires.com',
     value: 'v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2xk9P+...',
     status: 'pass',
   },
   spfRecord: {
     type: 'TXT',
     host: 'acmetires.com',
-    value: 'v=spf1 include:_spf.tdforge.io ~all',
+    value: 'v=spf1 include:_spf.fb-business-connect.io ~all',
     status: 'pass',
   },
   dmarcRecord: {
     type: 'TXT',
     host: '_dmarc.acmetires.com',
-    value: 'v=DMARC1; p=quarantine; rua=mailto:dmarc@tdforge.io; pct=100',
+    value: 'v=DMARC1; p=quarantine; rua=mailto:dmarc@fb-business-connect.io; pct=100',
     status: 'fail',
   },
   bounceRate: 0.012,

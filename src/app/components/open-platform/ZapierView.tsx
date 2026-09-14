@@ -15,7 +15,7 @@ const TRIGGERS = [
 ];
 
 const ACTIONS = [
-  { id: 'za-1', name: 'Create Customer',       desc: 'Add a new customer to TDForge.',            scope: 'customers:write' },
+  { id: 'za-1', name: 'Create Customer',       desc: 'Add a new customer to FB Business Connect.',            scope: 'customers:write' },
   { id: 'za-2', name: 'Create Vehicle',        desc: 'Register a vehicle on a customer record.',  scope: 'vehicles:write' },
   { id: 'za-3', name: 'Create Booking',        desc: 'Schedule a service appointment.',           scope: 'bookings:write' },
   { id: 'za-4', name: 'Send SMS/Email via Campaign', desc: 'Trigger a campaign message to a customer.', scope: 'communications:write' },
@@ -27,22 +27,22 @@ const ACTIONS = [
 
 const EXAMPLE_ZAPS = [
   {
-    from: 'TDForge: Visit Completed',
+    from: 'FB Business Connect: Visit Completed',
     to: 'HubSpot: Update Contact',
     desc: 'Keep CRM in sync — update last service date and spend after every visit.',
   },
   {
-    from: 'TDForge: Inspection Completed',
+    from: 'FB Business Connect: Inspection Completed',
     to: 'Slack: Send Message',
     desc: 'Alert the service team in Slack when a critical inspection finding is filed.',
   },
   {
     from: 'Google Forms: New Response',
-    to: 'TDForge: Create Booking',
+    to: 'FB Business Connect: Create Booking',
     desc: 'Let customers book via a Google Form and automatically create the appointment.',
   },
   {
-    from: 'TDForge: Plan Enrolled',
+    from: 'FB Business Connect: Plan Enrolled',
     to: 'QuickBooks: Create Invoice',
     desc: 'Mirror membership enrollments into QuickBooks for accounting.',
   },
@@ -87,7 +87,7 @@ export function ZapierView() {
       {/* About */}
       <div className="mb-5 p-4 rounded-[10px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
         <p style={{ color: '#374151', fontSize: '0.9375rem', lineHeight: 1.7 }}>
-          TDForge is published in the <strong>Zapier public app directory</strong> — no private invite required. Authenticate with your TDForge account via OAuth 2.0, and each Zap is scoped to your permissions within your shop. Zapier triggers use the same webhook infrastructure as your registered endpoints.
+          FB Business Connect is published in the <strong>Zapier public app directory</strong> — no private invite required. Authenticate with your FB Business Connect account via OAuth 2.0, and each Zap is scoped to your permissions within your shop. Zapier triggers use the same webhook infrastructure as your registered endpoints.
         </p>
       </div>
 

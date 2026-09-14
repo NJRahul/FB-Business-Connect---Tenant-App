@@ -73,7 +73,7 @@ function RegisterModal({ onClose }: { onClose: (created: boolean) => void }) {
             {secret}
           </div>
           <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginBottom: '16px' }}>
-            Use this secret to verify HMAC-SHA256 signatures on the <code style={{ fontFamily: 'monospace' }}>TDForge-Signature</code> header of incoming webhook deliveries.
+            Use this secret to verify HMAC-SHA256 signatures on the <code style={{ fontFamily: 'monospace' }}>FB Business Connect-Signature</code> header of incoming webhook deliveries.
           </p>
           <button onClick={() => onClose(true)} className="w-full py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>Done</button>
         </div>
@@ -95,7 +95,7 @@ function RegisterModal({ onClose }: { onClose: (created: boolean) => void }) {
             <input
               value={url}
               onChange={e => setUrl(e.target.value)}
-              placeholder="https://your-server.com/webhooks/tdforge"
+              placeholder="https://your-server.com/webhooks/fb-business-connect"
               className="w-full px-3 py-2 rounded-[6px] text-sm font-mono"
               style={{ border: '1.5px solid #E5E7EB', outline: 'none', color: '#1A1A1A' }}
             />

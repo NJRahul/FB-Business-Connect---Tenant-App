@@ -163,7 +163,7 @@ export function TenantListView({ onSelect }: Props) {
                     </div>
                   </td>
                   <td className="px-4 py-3">
-                    <span style={{ fontFamily: 'monospace', fontSize: '0.825rem', color: '#9CA3AF' }}>{t.subdomain}.tdforge.app</span>
+                    <span style={{ fontFamily: 'monospace', fontSize: '0.825rem', color: '#9CA3AF' }}>{t.subdomain}.fb-business-connect.app</span>
                   </td>
                   <td className="px-4 py-3"><PlanBadge tier={t.planTier} /></td>
                   <td className="px-4 py-3"><LifecycleBadge state={t.lifecycleState} /></td>

@@ -135,7 +135,7 @@ export function ExportView() {
             Direct SQL access to your shop data. Connect any BI tool — Metabase, Redash, Looker — to a read-only replica that mirrors your production database.
           </div>
           <div style={{ padding: '10px 12px', background: '#F3F4F6', borderRadius: 6, fontFamily: 'monospace', fontSize: 11, color: '#374151', marginBottom: 12 }}>
-            postgres://readonly:●●●●@db.tdforge.io:5432/shop_1
+            postgres://readonly:●●●●@db.fb-business-connect.io:5432/shop_1
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <Lock size={13} color="#9CA3AF" />
@@ -155,7 +155,7 @@ export function ExportView() {
             <div style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>QuickBooks Sync</div>
           </div>
           <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 14 }}>
-            Two-way sync with QuickBooks Online. Revenue, invoices, refunds, and payouts sync nightly. Map TDForge categories to your chart of accounts.
+            Two-way sync with QuickBooks Online. Revenue, invoices, refunds, and payouts sync nightly. Map FB Business Connect categories to your chart of accounts.
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 12 }}>
             {['Revenue → Income Account', 'Refunds → Expense Account', 'Payouts → Bank Account'].map(l => (

@@ -87,7 +87,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
           <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#C0392B' }}>
             <Wrench size={16} color="#fff" />
           </div>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>TDforge</span>
+          <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>FB Business Connect</span>
         </div>
 
         {/* Tenant info */}
@@ -142,7 +142,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
           >
             <Globe size={14} style={{ color: '#9CA3AF' }} />
             <span style={{ color: '#6B7280', fontSize: '0.8125rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {slug}.tdforge.app
+              {slug}.fb-business-connect.app
             </span>
           </a>
           {onPlatformAdmin && (
@@ -168,7 +168,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
                 <div className="w-8 h-8 rounded-[6px] flex items-center justify-center" style={{ background: '#C0392B' }}>
                   <Wrench size={16} color="#fff" />
                 </div>
-                <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A' }}>TDforge</span>
+                <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A' }}>FB Business Connect</span>
               </div>
               <button onClick={() => setMobileNavOpen(false)}>
                 <X size={20} style={{ color: '#9CA3AF' }} />
@@ -276,7 +276,7 @@ function OverviewSection({ tenant, plan, onNavigate }: { tenant: TenantData; pla
           Welcome back, {tenant.ownerName || tenant.businessName}! 👋
         </h1>
         <p style={{ color: '#6B7280', marginTop: '4px', fontSize: '0.9375rem' }}>
-          Your storefront is live at <span style={{ color: '#C0392B', fontWeight: 600 }}>{slug}.tdforge.app</span>
+          Your storefront is live at <span style={{ color: '#C0392B', fontWeight: 600 }}>{slug}.fb-business-connect.app</span>
         </p>
       </div>
 

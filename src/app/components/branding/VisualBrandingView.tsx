@@ -131,7 +131,7 @@ function StorefrontPreview({ b }: { b: TenantBranding }) {
       {/* Footer */}
       <div style={{ background: '#F9FAFB', borderTop: '1px solid #E5E7EB', padding: '8px 14px', fontSize: 9, color: '#9CA3AF', textAlign: 'center' }}>
         {b.footerText || '© 2026 Your Business'}
-        {!b.poweredByHidden && <span style={{ color: b.accentColor }}> · Powered by TDforge</span>}
+        {!b.poweredByHidden && <span style={{ color: b.accentColor }}> · Powered by FB Business Connect</span>}
       </div>
     </div>
   );
@@ -161,7 +161,7 @@ function EmailPreview({ b }: { b: TenantBranding }) {
       </div>
       {!b.poweredByHidden && (
         <div style={{ background: '#F9FAFB', padding: '5px 14px', fontSize: 9, color: '#9CA3AF', textAlign: 'center' }}>
-          Powered by TDforge
+          Powered by FB Business Connect
         </div>
       )}
     </div>
@@ -298,12 +298,12 @@ export function VisualBrandingView({ plan }: { plan: BrandingPlanTier }) {
           )}
         </div>
 
-        {/* Powered by TDforge */}
+        {/* Powered by FB Business Connect */}
         <div style={{ border: `1px solid ${poweredByLocked ? '#FDE68A' : '#E5E7EB'}`, borderRadius: 10, background: poweredByLocked ? '#FFFBEB' : '#fff', padding: '18px 20px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <div style={{ fontWeight: 700, fontSize: 13, color: '#1A1A1A' }}>"Powered by TDforge" Footer</div>
+                <div style={{ fontWeight: 700, fontSize: 13, color: '#1A1A1A' }}>"Powered by FB Business Connect" Footer</div>
                 {poweredByLocked && (
                   <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 10, fontWeight: 700, color: '#D97706', background: '#FEF3C7', padding: '2px 8px', borderRadius: 99 }}>
                     <Lock size={10} /> Starter plan
@@ -333,7 +333,7 @@ export function VisualBrandingView({ plan }: { plan: BrandingPlanTier }) {
           <div style={{ fontWeight: 700, fontSize: 13, color: '#1A1A1A', marginBottom: 10 }}>Your Subdomain</div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ flex: 1, padding: '10px 14px', borderRadius: 8, background: '#F9FAFB', border: '1px solid #E5E7EB', fontFamily: 'monospace', fontSize: 13, color: '#374151' }}>
-              acmetires.tdforge.app
+              acmetires.fb-business-connect.app
             </div>
             <span style={{ padding: '4px 10px', borderRadius: 99, fontSize: 11, fontWeight: 700, background: '#F0FDF4', color: '#15803D' }}>Active</span>
           </div>

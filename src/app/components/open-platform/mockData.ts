@@ -11,7 +11,7 @@ export const API_TOKENS: ApiToken[] = [
     lastUsedAt: '2026-06-16T08:14:00Z',
     revokedAt: null,
     createdAt: '2026-01-10T09:00:00Z',
-    preview: 'tdforge_live_sk_****4a2f',
+    preview: 'fb-business-connect_live_sk_****4a2f',
   },
   {
     id: 'tok-2',
@@ -20,7 +20,7 @@ export const API_TOKENS: ApiToken[] = [
     lastUsedAt: '2026-06-15T22:00:00Z',
     revokedAt: null,
     createdAt: '2026-02-18T14:30:00Z',
-    preview: 'tdforge_live_sk_****9b1c',
+    preview: 'fb-business-connect_live_sk_****9b1c',
   },
   {
     id: 'tok-3',
@@ -29,7 +29,7 @@ export const API_TOKENS: ApiToken[] = [
     lastUsedAt: '2026-06-10T03:00:00Z',
     revokedAt: null,
     createdAt: '2026-03-05T11:00:00Z',
-    preview: 'tdforge_live_sk_****c7d3',
+    preview: 'fb-business-connect_live_sk_****c7d3',
   },
   {
     id: 'tok-4',
@@ -38,14 +38,14 @@ export const API_TOKENS: ApiToken[] = [
     lastUsedAt: '2025-11-02T16:45:00Z',
     revokedAt: '2026-01-01T00:00:00Z',
     createdAt: '2025-06-01T10:00:00Z',
-    preview: 'tdforge_live_sk_****0e5a',
+    preview: 'fb-business-connect_live_sk_****0e5a',
   },
 ];
 
 export const OAUTH_CLIENTS: OAuthClient[] = [
   {
     id: 'oc-1',
-    clientId: 'client_tdforge_DealerSocket_9X2',
+    clientId: 'client_fb-business-connect_DealerSocket_9X2',
     name: 'DealerSocket DMS Connector',
     scopes: ['customers:read', 'customers:write', 'vehicles:read', 'vehicles:write', 'invoices:read'],
     createdAt: '2026-03-20T09:00:00Z',
@@ -53,7 +53,7 @@ export const OAUTH_CLIENTS: OAuthClient[] = [
   },
   {
     id: 'oc-2',
-    clientId: 'client_tdforge_QuickBooks_7P4',
+    clientId: 'client_fb-business-connect_QuickBooks_7P4',
     name: 'QuickBooks Sync',
     scopes: ['invoices:read', 'customers:read'],
     createdAt: '2026-04-01T10:00:00Z',
@@ -64,7 +64,7 @@ export const OAUTH_CLIENTS: OAuthClient[] = [
 export const WEBHOOK_ENDPOINTS: WebhookEndpoint[] = [
   {
     id: 'wh-1',
-    url: 'https://hooks.dealersocket.com/tdforge/v1/inbound',
+    url: 'https://hooks.dealersocket.com/fb-business-connect/v1/inbound',
     events: ['booking.created', 'booking.cancelled', 'visit.completed', 'invoice.paid'],
     secretPreview: 'whsec_****kL7m',
     active: true,
@@ -80,7 +80,7 @@ export const WEBHOOK_ENDPOINTS: WebhookEndpoint[] = [
   },
   {
     id: 'wh-3',
-    url: 'https://internal.acme-fleet.com/tdforge-events',
+    url: 'https://internal.acme-fleet.com/fb-business-connect-events',
     events: ['fleet.session_closed', 'invoice.paid', 'booking.created'],
     secretPreview: 'whsec_****xR9s',
     active: false,

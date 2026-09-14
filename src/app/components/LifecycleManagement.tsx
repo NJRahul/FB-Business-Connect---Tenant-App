@@ -164,7 +164,7 @@ export function LifecycleManagement() {
                     </div>
                     <div className="min-w-0">
                       <p style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '0.9375rem' }}>{tenant.name}</p>
-                      <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{tenant.slug}.tdforge.app · {tenant.planTier} · Since {tenant.createdAt}</p>
+                      <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{tenant.slug}.fb-business-connect.app · {tenant.planTier} · Since {tenant.createdAt}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
@@ -208,7 +208,7 @@ export function LifecycleManagement() {
                       </div>
                       <div>
                         <h3 style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1.0625rem' }}>{selectedTenant.name}</h3>
-                        <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{selectedTenant.slug}.tdforge.app</p>
+                        <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{selectedTenant.slug}.fb-business-connect.app</p>
                       </div>
                     </div>
                     <div className="grid grid-cols-2 gap-3">
