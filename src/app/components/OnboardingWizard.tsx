@@ -93,6 +93,14 @@ interface WizardState {
   licenseNumber: string;
   insurancePolicy: string;
   certType: string;
+  // Bank Account step
+  bankAccountName: string;
+  bankName: string;
+  bankAccountNumber: string;
+  bankBranchCode: string;
+  bankAccountType: string;
+  cipcNumber: string;
+  bankSkipped: boolean;
   // Step 10
   brandColor: string;
   tagline: string;
@@ -259,17 +267,18 @@ const INDUSTRY_CARDS = [
 ];
 
 const STEPS = [
-  { id: 1, label: 'Industry', icon: Briefcase, time: '1 min', required: false },
-  { id: 2, label: 'Business Profile', icon: Building2, time: '3 min', required: false },
-  { id: 3, label: 'Service Area', icon: MapPin, time: '2 min', required: false },
-  { id: 4, label: 'Business Hours', icon: Clock, time: '2 min', required: false },
-  { id: 5, label: 'Payout Setup', icon: CreditCard, time: '5 min', required: true },
-  { id: 6, label: 'Catalog Setup', icon: Package, time: '3 min', required: true },
-  { id: 7, label: 'Service Types', icon: Wrench, time: '3 min', required: false },
-  { id: 8, label: 'Pricing & Fees', icon: DollarSign, time: '3 min', required: false },
-  { id: 9, label: 'Team Setup', icon: Users, time: '2 min', required: false },
-  { id: 10, label: 'Branding', icon: Palette, time: '3 min', required: false },
-  { id: 11, label: 'Publish', icon: Rocket, time: '1 min', required: false },
+  { id: 1,  label: 'Industry',        icon: Briefcase,  time: '1 min', required: false },
+  { id: 2,  label: 'Business Profile', icon: Building2,  time: '3 min', required: false },
+  { id: 3,  label: 'Service Area',     icon: MapPin,     time: '2 min', required: false },
+  { id: 4,  label: 'Business Hours',   icon: Clock,      time: '2 min', required: false },
+  { id: 5,  label: 'Bank Account',     icon: Building2,  time: '3 min', required: false },
+  { id: 6,  label: 'Payout Setup',     icon: CreditCard, time: '5 min', required: true  },
+  { id: 7,  label: 'Catalog Setup',    icon: Package,    time: '3 min', required: true  },
+  { id: 8,  label: 'Service Types',    icon: Wrench,     time: '3 min', required: false },
+  { id: 9,  label: 'Pricing & Fees',   icon: DollarSign, time: '3 min', required: false },
+  { id: 10, label: 'Team Setup',       icon: Users,      time: '2 min', required: false },
+  { id: 11, label: 'Branding',         icon: Palette,    time: '3 min', required: false },
+  { id: 12, label: 'Publish',          icon: Rocket,     time: '1 min', required: false },
 ];
 
 const DEFAULT_HOURS = Object.fromEntries(DAYS.map((d, i) => [d, {
@@ -309,7 +318,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
   const [state, setState] = useState<WizardState>({
     industryPack: null, industryLabel: '',
     legalName: tenant.businessName, displayName: tenant.businessName,
-    legalEntity: 'LLC', ein: '', address: '', city: '', stateCode: 'GP', zip: '',
+    legalEntity: 'Private Company (Pty) Ltd', ein: '', address: '', city: '', stateCode: 'GP', zip: '',
     phone: '', supportEmail: tenant.email, website: '', yearEstablished: '',
     serviceBays: '', teamSize: '',
     operationsType: null, serviceAreaType: 'zips', serviceZips: [], zipInput: '',
@@ -324,12 +333,13 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
     depositPolicy: 'full', depositPercent: '25',
     teamMembers: [], techInput: { name: '', email: '', role: 'Technician' },
     licenseNumber: '', insurancePolicy: '', certType: '',
+    bankAccountName: '', bankName: '', bankAccountNumber: '', bankBranchCode: '', bankAccountType: 'Cheque / Current', cipcNumber: '', bankSkipped: false,
     brandColor: '#C0392B', tagline: '', businessDescription: '',
     serviceAreaText: '', published: false,
   });
 
   const markComplete = (step: number) => setCompletedSteps(prev => new Set([...prev, step]));
-  const goNext = () => { markComplete(currentStep); if (currentStep < 11) setCurrentStep(s => s + 1); };
+  const goNext = () => { markComplete(currentStep); if (currentStep < 12) setCurrentStep(s => s + 1); };
   const goBack = () => { if (currentStep > 1) setCurrentStep(s => s - 1); };
 
   const isTireInMain = state.industryPack?.startsWith('tires');
@@ -346,23 +356,25 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
   const remaining = STEPS.filter(s => !completedSteps.has(s.id) && s.id > currentStep)
     .reduce((a, s) => a + parseInt(s.time), 0);
 
+
   const setStateField = <K extends keyof WizardState>(key: K, val: WizardState[K]) =>
     setState(s => ({ ...s, [key]: val }));
 
   const renderStep = () => {
     switch (currentStep) {
-      case 1: return <Step1 state={state} setState={setState} setStateField={setStateField} goNext={goNext} />;
-      case 2: return <Step2 state={state} setState={setState} tenant={tenant} />;
-      case 3: return <Step3 state={state} setState={setState} />;
-      case 4: return <Step4 state={state} setState={setState} />;
-      case 5: return <Step5 state={state} setState={setState} />;
-      case 6: return <Step6 state={state} setState={setState} />;
-      case 7: return <Step7 state={state} setState={setState} />;
-      case 8: return <Step8 state={state} setState={setState} />;
-      case 9: return <Step9 state={state} setState={setState} />;
-      case 10: return <Step10 state={state} setState={setState} slug={slug} />;
-      case 11: return <Step11 state={state} canPublish={canPublish} slug={slug}
-        onPublish={() => { setState(s => ({ ...s, published: true })); markComplete(11); }} onComplete={onComplete} />;
+      case 1:  return <Step1 state={state} setState={setState} setStateField={setStateField} goNext={goNext} />;
+      case 2:  return <Step2 state={state} setState={setState} tenant={tenant} />;
+      case 3:  return <Step3 state={state} setState={setState} />;
+      case 4:  return <Step4 state={state} setState={setState} />;
+      case 5:  return <StepBankAccount state={state} setState={setState} />;
+      case 6:  return <Step5 state={state} setState={setState} />;
+      case 7:  return <Step6 state={state} setState={setState} />;
+      case 8:  return <Step7 state={state} setState={setState} />;
+      case 9:  return <Step8 state={state} setState={setState} />;
+      case 10: return <Step9 state={state} setState={setState} />;
+      case 11: return <Step10 state={state} setState={setState} slug={slug} />;
+      case 12: return <Step11 state={state} canPublish={canPublish} slug={slug}
+        onPublish={() => { setState(s => ({ ...s, published: true })); markComplete(12); }} onComplete={onComplete} />;
       default: return null;
     }
   };
@@ -384,10 +396,10 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
 
         <div className="p-4 border-b" style={{ borderColor: '#E5E7EB' }}>
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-            <div className="h-full rounded-full transition-all" style={{ width: `${(completedSteps.size / 11) * 100}%`, background: '#C0392B' }} />
+            <div className="h-full rounded-full transition-all" style={{ width: `${(completedSteps.size / 12) * 100}%`, background: '#C0392B' }} />
           </div>
           <p className="mt-1.5" style={{ color: '#9CA3AF', fontSize: '0.6875rem' }}>
-            {completedSteps.size}/11 steps · ~{remaining} min left
+            {completedSteps.size}/12 steps · ~{remaining} min left
           </p>
         </div>
 
@@ -455,7 +467,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
           <div className="flex items-center justify-between w-full">
             <div>
               <div className="flex items-center gap-2 mb-0.5">
-                <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Step {currentStep} of 11</span>
+                <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Step {currentStep} of 12</span>
                 {stepInfo.required && (
                   <span className="px-1.5 py-0.5 rounded" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.6875rem', fontWeight: 600 }}>Required to publish</span>
                 )}
@@ -479,7 +491,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
         </div>
 
         {/* Footer nav (not shown on publish screen) */}
-        {currentStep < 11 && (
+        {currentStep < 12 && (
           <div className="bg-white border-t px-5 lg:px-8 py-3.5 flex items-center justify-between" style={{ borderColor: '#E5E7EB' }}>
             <button
               onClick={goBack}
@@ -660,7 +672,7 @@ function Step1({ state, setState, setStateField, goNext }: {
             {[
               { key: 'name', label: 'Industry / Trade', placeholder: 'e.g., Mobile Detailing' },
               { key: 'services', label: 'Services you offer', placeholder: 'e.g., wash, polish, ceramic coat' },
-              { key: 'jobSize', label: 'Average job size', placeholder: 'e.g., $150–$500' },
+              { key: 'jobSize', label: 'Average job size', placeholder: 'e.g., R 2,500–R 8,000' },
               { key: 'teamSize', label: 'Team size', placeholder: 'e.g., 3 technicians' },
             ].map(f => (
               <div key={f.key}>
@@ -719,13 +731,13 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
           <div>
             <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Business Type</label>
             <select value={state.legalEntity} onChange={e => setState(s => ({ ...s, legalEntity: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
-              {['Sole Proprietorship', 'LLC', 'S-Corp', 'C-Corp', 'Partnership'].map(t => <option key={t}>{t}</option>)}
+              {['Private Company (Pty) Ltd', 'Public Company (Ltd)', 'Sole Proprietor', 'Close Corporation (CC)', 'Partnership', 'Non-Profit Company (NPC)', 'Trust'].map(t => <option key={t}>{t}</option>)}
             </select>
           </div>
           <div>
-            <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Tax Reference Number / Tax ID <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(encrypted)</span></label>
+            <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>SARS Income Tax Number <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(encrypted)</span></label>
             <div className="relative mt-1.5">
-              <input type="password" value={state.ein} onChange={e => setState(s => ({ ...s, ein: e.target.value }))} style={{ ...inp, display: 'block' }} placeholder="XXXXXXXXX" />
+              <input type="password" value={state.ein} onChange={e => setState(s => ({ ...s, ein: e.target.value }))} style={{ ...inp, display: 'block' }} placeholder="10-digit SARS tax number" />
               <Lock size={12} className="absolute right-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} />
             </div>
           </div>
@@ -1202,7 +1214,131 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
   );
 }
 
-// ─── Step 5: Payout Setup ─────────────────────────────────────────────────────
+// ─── Step 5: Bank Account Creation ───────────────────────────────────────────
+
+const SA_BANKS = [
+  { name: 'Absa Bank', branchCode: '632005' },
+  { name: 'Capitec Bank', branchCode: '470010' },
+  { name: 'First National Bank (FNB)', branchCode: '250655' },
+  { name: 'Nedbank', branchCode: '198765' },
+  { name: 'Standard Bank', branchCode: '051001' },
+  { name: 'African Bank', branchCode: '430000' },
+  { name: 'Bidvest Bank', branchCode: '462005' },
+  { name: 'Discovery Bank', branchCode: '679000' },
+  { name: 'Investec Bank', branchCode: '580105' },
+  { name: 'TymeBank', branchCode: '678910' },
+];
+
+function StepBankAccount({ state, setState }: { state: WizardState; setState: React.Dispatch<React.SetStateAction<WizardState>> }) {
+  const filled = !state.bankSkipped && state.bankAccountName && state.bankName && state.bankAccountNumber && state.bankBranchCode;
+
+  function selectBank(name: string) {
+    const bank = SA_BANKS.find(b => b.name === name);
+    setState(s => ({ ...s, bankName: name, bankBranchCode: bank?.branchCode ?? '' }));
+  }
+
+  return (
+    <div className="space-y-5">
+      {/* Hero */}
+      <div className="rounded-[12px] p-6 text-center" style={{ background: '#1A1A1A', color: '#fff' }}>
+        <div className="w-14 h-14 rounded-[12px] flex items-center justify-center mx-auto mb-3" style={{ background: '#C0392B' }}>
+          <Building2 size={28} color="#fff" />
+        </div>
+        <h2 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.25rem', fontWeight: 700, marginBottom: 6 }}>
+          Link Your Business Bank Account
+        </h2>
+        <p style={{ color: '#9CA3AF', fontSize: '0.9375rem', lineHeight: 1.6, maxWidth: 480, margin: '0 auto' }}>
+          Connect your South African business bank account so payouts land directly in your account. SARB-regulated · Encrypted · DIS covered up to R 100,000.
+        </p>
+      </div>
+
+      {/* Feature highlights */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {[
+          { icon: '🏦', title: 'SARB-Regulated',      desc: 'Your account is held at a SARB-regulated partner bank with full DIS deposit insurance.' },
+          { icon: '💳', title: 'Instant Payouts',      desc: 'Receive payout batches directly to your linked account after job completion.' },
+          { icon: '🔒', title: 'Encrypted & Secure',   desc: 'Account details are encrypted at rest. FB Business Connect never stores full account numbers.' },
+        ].map(f => (
+          <div key={f.title} className="rounded-[10px] p-4" style={{ background: '#fff', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+            <div style={{ fontSize: '1.5rem', marginBottom: 8 }}>{f.icon}</div>
+            <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 4 }}>{f.title}</p>
+            <p style={{ color: '#6B7280', fontSize: '0.8125rem', lineHeight: 1.5 }}>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {!state.bankSkipped ? (
+        <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: 16 }}>Business Banking Details</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="sm:col-span-2">
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Account Holder Name</label>
+              <input value={state.bankAccountName} onChange={e => setState(s => ({ ...s, bankAccountName: e.target.value }))} style={{ ...inp, marginTop: 6, display: 'block' }} placeholder="Registered business name" />
+            </div>
+            <div>
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Bank</label>
+              <select value={state.bankName} onChange={e => selectBank(e.target.value)} style={{ ...inp, marginTop: 6, display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                <option value="">— Select bank —</option>
+                {SA_BANKS.map(b => <option key={b.name} value={b.name}>{b.name}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Account Type</label>
+              <select value={state.bankAccountType} onChange={e => setState(s => ({ ...s, bankAccountType: e.target.value }))} style={{ ...inp, marginTop: 6, display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                {['Cheque / Current', 'Business Savings', 'Transmission'].map(t => <option key={t}>{t}</option>)}
+              </select>
+            </div>
+            <div>
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Account Number</label>
+              <div className="relative mt-1.5">
+                <input type="password" value={state.bankAccountNumber} onChange={e => setState(s => ({ ...s, bankAccountNumber: e.target.value.replace(/\D/g, '').slice(0, 16) }))} style={{ ...inp, display: 'block' }} placeholder="••••••••••••" />
+                <Lock size={12} className="absolute right-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }} />
+              </div>
+            </div>
+            <div>
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Branch Code</label>
+              <input value={state.bankBranchCode} onChange={e => setState(s => ({ ...s, bankBranchCode: e.target.value.replace(/\D/g, '').slice(0, 6) }))} style={{ ...inp, marginTop: 6, display: 'block' }} placeholder="6-digit code" maxLength={6} />
+              <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 4 }}>Auto-filled when you select a bank above</p>
+            </div>
+            <div className="sm:col-span-2">
+              <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>CIPC Registration Number <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(required for verification)</span></label>
+              <input value={state.cipcNumber} onChange={e => setState(s => ({ ...s, cipcNumber: e.target.value }))} style={{ ...inp, marginTop: 6, display: 'block' }} placeholder="e.g. 2019/123456/07" />
+            </div>
+          </div>
+
+          {filled && (
+            <div className="mt-4 flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#F0FDF4', border: '1px solid #BBF7D0' }}>
+              <CheckCircle2 size={16} style={{ color: '#27AE60' }} />
+              <span style={{ color: '#15803D', fontWeight: 600, fontSize: '0.9375rem' }}>Account details saved — pending verification</span>
+            </div>
+          )}
+
+          <div className="mt-4 p-3 rounded-[8px]" style={{ background: '#FFFBEB', border: '1px solid #FDE68A' }}>
+            <p style={{ color: '#92400E', fontSize: '0.8125rem' }}>
+              <strong>FICA Notice:</strong> In terms of the Financial Intelligence Centre Act (FICA), we are required to verify your business identity and bank account before processing payouts. This is a once-off process.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div className="bg-white rounded-[8px] p-6 text-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '2px dashed #E5E7EB' }}>
+          <p style={{ color: '#6B7280', fontSize: '0.9375rem' }}>Bank account setup skipped. You can link your account later from <strong>Banking → Account Overview</strong>.</p>
+        </div>
+      )}
+
+      <div className="flex items-center justify-between">
+        <button
+          onClick={() => setState(s => ({ ...s, bankSkipped: !s.bankSkipped }))}
+          style={{ color: '#9CA3AF', fontSize: '0.875rem', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline' }}
+        >
+          {state.bankSkipped ? '← Add bank account' : 'Skip for now'}
+        </button>
+        <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>You can always update this in Settings → Banking</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Step 6: Payout Setup ─────────────────────────────────────────────────────
 
 function Step5({ state, setState }: { state: WizardState; setState: React.Dispatch<React.SetStateAction<WizardState>> }) {
   const [loading, setLoading] = useState(false);
@@ -1484,7 +1620,7 @@ function Step7({ state, setState }: { state: WizardState; setState: React.Dispat
                 </div>
                 <div className="col-span-2 text-center">
                   <div className="relative inline-block">
-                    <span className="absolute left-2 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>$</span>
+                    <span className="absolute left-2 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>R</span>
                     <input type="number" value={svc.price} onChange={e => updatePrice(svc.id, parseFloat(e.target.value) || 0)} style={{ ...inp, width: '70px', fontSize: '0.875rem', padding: '4px 6px 4px 16px' }} min="0" />
                   </div>
                 </div>
@@ -1508,7 +1644,7 @@ function Step7({ state, setState }: { state: WizardState; setState: React.Dispat
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <input type="number" value={newSvc.duration} onChange={e => setNewSvc(v => ({ ...v, duration: e.target.value }))} style={inp} placeholder="Duration (min)" />
-                  <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>$</span><input type="number" value={newSvc.price} onChange={e => setNewSvc(v => ({ ...v, price: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} placeholder="Price" /></div>
+                  <div className="relative"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>R</span><input type="number" value={newSvc.price} onChange={e => setNewSvc(v => ({ ...v, price: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} placeholder="Price" /></div>
                 </div>
                 <select value={newSvc.pattern} onChange={e => setNewSvc(v => ({ ...v, pattern: e.target.value as any }))} style={{ ...inp, appearance: 'none', cursor: 'pointer' }}>
                   <option value="No-Parts">No-Parts</option>
@@ -1559,7 +1695,7 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
               </label>
               {state.disposalFeeEnabled && (
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>$</span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>R</span>
                   <input type="number" value={state.disposalFeeAmount} onChange={e => setState(s => ({ ...s, disposalFeeAmount: e.target.value }))} style={{ ...inp, paddingLeft: '24px', width: '120px' }} min="0" />
                 </div>
               )}
@@ -1584,11 +1720,11 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div>
                 <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Trip fee amount</label>
-                <div className="relative mt-1.5"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>$</span><input type="number" value={state.calloutFeeAmount} onChange={e => setState(s => ({ ...s, calloutFeeAmount: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} min="0" /></div>
+                <div className="relative mt-1.5"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>R</span><input type="number" value={state.calloutFeeAmount} onChange={e => setState(s => ({ ...s, calloutFeeAmount: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} min="0" /></div>
               </div>
               <div>
                 <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Apply when cart is under</label>
-                <div className="relative mt-1.5"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>$</span><input type="number" value={state.calloutFeeThreshold} onChange={e => setState(s => ({ ...s, calloutFeeThreshold: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} min="0" /></div>
+                <div className="relative mt-1.5"><span className="absolute left-3 top-1/2 -translate-y-1/2" style={{ color: '#9CA3AF' }}>R</span><input type="number" value={state.calloutFeeThreshold} onChange={e => setState(s => ({ ...s, calloutFeeThreshold: e.target.value }))} style={{ ...inp, paddingLeft: '24px' }} min="0" /></div>
               </div>
             </div>
           )}

@@ -248,7 +248,7 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         {needsDualApproval && !insufficient && amountCents > 0 && (
           <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#FFF8E1', border: '1px solid #FDE68A' }}>
             <Clock size={14} style={{ color: '#F39C12', flexShrink: 0 }} />
-            <p style={{ color: '#92400E', fontSize: '0.8125rem', fontWeight: 600 }}>Requires dual approval (≥$250,000)</p>
+            <p style={{ color: '#92400E', fontSize: '0.8125rem', fontWeight: 600 }}>Requires dual approval (≥R 250,000)</p>
           </div>
         )}
       </div>
