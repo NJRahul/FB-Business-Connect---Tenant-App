@@ -189,6 +189,53 @@ const SERVICE_SEEDS: Record<string, ServiceTypeRow[]> = {
     { id: 'pc6', name: 'Ant & Roach Treatment', duration: 60, price: 129, pattern: 'No-Parts', checked: false },
     { id: 'pc7', name: 'Termite Treatment', duration: 180, price: 1200, pattern: 'Parts-Install', checked: false },
   ],
+  carpentry: [
+    { id: 'ca1', name: 'Custom Cabinet Installation', duration: 240, price: 2500, pattern: 'Parts-Install', checked: true },
+    { id: 'ca2', name: 'Door Installation', duration: 120, price: 850, pattern: 'Parts-Install', checked: true },
+    { id: 'ca3', name: 'Shelving & Storage Build', duration: 180, price: 1200, pattern: 'Parts-Install', checked: true },
+    { id: 'ca4', name: 'Deck Construction', duration: 480, price: 6500, pattern: 'Parts-Install', checked: true },
+    { id: 'ca5', name: 'Flooring Installation', duration: 300, price: 3500, pattern: 'Parts-Install', checked: false },
+    { id: 'ca6', name: 'Window Frame Repair', duration: 90, price: 650, pattern: 'Parts-Install', checked: false },
+    { id: 'ca7', name: 'Furniture Assembly', duration: 60, price: 350, pattern: 'No-Parts', checked: false },
+    { id: 'ca8', name: 'Trim & Moulding Install', duration: 120, price: 900, pattern: 'Parts-Install', checked: false },
+  ],
+  salon: [
+    { id: 'sl1', name: 'Haircut & Style', duration: 45, price: 350, pattern: 'No-Parts', checked: true },
+    { id: 'sl2', name: 'Colour Treatment', duration: 120, price: 950, pattern: 'Parts-Install', checked: true },
+    { id: 'sl3', name: 'Highlights / Balayage', duration: 150, price: 1400, pattern: 'Parts-Install', checked: true },
+    { id: 'sl4', name: 'Blow-Dry & Finish', duration: 45, price: 280, pattern: 'No-Parts', checked: true },
+    { id: 'sl5', name: 'Keratin Treatment', duration: 180, price: 1800, pattern: 'Parts-Install', checked: false },
+    { id: 'sl6', name: 'Manicure & Pedicure', duration: 60, price: 450, pattern: 'Parts-Install', checked: false },
+    { id: 'sl7', name: 'Eyebrow Shaping & Tint', duration: 30, price: 200, pattern: 'No-Parts', checked: false },
+    { id: 'sl8', name: 'Facial Treatment', duration: 60, price: 650, pattern: 'Parts-Install', checked: false },
+  ],
+  consulting: [
+    { id: 'co1', name: 'Initial Consultation (1 hr)', duration: 60, price: 1500, pattern: 'No-Parts', checked: true },
+    { id: 'co2', name: 'Strategy Workshop (Half Day)', duration: 240, price: 8500, pattern: 'No-Parts', checked: true },
+    { id: 'co3', name: 'Strategy Workshop (Full Day)', duration: 480, price: 15000, pattern: 'No-Parts', checked: true },
+    { id: 'co4', name: 'Monthly Retainer', duration: 0, price: 25000, pattern: 'No-Parts', checked: true },
+    { id: 'co5', name: 'Project Assessment & Report', duration: 120, price: 6500, pattern: 'No-Parts', checked: false },
+    { id: 'co6', name: 'Training Session (Group)', duration: 180, price: 5000, pattern: 'No-Parts', checked: false },
+    { id: 'co7', name: 'Coaching Session (1-on-1)', duration: 60, price: 2200, pattern: 'No-Parts', checked: false },
+  ],
+  healthcare: [
+    { id: 'hc1', name: 'General Consultation', duration: 30, price: 650, pattern: 'No-Parts', checked: true },
+    { id: 'hc2', name: 'Follow-Up Appointment', duration: 20, price: 350, pattern: 'No-Parts', checked: true },
+    { id: 'hc3', name: 'Health Screening', duration: 60, price: 1200, pattern: 'No-Parts', checked: true },
+    { id: 'hc4', name: 'Physiotherapy Session', duration: 45, price: 850, pattern: 'No-Parts', checked: false },
+    { id: 'hc5', name: 'Chronic Disease Management', duration: 45, price: 750, pattern: 'No-Parts', checked: false },
+    { id: 'hc6', name: 'Home Visit Consultation', duration: 60, price: 1500, pattern: 'No-Parts', checked: false },
+    { id: 'hc7', name: 'Vaccination / Injection', duration: 15, price: 280, pattern: 'Parts-Install', checked: false },
+  ],
+  education: [
+    { id: 'ed1', name: 'Individual Tutoring (1 hr)', duration: 60, price: 450, pattern: 'No-Parts', checked: true },
+    { id: 'ed2', name: 'Group Class (Up to 10)', duration: 90, price: 1200, pattern: 'No-Parts', checked: true },
+    { id: 'ed3', name: 'Online Course Enrolment', duration: 0, price: 2500, pattern: 'No-Parts', checked: true },
+    { id: 'ed4', name: 'Exam Preparation Pack (4 sessions)', duration: 240, price: 1600, pattern: 'No-Parts', checked: false },
+    { id: 'ed5', name: 'Workshop (Half Day)', duration: 240, price: 1800, pattern: 'No-Parts', checked: false },
+    { id: 'ed6', name: 'Monthly Subscription (Unlimited Classes)', duration: 0, price: 2200, pattern: 'No-Parts', checked: false },
+    { id: 'ed7', name: 'Corporate Training Session', duration: 180, price: 8500, pattern: 'No-Parts', checked: false },
+  ],
   generic: [],
 };
 
@@ -200,6 +247,11 @@ const INDUSTRY_CARDS = [
   { id: 'plumbing', label: 'Plumbing', icon: '🔩', desc: 'Parts-install + on-demand jobs', active: true, ops: 'mobile' as OperationsType },
   { id: 'cleaning', label: 'Cleaning', icon: '🧹', desc: 'Recurring routes, team dispatch', active: true, ops: 'mobile' as OperationsType },
   { id: 'pest_control', label: 'Pest Control', icon: '🐛', desc: 'Recurring routes, chemical management', active: true, ops: 'mobile' as OperationsType },
+  { id: 'carpentry', label: 'Carpentry', icon: '🪚', desc: 'Custom builds, installations, renovations', active: true, ops: 'mobile' as OperationsType },
+  { id: 'salon', label: 'Salon & Beauty', icon: '💇', desc: 'Appointments, stylists, product retail', active: true, ops: 'inshop' as OperationsType },
+  { id: 'consulting', label: 'Consulting', icon: '💼', desc: 'Sessions, retainers, workshops', active: true, ops: 'inshop' as OperationsType },
+  { id: 'healthcare', label: 'Healthcare', icon: '🏥', desc: 'Appointments, patient records, home visits', active: true, ops: 'both' as OperationsType },
+  { id: 'education', label: 'Education', icon: '🎓', desc: 'Tutoring, classes, online courses', active: true, ops: 'both' as OperationsType },
   { id: 'lawn_care', label: 'Lawn Care', icon: '🌿', desc: 'Mowing, aeration, seasonal programs', active: false },
   { id: 'painting', label: 'Painting', icon: '🎨', desc: 'Quote-to-job, phase management', active: false },
   { id: 'roofing', label: 'Roofing', icon: '🏠', desc: 'Inspect-quote-job, material tracking', active: false },
@@ -801,6 +853,123 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
                 </div>
                 <div>
                   <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Number of Cleaning Crews</label>
+                  <input type="number" value={state.serviceBays} onChange={e => setState(s => ({ ...s, serviceBays: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', width: '120px' }} placeholder="1" min="1" />
+                </div>
+              </>
+            )}
+            {state.industryPack === 'carpentry' && (
+              <>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Carpentry / Builder Registration # <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.licenseNumber} onChange={e => setState(s => ({ ...s, licenseNumber: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="NHBRC or trade registration number" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Number of Carpenters / Crew</label>
+                  <input type="number" value={state.serviceBays} onChange={e => setState(s => ({ ...s, serviceBays: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', width: '120px' }} placeholder="2" min="1" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Public Liability Insurance # <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.insurancePolicy} onChange={e => setState(s => ({ ...s, insurancePolicy: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="Policy # or carrier name" />
+                </div>
+              </>
+            )}
+            {state.industryPack === 'salon' && (
+              <>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Salon / Cosmetology Registration # <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.licenseNumber} onChange={e => setState(s => ({ ...s, licenseNumber: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="SAQA or provincial registration" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Number of Chairs / Stations</label>
+                  <input type="number" value={state.serviceBays} onChange={e => setState(s => ({ ...s, serviceBays: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', width: '120px' }} placeholder="4" min="1" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Specialisation</label>
+                  <select value={state.certType || ''} onChange={e => setState(s => ({ ...s, certType: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                    <option value="">— Select —</option>
+                    <option>Hair & Styling</option>
+                    <option>Nails & Beauty</option>
+                    <option>Skin & Facials</option>
+                    <option>Full-Service Salon</option>
+                    <option>Barbershop</option>
+                  </select>
+                </div>
+              </>
+            )}
+            {state.industryPack === 'consulting' && (
+              <>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Consulting Domain</label>
+                  <select value={state.certType || ''} onChange={e => setState(s => ({ ...s, certType: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                    <option value="">— Select —</option>
+                    <option>Business Strategy</option>
+                    <option>Financial Advisory</option>
+                    <option>HR & Organisational</option>
+                    <option>IT & Technology</option>
+                    <option>Marketing & Branding</option>
+                    <option>Legal & Compliance</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Professional Membership / Accreditation <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.licenseNumber} onChange={e => setState(s => ({ ...s, licenseNumber: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="e.g. SAICA, SABPP, IODSA" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Number of Consultants</label>
+                  <input type="number" value={state.serviceBays} onChange={e => setState(s => ({ ...s, serviceBays: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', width: '120px' }} placeholder="1" min="1" />
+                </div>
+              </>
+            )}
+            {state.industryPack === 'healthcare' && (
+              <>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>HPCSA Registration # <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(required)</span></label>
+                  <input value={state.licenseNumber} onChange={e => setState(s => ({ ...s, licenseNumber: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="Health Professions Council SA registration" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Practice Type</label>
+                  <select value={state.certType || ''} onChange={e => setState(s => ({ ...s, certType: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                    <option value="">— Select —</option>
+                    <option>General Practice (GP)</option>
+                    <option>Physiotherapy</option>
+                    <option>Psychology / Counselling</option>
+                    <option>Dentistry</option>
+                    <option>Optometry</option>
+                    <option>Nursing Practice</option>
+                    <option>Specialist Clinic</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Medical Aid Billing Codes <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.insurancePolicy} onChange={e => setState(s => ({ ...s, insurancePolicy: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="e.g. Discovery, Momentum, Medshield" />
+                  <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '4px' }}>List accepted medical aid schemes for storefront display</p>
+                </div>
+              </>
+            )}
+            {state.industryPack === 'education' && (
+              <>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Education Focus</label>
+                  <select value={state.certType || ''} onChange={e => setState(s => ({ ...s, certType: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', appearance: 'none', cursor: 'pointer' }}>
+                    <option value="">— Select —</option>
+                    <option>Academic Tutoring (School)</option>
+                    <option>Academic Tutoring (University)</option>
+                    <option>Languages</option>
+                    <option>Music & Arts</option>
+                    <option>Professional Skills</option>
+                    <option>Sports & Fitness Coaching</option>
+                    <option>Early Childhood Development</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>SACE / ETQA Registration # <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(optional)</span></label>
+                  <input value={state.licenseNumber} onChange={e => setState(s => ({ ...s, licenseNumber: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block' }} placeholder="SA Council for Educators or ETQA number" />
+                </div>
+                <div>
+                  <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Number of Educators / Tutors</label>
                   <input type="number" value={state.serviceBays} onChange={e => setState(s => ({ ...s, serviceBays: e.target.value }))} style={{ ...inp, marginTop: '6px', display: 'block', width: '120px' }} placeholder="1" min="1" />
                 </div>
               </>

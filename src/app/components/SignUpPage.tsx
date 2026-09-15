@@ -138,64 +138,14 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
   }
 
   return (
-    <div className="min-h-screen flex" style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Left panel */}
-      <div className="hidden lg:flex lg:w-[480px] xl:w-[540px] flex-col justify-between p-10 xl:p-14" style={{ background: 'linear-gradient(160deg, #1A1A1A 0%, #2D0A08 100%)' }}>
-        <div>
-          <div className="flex items-center gap-3 mb-14">
-            <div className="w-10 h-10 rounded-[8px] flex items-center justify-center" style={{ background: '#C0392B' }}>
-              <Wrench size={20} color="#fff" />
-            </div>
-            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1.375rem' }}>FB Business Connect</span>
-          </div>
-          <h1 style={{ fontFamily: 'Sora, sans-serif', color: '#fff', fontSize: '2rem', lineHeight: 1.25, fontWeight: 700 }}>
-            The complete platform for tire service shops
-          </h1>
-          <p className="mt-4" style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6 }}>
-            Launch your online storefront, manage inventory from distributors, book services, and grow your customer base — all in one place.
-          </p>
-          <div className="mt-10 space-y-4">
-            {[
-              { icon: '🏪', title: 'Multi-Tenant Storefronts', desc: 'Your own branded shop at yourshop.fb-business-connect.app' },
-              { icon: '📦', title: 'Live Distributor Inventory', desc: 'Sync stock from major tire distributors every 60 min' },
-              { icon: '💳', title: 'Stripe Connect Payouts', desc: 'Fast, automated payouts to your bank account' },
-              { icon: '📱', title: 'SMS & Email Campaigns', desc: 'Reach customers with targeted promotions' },
-            ].map(f => (
-              <div key={f.title} className="flex gap-3 items-start">
-                <span className="text-xl mt-0.5">{f.icon}</span>
-                <div>
-                  <p style={{ color: '#fff', fontWeight: 600, fontSize: '0.9375rem' }}>{f.title}</p>
-                  <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginTop: '2px' }}>{f.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="rounded-[8px] p-5" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <p style={{ color: '#fff', fontSize: '0.9375rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-            "FB Business Connect cut our booking admin time by 70%. Our techs see their schedule on their phones, customers book online 24/7."
-          </p>
-          <div className="flex items-center gap-3 mt-4">
-            <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: '0.875rem' }}>
-              MR
-            </div>
-            <div>
-              <p style={{ color: '#fff', fontWeight: 600, fontSize: '0.875rem' }}>Mike Rodriguez</p>
-              <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Rodriguez Tyre — 4 locations, GP</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Right panel */}
-      <div className="flex-1 flex items-start justify-center overflow-y-auto p-6 lg:p-10 xl:p-14" style={{ background: '#F9FAFB' }}>
-        <div className="w-full max-w-[620px]">
-          {/* Mobile logo */}
-          <div className="flex items-center gap-3 mb-8 lg:hidden">
+    <div className="min-h-screen flex items-start justify-center overflow-y-auto p-6 lg:p-10" style={{ fontFamily: 'Inter, sans-serif', background: '#F9FAFB' }}>
+      <div className="w-full max-w-[620px]">
+          {/* Logo */}
+          <div className="flex items-center justify-center gap-3 mb-8">
             <div className="w-9 h-9 rounded-[8px] flex items-center justify-center" style={{ background: '#C0392B' }}>
               <Wrench size={18} color="#fff" />
             </div>
-            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.25rem' }}>FB Business Connect</span>
+            <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.375rem' }}>FB Business Connect</span>
           </div>
 
           <div className="bg-white rounded-[8px] p-8" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
@@ -402,7 +352,6 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
               </button>
             </p>
           )}
-        </div>
       </div>
     </div>
   );
