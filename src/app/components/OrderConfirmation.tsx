@@ -57,7 +57,7 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
           <p className="mt-2" style={{ color: '#6B7280', fontSize: '1rem' }}>
             Your appointment is locked in. We'll see you soon!
           </p>
-          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
             <span style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>Order</span>
             <span style={{ color: '#00A9AC', fontWeight: 800, fontSize: '1rem', fontFamily: 'Sora, sans-serif', letterSpacing: '0.05em' }}>{order.orderNumber}</span>
           </div>

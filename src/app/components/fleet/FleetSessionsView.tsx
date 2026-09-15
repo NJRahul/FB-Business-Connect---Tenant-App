@@ -39,7 +39,7 @@ export function FleetSessionsView({ onSelectSession }: Props) {
             <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#FECACA' : '#9CA3AF', marginTop: 2 }}>
               {new Date(s.scheduledStart).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} – {new Date(s.scheduledEnd).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </p>
-            <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#80D4D5' : '#9CA3AF' }}>{s.locationName}</p>
+            <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#FCA5A5' : '#9CA3AF' }}>{s.locationName}</p>
           </div>
         ))}
       </div>

@@ -156,7 +156,7 @@ export function OperationalToolsView() {
                 style={{
                   background: tool.danger ? '#7F1D1D' : '#1F2937',
                   color: tool.danger ? '#F87171' : '#D1D5DB',
-                  border: `1px solid ${tool.danger ? '#005F62' : '#374151'}`,
+                  border: `1px solid ${tool.danger ? '#991B1B' : '#374151'}`,
                   opacity: canRun ? 1 : 0.4,
                 }}>
                 Run Tool
@@ -236,7 +236,7 @@ export function OperationalToolsView() {
             </div>
             {confirmState.tool.danger && (
               <div className="flex items-start gap-2 rounded-lg p-3 mb-4" style={{ background: '#1C0A0A', border: '1px solid #3F1515' }}>
-                <span style={{ fontSize: '0.8rem', color: '#80D4D5' }}>
+                <span style={{ fontSize: '0.8rem', color: '#FCA5A5' }}>
                   ⚠ This is a destructive action. Ensure you have verified the situation before proceeding.
                 </span>
               </div>

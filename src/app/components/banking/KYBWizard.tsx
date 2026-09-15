@@ -83,7 +83,7 @@ const STATUS_CONFIG: Record<ApplicationStatus, { label: string; color: string; b
   pending_review:     { label: 'Under review',      color: '#F39C12', bg: '#FFF8E1', icon: Clock },
   approved:           { label: 'Approved',          color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle },
   requires_documents: { label: 'Documents needed',  color: '#F39C12', bg: '#FFF8E1', icon: AlertTriangle },
-  denied:             { label: 'Not approved',      color: '#00BFC3', bg: '#F0FBFB', icon: XCircle },
+  denied:             { label: 'Not approved',      color: '#00BFC3', bg: '#FEF2F2', icon: XCircle },
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -308,9 +308,9 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
       </div>
 
       {overLimit && (
-        <div className="p-3 rounded-[8px] flex items-center gap-2" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+        <div className="p-3 rounded-[8px] flex items-center gap-2" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
           <AlertCircle size={16} style={{ color: '#00BFC3' }} />
-          <span style={{ color: '#005F62', fontSize: '0.875rem', fontWeight: 600 }}>Total ownership ({totalPct}%) exceeds 100%.</span>
+          <span style={{ color: '#991B1B', fontSize: '0.875rem', fontWeight: 600 }}>Total ownership ({totalPct}%) exceeds 100%.</span>
         </div>
       )}
 
@@ -544,8 +544,8 @@ function ApplicationStatusPage({
             {status === 'submitted'      && <p style={{ color: '#6B7280', fontSize: '0.9375rem' }}>Your application has been submitted and is in the queue for review.</p>}
             {status === 'approved'       && <p style={{ color: '#6B7280', fontSize: '0.9375rem' }}>Your business bank account is ready. Setting up your account…</p>}
             {status === 'denied' && denialReason && (
-              <div className="mt-3 p-3 rounded-[8px] text-left" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
-                <p style={{ color: '#005F62', fontWeight: 600, fontSize: '0.875rem', marginBottom: 4 }}>Reason provided by our banking partner:</p>
+              <div className="mt-3 p-3 rounded-[8px] text-left" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
+                <p style={{ color: '#991B1B', fontWeight: 600, fontSize: '0.875rem', marginBottom: 4 }}>Reason provided by our banking partner:</p>
                 <p style={{ color: '#7F1D1D', fontSize: '0.875rem' }}>{denialReason}</p>
               </div>
             )}
@@ -588,7 +588,7 @@ function ApplicationStatusPage({
                       {doc.rejection_reason && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 2 }}>{doc.rejection_reason}</p>}
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: doc.status === 'uploaded' ? '#EBF5FB' : '#F0FBFB', color: doc.status === 'uploaded' ? '#2980B9' : '#00A9AC' }}>
+                      <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: doc.status === 'uploaded' ? '#EBF5FB' : '#FEF2F2', color: doc.status === 'uploaded' ? '#2980B9' : '#00A9AC' }}>
                         {doc.status}
                       </span>
                       <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] cursor-pointer font-semibold text-sm" style={{ background: '#1A1A1A', color: '#fff' }}>

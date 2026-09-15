@@ -13,8 +13,8 @@ function StatusChip({ status }: { status: InsurancePolicy['status'] }) {
   const cfg = {
     active:    { label: 'Active',    color: '#27AE60', bg: '#F0FDF4' },
     pending:   { label: 'Pending',   color: '#F39C12', bg: '#FFF8E1' },
-    lapsed:    { label: 'Lapsed',    color: '#00BFC3', bg: '#F0FBFB' },
-    cancelled: { label: 'Cancelled', color: '#00BFC3', bg: '#F0FBFB' },
+    lapsed:    { label: 'Lapsed',    color: '#00BFC3', bg: '#FEF2F2' },
+    cancelled: { label: 'Cancelled', color: '#00BFC3', bg: '#FEF2F2' },
     expired:   { label: 'Expired',   color: '#6B7280', bg: '#F3F4F6' },
   }[status] ?? { label: status, color: '#6B7280', bg: '#F3F4F6' };
   return <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: cfg.bg, color: cfg.color }}>{cfg.label}</span>;

@@ -26,7 +26,7 @@ const TODAY_VISITS = [
   { state: 'in_progress', label: 'In Progress', count: 3,  color: '#2563EB', bg: '#EFF6FF' },
   { state: 'en_route',    label: 'En Route',    count: 2,  color: '#7E22CE', bg: '#FDF4FF' },
   { state: 'scheduled',   label: 'Scheduled',   count: 8,  color: '#D97706', bg: '#FEF3C7' },
-  { state: 'no_show',     label: 'No Show',     count: 1,  color: '#DC2626', bg: '#F0FBFB' },
+  { state: 'no_show',     label: 'No Show',     count: 1,  color: '#DC2626', bg: '#FEF2F2' },
 ];
 
 const STATE_ICONS: Record<string, React.ElementType> = {

@@ -8,7 +8,7 @@ const STATUS_META: Record<WaitlistStatus, { label: string; color: string; bg: st
   offered: { label: 'Offered',  color: '#D97706', bg: '#FEF3C7' },
   claimed: { label: 'Claimed',  color: '#15803D', bg: '#F0FDF4' },
   expired: { label: 'Expired',  color: '#9CA3AF', bg: '#F3F4F6' },
-  removed: { label: 'Removed',  color: '#DC2626', bg: '#F0FBFB' },
+  removed: { label: 'Removed',  color: '#DC2626', bg: '#FEF2F2' },
 };
 
 function Countdown({ expiresAt }: { expiresAt: string }) {

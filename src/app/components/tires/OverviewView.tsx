@@ -38,7 +38,7 @@ export function OverviewView({ onNavigate }: OverviewViewProps) {
       {(activeClaims > 0 || overdueSwaps > 0) && (
         <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
           {activeClaims > 0 && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 13, color: '#DC2626', cursor: 'pointer' }} onClick={() => onNavigate('warranties')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 13, color: '#DC2626', cursor: 'pointer' }} onClick={() => onNavigate('warranties')}>
               <AlertCircle size={14} />
               {activeClaims} warranty claim{activeClaims > 1 ? 's' : ''} need attention
             </div>

@@ -12,7 +12,7 @@ const DISPUTE_STATUS: Record<DisputeStatus, { label: string; color: string; bg: 
   in_review:          { label: 'In review',          color: '#F39C12', bg: '#FFF8E1', icon: Clock },
   provisional_credit: { label: 'Provisional credit', color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle2 },
   resolved_won:       { label: 'Resolved — Won',     color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle2 },
-  resolved_lost:      { label: 'Resolved — Lost',    color: '#00BFC3', bg: '#F0FBFB', icon: AlertTriangle },
+  resolved_lost:      { label: 'Resolved — Lost',    color: '#00BFC3', bg: '#FEF2F2', icon: AlertTriangle },
   cancelled:          { label: 'Cancelled',           color: '#9CA3AF', bg: '#F3F4F6', icon: X },
 };
 
@@ -278,8 +278,8 @@ function AccountClosure() {
 
   return (
     <div style={{ maxWidth: 480 }}>
-      <div className="p-4 rounded-[8px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
-        <p style={{ color: '#005F62', fontWeight: 700, fontSize: '0.9375rem', marginBottom: 4 }}>Close business bank account</p>
+      <div className="p-4 rounded-[8px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
+        <p style={{ color: '#991B1B', fontWeight: 700, fontSize: '0.9375rem', marginBottom: 4 }}>Close business bank account</p>
         <p style={{ color: '#7F1D1D', fontSize: '0.875rem', lineHeight: 1.5 }}>
           This will permanently close your FB Business Connect Banking account. Your remaining balance will be swept to the destination you specify. Statements will remain available for 30 days after closure.
         </p>

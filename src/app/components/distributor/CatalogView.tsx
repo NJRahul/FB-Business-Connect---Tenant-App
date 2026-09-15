@@ -27,7 +27,7 @@ function StockBadge({ sku }: { sku: SkuRecord }) {
       </span>
     );
   }
-  if (!sku.inStock) return <span style={{ background: '#FEE2E2', color: '#005F62', border: '1px solid #80D4D5', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>Out of Stock</span>;
+  if (!sku.inStock) return <span style={{ background: '#FEE2E2', color: '#991B1B', border: '1px solid #FCA5A5', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>Out of Stock</span>;
   return <span style={{ background: '#D1FAE5', color: '#065F46', border: '1px solid #10B981', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>In Stock ({sku.stockQty})</span>;
 }
 

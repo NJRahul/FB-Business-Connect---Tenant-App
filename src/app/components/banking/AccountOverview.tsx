@@ -19,7 +19,7 @@ function MFAModal({ onConfirm, onClose }: { onConfirm: () => void; onClose: () =
     <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.45)' }}>
       <div className="bg-white rounded-[12px] p-6 shadow-xl" style={{ width: 360 }}>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#F0FBFB' }}>
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#FEF2F2' }}>
             <Lock size={18} style={{ color: '#00A9AC' }} />
           </div>
           <div>

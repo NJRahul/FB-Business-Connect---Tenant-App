@@ -7,7 +7,7 @@ import {
 const STATUS_CFG: Record<string, { label: string; color: string; bg: string }> = {
   active:    { label: 'Active',    color: '#27AE60', bg: '#F0FDF4' },
   quoted:    { label: 'Quoted',    color: '#F39C12', bg: '#FFF8E1' },
-  declined:  { label: 'Declined', color: '#00BFC3', bg: '#F0FBFB' },
+  declined:  { label: 'Declined', color: '#00BFC3', bg: '#FEF2F2' },
   pending:   { label: 'Pending',  color: '#2980B9', bg: '#EBF5FB' },
 };
 

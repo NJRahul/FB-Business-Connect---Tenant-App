@@ -500,7 +500,7 @@ export function ApplicationWizard({ initialCoverageTypeId, tenant, onComplete, o
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
           <AlertTriangle size={15} style={{ color: '#00A9AC' }} />
           <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
         </div>

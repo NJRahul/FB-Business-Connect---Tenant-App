@@ -7,7 +7,7 @@ import type { MidJobAuth as MidJobAuthType, AuthStatus } from './types';
 const STATUS_CONFIG: Record<AuthStatus, { bg: string; color: string; border: string; label: string; icon: React.ReactNode }> = {
   pending:   { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Awaiting Response', icon: <Clock size={14} /> },
   approved:  { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Approved',           icon: <CheckCircle size={14} /> },
-  declined:  { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Declined',           icon: <XCircle size={14} /> },
+  declined:  { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Declined',           icon: <XCircle size={14} /> },
   timeout:   { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'Timed Out',          icon: <Clock size={14} /> },
   bypassed:  { bg: '#EDE9FE', color: '#5B21B6', border: '#7C3AED', label: 'Bypassed',           icon: <AlertTriangle size={14} /> },
 };

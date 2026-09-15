@@ -255,7 +255,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                           <span style={{ color: '#27AE60', fontSize: '0.6875rem', fontWeight: 500 }}>✓ In stock locally</span>
                         )}
                       </div>
-                      <button onClick={() => onRemove(item.id)} className="shrink-0 p-1" style={{ color: '#80D4D5' }}>
+                      <button onClick={() => onRemove(item.id)} className="shrink-0 p-1" style={{ color: '#FCA5A5' }}>
                         <Trash2 size={15} style={{ color: '#00A9AC', opacity: 0.6 }} />
                       </button>
                     </div>
@@ -384,7 +384,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                   </div>
                 )}
                 {overrideSubmitted && (
-                  <div className="mt-2 flex items-center justify-between px-3 py-2 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                  <div className="mt-2 flex items-center justify-between px-3 py-2 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                     <span style={{ color: '#B91C1C', fontSize: '0.75rem', fontWeight: 600 }}>
                       Override: -${parseFloat(overrideAmount).toFixed(2)} · {overrideReason}
                     </span>

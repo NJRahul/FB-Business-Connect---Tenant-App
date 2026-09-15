@@ -6,7 +6,7 @@ function StatusDot({ status }: { status: 'healthy' | 'degraded' | 'down' }) {
   const MAP = {
     healthy:  { color: '#15803D', bg: '#F0FDF4', label: 'Healthy',  icon: CheckCircle },
     degraded: { color: '#D97706', bg: '#FFFBEB', label: 'Degraded', icon: AlertTriangle },
-    down:     { color: '#DC2626', bg: '#F0FBFB', label: 'Down',     icon: XCircle },
+    down:     { color: '#DC2626', bg: '#FEF2F2', label: 'Down',     icon: XCircle },
   };
   const m = MAP[status];
   const Icon = m.icon;
@@ -80,10 +80,10 @@ export function ObservabilityView() {
 
       {/* Alerts */}
       {(degradedCount > 0 || downCount > 0) && (
-        <div style={{ padding: '12px 16px', borderRadius: 8, background: degradedCount > 0 ? '#FFFBEB' : '#F0FBFB', border: `1px solid ${degradedCount > 0 ? '#FDE68A' : '#80D4D5'}` }}>
+        <div style={{ padding: '12px 16px', borderRadius: 8, background: degradedCount > 0 ? '#FFFBEB' : '#FEF2F2', border: `1px solid ${degradedCount > 0 ? '#FDE68A' : '#FCA5A5'}` }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <AlertTriangle size={14} color={degradedCount > 0 ? '#D97706' : '#DC2626'} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: degradedCount > 0 ? '#92400E' : '#005F62' }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: degradedCount > 0 ? '#92400E' : '#991B1B' }}>
               {downCount > 0 ? `${downCount} connector down` : `${degradedCount} connector degraded`} — check connector health below
             </span>
           </div>

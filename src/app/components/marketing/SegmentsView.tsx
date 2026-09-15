@@ -86,7 +86,7 @@ function computeCount(filters: SegmentFilter[]): number {
 
 function FilterChip({ filter, onRemove }: { filter: SegmentFilter; onRemove: () => void }) {
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 8, padding: '5px 10px', fontSize: 13, fontWeight: 600, color: '#00A9AC' }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E6F7F7', border: '1px solid #FCA5A5', borderRadius: 8, padding: '5px 10px', fontSize: 13, fontWeight: 600, color: '#00A9AC' }}>
       <span style={{ color: '#6B7280', fontWeight: 400 }}>{filter.fieldLabel}</span>
       <span>{filter.operator.replace(/_/g, ' ')}</span>
       <span style={{ fontFamily: 'monospace' }}>{String(filter.value)}</span>
@@ -215,7 +215,7 @@ function SegmentBuilder({ initial, onSave, onCancel }: { initial?: Segment; onSa
       </div>
 
       {/* Segment size preview */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, marginBottom: 16 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: '#E6F7F7', border: '1px solid #FCA5A5', borderRadius: 10, marginBottom: 16 }}>
         <Users size={20} color="#00A9AC" />
         <div>
           <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 24, fontWeight: 800, color: '#00A9AC', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -322,7 +322,7 @@ export function SegmentsView() {
                   {seg.filters.length > 0 && (
                     <div style={{ display: 'flex', gap: 6, marginTop: 6, flexWrap: 'wrap' }}>
                       {seg.filters.map(f => (
-                        <span key={f.id} style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 6, padding: '2px 8px', fontSize: 11, color: '#00A9AC' }}>
+                        <span key={f.id} style={{ background: '#E6F7F7', border: '1px solid #FCA5A5', borderRadius: 6, padding: '2px 8px', fontSize: 11, color: '#00A9AC' }}>
                           {f.fieldLabel} {f.operator.replace(/_/g, ' ')} {String(f.value)}
                         </span>
                       ))}
@@ -335,7 +335,7 @@ export function SegmentsView() {
                   <button onClick={() => { setEditingSeg(seg); setBuilding(false); }}
                     style={{ padding: '5px 10px', border: '1px solid #E5E7EB', borderRadius: 7, fontSize: 12, cursor: 'pointer', background: '#fff' }}>Edit</button>
                   <button onClick={() => setSegments(prev => prev.filter(s => s.id !== seg.id))}
-                    style={{ padding: '5px 8px', border: '1px solid #80D4D5', borderRadius: 7, cursor: 'pointer', background: '#F0FBFB' }}>
+                    style={{ padding: '5px 8px', border: '1px solid #FCA5A5', borderRadius: 7, cursor: 'pointer', background: '#FEF2F2' }}>
                     <Trash2 size={12} color="#DC2626" />
                   </button>
                 </div>

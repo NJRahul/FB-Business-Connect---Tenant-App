@@ -113,7 +113,7 @@ function SafetyBufferConfig() {
             const val = buffers[dist.id] ?? 1;
             const isZero = val === 0;
             return (
-              <div key={dist.id} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 16px', background: '#F9FAFB', border: `1px solid ${isZero ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 10 }}>
+              <div key={dist.id} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 16px', background: '#F9FAFB', border: `1px solid ${isZero ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 10 }}>
                 <span style={{ fontSize: 20 }}>{dist.logoEmoji}</span>
                 <div style={{ flex: 1 }}>
                   <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A' }}>{dist.name}</div>
@@ -127,7 +127,7 @@ function SafetyBufferConfig() {
                   />
                   <span style={{ fontSize: 13, color: '#6B7280' }}>day{val !== 1 ? 's' : ''}</span>
                   {isZero && (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: '#FEE2E2', border: '1px solid #80D4D5', borderRadius: 7, padding: '4px 10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5, background: '#FEE2E2', border: '1px solid #FCA5A5', borderRadius: 7, padding: '4px 10px' }}>
                       <AlertTriangle size={13} color="#DC2626" />
                       <span style={{ fontSize: 12, color: '#DC2626', fontWeight: 600 }}>0-day buffer — no safety margin</span>
                     </div>

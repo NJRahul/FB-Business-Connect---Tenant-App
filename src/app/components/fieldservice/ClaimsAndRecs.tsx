@@ -9,7 +9,7 @@ import type { DamageClaim, ClaimStatus, Recommendation, RecoStatus } from './typ
 const RECO_STATUS_CFG: Record<RecoStatus, { bg: string; color: string; border: string; label: string }> = {
   pending:     { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Pending Follow-up' },
   booked:      { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Booked' },
-  declined:    { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Declined' },
+  declined:    { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Declined' },
   no_response: { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'No Response' },
 };
 

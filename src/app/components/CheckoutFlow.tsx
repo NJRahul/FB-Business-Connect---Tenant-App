@@ -424,7 +424,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                   <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Choose Install Slot</h2>
                 </div>
                 {slot && holdSeconds !== null && !holdExpired && (
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px]" style={{ background: holdSeconds < 120 ? '#F0FBFB' : '#F0FDF4', border: `1px solid ${holdSeconds < 120 ? '#FECACA' : '#BBF7D0'}` }}>
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px]" style={{ background: holdSeconds < 120 ? '#FEF2F2' : '#F0FDF4', border: `1px solid ${holdSeconds < 120 ? '#FECACA' : '#BBF7D0'}` }}>
                     <Clock size={13} style={{ color: holdSeconds < 120 ? '#00BFC3' : '#27AE60' }} />
                     <span style={{ color: holdSeconds < 120 ? '#00BFC3' : '#27AE60', fontWeight: 700, fontSize: '0.875rem', fontVariantNumeric: 'tabular-nums' }}>
                       {formatHoldTime(holdSeconds)}
@@ -435,7 +435,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
               </div>
 
               {holdExpired && (
-                <div className="mb-4 p-4 rounded-[8px] flex items-start gap-3" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                <div className="mb-4 p-4 rounded-[8px] flex items-start gap-3" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                   <AlertTriangle size={16} style={{ color: '#00BFC3', marginTop: '2px' }} />
                   <div>
                     <p style={{ color: '#B91C1C', fontWeight: 600, fontSize: '0.9375rem' }}>Your hold expired</p>

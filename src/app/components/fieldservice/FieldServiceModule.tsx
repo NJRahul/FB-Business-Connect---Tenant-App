@@ -133,7 +133,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (tab: FSTab) => void })
                   en_route:    { bg: '#FEF3C7', color: '#B45309' },
                   on_site:     { bg: '#EDE9FE', color: '#5B21B6' },
                   scheduled:   { bg: '#F3F4F6', color: '#4B5563' },
-                  cancelled:   { bg: '#FEE2E2', color: '#005F62' },
+                  cancelled:   { bg: '#FEE2E2', color: '#991B1B' },
                 };
                 const sc = stateColors[v.visitState] ?? { bg: '#F3F4F6', color: '#4B5563' };
                 return (

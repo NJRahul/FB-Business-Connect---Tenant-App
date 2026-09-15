@@ -395,7 +395,7 @@ function ExecutionLog() {
                             key={i}
                             title={`${ACTION_LABELS[a.type]?.label}: ${a.detail}`}
                             className="w-5 h-5 rounded-full flex items-center justify-center"
-                            style={{ background: a.status === 'success' ? '#DCFCE7' : '#F0FBFB' }}
+                            style={{ background: a.status === 'success' ? '#DCFCE7' : '#FEF2F2' }}
                           >
                             {a.status === 'success'
                               ? <CheckCircle2 size={12} style={{ color: '#16A34A' }} />
@@ -413,7 +413,7 @@ function ExecutionLog() {
                     <span
                       className="px-2 py-0.5 rounded-full text-xs font-semibold"
                       style={{
-                        background: ex.status === 'success' ? '#DCFCE7' : ex.status === 'partial' ? '#FEF3C7' : '#F0FBFB',
+                        background: ex.status === 'success' ? '#DCFCE7' : ex.status === 'partial' ? '#FEF3C7' : '#FEF2F2',
                         color: ex.status === 'success' ? '#16A34A' : ex.status === 'partial' ? '#D97706' : '#DC2626',
                       }}
                     >

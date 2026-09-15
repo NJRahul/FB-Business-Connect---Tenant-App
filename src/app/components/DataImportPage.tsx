@@ -354,7 +354,7 @@ export function DataImportPage() {
                   {[
                     { label: 'Imported', value: SAMPLE_RESULTS.filter(r => r.status === 'imported').length, color: '#27AE60', bg: '#F0FDF4' },
                     { label: 'Skipped (duplicate)', value: SAMPLE_RESULTS.filter(r => r.status === 'skipped').length, color: '#F39C12', bg: '#FFF7ED' },
-                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#00BFC3', bg: '#F0FBFB' },
+                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#00BFC3', bg: '#FEF2F2' },
                   ].map(s => (
                     <div key={s.label} className="rounded-[8px] p-4 text-center" style={{ background: s.bg }}>
                       <p style={{ color: s.color, fontWeight: 700, fontSize: '1.75rem', fontFamily: 'Sora, sans-serif' }}>{s.value}</p>
@@ -381,7 +381,7 @@ export function DataImportPage() {
                             <span
                               className="px-2 py-0.5 rounded-[4px] text-xs font-semibold"
                               style={{
-                                background: r.status === 'imported' ? '#F0FDF4' : r.status === 'skipped' ? '#FFF7ED' : '#F0FBFB',
+                                background: r.status === 'imported' ? '#F0FDF4' : r.status === 'skipped' ? '#FFF7ED' : '#FEF2F2',
                                 color: r.status === 'imported' ? '#15803D' : r.status === 'skipped' ? '#92400E' : '#B91C1C',
                               }}
                             >
@@ -436,7 +436,7 @@ export function DataImportPage() {
                     <span
                       className="shrink-0 px-2 py-0.5 rounded-[4px] text-xs font-semibold"
                       style={{
-                        background: job.status === 'complete' ? '#F0FDF4' : job.status === 'failed' ? '#F0FBFB' : '#FFF7ED',
+                        background: job.status === 'complete' ? '#F0FDF4' : job.status === 'failed' ? '#FEF2F2' : '#FFF7ED',
                         color: job.status === 'complete' ? '#15803D' : job.status === 'failed' ? '#B91C1C' : '#92400E',
                       }}
                     >
@@ -457,7 +457,7 @@ export function DataImportPage() {
                         <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Rollback until {job.rollbackAvailableUntil}</span>
                       </div>
                       {rollbackTarget === job.id ? (
-                        <div className="rounded-[6px] p-3" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                        <div className="rounded-[6px] p-3" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                           <p style={{ color: '#B91C1C', fontSize: '0.8125rem', fontWeight: 600, marginBottom: '8px' }}>
                             Roll back this import?
                           </p>
@@ -485,7 +485,7 @@ export function DataImportPage() {
                         <button
                           onClick={() => setRollbackTarget(job.id)}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] w-full justify-center"
-                          style={{ border: '1px solid #FECACA', color: '#00BFC3', fontSize: '0.75rem', fontWeight: 600, background: '#F0FBFB' }}
+                          style={{ border: '1px solid #FECACA', color: '#00BFC3', fontSize: '0.75rem', fontWeight: 600, background: '#FEF2F2' }}
                         >
                           <Trash2 size={12} /> Rollback Import
                         </button>

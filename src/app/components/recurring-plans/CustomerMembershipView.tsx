@@ -116,7 +116,7 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
           </button>
           <button
             className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-[8px] text-sm font-semibold"
-            style={{ border: '1.5px solid #80D4D5', color: '#DC2626', background: '#F0FBFB' }}
+            style={{ border: '1.5px solid #FCA5A5', color: '#DC2626', background: '#FEF2F2' }}
             onClick={() => setCancelOpen(true)}
           >
             <XCircle size={14} /> Cancel
@@ -126,11 +126,11 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
 
       {cancelOpen && (
         <div className="px-5 pb-5 pt-0">
-          <div className="rounded-[8px] p-4" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+          <div className="rounded-[8px] p-4" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
             <div className="flex items-start gap-2 mb-3">
               <AlertTriangle size={15} style={{ color: '#DC2626', marginTop: '1px', flexShrink: 0 }} />
               <div>
-                <p style={{ fontWeight: 700, color: '#005F62', fontSize: '0.875rem' }}>Cancel Membership?</p>
+                <p style={{ fontWeight: 700, color: '#991B1B', fontSize: '0.875rem' }}>Cancel Membership?</p>
                 <p style={{ color: '#B91C1C', fontSize: '0.8125rem', marginTop: '2px' }}>
                   Your plan stays active until <strong>{fmtDate(enrollment.termEnd)}</strong>. After that date, you won't be charged and entitlements will end.
                 </p>
@@ -140,7 +140,7 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
               <button
                 onClick={() => setCancelOpen(false)}
                 className="flex-1 py-2 rounded-[6px] text-sm font-semibold"
-                style={{ border: '1.5px solid #80D4D5', color: '#DC2626' }}
+                style={{ border: '1.5px solid #FCA5A5', color: '#DC2626' }}
               >
                 Keep Plan
               </button>

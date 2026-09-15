@@ -377,7 +377,7 @@ export function RecallDetailView({ recall, onBack }: Props) {
                   <td className="px-4 py-2.5">
                     <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
                       style={{
-                        background: entry.deliveryStatus === 'delivered' ? '#F0FDF4' : '#F0FBFB',
+                        background: entry.deliveryStatus === 'delivered' ? '#F0FDF4' : '#FEF2F2',
                         color: entry.deliveryStatus === 'delivered' ? '#15803D' : '#B91C1C',
                       }}>
                       {entry.deliveryStatus}

@@ -340,7 +340,7 @@ function TemplateBuilder({ template, onSave, onCancel }: {
                 <p style={{ fontWeight: 600, fontSize: '0.825rem', color: '#374151', marginBottom: 12 }}>Recommended Actions per Status</p>
                 <div className="flex flex-col gap-3">
                   {(['attention', 'critical'] as ItemStatus[]).map(status => {
-                    const colors: Record<string, { bg: string; color: string }> = { attention: { bg: '#FFFBEB', color: '#B45309' }, critical: { bg: '#F0FBFB', color: '#B91C1C' } };
+                    const colors: Record<string, { bg: string; color: string }> = { attention: { bg: '#FFFBEB', color: '#B45309' }, critical: { bg: '#FEF2F2', color: '#B91C1C' } };
                     const c = colors[status];
                     return (
                       <div key={status}>

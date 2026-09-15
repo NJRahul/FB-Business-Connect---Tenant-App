@@ -238,9 +238,9 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
             className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#00A9AC' : '#E5E7EB'}`, outline: 'none' }} />
         </div>
         {insufficient && (
-          <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+          <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
             <AlertCircle size={14} style={{ color: '#00A9AC', flexShrink: 0 }} />
-            <p style={{ color: '#005F62', fontSize: '0.8125rem', fontWeight: 600 }}>
+            <p style={{ color: '#991B1B', fontSize: '0.8125rem', fontWeight: 600 }}>
               Insufficient funds. Shortfall: {formatCents(shortfall)}
             </p>
           </div>
@@ -306,7 +306,7 @@ function ScheduledTransfers({ transfers }: { transfers: BankingTransfer[] }) {
             </span>
             <div className="flex gap-1">
               <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#FFF8E1', color: '#F39C12' }}>Skip next</button>
-              <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#F0FBFB', color: '#00A9AC' }}>Cancel</button>
+              <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#FEF2F2', color: '#00A9AC' }}>Cancel</button>
             </div>
           </div>
         </div>

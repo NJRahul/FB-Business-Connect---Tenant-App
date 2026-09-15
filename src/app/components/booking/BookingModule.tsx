@@ -47,7 +47,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
 
       {/* Live alert */}
       {inProgress.length > 0 && (
-        <div className="rounded-[8px] p-4 mb-5 flex items-center gap-3" style={{ background: '#E6F7F7', border: '1.5px solid #80D4D5' }}>
+        <div className="rounded-[8px] p-4 mb-5 flex items-center gap-3" style={{ background: '#E6F7F7', border: '1.5px solid #FCA5A5' }}>
           <div className="w-2.5 h-2.5 rounded-full shrink-0 animate-pulse" style={{ background: '#00A9AC' }} />
           <div>
             <p style={{ color: '#00A9AC', fontWeight: 700, fontSize: '0.9375rem' }}>

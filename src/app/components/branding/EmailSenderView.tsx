@@ -41,7 +41,7 @@ function RecordRow({ label, record, onVerify }: { label: string; record: EmailDn
 
   const statusLabel = localStatus === 'pass' ? 'Pass' : localStatus === 'fail' ? 'Failed' : 'Pending';
   const statusColor = localStatus === 'pass' ? '#15803D' : localStatus === 'fail' ? '#DC2626' : '#D97706';
-  const statusBg    = localStatus === 'pass' ? '#F0FDF4' : localStatus === 'fail' ? '#F0FBFB' : '#FFFBEB';
+  const statusBg    = localStatus === 'pass' ? '#F0FDF4' : localStatus === 'fail' ? '#FEF2F2' : '#FFFBEB';
 
   return (
     <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, overflow: 'hidden' }}>
@@ -91,7 +91,7 @@ function RecordRow({ label, record, onVerify }: { label: string; record: EmailDn
           </div>
 
           {localStatus === 'fail' && (
-            <div style={{ marginTop: 12, padding: '10px 12px', borderRadius: 7, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 12, color: '#005F62' }}>
+            <div style={{ marginTop: 12, padding: '10px 12px', borderRadius: 7, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 12, color: '#991B1B' }}>
               Record not found or incorrect. Verify the value above matches exactly, including any trailing periods your DNS provider may require.
             </div>
           )}
@@ -159,7 +159,7 @@ function EmailSenderConfigured({ sender }: { sender: CustomEmailSender }) {
               sub: 'Alert threshold: 0.08%',
             },
           ].map(m => (
-            <div key={m.label} style={{ padding: '14px 16px', borderRadius: 8, border: '1px solid #E5E7EB', background: m.ok ? '#F0FDF4' : '#F0FBFB' }}>
+            <div key={m.label} style={{ padding: '14px 16px', borderRadius: 8, border: '1px solid #E5E7EB', background: m.ok ? '#F0FDF4' : '#FEF2F2' }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 4 }}>{m.label}</div>
               <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 26, color: m.ok ? '#15803D' : '#DC2626' }}>{m.value}</div>
               <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 4 }}>{m.sub}</div>

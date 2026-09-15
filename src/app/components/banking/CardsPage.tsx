@@ -46,7 +46,7 @@ function CardStatusPill({ status }: { status: CardStatus }) {
   const cfg: Record<CardStatus, { label: string; color: string; bg: string }> = {
     active:              { label: 'Active',        color: '#27AE60', bg: '#F0FDF4' },
     frozen:              { label: 'Frozen',        color: '#6B7280', bg: '#F3F4F6' },
-    lost_stolen:         { label: 'Lost/Stolen',   color: '#00BFC3', bg: '#F0FBFB' },
+    lost_stolen:         { label: 'Lost/Stolen',   color: '#00BFC3', bg: '#FEF2F2' },
     cancelled:           { label: 'Cancelled',     color: '#9CA3AF', bg: '#F3F4F6' },
     pending_activation:  { label: 'Activate',      color: '#F39C12', bg: '#FFF8E1' },
   };
@@ -226,7 +226,7 @@ function ControlsDrawer({ card, controls, onClose, onUpdate, onFreeze, onReportL
               {card.status === 'frozen' ? '🔓 Unfreeze card' : '🔒 Freeze card'}
             </button>
             <button onClick={onReportLost} className="w-full py-2.5 rounded-[8px] font-semibold"
-              style={{ background: '#F0FBFB', color: '#00A9AC' }}>
+              style={{ background: '#FEF2F2', color: '#00A9AC' }}>
               Report lost / stolen
             </button>
           </div>

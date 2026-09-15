@@ -39,7 +39,7 @@ export function CrossTenantModal({ tenantName, actionLabel, onConfirm, onCancel 
           <div>
             <h3 style={{ fontWeight: 700, color: '#F9FAFB', fontSize: '1rem' }}>Cross-Tenant Data Access</h3>
             <p style={{ fontSize: '0.825rem', color: '#9CA3AF', marginTop: 2 }}>
-              You are about to access <span style={{ color: '#80D4D5', fontWeight: 600 }}>{tenantName}</span>
+              You are about to access <span style={{ color: '#FCA5A5', fontWeight: 600 }}>{tenantName}</span>
               {' '}to perform: <span style={{ color: '#F9FAFB', fontWeight: 500 }}>{actionLabel}</span>
             </p>
           </div>

@@ -131,7 +131,7 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                   className="relative flex flex-col items-center justify-center rounded-[6px] aspect-square transition-all"
                   style={{
                     background: isSelected ? '#00A9AC' : isToday ? '#E6F7F7' : hasSlots && !isPast ? '#FFF' : 'transparent',
-                    border: isSelected ? '2px solid #00A9AC' : isToday ? '1.5px solid #80D4D5' : hasSlots && !isPast ? '1.5px solid #E5E7EB' : 'none',
+                    border: isSelected ? '2px solid #00A9AC' : isToday ? '1.5px solid #FCA5A5' : hasSlots && !isPast ? '1.5px solid #E5E7EB' : 'none',
                     cursor: hasSlots && !isPast ? 'pointer' : 'default',
                     opacity: isPast ? 0.35 : 1,
                   }}
@@ -315,7 +315,7 @@ export function BookingCalendar({ onSlotBooked }: Props) {
 
               {/* Selected slot summary + confirm */}
               {selectedSlot && (
-                <div className="mt-5 p-4 rounded-[8px]" style={{ background: '#E6F7F7', border: '1.5px solid #80D4D5' }}>
+                <div className="mt-5 p-4 rounded-[8px]" style={{ background: '#E6F7F7', border: '1.5px solid #FCA5A5' }}>
                   <p style={{ fontWeight: 600, color: '#00A9AC', fontSize: '0.9375rem' }}>
                     {st.slotModel === 'time-slot' ? `${selectedSlot.windowLabel} window selected` : `${fmtTime(selectedSlot.slotStart)} selected`}
                   </p>

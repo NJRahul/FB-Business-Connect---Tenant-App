@@ -135,9 +135,9 @@ export function UsageView() {
               ))}
             </div>
             {s.webhookFailures > 0 && (
-              <div className="mt-3 flex items-center gap-2 p-2 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+              <div className="mt-3 flex items-center gap-2 p-2 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
                 <AlertTriangle size={13} style={{ color: '#DC2626', flexShrink: 0 }} />
-                <p style={{ color: '#005F62', fontSize: '0.8125rem' }}>
+                <p style={{ color: '#991B1B', fontSize: '0.8125rem' }}>
                   {s.webhookFailures} deliveries failed after max retries. Review the Webhooks tab.
                 </p>
               </div>
@@ -179,7 +179,7 @@ export function UsageView() {
               </div>
               <button
                 className="px-3 py-1.5 rounded-[6px] text-sm font-semibold shrink-0"
-                style={{ border: `1.5px solid ${item.danger ? '#80D4D5' : '#E5E7EB'}`, color: item.danger ? '#DC2626' : '#374151', background: item.danger ? '#F0FBFB' : '#fff' }}
+                style={{ border: `1.5px solid ${item.danger ? '#FCA5A5' : '#E5E7EB'}`, color: item.danger ? '#DC2626' : '#374151', background: item.danger ? '#FEF2F2' : '#fff' }}
               >
                 {item.action}
               </button>

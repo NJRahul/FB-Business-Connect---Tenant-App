@@ -7,7 +7,7 @@ const STATUS_META: Record<PayoutStatus, { label: string; color: string; bg: stri
   paid:       { label: 'Paid',       color: '#15803D', bg: '#F0FDF4', icon: CheckCircle },
   in_transit: { label: 'In Transit', color: '#2563EB', bg: '#EFF6FF', icon: Clock },
   pending:    { label: 'Pending',    color: '#D97706', bg: '#FEF3C7', icon: Clock },
-  failed:     { label: 'Failed',     color: '#DC2626', bg: '#F0FBFB', icon: AlertTriangle },
+  failed:     { label: 'Failed',     color: '#DC2626', bg: '#FEF2F2', icon: AlertTriangle },
 };
 
 function fmtMoney(cents: number) {

@@ -9,7 +9,7 @@ const POST_STATUS_CFG: Record<PostStatus, { label: string; color: string; bg: st
   draft:     { label: 'Draft', color: '#6B7280', bg: '#F3F4F6' },
   scheduled: { label: 'Scheduled', color: '#D97706', bg: '#FEF3C7' },
   published: { label: 'Published', color: '#15803D', bg: '#F0FDF4' },
-  failed:    { label: 'Failed', color: '#DC2626', bg: '#F0FBFB' },
+  failed:    { label: 'Failed', color: '#DC2626', bg: '#FEF2F2' },
 };
 
 const PLATFORM_CFG: Record<SocialPlatform, { label: string; color: string; bg: string }> = {

@@ -79,7 +79,7 @@ function LogRow({ log, expanded, onToggle }: { log: DistributorApiLog; expanded:
               </div>
               <div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>Response</div>
-                <pre style={{ color: log.error ? '#80D4D5' : '#86EFAC', fontSize: 12, fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
+                <pre style={{ color: log.error ? '#FCA5A5' : '#86EFAC', fontSize: 12, fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
                   HTTP {log.responseStatus}{'\n'}
                   Latency: {log.latencyMs}ms{'\n'}
                   {log.error ? `\nError: ${log.error}` : '\nStatus: OK'}

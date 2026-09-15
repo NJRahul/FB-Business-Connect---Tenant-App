@@ -116,7 +116,7 @@ export function ReportsView() {
       {/* Dimension toggle */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         {(['manufacturer', 'tech'] as const).map(d => (
-          <button key={d} onClick={() => setDimension(d)} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: dimension === d ? '#00A9AC' : '#E5E7EB', background: dimension === d ? '#F0FBFB' : '#fff', color: dimension === d ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+          <button key={d} onClick={() => setDimension(d)} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: dimension === d ? '#00A9AC' : '#E5E7EB', background: dimension === d ? '#FEF2F2' : '#fff', color: dimension === d ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
             By {d}
           </button>
         ))}

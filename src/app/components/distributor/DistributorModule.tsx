@@ -83,9 +83,9 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: DSTab) => void }) {
 
           return (
             <div key={dist.id} onClick={() => onNavigate('connectors')}
-              style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 12, padding: '16px', cursor: 'pointer' }}
+              style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 12, padding: '16px', cursor: 'pointer' }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = '#00A9AC'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(192,57,43,0.1)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+              onMouseLeave={e => { e.currentTarget.style.borderColor = dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                 <span style={{ fontSize: 24 }}>{dist.logoEmoji}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>

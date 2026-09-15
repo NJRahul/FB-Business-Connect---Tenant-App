@@ -278,7 +278,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
               <button
                 onClick={() => onStateChange(visit.id, 'cancelled')}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-[6px] text-sm"
-                style={{ border: '1.5px solid #80D4D5', color: '#DC2626', background: '#F0FBFB' }}
+                style={{ border: '1.5px solid #FCA5A5', color: '#DC2626', background: '#FEF2F2' }}
               >
                 <BanIcon size={14} /> Cancel
               </button>

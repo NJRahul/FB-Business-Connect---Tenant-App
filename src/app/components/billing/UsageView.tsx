@@ -40,7 +40,7 @@ function UsageMeter({ used, included, label }: { used: number; included: number 
         <span>{included.toLocaleString()}</span>
       </div>
       {overage > 0 && (
-        <div style={{ marginTop: 8, padding: '6px 10px', borderRadius: 6, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 12, color: '#DC2626', fontWeight: 600 }}>
+        <div style={{ marginTop: 8, padding: '6px 10px', borderRadius: 6, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 12, color: '#DC2626', fontWeight: 600 }}>
           {overage.toLocaleString()} overage SMS · ${overageCost.toFixed(2)} will be added to next invoice
         </div>
       )}
@@ -85,7 +85,7 @@ export function UsageView({ currentPlan }: Props) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* Alert banners */}
       {atAlert100 && (
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', color: '#005F62' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#991B1B' }}>
           <AlertTriangle size={16} style={{ marginTop: 2, flexShrink: 0 }} />
           <div>
             <div style={{ fontWeight: 700, fontSize: 13 }}>SMS inclusion exhausted</div>

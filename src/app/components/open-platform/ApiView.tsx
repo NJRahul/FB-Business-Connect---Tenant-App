@@ -13,7 +13,7 @@ const METHOD_COLOR: Record<string, { bg: string; color: string }> = {
   POST:   { bg: '#EFF6FF', color: '#1D4ED8' },
   PUT:    { bg: '#FEF3C7', color: '#D97706' },
   PATCH:  { bg: '#FDF4FF', color: '#7E22CE' },
-  DELETE: { bg: '#F0FBFB', color: '#DC2626' },
+  DELETE: { bg: '#FEF2F2', color: '#DC2626' },
 };
 
 function MethodBadge({ method }: { method: string }) {

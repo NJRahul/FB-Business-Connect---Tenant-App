@@ -665,7 +665,7 @@ function Step1({ state, setState, setStateField, goNext }: {
 
       {/* Custom industry form */}
       {showCustomForm && (
-        <div className="bg-white rounded-[8px] p-5" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1.5px solid #80D4D5' }}>
+        <div className="bg-white rounded-[8px] p-5" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1.5px solid #FCA5A5' }}>
           <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Tell us about your business</h3>
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>This feeds the product roadmap for future industry packs.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1003,7 +1003,7 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
           ))}
         </div>
         {planRec && (
-          <div className="mt-4 flex items-center gap-2.5 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+          <div className="mt-4 flex items-center gap-2.5 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
             <Star size={14} style={{ color: '#00A9AC' }} />
             <p style={{ color: '#00A9AC', fontSize: '0.875rem', fontWeight: 600 }}>Recommended: {planRec}</p>
           </div>
@@ -1078,7 +1078,7 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
                 {state.serviceZips.map(z => (
                   <span key={z} className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px]" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}>
                     <MapPin size={11} />{z}
-                    <button onClick={() => setState(s => ({ ...s, serviceZips: s.serviceZips.filter(v => v !== z) }))}><X size={11} style={{ color: '#80D4D5' }} /></button>
+                    <button onClick={() => setState(s => ({ ...s, serviceZips: s.serviceZips.filter(v => v !== z) }))}><X size={11} style={{ color: '#FCA5A5' }} /></button>
                   </span>
                 ))}
                 {state.serviceZips.length === 0 && <p style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>No postal codes added yet</p>}
@@ -1103,7 +1103,7 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
           ))}
         </div>
         {state.locationCount === '20+' && (
-          <div className="mt-3 p-3 rounded-[6px] flex items-center gap-2.5" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+          <div className="mt-3 p-3 rounded-[6px] flex items-center gap-2.5" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
             <Star size={14} style={{ color: '#00A9AC' }} />
             <p style={{ color: '#00A9AC', fontSize: '0.875rem', fontWeight: 600 }}>Enterprise plan recommended — <button className="underline">Talk to Sales</button></p>
           </div>
@@ -1196,7 +1196,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
           {FEDERAL_HOLIDAYS.map(h => {
             const checked = state.holidays.includes(h);
             return (
-              <label key={h} className="flex items-center gap-3 py-2 px-3 rounded-[6px] cursor-pointer" style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#80D4D5' : '#E5E7EB'}` }}>
+              <label key={h} className="flex items-center gap-3 py-2 px-3 rounded-[6px] cursor-pointer" style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#FCA5A5' : '#E5E7EB'}` }}>
                 <input type="checkbox" checked={checked} onChange={() => setState(s => ({ ...s, holidays: checked ? s.holidays.filter(v => v !== h) : [...s.holidays, h] }))} style={{ accentColor: '#00A9AC' }} />
                 <span style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: checked ? 500 : 400 }}>{h}</span>
               </label>
@@ -1381,7 +1381,7 @@ function Step5({ state, setState }: { state: WizardState; setState: React.Dispat
                 </div>
               ))}
             </div>
-            <div className="p-3 rounded-[6px] mb-5" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+            <div className="p-3 rounded-[6px] mb-5" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
               <p style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600 }}>⚠️ Required before storefront can be published</p>
             </div>
             <button onClick={connect} disabled={loading} className="w-full flex items-center justify-center gap-2 py-3 rounded-[6px] text-white transition-colors" style={{ background: loading ? '#9CA3AF' : '#635BFF', fontWeight: 600 }}>
@@ -1938,10 +1938,10 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
           <div className="flex items-center justify-between mb-2">
             <h3 style={{ color: '#1A1A1A', fontWeight: 600 }}>Your Storefront URL</h3>
           </div>
-          <div className="flex items-center gap-3 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+          <div className="flex items-center gap-3 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
             <Globe size={16} style={{ color: '#00A9AC', shrink: 0 }} />
             <span style={{ color: '#00A9AC', fontWeight: 700, fontFamily: 'Sora, sans-serif', fontSize: '1rem', flex: 1 }}>{slug}.fb-business-connect.app</span>
-            <button onClick={copyUrl} className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold" style={{ border: '1px solid #80D4D5', color: '#00A9AC', background: '#fff' }}>
+            <button onClick={copyUrl} className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold" style={{ border: '1px solid #FCA5A5', color: '#00A9AC', background: '#fff' }}>
               {copied ? <CheckCircle2 size={12} style={{ color: '#27AE60' }} /> : <Copy size={12} />}
               {copied ? 'Copied!' : 'Copy'}
             </button>
@@ -2025,7 +2025,7 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
         </div>
 
         {!canPublish && (
-          <div className="mt-5 rounded-[8px] p-4 flex items-start gap-3" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+          <div className="mt-5 rounded-[8px] p-4 flex items-start gap-3" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
             <AlertCircle size={16} style={{ color: '#00A9AC', marginTop: '2px' }} />
             <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>Complete the required steps before publishing: {!state.stripeConnected && 'Payout setup'}{!state.stripeConnected && !state.catalogSource && ' + '}{!state.catalogSource && 'Catalog / inventory setup'}.</p>
           </div>

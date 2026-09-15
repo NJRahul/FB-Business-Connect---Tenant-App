@@ -14,7 +14,7 @@ function NetBadge({ net }: { net: number }) {
     );
   }
   return (
-    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#F0FBFB', color: '#DC2626' }}>
+    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FEF2F2', color: '#DC2626' }}>
       <TrendingDown size={11} /> {fmtMoney(net)}
     </span>
   );

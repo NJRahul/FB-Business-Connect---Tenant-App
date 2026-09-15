@@ -280,7 +280,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 22px', borderBottom: '1px solid #E5E7EB' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 99, display: 'flex', alignItems: 'center', justifyContent: 'center', background: modal.type === 'upgrade' ? '#E6F7F7' : '#F0FBFB' }}>
+                <div style={{ width: 36, height: 36, borderRadius: 99, display: 'flex', alignItems: 'center', justifyContent: 'center', background: modal.type === 'upgrade' ? '#E6F7F7' : '#FEF2F2' }}>
                   {modal.type === 'upgrade' ? <ArrowUp size={18} color="#00A9AC" /> : <AlertTriangle size={18} color="#DC2626" />}
                 </div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#1A1A1A' }}>
@@ -332,12 +332,12 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {ACTIVE_COMMITMENTS.map(c => (
-                      <div key={c.key} style={{ padding: '12px 14px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+                      <div key={c.key} style={{ padding: '12px 14px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
                         <div style={{ fontWeight: 700, fontSize: 13, color: '#DC2626', marginBottom: 4 }}>
                           <AlertTriangle size={12} style={{ display: 'inline', marginRight: 5, verticalAlign: 'middle' }} />
                           {c.label}
                         </div>
-                        <div style={{ fontSize: 12, color: '#005F62', marginBottom: 6 }}>{c.description}</div>
+                        <div style={{ fontSize: 12, color: '#991B1B', marginBottom: 6 }}>{c.description}</div>
                         <div style={{ fontSize: 11, color: '#6B7280' }}>To resolve: {c.resolveAction}</div>
                       </div>
                     ))}

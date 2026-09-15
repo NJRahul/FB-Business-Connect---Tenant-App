@@ -8,7 +8,7 @@ function WarrantyStatusBadge({ status }: { status: WarrantyStatus }) {
     active:  { label: 'Active',   color: '#16A34A', bg: '#F0FDF4' },
     expired: { label: 'Expired',  color: '#9CA3AF', bg: '#F3F4F6' },
     claimed: { label: 'Claimed',  color: '#2563EB', bg: '#EFF6FF' },
-    voided:  { label: 'Voided',   color: '#DC2626', bg: '#F0FBFB' },
+    voided:  { label: 'Voided',   color: '#DC2626', bg: '#FEF2F2' },
   };
   const s = map[status];
   return <span style={{ padding: '2px 8px', borderRadius: 99, background: s.bg, color: s.color, fontSize: 11, fontWeight: 600 }}>{s.label}</span>;
@@ -19,7 +19,7 @@ function ClaimStatusBadge({ status }: { status: ClaimStatus }) {
     open:         { label: 'Open',         color: '#2563EB', bg: '#EFF6FF', icon: <Clock size={10} /> },
     under_review: { label: 'Under Review', color: '#D97706', bg: '#FFFBEB', icon: <AlertTriangle size={10} /> },
     approved:     { label: 'Approved',     color: '#16A34A', bg: '#F0FDF4', icon: <CheckCircle size={10} /> },
-    denied:       { label: 'Denied',       color: '#DC2626', bg: '#F0FBFB', icon: <XCircle size={10} /> },
+    denied:       { label: 'Denied',       color: '#DC2626', bg: '#FEF2F2', icon: <XCircle size={10} /> },
     resolved:     { label: 'Resolved',     color: '#6B7280', bg: '#F3F4F6', icon: <CheckCircle size={10} /> },
   };
   const s = map[status];
@@ -89,7 +89,7 @@ function ConfigTab() {
         <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Recommendation Level</label>
         <div style={{ display: 'flex', gap: 8 }}>
           {(['required', 'recommended', 'optional'] as const).map(lvl => (
-            <button key={lvl} onClick={() => setCfg(c => ({ ...c, recommendationLevel: lvl }))} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: cfg.recommendationLevel === lvl ? '#00A9AC' : '#E5E7EB', background: cfg.recommendationLevel === lvl ? '#F0FBFB' : '#fff', color: cfg.recommendationLevel === lvl ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+            <button key={lvl} onClick={() => setCfg(c => ({ ...c, recommendationLevel: lvl }))} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: cfg.recommendationLevel === lvl ? '#00A9AC' : '#E5E7EB', background: cfg.recommendationLevel === lvl ? '#FEF2F2' : '#fff', color: cfg.recommendationLevel === lvl ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
               {lvl}
             </button>
           ))}

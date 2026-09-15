@@ -54,7 +54,7 @@ function PlatformAdminView() {
   const statusCfg: Record<string, { label: string; color: string; bg: string }> = {
     approved:       { label: 'Approved',    color: '#27AE60', bg: '#F0FDF4' },
     pending_review: { label: 'In review',   color: '#F39C12', bg: '#FFF8E1' },
-    denied:         { label: 'Denied',      color: '#00BFC3', bg: '#F0FBFB' },
+    denied:         { label: 'Denied',      color: '#00BFC3', bg: '#FEF2F2' },
     submitted:      { label: 'Submitted',   color: '#2980B9', bg: '#EBF5FB' },
   };
 

@@ -90,7 +90,7 @@ export function ComplianceDashboard() {
                 : <AlertTriangle size={10} color="#F87171" />}
             </div>
             <div>
-              <p style={{ fontSize: '0.85rem', color: r.met ? '#D1D5DB' : '#80D4D5', fontWeight: 500 }}>{r.label}</p>
+              <p style={{ fontSize: '0.85rem', color: r.met ? '#D1D5DB' : '#FCA5A5', fontWeight: 500 }}>{r.label}</p>
               <p style={{ fontSize: '0.775rem', color: '#4B5563', marginTop: 2 }}>{r.detail}</p>
             </div>
           </div>

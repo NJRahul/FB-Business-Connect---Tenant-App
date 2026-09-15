@@ -3,13 +3,13 @@ import { Plus, Search, ChevronRight, X, Shield, AlertTriangle, Info, Check } fro
 import type { Recall, RecallSeverity, RecallStatus, RecallSource, AffectedDOTRange, AffectedVehicle } from './types';
 
 export const SEVERITY_CONFIG: Record<RecallSeverity, { label: string; bg: string; color: string; dot: string }> = {
-  critical: { label: 'Critical',  bg: '#F0FBFB', color: '#B91C1C', dot: '#DC2626' },
+  critical: { label: 'Critical',  bg: '#FEF2F2', color: '#B91C1C', dot: '#DC2626' },
   warning:  { label: 'Warning',   bg: '#FFFBEB', color: '#B45309', dot: '#D97706' },
   info:     { label: 'Advisory',  bg: '#EFF6FF', color: '#1D4ED8', dot: '#3B82F6' },
 };
 
 export const STATUS_CONFIG: Record<RecallStatus, { label: string; bg: string; color: string }> = {
-  active:   { label: 'Active',    bg: '#F0FBFB', color: '#B91C1C' },
+  active:   { label: 'Active',    bg: '#FEF2F2', color: '#B91C1C' },
   resolved: { label: 'Resolved',  bg: '#F0FDF4', color: '#15803D' },
   withdrawn:{ label: 'Withdrawn', bg: '#F9FAFB', color: '#6B7280' },
 };

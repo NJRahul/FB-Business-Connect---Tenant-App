@@ -10,7 +10,7 @@ function StatusPill({ status }: { status: BankingTransaction['status'] }) {
   const cfg = {
     posted:    { label: 'Posted',    bg: '#F0FDF4', color: '#27AE60' },
     pending:   { label: 'Pending',   bg: '#FFF8E1', color: '#F39C12' },
-    returned:  { label: 'Returned',  bg: '#F0FBFB', color: '#00BFC3' },
+    returned:  { label: 'Returned',  bg: '#FEF2F2', color: '#00BFC3' },
     cancelled: { label: 'Cancelled', bg: '#F3F4F6', color: '#6B7280' },
   }[status];
   return (

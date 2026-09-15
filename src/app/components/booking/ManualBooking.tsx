@@ -553,7 +553,7 @@ export function ManualBooking({ onComplete }: Props) {
                       </div>
                     )}
                     {booking.selectedSlot && (
-                      <div className="mt-4 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+                      <div className="mt-4 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
                         <p style={{ fontWeight: 600, color: '#00A9AC', fontSize: '0.875rem' }}>
                           {fmtTime(booking.selectedSlot.slotStart)} · {booking.selectedSlot.technicianName}
                         </p>
@@ -586,7 +586,7 @@ export function ManualBooking({ onComplete }: Props) {
                     onChange={e => set('overrideReason', e.target.value)}
                     placeholder="Enter override reason (required)…"
                     className="w-full px-3 py-2 rounded-[6px] text-sm mb-2"
-                    style={{ border: '1.5px solid #80D4D5', outline: 'none' }}
+                    style={{ border: '1.5px solid #FCA5A5', outline: 'none' }}
                   />
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input

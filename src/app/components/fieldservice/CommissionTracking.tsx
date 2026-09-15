@@ -39,7 +39,7 @@ function RuleCard({ rule, onEdit, onDelete }: { rule: CommissionRule; onEdit: (r
         <button onClick={() => onEdit(rule)} style={{ padding: '6px', border: '1px solid #E5E7EB', borderRadius: 6, cursor: 'pointer', background: '#fff' }}>
           <Edit2 size={14} color="#6B7280" />
         </button>
-        <button onClick={() => onDelete(rule.id)} style={{ padding: '6px', border: '1px solid #80D4D5', borderRadius: 6, cursor: 'pointer', background: '#F0FBFB' }}>
+        <button onClick={() => onDelete(rule.id)} style={{ padding: '6px', border: '1px solid #FCA5A5', borderRadius: 6, cursor: 'pointer', background: '#FEF2F2' }}>
           <Trash2 size={14} color="#DC2626" />
         </button>
       </div>

@@ -75,7 +75,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Tags</div>
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                 {customer.tags.map(t => (
-                  <span key={t} style={{ background: '#E6F7F7', color: '#00A9AC', border: '1px solid #80D4D5', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 600 }}>{t}</span>
+                  <span key={t} style={{ background: '#E6F7F7', color: '#00A9AC', border: '1px solid #FCA5A5', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 600 }}>{t}</span>
                 ))}
               </div>
             </div>
@@ -128,7 +128,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
                 {logs.map(l => (
                   <div key={l.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '6px 10px', background: '#F9FAFB', borderRadius: 7, fontSize: 12 }}>
                     <span style={{ fontFamily: 'monospace', color: '#9CA3AF', fontSize: 11 }}>{l.createdAt.slice(0, 16)}</span>
-                    <span style={{ background: l.eventType.includes('opt_in') ? '#D1FAE5' : '#FEE2E2', color: l.eventType.includes('opt_in') ? '#065F46' : '#005F62', borderRadius: 5, padding: '1px 7px', fontWeight: 700 }}>{l.eventType}</span>
+                    <span style={{ background: l.eventType.includes('opt_in') ? '#D1FAE5' : '#FEE2E2', color: l.eventType.includes('opt_in') ? '#065F46' : '#991B1B', borderRadius: 5, padding: '1px 7px', fontWeight: 700 }}>{l.eventType}</span>
                     <span style={{ color: '#374151', textTransform: 'capitalize' }}>{l.channel}</span>
                     <span style={{ color: '#9CA3AF' }}>{l.source}</span>
                   </div>

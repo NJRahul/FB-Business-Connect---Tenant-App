@@ -147,7 +147,7 @@ function PlanCard({ plan }: { plan: ServicePlan }) {
           {plan.exclusions.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">
               {plan.exclusions.map((ex, i) => (
-                <span key={i} className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs" style={{ background: '#F0FBFB', color: '#005F62' }}>
+                <span key={i} className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs" style={{ background: '#FEF2F2', color: '#991B1B' }}>
                   <XCircle size={9} /> {ex}
                 </span>
               ))}

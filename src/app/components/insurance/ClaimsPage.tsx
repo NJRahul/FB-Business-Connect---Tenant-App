@@ -25,7 +25,7 @@ const STATUS_CFG: Record<ClaimStatus, { label: string; color: string; bg: string
   acknowledged:  { label: 'Acknowledged',  color: '#2980B9', bg: '#EBF5FB' },
   investigating: { label: 'Investigating', color: '#F39C12', bg: '#FFF8E1' },
   approved:      { label: 'Approved',      color: '#27AE60', bg: '#F0FDF4' },
-  denied:        { label: 'Denied',        color: '#00BFC3', bg: '#F0FBFB' },
+  denied:        { label: 'Denied',        color: '#00BFC3', bg: '#FEF2F2' },
   paid:          { label: 'Paid',          color: '#27AE60', bg: '#F0FDF4' },
   closed:        { label: 'Closed',        color: '#6B7280', bg: '#F3F4F6' },
 };
@@ -228,7 +228,7 @@ function FNOLForm({ onSubmitted }: { onSubmitted: () => void }) {
   return (
     <div className="space-y-4">
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+        <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
           <AlertTriangle size={14} style={{ color: '#00A9AC' }} />
           <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
         </div>

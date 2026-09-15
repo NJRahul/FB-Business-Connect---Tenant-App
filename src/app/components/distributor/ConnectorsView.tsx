@@ -177,7 +177,7 @@ function ConnectModal({ onClose }: { onClose: () => void }) {
               )}
               {testResult === 'fail' && (
                 <div style={{ background: '#FEE2E2', border: '1px solid #EF4444', borderRadius: 8, padding: '12px 16px' }}>
-                  <div style={{ fontSize: 14, color: '#005F62', fontWeight: 600 }}>Connection failed</div>
+                  <div style={{ fontSize: 14, color: '#991B1B', fontWeight: 600 }}>Connection failed</div>
                   <div style={{ fontSize: 13, color: '#DC2626', marginTop: 4 }}>Invalid API credentials. Check your key and try again.</div>
                 </div>
               )}
@@ -233,7 +233,7 @@ function ConnectorCard({ dist, tenant, onViewRef }: ConnectorCardProps) {
   };
 
   return (
-    <div style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 12, overflow: 'hidden' }}>
+    <div style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 12, overflow: 'hidden' }}>
       {/* Degraded warning stripe */}
       {dist.status === 'degraded' && (
         <div style={{ background: '#FEF3C7', borderBottom: '1px solid #F59E0B', padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -314,7 +314,7 @@ function ConnectorCard({ dist, tenant, onViewRef }: ConnectorCardProps) {
           )}
           {testResult === 'fail' && (
             <div style={{ background: '#FEE2E2', border: '1px solid #EF4444', borderRadius: 8, padding: '10px 14px', marginBottom: 12 }}>
-              <div style={{ fontSize: 13, color: '#005F62', fontWeight: 600 }}>Test failed — distributor unreachable</div>
+              <div style={{ fontSize: 13, color: '#991B1B', fontWeight: 600 }}>Test failed — distributor unreachable</div>
               <div style={{ fontSize: 12, color: '#DC2626', marginTop: 2 }}>503 Service Unavailable (timeout 30s)</div>
             </div>
           )}

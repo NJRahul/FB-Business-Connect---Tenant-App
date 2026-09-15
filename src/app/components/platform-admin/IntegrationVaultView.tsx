@@ -141,7 +141,7 @@ export function IntegrationVaultView() {
             </div>
             <div className="flex items-start gap-2 rounded-lg p-3 mb-4" style={{ background: '#1C0A0A', border: '1px solid #3F1515' }}>
               <AlertTriangle size={14} color="#F87171" className="mt-0.5 shrink-0" />
-              <p style={{ fontSize: '0.8rem', color: '#80D4D5' }}>
+              <p style={{ fontSize: '0.8rem', color: '#FCA5A5' }}>
                 This credential read will be audit-logged with your identity and reason.
               </p>
             </div>
@@ -172,7 +172,7 @@ export function IntegrationVaultView() {
               </>
             ) : (
               <div>
-                <div className="px-3 py-3 rounded-lg font-mono text-sm mb-4" style={{ background: '#0D1526', color: '#80D4D5', wordBreak: 'break-all' }}>
+                <div className="px-3 py-3 rounded-lg font-mono text-sm mb-4" style={{ background: '#0D1526', color: '#FCA5A5', wordBreak: 'break-all' }}>
                   {revealedValue}
                 </div>
                 <p style={{ fontSize: '0.75rem', color: '#4B5563', marginBottom: 12 }}>

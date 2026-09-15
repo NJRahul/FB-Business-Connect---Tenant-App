@@ -13,7 +13,7 @@ const STATUS_CFG: Record<CampaignStatus, { bg: string; color: string; border: st
   sending:   { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Sending' },
   sent:      { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'Sent' },
   paused:    { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Paused' },
-  cancelled: { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Cancelled' },
+  cancelled: { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Cancelled' },
 };
 
 const TOKENS = ['{{first_name}}', '{{last_vehicle}}', '{{last_service}}', '{{promo_code}}'];
@@ -129,7 +129,7 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                   {SEGMENTS.map(s => <option key={s.id} value={s.id}>{s.name} ({s.memberCount})</option>)}
                 </select>
               </div>
-              <div style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
+              <div style={{ background: '#E6F7F7', border: '1px solid #FCA5A5', borderRadius: 10, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#00A9AC' }}>{seg.memberCount}</div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#1A1A1A' }}>customers will receive this campaign</div>
@@ -282,12 +282,12 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                 { ok: !smsEnabled || smsText.includes('STOP'), label: 'SMS includes STOP keyword (TCPA)' },
                 { ok: !smsEnabled || smsValid.ok, label: `SMS length ≤ 480 chars (${smsValid.charCount} chars, ${smsValid.segmentCount} segments)` },
               ].map((check, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', background: check.ok ? '#F0FDF4' : '#F0FBFB', border: `1px solid ${check.ok ? '#86EFAC' : '#80D4D5'}`, borderRadius: 8 }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', background: check.ok ? '#F0FDF4' : '#FEF2F2', border: `1px solid ${check.ok ? '#86EFAC' : '#FCA5A5'}`, borderRadius: 8 }}>
                   {check.ok ? <CheckCircle size={16} color="#22C55E" /> : <AlertTriangle size={16} color="#EF4444" />}
                   <span style={{ fontSize: 13, color: check.ok ? '#15803D' : '#DC2626', fontWeight: check.ok ? 400 : 600 }}>{check.label}</span>
                 </div>
               ))}
-              <div style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, padding: '14px 16px' }}>
+              <div style={{ background: '#E6F7F7', border: '1px solid #FCA5A5', borderRadius: 10, padding: '14px 16px' }}>
                 <div style={{ fontWeight: 700, color: '#1A1A1A', marginBottom: 6 }}>Ready to send to</div>
                 <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#00A9AC' }}>
                   {seg.memberCount} customers

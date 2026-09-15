@@ -108,7 +108,7 @@ function EditModal({ template, onClose }: EditModalProps) {
               value={body}
               onChange={e => setBody(e.target.value)}
               rows={8}
-              style={{ width: '100%', padding: '10px 12px', border: `1px solid ${bodyErrors.length ? '#80D4D5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
+              style={{ width: '100%', padding: '10px 12px', border: `1px solid ${bodyErrors.length ? '#FCA5A5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
             />
             {bodyErrors.length > 0 && (
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4 }}>
@@ -131,7 +131,7 @@ function EditModal({ template, onClose }: EditModalProps) {
                 value={smsText}
                 onChange={e => setSmsText(e.target.value)}
                 rows={3}
-                style={{ width: '100%', padding: '10px 12px', border: `1px solid ${smsErrors.length ? '#80D4D5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
+                style={{ width: '100%', padding: '10px 12px', border: `1px solid ${smsErrors.length ? '#FCA5A5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
               />
               {smsErrors.length > 0 && (
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4 }}>

@@ -17,9 +17,9 @@ class ErrorBoundary extends Component<{ children: React.ReactNode }, { error: st
   render() {
     if (this.state.error) {
       return (
-        <div style={{ padding: 24, background: '#F0FBFB', border: '1px solid #80D4D5', borderRadius: 10, margin: 24 }}>
+        <div style={{ padding: 24, background: '#FEF2F2', border: '1px solid #FCA5A5', borderRadius: 10, margin: 24 }}>
           <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: 8 }}>Render error</div>
-          <pre style={{ fontSize: 12, color: '#005F62', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
+          <pre style={{ fontSize: 12, color: '#991B1B', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
         </div>
       );
     }
@@ -67,7 +67,7 @@ export default function NotificationsModule() {
 
       {/* Alert strip */}
       {txnFailed > 0 && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', color: '#005F62', marginBottom: 20 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#991B1B', marginBottom: 20 }}>
           <AlertTriangle size={14} />
           <span style={{ fontSize: 13, fontWeight: 600 }}>
             {txnFailed} transactional notification{txnFailed > 1 ? 's' : ''} failed — check the Delivery Log

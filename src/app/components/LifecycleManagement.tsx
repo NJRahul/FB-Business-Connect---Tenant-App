@@ -26,7 +26,7 @@ const STATE_CONFIG: Record<LifecycleState, { label: string; color: string; bg: s
   provisioning: { label: 'Provisioning', color: '#6B7280', bg: '#F9FAFB', border: '#E5E7EB', icon: Clock, description: 'Account is being set up' },
   active: { label: 'Active', color: '#27AE60', bg: '#F0FDF4', border: '#BBF7D0', icon: CheckCircle2, description: 'Storefront live, all features enabled' },
   suspended_billing: { label: 'Billing Suspended', color: '#F39C12', bg: '#FFF7ED', border: '#FED7AA', icon: AlertTriangle, description: 'Storefront + campaigns disabled; owner has read-only access' },
-  suspended_admin: { label: 'Admin Suspended', color: '#00BFC3', bg: '#F0FBFB', border: '#FECACA', icon: XCircle, description: 'All access disabled; owner notified via email' },
+  suspended_admin: { label: 'Admin Suspended', color: '#00BFC3', bg: '#FEF2F2', border: '#FECACA', icon: XCircle, description: 'All access disabled; owner notified via email' },
   archived: { label: 'Archived', color: '#6B7280', bg: '#F9FAFB', border: '#E5E7EB', icon: Archive, description: '30-day soft delete window; then permanent deletion' },
 };
 
@@ -329,7 +329,7 @@ export function LifecycleManagement() {
                   )}
 
                   {confirmModal.targetState === 'archived' && (
-                    <div className="p-3 rounded-[6px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                    <div className="p-3 rounded-[6px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                       <p style={{ color: '#B91C1C', fontSize: '0.8125rem', fontWeight: 600 }}>
                         ⚠️ This will begin the 30-day deletion countdown
                       </p>

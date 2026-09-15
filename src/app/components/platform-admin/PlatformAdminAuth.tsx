@@ -66,7 +66,7 @@ export function PlatformAdminAuth({ onAuthenticated }: Props) {
         {/* MFA warning banner */}
         <div className="flex items-center gap-2 rounded-lg px-4 py-3 mb-6" style={{ background: '#1F1010', border: '1px solid #3F1515' }}>
           <ShieldAlert size={15} color="#DC2626" />
-          <span style={{ fontSize: '0.8rem', color: '#80D4D5' }}>
+          <span style={{ fontSize: '0.8rem', color: '#FCA5A5' }}>
             MFA required on every session. Audit-logged.
           </span>
         </div>

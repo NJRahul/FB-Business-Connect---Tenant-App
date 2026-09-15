@@ -276,7 +276,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                   <MapPin size={12} />
                   {zip}
                   <button onClick={() => setServiceZips(z => z.filter(v => v !== zip))}>
-                    <X size={12} style={{ color: '#80D4D5' }} />
+                    <X size={12} style={{ color: '#FCA5A5' }} />
                   </button>
                 </span>
               ))}
@@ -389,7 +389,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                     <label
                       key={h}
                       className="flex items-center gap-3 py-2.5 px-4 rounded-[6px] cursor-pointer transition-colors"
-                      style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#80D4D5' : '#E5E7EB'}` }}
+                      style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#FCA5A5' : '#E5E7EB'}` }}
                     >
                       <input
                         type="checkbox"

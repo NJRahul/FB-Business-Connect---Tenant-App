@@ -9,7 +9,7 @@ function fmtMoney(n: number) {
 function TagPill({ tag }: { tag: string }) {
   const MAP: Record<string, { bg: string; color: string }> = {
     'vip':        { bg: '#FEF3C7', color: '#D97706' },
-    'at-risk':    { bg: '#F0FBFB', color: '#DC2626' },
+    'at-risk':    { bg: '#FEF2F2', color: '#DC2626' },
     'loyal':      { bg: '#F0FDF4', color: '#15803D' },
     'new':        { bg: '#EFF6FF', color: '#2563EB' },
     'lapsed':     { bg: '#F3F4F6', color: '#6B7280' },
@@ -30,7 +30,7 @@ function heatColor(pct: number) {
   if (pct >= 60) return { bg: '#4ADE80', color: '#14532D' };
   if (pct >= 40) return { bg: '#BEF264', color: '#365314' };
   if (pct >= 20) return { bg: '#FEF08A', color: '#713F12' };
-  if (pct > 0)  return { bg: '#80D4D5', color: '#7F1D1D' };
+  if (pct > 0)  return { bg: '#FCA5A5', color: '#7F1D1D' };
   return { bg: '#F3F4F6', color: '#9CA3AF' };
 }
 

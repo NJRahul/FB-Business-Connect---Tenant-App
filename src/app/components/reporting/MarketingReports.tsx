@@ -29,7 +29,7 @@ function StatusPill({ status }: { status: string }) {
     sending:   { bg: '#EFF6FF', color: '#2563EB' },
     sent:      { bg: '#F0FDF4', color: '#15803D' },
     paused:    { bg: '#FEF3C7', color: '#D97706' },
-    cancelled: { bg: '#F0FBFB', color: '#DC2626' },
+    cancelled: { bg: '#FEF2F2', color: '#DC2626' },
   };
   const s = MAP[status] ?? MAP.draft;
   return (
@@ -51,7 +51,7 @@ function DeliveryDetails({ campaign }: { campaign: typeof CAMPAIGN_STATS[0] }) {
     opened:       { bg: '#EFF6FF', color: '#2563EB' },
     clicked:      { bg: '#F0FDF4', color: '#15803D' },
     delivered:    { bg: '#F3F4F6', color: '#6B7280' },
-    bounced:      { bg: '#F0FBFB', color: '#DC2626' },
+    bounced:      { bg: '#FEF2F2', color: '#DC2626' },
     unsubscribed: { bg: '#FEF3C7', color: '#D97706' },
   };
   return (

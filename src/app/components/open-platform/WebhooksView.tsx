@@ -20,7 +20,7 @@ const ALL_EVENTS: { group: string; events: WebhookEventType[] }[] = [
 
 const STATUS_CFG: Record<DeliveryStatus, { bg: string; color: string; label: string; icon: React.ElementType }> = {
   delivered: { bg: '#DCFCE7', color: '#16A34A', label: 'Delivered', icon: CheckCircle2 },
-  failed:    { bg: '#F0FBFB', color: '#DC2626', label: 'Failed',    icon: X },
+  failed:    { bg: '#FEF2F2', color: '#DC2626', label: 'Failed',    icon: X },
   retrying:  { bg: '#FEF3C7', color: '#D97706', label: 'Retrying',  icon: RefreshCw },
   pending:   { bg: '#F3F4F6', color: '#9CA3AF', label: 'Pending',   icon: Clock },
 };
@@ -169,7 +169,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
   const failCount = endDeliveries.filter(d => d.status === 'failed').length;
 
   return (
-    <div className="bg-white rounded-[10px]" style={{ border: `1.5px solid ${failCount > 0 ? '#80D4D5' : '#E5E7EB'}`, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+    <div className="bg-white rounded-[10px]" style={{ border: `1.5px solid ${failCount > 0 ? '#FCA5A5' : '#E5E7EB'}`, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -199,7 +199,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
 
           <div className="flex items-center gap-2 shrink-0">
             {failCount > 0 && (
-              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#F0FBFB', color: '#DC2626' }}>
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FEF2F2', color: '#DC2626' }}>
                 <AlertTriangle size={11} /> {failCount} failed
               </span>
             )}

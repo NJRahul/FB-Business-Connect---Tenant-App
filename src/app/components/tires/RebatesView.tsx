@@ -108,7 +108,7 @@ function RebateCard({ rebate, onMailIn, onTogglePublish }: { rebate: Rebate; onM
   const expired = new Date(rebate.endDate) < today;
 
   return (
-    <div style={{ background: '#fff', border: `1px solid ${!rebate.active ? '#E5E7EB' : expired ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px', opacity: !rebate.active ? 0.65 : 1 }}>
+    <div style={{ background: '#fff', border: `1px solid ${!rebate.active ? '#E5E7EB' : expired ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px', opacity: !rebate.active ? 0.65 : 1 }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
         <div style={{ width: 40, height: 40, borderRadius: 8, background: rebate.logoColor, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
           <Tag size={18} color="#fff" />
@@ -118,7 +118,7 @@ function RebateCard({ rebate, onMailIn, onTogglePublish }: { rebate: Rebate; onM
             <span style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>{rebate.name}</span>
             <RebateTypeBadge type={rebate.rebateType} />
             {!rebate.active && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#F3F4F6', color: '#9CA3AF', fontSize: 10, fontWeight: 600 }}>Inactive</span>}
-            {expired && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#F0FBFB', color: '#DC2626', fontSize: 10, fontWeight: 600 }}>Expired</span>}
+            {expired && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#FEF2F2', color: '#DC2626', fontSize: 10, fontWeight: 600 }}>Expired</span>}
           </div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>
             {rebate.manufacturer} · {rebate.amountType === 'fixed' ? `R ${rebate.amount}` : `${rebate.amount}%`} off · {rebate.startDate} → {rebate.endDate}
@@ -204,7 +204,7 @@ export function RebatesView() {
           </div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
             {rebates.filter(r => r.active).map(r => (
-              <button key={r.id} onClick={() => setPreviewRebate(r)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: previewRebate.id === r.id ? '#00A9AC' : '#E5E7EB', background: previewRebate.id === r.id ? '#F0FBFB' : '#fff', color: previewRebate.id === r.id ? '#00A9AC' : '#374151', fontSize: 12, cursor: 'pointer' }}>
+              <button key={r.id} onClick={() => setPreviewRebate(r)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: previewRebate.id === r.id ? '#00A9AC' : '#E5E7EB', background: previewRebate.id === r.id ? '#FEF2F2' : '#fff', color: previewRebate.id === r.id ? '#00A9AC' : '#374151', fontSize: 12, cursor: 'pointer' }}>
                 {r.manufacturer}
               </button>
             ))}

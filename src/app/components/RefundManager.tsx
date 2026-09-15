@@ -287,7 +287,7 @@ export function RefundManager() {
                 <div className="mt-4 pt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
                   <p style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Refund History</p>
                   {selectedOrder.refunds.map(r => (
-                    <div key={r.id} className="mb-2 p-3 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                    <div key={r.id} className="mb-2 p-3 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
                       <div className="flex justify-between mb-1">
                         <span style={{ color: '#B91C1C', fontWeight: 700, fontSize: '0.9375rem' }}>-${r.amount.toFixed(2)}</span>
                         <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{r.createdAt}</span>

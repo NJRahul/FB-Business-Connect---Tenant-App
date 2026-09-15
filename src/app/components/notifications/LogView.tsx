@@ -9,7 +9,7 @@ const STATUS_META: Record<NotificationStatus, { label: string; color: string; bg
   delivered: { label: 'Delivered', color: '#15803D', bg: '#F0FDF4' },
   opened:    { label: 'Opened',    color: '#7E22CE', bg: '#FDF4FF' },
   clicked:   { label: 'Clicked',   color: '#0F766E', bg: '#F0FDFA' },
-  failed:    { label: 'Failed',    color: '#DC2626', bg: '#F0FBFB' },
+  failed:    { label: 'Failed',    color: '#DC2626', bg: '#FEF2F2' },
   bounced:   { label: 'Bounced',   color: '#D97706', bg: '#FEF3C7' },
 };
 
@@ -164,9 +164,9 @@ export function LogView() {
                           ))}
                         </div>
                         {log.error && (
-                          <div style={{ marginTop: 10, padding: '8px 12px', background: '#F0FBFB', border: '1px solid #80D4D5', borderRadius: 6 }}>
+                          <div style={{ marginTop: 10, padding: '8px 12px', background: '#FEF2F2', border: '1px solid #FCA5A5', borderRadius: 6 }}>
                             <div style={{ fontSize: 11, fontWeight: 600, color: '#DC2626', marginBottom: 2 }}>ERROR</div>
-                            <div style={{ fontSize: 12, color: '#005F62', fontFamily: 'monospace' }}>{log.error}</div>
+                            <div style={{ fontSize: 12, color: '#991B1B', fontFamily: 'monospace' }}>{log.error}</div>
                           </div>
                         )}
                         {log.retryCount > 0 && (

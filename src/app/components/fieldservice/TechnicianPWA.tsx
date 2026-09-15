@@ -166,8 +166,8 @@ function PhotoPanel({ visitId, visitRequiresParts, onClose }: { visitId: string;
 
       {!met && REQUIRED > 0 && (
         <div className="mx-4 mb-3 p-2.5 rounded-[6px] flex items-center gap-2" style={{ background: '#7F1D1D' }}>
-          <AlertTriangle size={14} style={{ color: '#80D4D5' }} />
-          <p style={{ color: '#80D4D5', fontSize: '0.8125rem' }}>
+          <AlertTriangle size={14} style={{ color: '#FCA5A5' }} />
+          <p style={{ color: '#FCA5A5', fontSize: '0.8125rem' }}>
             Parts-Install requires minimum {REQUIRED} photos. {REQUIRED - capturedCount} more needed.
           </p>
         </div>
@@ -466,8 +466,8 @@ export function TechnicianPWA() {
             className="flex items-center gap-1 px-2 py-1 rounded-full"
             style={{ background: online ? '#064E3B' : '#7F1D1D' }}
           >
-            {online ? <Wifi size={13} style={{ color: '#34D399' }} /> : <WifiOff size={13} style={{ color: '#80D4D5' }} />}
-            <span style={{ color: online ? '#34D399' : '#80D4D5', fontSize: '0.75rem', fontWeight: 600 }}>{online ? 'Online' : 'Offline'}</span>
+            {online ? <Wifi size={13} style={{ color: '#34D399' }} /> : <WifiOff size={13} style={{ color: '#FCA5A5' }} />}
+            <span style={{ color: online ? '#34D399' : '#FCA5A5', fontSize: '0.75rem', fontWeight: 600 }}>{online ? 'Online' : 'Offline'}</span>
           </button>
         </div>
         {!online && pendingActions > 0 && (

@@ -21,7 +21,7 @@ const AGING_CONFIG: Record<AgingBucket, { label: string; color: string; bg: stri
   current:  { label: 'Current',   color: '#15803D', bg: '#F0FDF4' },
   '1_30':   { label: '1–30 days', color: '#B45309', bg: '#FFF7ED' },
   '31_60':  { label: '31–60 days',color: '#C2410C', bg: '#FFF3CD' },
-  '61_90':  { label: '61–90 days',color: '#B91C1C', bg: '#F0FBFB' },
+  '61_90':  { label: '61–90 days',color: '#B91C1C', bg: '#FEF2F2' },
   '90_plus':{ label: '90+ days',  color: '#7F1D1D', bg: '#FEE2E2' },
 };
 
@@ -29,7 +29,7 @@ const INV_STATUS: Record<InvoiceStatus, { label: string; color: string; bg: stri
   draft:   { label: 'Draft',   color: '#6B7280', bg: '#F9FAFB' },
   open:    { label: 'Open',    color: '#2563EB', bg: '#EFF6FF' },
   paid:    { label: 'Paid',    color: '#15803D', bg: '#F0FDF4' },
-  overdue: { label: 'Overdue', color: '#B91C1C', bg: '#F0FBFB' },
+  overdue: { label: 'Overdue', color: '#B91C1C', bg: '#FEF2F2' },
   voided:  { label: 'Voided',  color: '#6B7280', bg: '#F9FAFB' },
 };
 
