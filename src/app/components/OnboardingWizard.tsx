@@ -1216,21 +1216,45 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
 
 // ─── Step 5: Bank Account Creation ───────────────────────────────────────────
 
+// FNB brand colours
+const FNB_GREEN  = '#007A4C';
+const FNB_LIGHT  = '#E8F5EF';
+const FNB_BORDER = '#A8D5BC';
+
 const SA_BANKS = [
-  { name: 'Absa Bank', branchCode: '632005' },
-  { name: 'Capitec Bank', branchCode: '470010' },
   { name: 'First National Bank (FNB)', branchCode: '250655' },
-  { name: 'Nedbank', branchCode: '198765' },
-  { name: 'Standard Bank', branchCode: '051001' },
-  { name: 'African Bank', branchCode: '430000' },
-  { name: 'Bidvest Bank', branchCode: '462005' },
-  { name: 'Discovery Bank', branchCode: '679000' },
-  { name: 'Investec Bank', branchCode: '580105' },
-  { name: 'TymeBank', branchCode: '678910' },
+  { name: 'Absa Bank',                 branchCode: '632005' },
+  { name: 'Capitec Bank',              branchCode: '470010' },
+  { name: 'Nedbank',                   branchCode: '198765' },
+  { name: 'Standard Bank',             branchCode: '051001' },
+  { name: 'African Bank',              branchCode: '430000' },
+  { name: 'Bidvest Bank',              branchCode: '462005' },
+  { name: 'Discovery Bank',            branchCode: '679000' },
+  { name: 'Investec Bank',             branchCode: '580105' },
+  { name: 'TymeBank',                  branchCode: '678910' },
 ];
+
+/** Inline FNB wordmark — lowercase "fnb" in FNB green, bold serif-ish */
+function FNBLogo({ size = 36 }: { size?: number }) {
+  return (
+    <div style={{
+      width: size, height: size, borderRadius: 8,
+      background: FNB_GREEN,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      flexShrink: 0,
+    }}>
+      <span style={{
+        color: '#fff', fontWeight: 900, fontSize: size * 0.38,
+        fontFamily: 'Georgia, "Times New Roman", serif',
+        letterSpacing: '-0.02em', lineHeight: 1,
+      }}>fnb</span>
+    </div>
+  );
+}
 
 function StepBankAccount({ state, setState }: { state: WizardState; setState: React.Dispatch<React.SetStateAction<WizardState>> }) {
   const filled = !state.bankSkipped && state.bankAccountName && state.bankName && state.bankAccountNumber && state.bankBranchCode;
+  const isFNB  = state.bankName === 'First National Bank (FNB)';
 
   function selectBank(name: string) {
     const bank = SA_BANKS.find(b => b.name === name);
@@ -1239,37 +1263,59 @@ function StepBankAccount({ state, setState }: { state: WizardState; setState: Re
 
   return (
     <div className="space-y-5">
-      {/* Hero */}
-      <div className="rounded-[12px] p-6 text-center" style={{ background: '#1A1A1A', color: '#fff' }}>
-        <div className="w-14 h-14 rounded-[12px] flex items-center justify-center mx-auto mb-3" style={{ background: '#00A9AC' }}>
-          <Building2 size={28} color="#fff" />
-        </div>
-        <h2 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.25rem', fontWeight: 700, marginBottom: 6 }}>
-          Link Your Business Bank Account
-        </h2>
-        <p style={{ color: '#9CA3AF', fontSize: '0.9375rem', lineHeight: 1.6, maxWidth: 480, margin: '0 auto' }}>
-          Connect your South African business bank account so payouts land directly in your account. SARB-regulated · Encrypted · DIS covered up to R 100,000.
-        </p>
-      </div>
 
-      {/* Feature highlights */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {[
-          { icon: '🏦', title: 'SARB-Regulated',      desc: 'Your account is held at a SARB-regulated partner bank with full DIS deposit insurance.' },
-          { icon: '💳', title: 'Instant Payouts',      desc: 'Receive payout batches directly to your linked account after job completion.' },
-          { icon: '🔒', title: 'Encrypted & Secure',   desc: 'Account details are encrypted at rest. FB Business Connect never stores full account numbers.' },
-        ].map(f => (
-          <div key={f.title} className="rounded-[10px] p-4" style={{ background: '#fff', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
-            <div style={{ fontSize: '1.5rem', marginBottom: 8 }}>{f.icon}</div>
-            <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 4 }}>{f.title}</p>
-            <p style={{ color: '#6B7280', fontSize: '0.8125rem', lineHeight: 1.5 }}>{f.desc}</p>
+      {/* FNB Partner Hero */}
+      <div className="rounded-[12px] overflow-hidden" style={{ border: `2px solid ${FNB_BORDER}` }}>
+        {/* Header bar */}
+        <div className="px-6 py-4 flex items-center justify-between" style={{ background: FNB_GREEN }}>
+          <div className="flex items-center gap-3">
+            <FNBLogo size={40} />
+            <div>
+              <p style={{ color: '#fff', fontWeight: 800, fontSize: '1.0625rem', lineHeight: 1.2 }}>
+                First National Bank
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.75rem', marginTop: 2 }}>
+                Proud Banking Partner of FB Business Connect
+              </p>
+            </div>
           </div>
-        ))}
+          <span className="px-2.5 py-1 rounded-full text-xs font-bold" style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', border: '1px solid rgba(255,255,255,0.35)' }}>
+            SARB-Regulated
+          </span>
+        </div>
+
+        {/* Partnership details */}
+        <div className="px-6 py-5" style={{ background: FNB_LIGHT }}>
+          <p style={{ color: '#1A1A1A', fontSize: '0.9375rem', lineHeight: 1.65, marginBottom: 16 }}>
+            FB Business Connect has partnered with <strong style={{ color: FNB_GREEN }}>First National Bank (FNB)</strong> — South Africa's most innovative bank — to give your business a fully integrated banking experience. Open an FNB Business Account and your payouts, cards, and reconciliation all live in one place.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {[
+              { icon: '🏦', title: 'FNB Business Account',  desc: 'Cheque, savings or transmission account with dedicated branch code 250655.' },
+              { icon: '💳', title: 'FNB Business Card',     desc: 'Visa-powered cards for technicians with real-time spend controls.' },
+              { icon: '⚡', title: 'Instant EFT Payouts',   desc: "Payout batches settle same-day via FNB's RTC infrastructure." },
+            ].map(f => (
+              <div key={f.title} className="rounded-[8px] p-3.5" style={{ background: '#fff', border: `1px solid ${FNB_BORDER}` }}>
+                <div style={{ fontSize: '1.25rem', marginBottom: 6 }}>{f.icon}</div>
+                <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.875rem', marginBottom: 3 }}>{f.title}</p>
+                <p style={{ color: '#6B7280', fontSize: '0.8125rem', lineHeight: 1.45 }}>{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {!state.bankSkipped ? (
         <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: 16 }}>Business Banking Details</h3>
+          {/* Section header */}
+          <div className="flex items-center gap-3 mb-5">
+            <FNBLogo size={32} />
+            <div>
+              <h3 style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1rem' }}>Link Your FNB Business Account</h3>
+              <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>Enter your existing FNB details or open a new account at fnb.co.za</p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="sm:col-span-2">
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Account Holder Name</label>
@@ -1277,10 +1323,24 @@ function StepBankAccount({ state, setState }: { state: WizardState; setState: Re
             </div>
             <div>
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Bank</label>
-              <select value={state.bankName} onChange={e => selectBank(e.target.value)} style={{ ...inp, marginTop: 6, display: 'block', appearance: 'none', cursor: 'pointer' }}>
+              <select value={state.bankName} onChange={e => selectBank(e.target.value)}
+                style={{ ...inp, marginTop: 6, display: 'block', appearance: 'none', cursor: 'pointer',
+                  borderColor: isFNB ? FNB_GREEN : '#E5E7EB',
+                  background: isFNB ? FNB_LIGHT : '#fff',
+                }}>
                 <option value="">— Select bank —</option>
-                {SA_BANKS.map(b => <option key={b.name} value={b.name}>{b.name}</option>)}
+                {SA_BANKS.map(b => (
+                  <option key={b.name} value={b.name}>
+                    {b.name === 'First National Bank (FNB)' ? '⭐ ' + b.name + ' (Recommended)' : b.name}
+                  </option>
+                ))}
               </select>
+              {isFNB && (
+                <div className="flex items-center gap-1.5 mt-2">
+                  <CheckCircle2 size={13} style={{ color: FNB_GREEN }} />
+                  <span style={{ color: FNB_GREEN, fontSize: '0.75rem', fontWeight: 600 }}>FNB — our preferred banking partner</span>
+                </div>
+              )}
             </div>
             <div>
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Account Type</label>
@@ -1298,7 +1358,10 @@ function StepBankAccount({ state, setState }: { state: WizardState; setState: Re
             <div>
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Branch Code</label>
               <input value={state.bankBranchCode} onChange={e => setState(s => ({ ...s, bankBranchCode: e.target.value.replace(/\D/g, '').slice(0, 6) }))} style={{ ...inp, marginTop: 6, display: 'block' }} placeholder="6-digit code" maxLength={6} />
-              <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 4 }}>Auto-filled when you select a bank above</p>
+              {isFNB
+                ? <p style={{ fontSize: '0.75rem', color: FNB_GREEN, marginTop: 4, fontWeight: 600 }}>✓ FNB universal branch code: 250655</p>
+                : <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 4 }}>Auto-filled when you select a bank above</p>
+              }
             </div>
             <div className="sm:col-span-2">
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>CIPC Registration Number <span style={{ color: '#9CA3AF', fontWeight: 400 }}>(required for verification)</span></label>
@@ -1309,7 +1372,18 @@ function StepBankAccount({ state, setState }: { state: WizardState; setState: Re
           {filled && (
             <div className="mt-4 flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#F0FDF4', border: '1px solid #BBF7D0' }}>
               <CheckCircle2 size={16} style={{ color: '#27AE60' }} />
-              <span style={{ color: '#15803D', fontWeight: 600, fontSize: '0.9375rem' }}>Account details saved — pending verification</span>
+              <span style={{ color: '#15803D', fontWeight: 600, fontSize: '0.9375rem' }}>Account details saved — pending FNB verification</span>
+            </div>
+          )}
+
+          {/* Don't have an FNB account yet */}
+          {!isFNB && !state.bankName && (
+            <div className="mt-4 flex items-center gap-3 p-4 rounded-[8px]" style={{ background: FNB_LIGHT, border: `1px solid ${FNB_BORDER}` }}>
+              <FNBLogo size={28} />
+              <div className="flex-1">
+                <p style={{ color: FNB_GREEN, fontWeight: 700, fontSize: '0.875rem' }}>Don't have an FNB Business Account yet?</p>
+                <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: 2 }}>Open one online in under 10 minutes at fnb.co.za/business — it's our recommended partner for instant EFT payouts.</p>
+              </div>
             </div>
           )}
 
