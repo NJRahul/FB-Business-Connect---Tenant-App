@@ -92,7 +92,7 @@ export function UsageView() {
             <Activity size={16} style={{ color: '#00A9AC' }} />
             <h3 style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>API Requests</h3>
           </div>
-          <UsageBar used={s.apiCallsThisPeriod} limit={s.apiCallsLimit} label="Requests this period" color="#00A9AC" />
+          <UsageBar used={s.apiCallsThisPeriod} limit={s.apiCallsLimit} label="Requests this period" color="#DC2626" />
 
           <div className="mt-4 pt-4" style={{ borderTop: '1px solid #F3F4F6' }}>
             <p style={{ fontWeight: 700, color: '#374151', fontSize: '0.8125rem', marginBottom: '8px' }}>Top Endpoints</p>

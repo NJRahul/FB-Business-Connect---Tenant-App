@@ -169,11 +169,11 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     onChange={e => setForm(f => ({ ...f, businessName: e.target.value }))}
                     className="w-full pl-9 pr-4 py-2.5 rounded-[6px] outline-none transition-all"
                     style={{
-                      border: errors.businessName ? '1.5px solid #00BFC3' : '1.5px solid #E5E7EB',
+                      border: errors.businessName ? '1.5px solid #DC2626' : '1.5px solid #E5E7EB',
                       fontSize: '0.9375rem',
                       color: '#1A1A1A',
                     }}
-                    onFocus={e => { if (!errors.businessName) e.currentTarget.style.borderColor = '#00A9AC'; }}
+                    onFocus={e => { if (!errors.businessName) e.currentTarget.style.borderColor = '#DC2626'; }}
                     onBlur={e => { if (!errors.businessName) e.currentTarget.style.borderColor = '#E5E7EB'; }}
                   />
                 </div>
@@ -182,7 +182,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     Your URL: <span style={{ color: '#00A9AC', fontWeight: 600 }}>{slug}.fb-business-connect.app</span>
                   </p>
                 )}
-                {errors.businessName && <p style={{ color: '#00BFC3', fontSize: '0.75rem', marginTop: '4px' }}>{errors.businessName}</p>}
+                {errors.businessName && <p style={{ color: '#DC2626', fontSize: '0.75rem', marginTop: '4px' }}>{errors.businessName}</p>}
               </div>
 
               {/* Owner Name */}
@@ -197,15 +197,15 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     onChange={e => setForm(f => ({ ...f, ownerName: e.target.value }))}
                     className="w-full pl-9 pr-4 py-2.5 rounded-[6px] outline-none transition-all"
                     style={{
-                      border: errors.ownerName ? '1.5px solid #00BFC3' : '1.5px solid #E5E7EB',
+                      border: errors.ownerName ? '1.5px solid #DC2626' : '1.5px solid #E5E7EB',
                       fontSize: '0.9375rem',
                       color: '#1A1A1A',
                     }}
-                    onFocus={e => { if (!errors.ownerName) e.currentTarget.style.borderColor = '#00A9AC'; }}
+                    onFocus={e => { if (!errors.ownerName) e.currentTarget.style.borderColor = '#DC2626'; }}
                     onBlur={e => { if (!errors.ownerName) e.currentTarget.style.borderColor = '#E5E7EB'; }}
                   />
                 </div>
-                {errors.ownerName && <p style={{ color: '#00BFC3', fontSize: '0.75rem', marginTop: '4px' }}>{errors.ownerName}</p>}
+                {errors.ownerName && <p style={{ color: '#DC2626', fontSize: '0.75rem', marginTop: '4px' }}>{errors.ownerName}</p>}
               </div>
 
               {/* Email */}
@@ -220,15 +220,15 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                     className="w-full pl-9 pr-4 py-2.5 rounded-[6px] outline-none transition-all"
                     style={{
-                      border: errors.email ? '1.5px solid #00BFC3' : '1.5px solid #E5E7EB',
+                      border: errors.email ? '1.5px solid #DC2626' : '1.5px solid #E5E7EB',
                       fontSize: '0.9375rem',
                       color: '#1A1A1A',
                     }}
-                    onFocus={e => { if (!errors.email) e.currentTarget.style.borderColor = '#00A9AC'; }}
+                    onFocus={e => { if (!errors.email) e.currentTarget.style.borderColor = '#DC2626'; }}
                     onBlur={e => { if (!errors.email) e.currentTarget.style.borderColor = '#E5E7EB'; }}
                   />
                 </div>
-                {errors.email && <p style={{ color: '#00BFC3', fontSize: '0.75rem', marginTop: '4px' }}>{errors.email}</p>}
+                {errors.email && <p style={{ color: '#DC2626', fontSize: '0.75rem', marginTop: '4px' }}>{errors.email}</p>}
               </div>
 
               {/* Password */}
@@ -243,11 +243,11 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
                     className="w-full pl-9 pr-10 py-2.5 rounded-[6px] outline-none transition-all"
                     style={{
-                      border: errors.password ? '1.5px solid #00BFC3' : '1.5px solid #E5E7EB',
+                      border: errors.password ? '1.5px solid #DC2626' : '1.5px solid #E5E7EB',
                       fontSize: '0.9375rem',
                       color: '#1A1A1A',
                     }}
-                    onFocus={e => { if (!errors.password) e.currentTarget.style.borderColor = '#00A9AC'; }}
+                    onFocus={e => { if (!errors.password) e.currentTarget.style.borderColor = '#DC2626'; }}
                     onBlur={e => { if (!errors.password) e.currentTarget.style.borderColor = '#E5E7EB'; }}
                   />
                   <button
@@ -266,7 +266,7 @@ export function SignUpPage({ onSuccess, onPlatformAdmin }: SignUpPageProps) {
                     ))}
                   </div>
                 )}
-                {errors.password && <p style={{ color: '#00BFC3', fontSize: '0.75rem', marginTop: '4px' }}>{errors.password}</p>}
+                {errors.password && <p style={{ color: '#DC2626', fontSize: '0.75rem', marginTop: '4px' }}>{errors.password}</p>}
                 <p style={{ color: '#6B7280', fontSize: '0.75rem', marginTop: '4px' }}>
                   Min 10 chars, or 12+ chars with mixed case, numbers & symbols
                 </p>

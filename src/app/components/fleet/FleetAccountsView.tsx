@@ -153,7 +153,7 @@ export function FleetAccountsView({ onSelect }: Props) {
                     <div className="mt-0.5 h-1 rounded-full overflow-hidden" style={{ background: '#F3F4F6', width: 64 }}>
                       <div className="h-full rounded-full" style={{
                         width: `${Math.min(100, (a.outstandingBalanceCents / a.creditLimitCents) * 100)}%`,
-                        background: a.outstandingBalanceCents > a.creditLimitCents * 0.8 ? '#EF4444' : '#00A9AC',
+                        background: a.outstandingBalanceCents > a.creditLimitCents * 0.8 ? '#EF4444' : '#DC2626',
                       }} />
                     </div>
                   </td>

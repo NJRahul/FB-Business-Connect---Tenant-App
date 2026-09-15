@@ -62,7 +62,7 @@ export function CapabilitiesView({ currentPlan }: Props) {
 
       {/* Gate error example */}
       <div style={{ padding: '12px 16px', borderRadius: 8, background: '#E6F7F7', border: '1.5px solid #00A9AC' }}>
-        <div style={{ fontWeight: 700, fontSize: 12, color: '#00A9AC', marginBottom: 6 }}>EXAMPLE GATE ERROR (API response when limit exceeded)</div>
+        <div style={{ fontWeight: 700, fontSize: 12, color: '#DC2626', marginBottom: 6 }}>EXAMPLE GATE ERROR (API response when limit exceeded)</div>
         <pre style={{ margin: 0, fontSize: 11, color: '#374151', fontFamily: 'monospace', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
 {`{
   "error": "CAPABILITY_GATE",

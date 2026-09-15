@@ -238,7 +238,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             <div className="h-3 rounded-full overflow-hidden" style={{ background: '#F3F4F6' }}>
               <div className="h-full rounded-full transition-all" style={{
                 width: `${Math.min(100, (acct.outstandingBalanceCents / acct.creditLimitCents) * 100)}%`,
-                background: acct.outstandingBalanceCents / acct.creditLimitCents > 0.8 ? '#EF4444' : '#00A9AC',
+                background: acct.outstandingBalanceCents / acct.creditLimitCents > 0.8 ? '#EF4444' : '#DC2626',
               }} />
             </div>
             <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 4 }}>

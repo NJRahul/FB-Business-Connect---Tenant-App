@@ -345,7 +345,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
                 <span style={{ color: '#D1D5DB', fontSize: '0.875rem', fontWeight: 600 }}>Photos</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: photoCount >= requiredPhotos ? '#27AE60' : '#00A9AC', color: '#fff' }}>
+                <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: photoCount >= requiredPhotos ? '#27AE60' : '#DC2626', color: '#fff' }}>
                   {photoCount}{requiredPhotos > 0 ? `/${requiredPhotos}` : ''}
                 </span>
                 {photoCount < requiredPhotos && <AlertTriangle size={13} style={{ color: '#F59E0B' }} />}

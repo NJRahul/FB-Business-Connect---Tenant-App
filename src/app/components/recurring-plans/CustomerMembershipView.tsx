@@ -20,14 +20,14 @@ function UsageBar({ used, included, label }: { used: number; included: number; l
     <div>
       <div className="flex items-center justify-between mb-1">
         <span style={{ color: '#374151', fontSize: '0.875rem', fontWeight: 500 }}>{label}</span>
-        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: exhausted ? '#00A9AC' : '#1A1A1A' }}>
+        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: exhausted ? '#DC2626' : '#1A1A1A' }}>
           {used} of {included} used
         </span>
       </div>
       <div className="h-2.5 rounded-full" style={{ background: '#F3F4F6' }}>
         <div
           className="h-2.5 rounded-full transition-all"
-          style={{ width: `${pct}%`, background: exhausted ? '#00A9AC' : pct >= 75 ? '#F39C12' : '#00A9AC' }}
+          style={{ width: `${pct}%`, background: exhausted ? '#DC2626' : pct >= 75 ? '#F39C12' : '#DC2626' }}
         />
       </div>
       {exhausted && (

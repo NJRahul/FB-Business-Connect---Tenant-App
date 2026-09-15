@@ -37,9 +37,9 @@ function MFAModal({ onConfirm, onClose }: { onConfirm: () => void; onClose: () =
           placeholder="000000"
           autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl font-mono tracking-[0.3em]"
-          style={{ border: `1.5px solid ${error ? '#00A9AC' : '#E5E7EB'}`, outline: 'none', letterSpacing: '0.4em' }}
+          style={{ border: `1.5px solid ${error ? '#DC2626' : '#E5E7EB'}`, outline: 'none', letterSpacing: '0.4em' }}
         />
-        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 6, textAlign: 'center' }}>Invalid code. (Demo: use 123456)</p>}
+        {error && <p style={{ color: '#DC2626', fontSize: '0.8125rem', marginTop: 6, textAlign: 'center' }}>Invalid code. (Demo: use 123456)</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
           <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>
@@ -178,9 +178,9 @@ function VaultTransferModal({ vaults, onClose, onTransfer }: {
             <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: 4 }}>Amount</label>
             <div className="relative">
               <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF' }}>$</span>
-              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00" className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#00A9AC' : '#E5E7EB'}`, outline: 'none' }} />
+              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00" className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#DC2626' : '#E5E7EB'}`, outline: 'none' }} />
             </div>
-            {insufficient && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 4 }}>Insufficient balance. Available: {formatCents(fromVault!.balance_cached)}</p>}
+            {insufficient && <p style={{ color: '#DC2626', fontSize: '0.8125rem', marginTop: 4 }}>Insufficient balance. Available: {formatCents(fromVault!.balance_cached)}</p>}
           </div>
         </div>
         <div className="flex gap-2 mt-6">

@@ -238,7 +238,7 @@ function EndpointDetail({ endpoint }: { endpoint: ApiEndpoint }) {
           {rateLimitInfo.map(r => (
             <div key={r.tier} className="flex-1 p-3 rounded-[8px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
               <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.8125rem' }}>{r.tier}</p>
-              <p style={{ color: '#00A9AC', fontWeight: 600, fontFamily: 'monospace', fontSize: '0.875rem' }}>{r.limit}</p>
+              <p style={{ color: '#DC2626', fontWeight: 600, fontFamily: 'monospace', fontSize: '0.875rem' }}>{r.limit}</p>
             </div>
           ))}
         </div>

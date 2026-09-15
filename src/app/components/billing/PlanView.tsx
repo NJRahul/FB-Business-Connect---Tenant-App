@@ -281,7 +281,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 22px', borderBottom: '1px solid #E5E7EB' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div style={{ width: 36, height: 36, borderRadius: 99, display: 'flex', alignItems: 'center', justifyContent: 'center', background: modal.type === 'upgrade' ? '#E6F7F7' : '#FEF2F2' }}>
-                  {modal.type === 'upgrade' ? <ArrowUp size={18} color="#00A9AC" /> : <AlertTriangle size={18} color="#DC2626" />}
+                  {modal.type === 'upgrade' ? <ArrowUp size={18} color="#DC2626" /> : <AlertTriangle size={18} color="#DC2626" />}
                 </div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#1A1A1A' }}>
                   {modal.type === 'upgrade' ? `Upgrade to ${PLAN_CONFIGS[modal.target].name}` :

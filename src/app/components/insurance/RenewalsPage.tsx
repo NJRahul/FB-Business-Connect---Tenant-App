@@ -10,7 +10,7 @@ const STATUS_CFG: Record<string, { label: string; color: string; bg: string; ico
   sent:      { label: 'Sent',      color: '#27AE60', bg: '#F0FDF4', icon: <CheckCircle2 size={13} style={{ color: '#27AE60' }} /> },
   pending:   { label: 'Pending',   color: '#F39C12', bg: '#FFF8E1', icon: <Clock size={13} style={{ color: '#F39C12' }} /> },
   snoozed:   { label: 'Snoozed',   color: '#6B7280', bg: '#F3F4F6', icon: <Clock size={13} style={{ color: '#6B7280' }} /> },
-  cancelled: { label: 'Cancelled', color: '#00BFC3', bg: '#FEF2F2', icon: <AlertTriangle size={13} style={{ color: '#00BFC3' }} /> },
+  cancelled: { label: 'Cancelled', color: '#DC2626', bg: '#FEF2F2', icon: <AlertTriangle size={13} style={{ color: '#DC2626' }} /> },
 };
 
 function daysUntil(dateStr: string): number {

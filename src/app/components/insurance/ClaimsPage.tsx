@@ -229,8 +229,8 @@ function FNOLForm({ onSubmitted }: { onSubmitted: () => void }) {
     <div className="space-y-4">
       {error && (
         <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-          <AlertTriangle size={14} style={{ color: '#00A9AC' }} />
-          <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
+          <AlertTriangle size={14} style={{ color: '#DC2626' }} />
+          <p style={{ color: '#DC2626', fontSize: '0.875rem' }}>{error}</p>
         </div>
       )}
 

@@ -256,7 +256,7 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: modal.type === 'upgrade' ? '#E6F7F7' : '#FFF7ED' }}>
-                  {modal.type === 'upgrade' ? <ArrowUp size={20} style={{ color: '#00A9AC' }} /> : <AlertTriangle size={20} style={{ color: '#F39C12' }} />}
+                  {modal.type === 'upgrade' ? <ArrowUp size={20} style={{ color: '#DC2626' }} /> : <AlertTriangle size={20} style={{ color: '#F39C12' }} />}
                 </div>
                 <h3 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>
                   {modal.type === 'upgrade' ? 'Confirm Upgrade' : 'Confirm Downgrade'}

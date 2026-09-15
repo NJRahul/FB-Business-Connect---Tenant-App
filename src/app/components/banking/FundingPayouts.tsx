@@ -39,8 +39,8 @@ function MFAGate({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () 
         </div>
         <input type="text" inputMode="numeric" maxLength={6} value={code} onChange={e => { setCode(e.target.value.replace(/\D/g,'')); setError(false); }} onKeyDown={e => e.key==='Enter'&&submit()} placeholder="6-digit MFA code" autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl tracking-[0.4em]"
-          style={{ border: `1.5px solid ${error?'#00A9AC':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace' }} />
-        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid. (Demo: 123456)</p>}
+          style={{ border: `1.5px solid ${error?'#DC2626':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace' }} />
+        {error && <p style={{ color: '#DC2626', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid. (Demo: 123456)</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onCancel} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
           <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>
@@ -235,11 +235,11 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         <div className="relative">
           <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF' }}>$</span>
           <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00"
-            className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#00A9AC' : '#E5E7EB'}`, outline: 'none' }} />
+            className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#DC2626' : '#E5E7EB'}`, outline: 'none' }} />
         </div>
         {insufficient && (
           <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
-            <AlertCircle size={14} style={{ color: '#00A9AC', flexShrink: 0 }} />
+            <AlertCircle size={14} style={{ color: '#DC2626', flexShrink: 0 }} />
             <p style={{ color: '#991B1B', fontSize: '0.8125rem', fontWeight: 600 }}>
               Insufficient funds. Shortfall: {formatCents(shortfall)}
             </p>
@@ -269,7 +269,7 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         onClick={() => !insufficient && amountCents > 0 && setShowMFA(true)}
         disabled={insufficient || amountCents <= 0 || submitting}
         className="w-full flex items-center justify-center gap-2 py-3 rounded-[8px] font-semibold"
-        style={{ background: insufficient || amountCents <= 0 ? '#E5E7EB' : '#00A9AC', color: insufficient || amountCents <= 0 ? '#9CA3AF' : '#fff', cursor: insufficient || amountCents <= 0 ? 'not-allowed' : 'pointer' }}
+        style={{ background: insufficient || amountCents <= 0 ? '#E5E7EB' : '#DC2626', color: insufficient || amountCents <= 0 ? '#9CA3AF' : '#fff', cursor: insufficient || amountCents <= 0 ? 'not-allowed' : 'pointer' }}
       >
         {submitting ? <><Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} /> Processing…</> : <><Lock size={15} /> Confirm & send</>}
       </button>

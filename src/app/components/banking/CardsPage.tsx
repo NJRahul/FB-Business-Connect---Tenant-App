@@ -70,8 +70,8 @@ function MFAModal({ title, onConfirm, onClose }: { title: string; onConfirm: () 
         <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginBottom: 16 }}>Enter your 6-digit MFA code. (Demo: 123456)</p>
         <input type="text" inputMode="numeric" maxLength={6} value={code} onChange={e => { setCode(e.target.value.replace(/\D/g,'')); setError(false); }} onKeyDown={e => e.key==='Enter'&&submit()} placeholder="000000" autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl"
-          style={{ border: `1.5px solid ${error?'#00A9AC':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace', letterSpacing: '0.4em' }} />
-        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid code.</p>}
+          style={{ border: `1.5px solid ${error?'#DC2626':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace', letterSpacing: '0.4em' }} />
+        {error && <p style={{ color: '#DC2626', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid code.</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
           <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>

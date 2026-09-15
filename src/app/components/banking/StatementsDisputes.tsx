@@ -12,7 +12,7 @@ const DISPUTE_STATUS: Record<DisputeStatus, { label: string; color: string; bg: 
   in_review:          { label: 'In review',          color: '#F39C12', bg: '#FFF8E1', icon: Clock },
   provisional_credit: { label: 'Provisional credit', color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle2 },
   resolved_won:       { label: 'Resolved — Won',     color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle2 },
-  resolved_lost:      { label: 'Resolved — Lost',    color: '#00BFC3', bg: '#FEF2F2', icon: AlertTriangle },
+  resolved_lost:      { label: 'Resolved — Lost',    color: '#DC2626', bg: '#FEF2F2', icon: AlertTriangle },
   cancelled:          { label: 'Cancelled',           color: '#9CA3AF', bg: '#F3F4F6', icon: X },
 };
 

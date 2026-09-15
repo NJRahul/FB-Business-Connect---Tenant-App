@@ -309,7 +309,7 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
 
       {overLimit && (
         <div className="p-3 rounded-[8px] flex items-center gap-2" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
-          <AlertCircle size={16} style={{ color: '#00BFC3' }} />
+          <AlertCircle size={16} style={{ color: '#DC2626' }} />
           <span style={{ color: '#991B1B', fontSize: '0.875rem', fontWeight: 600 }}>Total ownership ({totalPct}%) exceeds 100%.</span>
         </div>
       )}

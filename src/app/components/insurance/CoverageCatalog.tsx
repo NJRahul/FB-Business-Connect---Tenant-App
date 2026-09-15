@@ -16,7 +16,7 @@ const ICON_MAP: Record<string, React.ElementType> = {
 function RequirementBadge({ level }: { level: RequirementResult['level'] | undefined }) {
   if (!level) return null;
   const cfg = {
-    required:         { label: 'Required',          color: '#00A9AC', bg: '#FEF2F2' },
+    required:         { label: 'Required',          color: '#DC2626', bg: '#FEF2F2' },
     commonly_carried: { label: 'Commonly carried',   color: '#F39C12', bg: '#FFF8E1' },
     optional:         { label: 'Optional',           color: '#6B7280', bg: '#F3F4F6' },
   }[level];
@@ -85,7 +85,7 @@ export function CoverageCatalog({ requirements, policies, onStartApplication, on
       {/* Legend */}
       <div className="flex flex-wrap gap-4 mb-5 p-3 rounded-[8px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
         {[
-          { icon: <AlertCircle size={13} style={{ color: '#00A9AC' }} />, label: 'Required by your profile' },
+          { icon: <AlertCircle size={13} style={{ color: '#DC2626' }} />, label: 'Required by your profile' },
           { icon: <CheckCircle2 size={13} style={{ color: '#F39C12' }} />, label: 'Commonly carried' },
           { icon: <Circle size={13} style={{ color: '#6B7280' }} />, label: 'Optional' },
           { icon: <CheckCircle2 size={13} style={{ color: '#27AE60' }} />, label: 'Policy active' },

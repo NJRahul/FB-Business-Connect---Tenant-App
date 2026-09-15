@@ -426,7 +426,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
                 <div className="flex-1 min-w-0 flex items-center justify-between gap-1">
                   <span style={{ fontSize: '0.8125rem', fontWeight: isActive ? 600 : 400, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{step.label}</span>
                   <div className="flex items-center gap-1 shrink-0">
-                    {step.required && <span className="px-1 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.5rem', fontWeight: 700 }}>REQ</span>}
+                    {step.required && <span className="px-1 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#DC2626', fontSize: '0.5rem', fontWeight: 700 }}>REQ</span>}
                     <span style={{ fontSize: '0.625rem', color: '#D1D5DB' }}>{step.time}</span>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
               <div className="flex items-center gap-2 mb-0.5">
                 <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Step {currentStep} of 12</span>
                 {stepInfo.required && (
-                  <span className="px-1.5 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.6875rem', fontWeight: 600 }}>Required to publish</span>
+                  <span className="px-1.5 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#DC2626', fontSize: '0.6875rem', fontWeight: 600 }}>Required to publish</span>
                 )}
                 {state.industryPack && currentStep > 1 && (
                   <span className="px-1.5 py-0.5 rounded" style={{ background: '#F3F4F6', color: '#6B7280', fontSize: '0.6875rem', fontWeight: 600 }}>
@@ -1382,7 +1382,7 @@ function Step5({ state, setState }: { state: WizardState; setState: React.Dispat
               ))}
             </div>
             <div className="p-3 rounded-[6px] mb-5" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
-              <p style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600 }}>⚠️ Required before storefront can be published</p>
+              <p style={{ color: '#DC2626', fontSize: '0.8125rem', fontWeight: 600 }}>⚠️ Required before storefront can be published</p>
             </div>
             <button onClick={connect} disabled={loading} className="w-full flex items-center justify-center gap-2 py-3 rounded-[6px] text-white transition-colors" style={{ background: loading ? '#9CA3AF' : '#635BFF', fontWeight: 600 }}>
               {loading ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Connecting...</> : <><ExternalLink size={16} />Connect with Stripe</>}
@@ -2000,11 +2000,11 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
           {checklist.map(item => (
             <div key={item.label} className="flex items-center justify-between py-2 border-b" style={{ borderColor: '#F3F4F6' }}>
               <div className="flex items-center gap-3">
-                {item.done ? <CheckCircle2 size={17} style={{ color: '#27AE60' }} /> : <Circle size={17} style={{ color: item.required ? '#00BFC3' : '#D1D5DB' }} />}
+                {item.done ? <CheckCircle2 size={17} style={{ color: '#27AE60' }} /> : <Circle size={17} style={{ color: item.required ? '#DC2626' : '#D1D5DB' }} />}
                 <span style={{ color: '#1A1A1A', fontSize: '0.9375rem' }}>{item.label}</span>
               </div>
               <div className="flex items-center gap-2">
-                {item.required && !item.done && <span className="px-2 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.6875rem', fontWeight: 600 }}>Required</span>}
+                {item.required && !item.done && <span className="px-2 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#DC2626', fontSize: '0.6875rem', fontWeight: 600 }}>Required</span>}
                 <span style={{ color: item.done ? '#27AE60' : '#9CA3AF', fontSize: '0.8125rem', fontWeight: 500 }}>{item.done ? 'Complete' : 'Incomplete'}</span>
               </div>
             </div>
@@ -2026,8 +2026,8 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
 
         {!canPublish && (
           <div className="mt-5 rounded-[8px] p-4 flex items-start gap-3" style={{ background: '#E6F7F7', border: '1px solid #FCA5A5' }}>
-            <AlertCircle size={16} style={{ color: '#00A9AC', marginTop: '2px' }} />
-            <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>Complete the required steps before publishing: {!state.stripeConnected && 'Payout setup'}{!state.stripeConnected && !state.catalogSource && ' + '}{!state.catalogSource && 'Catalog / inventory setup'}.</p>
+            <AlertCircle size={16} style={{ color: '#DC2626', marginTop: '2px' }} />
+            <p style={{ color: '#DC2626', fontSize: '0.875rem' }}>Complete the required steps before publishing: {!state.stripeConnected && 'Payout setup'}{!state.stripeConnected && !state.catalogSource && ' + '}{!state.catalogSource && 'Catalog / inventory setup'}.</p>
           </div>
         )}
       </div>

@@ -436,7 +436,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
 
               {holdExpired && (
                 <div className="mb-4 p-4 rounded-[8px] flex items-start gap-3" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-                  <AlertTriangle size={16} style={{ color: '#00BFC3', marginTop: '2px' }} />
+                  <AlertTriangle size={16} style={{ color: '#DC2626', marginTop: '2px' }} />
                   <div>
                     <p style={{ color: '#B91C1C', fontWeight: 600, fontSize: '0.9375rem' }}>Your hold expired</p>
                     <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '4px' }}>

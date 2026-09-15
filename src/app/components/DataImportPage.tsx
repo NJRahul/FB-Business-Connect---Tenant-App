@@ -354,7 +354,7 @@ export function DataImportPage() {
                   {[
                     { label: 'Imported', value: SAMPLE_RESULTS.filter(r => r.status === 'imported').length, color: '#27AE60', bg: '#F0FDF4' },
                     { label: 'Skipped (duplicate)', value: SAMPLE_RESULTS.filter(r => r.status === 'skipped').length, color: '#F39C12', bg: '#FFF7ED' },
-                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#00BFC3', bg: '#FEF2F2' },
+                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#DC2626', bg: '#FEF2F2' },
                   ].map(s => (
                     <div key={s.label} className="rounded-[8px] p-4 text-center" style={{ background: s.bg }}>
                       <p style={{ color: s.color, fontWeight: 700, fontSize: '1.75rem', fontFamily: 'Sora, sans-serif' }}>{s.value}</p>
@@ -447,7 +447,7 @@ export function DataImportPage() {
                     <div className="flex gap-3 mb-3">
                       <span style={{ color: '#27AE60', fontSize: '0.75rem', fontWeight: 500 }}>✓ {job.imported} imported</span>
                       {job.skipped > 0 && <span style={{ color: '#F39C12', fontSize: '0.75rem' }}>↷ {job.skipped} skipped</span>}
-                      {job.failed > 0 && <span style={{ color: '#00BFC3', fontSize: '0.75rem' }}>✗ {job.failed} failed</span>}
+                      {job.failed > 0 && <span style={{ color: '#DC2626', fontSize: '0.75rem' }}>✗ {job.failed} failed</span>}
                     </div>
                   )}
                   {job.status === 'complete' && !isRollbackExpired(job.rollbackAvailableUntil) && (
@@ -497,7 +497,7 @@ export function DataImportPage() {
                   )}
                   {job.status === 'failed' && (
                     <div className="flex items-center gap-1.5">
-                      <AlertCircle size={12} style={{ color: '#00BFC3' }} />
+                      <AlertCircle size={12} style={{ color: '#DC2626' }} />
                       <span style={{ color: '#00BFC3', fontSize: '0.75rem' }}>Upload format not recognized</span>
                     </div>
                   )}
