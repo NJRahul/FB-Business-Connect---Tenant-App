@@ -394,8 +394,8 @@ export const MCC_GROUPS: MccGroup[] = [
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 /** Format integer cents as currency string. Always pass cents — never floats. */
-export function formatCents(cents: number, currency = 'USD'): string {
-  return new Intl.NumberFormat('en-US', {
+export function formatCents(cents: number, currency = 'ZAR'): string {
+  return new Intl.NumberFormat('en-ZA', {
     style: 'currency',
     currency,
     minimumFractionDigits: 2,
