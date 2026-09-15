@@ -10,7 +10,7 @@ function pct(num: number, den: number) {
   return den > 0 ? `${((num / den) * 100).toFixed(1)}%` : '—';
 }
 
-function TrendSparkline({ values, color = '#C0392B' }: { values: number[]; color?: string }) {
+function TrendSparkline({ values, color = '#00A9AC' }: { values: number[]; color?: string }) {
   const w = 80, h = 28;
   if (values.length < 2) return null;
   const mn = Math.min(...values), mx = Math.max(...values), rng = mx - mn || 1;
@@ -29,7 +29,7 @@ function StatusPill({ status }: { status: string }) {
     sending:   { bg: '#EFF6FF', color: '#2563EB' },
     sent:      { bg: '#F0FDF4', color: '#15803D' },
     paused:    { bg: '#FEF3C7', color: '#D97706' },
-    cancelled: { bg: '#FEF2F2', color: '#DC2626' },
+    cancelled: { bg: '#F0FBFB', color: '#DC2626' },
   };
   const s = MAP[status] ?? MAP.draft;
   return (
@@ -51,7 +51,7 @@ function DeliveryDetails({ campaign }: { campaign: typeof CAMPAIGN_STATS[0] }) {
     opened:       { bg: '#EFF6FF', color: '#2563EB' },
     clicked:      { bg: '#F0FDF4', color: '#15803D' },
     delivered:    { bg: '#F3F4F6', color: '#6B7280' },
-    bounced:      { bg: '#FEF2F2', color: '#DC2626' },
+    bounced:      { bg: '#F0FBFB', color: '#DC2626' },
     unsubscribed: { bg: '#FEF3C7', color: '#D97706' },
   };
   return (
@@ -127,7 +127,7 @@ export function MarketingReports() {
       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
         <span style={{ fontSize: 12, fontWeight: 600, color: '#6B7280' }}>Channel:</span>
         {(['all', 'email', 'sms'] as const).map(c => (
-          <button key={c} onClick={() => setChannelFilter(c)} style={{ padding: '5px 12px', borderRadius: 99, border: '1px solid', fontSize: 12, fontWeight: 600, cursor: 'pointer', background: channelFilter === c ? '#C0392B' : '#fff', color: channelFilter === c ? '#fff' : '#6B7280', borderColor: channelFilter === c ? '#C0392B' : '#E5E7EB' }}>
+          <button key={c} onClick={() => setChannelFilter(c)} style={{ padding: '5px 12px', borderRadius: 99, border: '1px solid', fontSize: 12, fontWeight: 600, cursor: 'pointer', background: channelFilter === c ? '#00A9AC' : '#fff', color: channelFilter === c ? '#fff' : '#6B7280', borderColor: channelFilter === c ? '#00A9AC' : '#E5E7EB' }}>
             {c === 'all' ? 'All' : c === 'email' ? 'Email' : 'SMS'}
           </button>
         ))}

@@ -31,7 +31,7 @@ export function LocationPnL() {
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 400 }}>
           Per-location profit and loss reporting is available on the Pro and Enterprise plans. Upgrade to compare revenue, margins, and costs across all your locations.
         </div>
-        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
+        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
           Upgrade to Pro
         </button>
       </div>

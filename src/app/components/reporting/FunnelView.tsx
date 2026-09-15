@@ -66,7 +66,7 @@ export function FunnelView() {
                   <div style={{ flex: 1, height: 32, background: '#F3F4F6', borderRadius: 4, position: 'relative' }}>
                     <div style={{
                       height: '100%', borderRadius: 4,
-                      background: isAbandoned ? '#DC2626' : isCompleted ? '#15803D' : '#C0392B',
+                      background: isAbandoned ? '#DC2626' : isCompleted ? '#15803D' : '#00A9AC',
                       opacity: isAbandoned ? 1 : 0.75 + (widthPct / 100) * 0.25,
                       width: `${widthPct}%`,
                       transition: 'width 0.5s',
@@ -110,7 +110,7 @@ export function FunnelView() {
             </div>
           ))}
         </div>
-        <div style={{ border: '1px solid #FCA5A5', borderRadius: 10, background: '#FEF2F2', padding: '16px 18px' }}>
+        <div style={{ border: '1px solid #80D4D5', borderRadius: 10, background: '#F0FBFB', padding: '16px 18px' }}>
           <div style={{ fontWeight: 700, fontSize: 13, color: '#DC2626', marginBottom: 12 }}>Loss Reasons</div>
           {[
             { reason: 'Price too high', pct: 41 },
@@ -158,7 +158,7 @@ export function FunnelView() {
                   <td style={{ padding: '11px 14px', fontSize: 13, color: '#374151' }}>{c.service}</td>
                   <td style={{ padding: '11px 14px', fontSize: 13, fontWeight: 700, color: '#1A1A1A' }}>{fmtMoney(c.cartValue)}</td>
                   <td style={{ padding: '11px 14px' }}>
-                    <span style={{ padding: '2px 8px', borderRadius: 99, fontSize: 11, fontWeight: 700, background: '#FEF2F2', color: '#DC2626' }}>
+                    <span style={{ padding: '2px 8px', borderRadius: 99, fontSize: 11, fontWeight: 700, background: '#F0FBFB', color: '#DC2626' }}>
                       {c.dropStep.replace(/_/g, ' ')}
                     </span>
                   </td>
@@ -174,7 +174,7 @@ export function FunnelView() {
                       <button
                         onClick={() => triggerRecovery(c.id)}
                         disabled={isTrig}
-                        style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 6, border: '1px solid #C0392B', background: '#FDEDEC', color: '#C0392B', fontSize: 11, fontWeight: 700, cursor: 'pointer' }}
+                        style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 6, border: '1px solid #00A9AC', background: '#E6F7F7', color: '#00A9AC', fontSize: 11, fontWeight: 700, cursor: 'pointer' }}
                       >
                         {isTrig ? <RefreshCw size={11} style={{ animation: 'spin 0.8s linear infinite' }} /> : null}
                         {isTrig ? 'Sending…' : 'Send SMS'}

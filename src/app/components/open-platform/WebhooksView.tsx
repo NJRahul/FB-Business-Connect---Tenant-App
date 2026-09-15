@@ -20,7 +20,7 @@ const ALL_EVENTS: { group: string; events: WebhookEventType[] }[] = [
 
 const STATUS_CFG: Record<DeliveryStatus, { bg: string; color: string; label: string; icon: React.ElementType }> = {
   delivered: { bg: '#DCFCE7', color: '#16A34A', label: 'Delivered', icon: CheckCircle2 },
-  failed:    { bg: '#FEF2F2', color: '#DC2626', label: 'Failed',    icon: X },
+  failed:    { bg: '#F0FBFB', color: '#DC2626', label: 'Failed',    icon: X },
   retrying:  { bg: '#FEF3C7', color: '#D97706', label: 'Retrying',  icon: RefreshCw },
   pending:   { bg: '#F3F4F6', color: '#9CA3AF', label: 'Pending',   icon: Clock },
 };
@@ -75,7 +75,7 @@ function RegisterModal({ onClose }: { onClose: (created: boolean) => void }) {
           <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginBottom: '16px' }}>
             Use this secret to verify HMAC-SHA256 signatures on the <code style={{ fontFamily: 'monospace' }}>FB Business Connect-Signature</code> header of incoming webhook deliveries.
           </p>
-          <button onClick={() => onClose(true)} className="w-full py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>Done</button>
+          <button onClick={() => onClose(true)} className="w-full py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>Done</button>
         </div>
       </div>
     );
@@ -107,7 +107,7 @@ function RegisterModal({ onClose }: { onClose: (created: boolean) => void }) {
               <button onClick={() => {
                 const all = ALL_EVENTS.flatMap(g => g.events);
                 setSelectedEvents(new Set(all));
-              }} style={{ color: '#C0392B', fontSize: '0.75rem', fontWeight: 600 }}>Select all</button>
+              }} style={{ color: '#00A9AC', fontSize: '0.75rem', fontWeight: 600 }}>Select all</button>
             </div>
             <div className="space-y-2">
               {ALL_EVENTS.map(group => {
@@ -146,7 +146,7 @@ function RegisterModal({ onClose }: { onClose: (created: boolean) => void }) {
             onClick={() => setStep('secret')}
             disabled={!url || selectedEvents.size === 0}
             className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white"
-            style={{ background: url && selectedEvents.size > 0 ? '#C0392B' : '#F3F4F6', color: url && selectedEvents.size > 0 ? '#fff' : '#D1D5DB' }}
+            style={{ background: url && selectedEvents.size > 0 ? '#00A9AC' : '#F3F4F6', color: url && selectedEvents.size > 0 ? '#fff' : '#D1D5DB' }}
           >
             Register & Get Signing Secret
           </button>
@@ -169,7 +169,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
   const failCount = endDeliveries.filter(d => d.status === 'failed').length;
 
   return (
-    <div className="bg-white rounded-[10px]" style={{ border: `1.5px solid ${failCount > 0 ? '#FCA5A5' : '#E5E7EB'}`, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
+    <div className="bg-white rounded-[10px]" style={{ border: `1.5px solid ${failCount > 0 ? '#80D4D5' : '#E5E7EB'}`, boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
       <div className="p-4">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
@@ -191,7 +191,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
               <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>
                 Secret: <code style={{ fontFamily: 'monospace' }}>{endpoint.secretPreview}</code>
               </span>
-              <button onClick={onRotateSecret} className="flex items-center gap-1 text-xs font-semibold" style={{ color: '#C0392B' }}>
+              <button onClick={onRotateSecret} className="flex items-center gap-1 text-xs font-semibold" style={{ color: '#00A9AC' }}>
                 <RefreshCw size={11} /> Rotate
               </button>
             </div>
@@ -199,7 +199,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
 
           <div className="flex items-center gap-2 shrink-0">
             {failCount > 0 && (
-              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FEF2F2', color: '#DC2626' }}>
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#F0FBFB', color: '#DC2626' }}>
                 <AlertTriangle size={11} /> {failCount} failed
               </span>
             )}
@@ -213,7 +213,7 @@ function EndpointCard({ endpoint, deliveries, onRotateSecret }: {
         <button
           onClick={() => setExpanded(x => !x)}
           className="mt-3 flex items-center gap-1 text-xs font-semibold"
-          style={{ color: '#C0392B' }}
+          style={{ color: '#00A9AC' }}
         >
           <ChevronDown size={13} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
           {expanded ? 'Hide' : 'Show'} recent deliveries
@@ -284,7 +284,7 @@ function DeliveryLog({ deliveries }: { deliveries: WebhookDelivery[] }) {
                   <button
                     onClick={() => setReplayedIds(s => new Set([...s, d.id]))}
                     className="flex items-center gap-1 text-xs font-semibold"
-                    style={{ color: replayed ? '#16A34A' : '#C0392B' }}
+                    style={{ color: replayed ? '#16A34A' : '#00A9AC' }}
                   >
                     {replayed ? <CheckCircle2 size={12} /> : <RotateCcw size={12} />}
                     {replayed ? 'Replayed' : 'Replay'}
@@ -331,7 +331,7 @@ export function WebhooksView() {
         <button
           onClick={() => setShowRegister(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white"
-          style={{ background: '#C0392B' }}
+          style={{ background: '#00A9AC' }}
         >
           <Plus size={14} /> Register Endpoint
         </button>

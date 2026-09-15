@@ -6,7 +6,7 @@ import type { InvoiceStatus, Invoice } from './types';
 const STATUS_META: Record<InvoiceStatus, { label: string; color: string; bg: string; icon: React.ElementType }> = {
   paid:    { label: 'Paid',    color: '#15803D', bg: '#F0FDF4', icon: CheckCircle },
   pending: { label: 'Pending', color: '#D97706', bg: '#FEF3C7', icon: Clock },
-  failed:  { label: 'Failed',  color: '#DC2626', bg: '#FEF2F2', icon: AlertTriangle },
+  failed:  { label: 'Failed',  color: '#DC2626', bg: '#F0FBFB', icon: AlertTriangle },
   void:    { label: 'Void',    color: '#9CA3AF', bg: '#F3F4F6', icon: X },
 };
 

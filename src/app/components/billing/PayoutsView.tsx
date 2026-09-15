@@ -7,7 +7,7 @@ const STATUS_META: Record<PayoutStatus, { label: string; color: string; bg: stri
   paid:       { label: 'Paid',       color: '#15803D', bg: '#F0FDF4', icon: CheckCircle },
   in_transit: { label: 'In Transit', color: '#2563EB', bg: '#EFF6FF', icon: Clock },
   pending:    { label: 'Pending',    color: '#D97706', bg: '#FEF3C7', icon: Clock },
-  failed:     { label: 'Failed',     color: '#DC2626', bg: '#FEF2F2', icon: AlertTriangle },
+  failed:     { label: 'Failed',     color: '#DC2626', bg: '#F0FBFB', icon: AlertTriangle },
 };
 
 function fmtMoney(cents: number) {
@@ -36,7 +36,7 @@ export function PayoutsView({ currentPlan }: Props) {
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-              <Building2 size={16} color="#C0392B" />
+              <Building2 size={16} color="#00A9AC" />
               <span style={{ fontWeight: 700, fontSize: 15, color: '#1A1A1A' }}>Stripe Connect Account</span>
               {CONNECT_ACCOUNT.onboardingComplete && (
                 <span style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '2px 8px', borderRadius: 99, background: '#F0FDF4', color: '#15803D', fontSize: 11, fontWeight: 700 }}>
@@ -99,14 +99,14 @@ export function PayoutsView({ currentPlan }: Props) {
             const p = PLAN_CONFIGS[tier];
             const active = tier === currentPlan;
             return (
-              <div key={tier} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', borderRadius: 8, background: active ? '#FDEDEC' : '#F9FAFB', border: `1px solid ${active ? '#C0392B' : '#E5E7EB'}` }}>
+              <div key={tier} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', borderRadius: 8, background: active ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${active ? '#00A9AC' : '#E5E7EB'}` }}>
                 <div>
-                  <div style={{ fontWeight: 700, fontSize: 13, color: active ? '#C0392B' : '#374151' }}>
+                  <div style={{ fontWeight: 700, fontSize: 13, color: active ? '#00A9AC' : '#374151' }}>
                     {p.name} {active && <span style={{ fontSize: 10, fontWeight: 600 }}>← current plan</span>}
                   </div>
                   <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>Withheld from each customer payment at transaction time</div>
                 </div>
-                <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 20, color: active ? '#C0392B' : '#374151' }}>
+                <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 20, color: active ? '#00A9AC' : '#374151' }}>
                   {p.applicationFeePercent > 0 ? `${p.applicationFeePercent}%` : '0%'}
                 </div>
               </div>

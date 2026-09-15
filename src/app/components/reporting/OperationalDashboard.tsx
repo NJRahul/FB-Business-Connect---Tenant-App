@@ -6,7 +6,7 @@ function fmtMoney(cents: number) {
   return `R ${(cents / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-function Sparkline({ values, color = '#C0392B', h = 40 }: { values: number[]; color?: string; h?: number }) {
+function Sparkline({ values, color = '#00A9AC', h = 40 }: { values: number[]; color?: string; h?: number }) {
   const w = 100;
   if (values.length < 2) return null;
   const mn = Math.min(...values), mx = Math.max(...values), rng = mx - mn || 1;
@@ -26,7 +26,7 @@ const TODAY_VISITS = [
   { state: 'in_progress', label: 'In Progress', count: 3,  color: '#2563EB', bg: '#EFF6FF' },
   { state: 'en_route',    label: 'En Route',    count: 2,  color: '#7E22CE', bg: '#FDF4FF' },
   { state: 'scheduled',   label: 'Scheduled',   count: 8,  color: '#D97706', bg: '#FEF3C7' },
-  { state: 'no_show',     label: 'No Show',     count: 1,  color: '#DC2626', bg: '#FEF2F2' },
+  { state: 'no_show',     label: 'No Show',     count: 1,  color: '#DC2626', bg: '#F0FBFB' },
 ];
 
 const STATE_ICONS: Record<string, React.ElementType> = {
@@ -138,7 +138,7 @@ export function OperationalDashboard() {
         {/* Week bookings */}
         <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', padding: '16px 18px' }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 8 }}>This Week's Bookings</div>
-          <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 38, color: '#C0392B' }}>{weekBookings}</div>
+          <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 38, color: '#00A9AC' }}>{weekBookings}</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>Mon–Sun · 8 remaining today</div>
         </div>
 
@@ -213,7 +213,7 @@ export function OperationalDashboard() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
           {TECH_STATS.map(t => (
             <div key={t.techId} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{ width: 30, height: 30, borderRadius: 99, background: '#FDEDEC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#C0392B', flexShrink: 0 }}>{t.initials}</div>
+              <div style={{ width: 30, height: 30, borderRadius: 99, background: '#E6F7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#00A9AC', flexShrink: 0 }}>{t.initials}</div>
               <div style={{ width: 100, fontSize: 12, fontWeight: 500, color: '#374151', flexShrink: 0 }}>{t.name.split(' ')[0]}</div>
               <div style={{ flex: 1, height: 8, background: '#F3F4F6', borderRadius: 99 }}>
                 <div style={{ height: '100%', borderRadius: 99, background: t.utilization >= 0.85 ? '#15803D' : t.utilization >= 0.7 ? '#D97706' : '#DC2626', width: `${t.utilization * 100}%`, transition: 'width 0.5s' }} />

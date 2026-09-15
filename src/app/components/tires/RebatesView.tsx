@@ -36,7 +36,7 @@ function ProductPageBadgePreview({ rebate }: { rebate: Rebate }) {
             </div>
           </div>
           <div style={{ marginLeft: 'auto' }}>
-            <a href={rebate.termsUrl} style={{ fontSize: 11, color: '#C0392B', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+            <a href={rebate.termsUrl} style={{ fontSize: 11, color: '#00A9AC', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
               Terms <ExternalLink size={10} />
             </a>
           </div>
@@ -82,7 +82,7 @@ function MailInFormModal({ rebate, onClose }: { rebate: Rebate; onClose: () => v
             </label>
             <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
               <button onClick={onClose} style={{ padding: '8px 16px', border: '1px solid #E5E7EB', borderRadius: 7, background: '#fff', fontSize: 13, cursor: 'pointer' }}>Cancel</button>
-              <button onClick={() => setStep('success')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              <button onClick={() => setStep('success')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 <Mail size={13} /> Submit & Print
               </button>
             </div>
@@ -108,7 +108,7 @@ function RebateCard({ rebate, onMailIn, onTogglePublish }: { rebate: Rebate; onM
   const expired = new Date(rebate.endDate) < today;
 
   return (
-    <div style={{ background: '#fff', border: `1px solid ${!rebate.active ? '#E5E7EB' : expired ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px', opacity: !rebate.active ? 0.65 : 1 }}>
+    <div style={{ background: '#fff', border: `1px solid ${!rebate.active ? '#E5E7EB' : expired ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px', opacity: !rebate.active ? 0.65 : 1 }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
         <div style={{ width: 40, height: 40, borderRadius: 8, background: rebate.logoColor, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
           <Tag size={18} color="#fff" />
@@ -118,7 +118,7 @@ function RebateCard({ rebate, onMailIn, onTogglePublish }: { rebate: Rebate; onM
             <span style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>{rebate.name}</span>
             <RebateTypeBadge type={rebate.rebateType} />
             {!rebate.active && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#F3F4F6', color: '#9CA3AF', fontSize: 10, fontWeight: 600 }}>Inactive</span>}
-            {expired && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#FEF2F2', color: '#DC2626', fontSize: 10, fontWeight: 600 }}>Expired</span>}
+            {expired && <span style={{ padding: '1px 6px', borderRadius: 99, background: '#F0FBFB', color: '#DC2626', fontSize: 10, fontWeight: 600 }}>Expired</span>}
           </div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>
             {rebate.manufacturer} · {rebate.amountType === 'fixed' ? `R ${rebate.amount}` : `${rebate.amount}%`} off · {rebate.startDate} → {rebate.endDate}
@@ -180,11 +180,11 @@ export function RebatesView() {
       {/* Sub-tabs */}
       <div style={{ display: 'flex', gap: 0, borderBottom: '2px solid #E5E7EB', marginBottom: 20, alignItems: 'flex-end' }}>
         {(['registry', 'preview', 'attributions'] as const).map(t => (
-          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#C0392B' : '#6B7280', borderBottom: subtab === t ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
+          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#00A9AC' : '#6B7280', borderBottom: subtab === t ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
             {t === 'attributions' ? 'Attributions' : t === 'preview' ? 'Badge Preview' : 'Registry'}
           </button>
         ))}
-        <button style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer', marginBottom: 8 }}>
+        <button style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer', marginBottom: 8 }}>
           <Plus size={13} /> Add Rebate
         </button>
       </div>
@@ -204,7 +204,7 @@ export function RebatesView() {
           </div>
           <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
             {rebates.filter(r => r.active).map(r => (
-              <button key={r.id} onClick={() => setPreviewRebate(r)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: previewRebate.id === r.id ? '#C0392B' : '#E5E7EB', background: previewRebate.id === r.id ? '#FEF2F2' : '#fff', color: previewRebate.id === r.id ? '#C0392B' : '#374151', fontSize: 12, cursor: 'pointer' }}>
+              <button key={r.id} onClick={() => setPreviewRebate(r)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: previewRebate.id === r.id ? '#00A9AC' : '#E5E7EB', background: previewRebate.id === r.id ? '#F0FBFB' : '#fff', color: previewRebate.id === r.id ? '#00A9AC' : '#374151', fontSize: 12, cursor: 'pointer' }}>
                 {r.manufacturer}
               </button>
             ))}

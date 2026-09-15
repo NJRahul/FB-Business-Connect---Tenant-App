@@ -9,7 +9,7 @@ import type { DamageClaim, ClaimStatus, Recommendation, RecoStatus } from './typ
 const RECO_STATUS_CFG: Record<RecoStatus, { bg: string; color: string; border: string; label: string }> = {
   pending:     { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Pending Follow-up' },
   booked:      { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Booked' },
-  declined:    { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Declined' },
+  declined:    { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Declined' },
   no_response: { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'No Response' },
 };
 
@@ -20,8 +20,8 @@ function RecoCard({ reco, onStatusChange }: { reco: Recommendation; onStatusChan
   return (
     <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, overflow: 'hidden' }}>
       <div onClick={() => setExpanded(e => !e)} style={{ padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}>
-        <div style={{ width: 36, height: 36, background: '#FDEDEC', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-          <ThumbsUp size={16} color="#C0392B" />
+        <div style={{ width: 36, height: 36, background: '#E6F7F7', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <ThumbsUp size={16} color="#00A9AC" />
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A', marginBottom: 2 }}>{reco.type}</div>
@@ -122,7 +122,7 @@ function NewRecoModal({ onClose, onCreate }: { onClose: () => void; onCreate: (r
         </div>
         <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Create Recommendation</button>
+          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Create Recommendation</button>
         </div>
       </div>
     </div>
@@ -217,7 +217,7 @@ function ClaimCard({ claim, onUpdate }: { claim: DamageClaim; onUpdate: (id: str
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {nextStatus() && (
               <button onClick={() => onUpdate(claim.id, { status: nextStatus()!, updatedAt: new Date().toISOString() })}
-                style={{ padding: '7px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ padding: '7px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 Advance → {CLAIM_STATUS_CFG[nextStatus()!].label}
               </button>
             )}
@@ -299,7 +299,7 @@ function NewClaimModal({ onClose, onCreate }: { onClose: () => void; onCreate: (
         </div>
         <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>File Claim</button>
+          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>File Claim</button>
         </div>
       </div>
     </div>
@@ -331,7 +331,7 @@ export function ClaimsAndRecs() {
         {[
           { label: 'Pending Follow-ups', value: pendingRecos, color: '#D97706', bg: '#FEF3C7' },
           { label: 'Booked from Recos', value: recos.filter(r => r.status === 'booked').length, color: '#059669', bg: '#D1FAE5' },
-          { label: 'Open Claims', value: openClaims, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Open Claims', value: openClaims, color: '#00A9AC', bg: '#E6F7F7' },
           { label: 'Resolved Claims', value: claims.filter(c => c.status === 'resolved').length, color: '#6B7280', bg: '#F9FAFB' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, border: '1px solid #E5E7EB', borderRadius: 12, padding: '14px 16px' }}>
@@ -346,19 +346,19 @@ export function ClaimsAndRecs() {
         <div style={{ display: 'flex', gap: 4, background: '#F9FAFB', padding: 4, borderRadius: 10, border: '1px solid #E5E7EB' }}>
           {([['recos', 'Recommendations', ThumbsUp], ['claims', 'Damage Claims', AlertOctagon]] as const).map(([id, label, Icon]) => (
             <button key={id} onClick={() => setTab(id)}
-              style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '8px 16px', borderRadius: 8, fontSize: 14, fontWeight: tab === id ? 700 : 500, cursor: 'pointer', border: 'none', background: tab === id ? '#fff' : 'transparent', color: tab === id ? '#C0392B' : '#6B7280', boxShadow: tab === id ? '0 1px 3px rgba(0,0,0,0.08)' : 'none' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 7, padding: '8px 16px', borderRadius: 8, fontSize: 14, fontWeight: tab === id ? 700 : 500, cursor: 'pointer', border: 'none', background: tab === id ? '#fff' : 'transparent', color: tab === id ? '#00A9AC' : '#6B7280', boxShadow: tab === id ? '0 1px 3px rgba(0,0,0,0.08)' : 'none' }}>
               <Icon size={14} /> {label}
               {id === 'recos' && pendingRecos > 0 && (
                 <span style={{ background: '#F59E0B', color: '#fff', borderRadius: '50%', width: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700 }}>{pendingRecos}</span>
               )}
               {id === 'claims' && openClaims > 0 && (
-                <span style={{ background: '#C0392B', color: '#fff', borderRadius: '50%', width: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700 }}>{openClaims}</span>
+                <span style={{ background: '#00A9AC', color: '#fff', borderRadius: '50%', width: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700 }}>{openClaims}</span>
               )}
             </button>
           ))}
         </div>
         <button onClick={() => tab === 'recos' ? setShowNewReco(true) : setShowNewClaim(true)}
-          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
           <Plus size={14} /> {tab === 'recos' ? 'New Recommendation' : 'File Claim'}
         </button>
       </div>

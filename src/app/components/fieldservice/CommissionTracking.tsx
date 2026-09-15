@@ -22,8 +22,8 @@ const PERIODS = ['2026-06', '2026-05', '2026-04'];
 function RuleCard({ rule, onEdit, onDelete }: { rule: CommissionRule; onEdit: (r: CommissionRule) => void; onDelete: (id: string) => void }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10 }}>
-      <div style={{ width: 36, height: 36, background: '#FDEDEC', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <DollarSign size={16} color="#C0392B" />
+      <div style={{ width: 36, height: 36, background: '#E6F7F7', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <DollarSign size={16} color="#00A9AC" />
       </div>
       <div style={{ flex: 1 }}>
         <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A' }}>{rule.name}</div>
@@ -32,14 +32,14 @@ function RuleCard({ rule, onEdit, onDelete }: { rule: CommissionRule; onEdit: (r
           {rule.category && <span style={{ marginLeft: 6, background: '#EDE9FE', color: '#7C3AED', borderRadius: 5, padding: '1px 7px', fontSize: 11 }}>{rule.category}</span>}
         </div>
       </div>
-      <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 20, fontWeight: 800, color: '#C0392B' }}>
+      <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 20, fontWeight: 800, color: '#00A9AC' }}>
         {rule.type === 'fixed_per_service' ? `R ${rule.value}` : `${rule.value}%`}
       </div>
       <div style={{ display: 'flex', gap: 6 }}>
         <button onClick={() => onEdit(rule)} style={{ padding: '6px', border: '1px solid #E5E7EB', borderRadius: 6, cursor: 'pointer', background: '#fff' }}>
           <Edit2 size={14} color="#6B7280" />
         </button>
-        <button onClick={() => onDelete(rule.id)} style={{ padding: '6px', border: '1px solid #FCA5A5', borderRadius: 6, cursor: 'pointer', background: '#FEF2F2' }}>
+        <button onClick={() => onDelete(rule.id)} style={{ padding: '6px', border: '1px solid #80D4D5', borderRadius: 6, cursor: 'pointer', background: '#F0FBFB' }}>
           <Trash2 size={14} color="#DC2626" />
         </button>
       </div>
@@ -108,7 +108,7 @@ function RuleModal({ rule, onClose, onSave }: RuleModalProps) {
         </div>
         <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-          <button onClick={handleSave} style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Save Rule</button>
+          <button onClick={handleSave} style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Save Rule</button>
         </div>
       </div>
     </div>
@@ -133,7 +133,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 320 }}>
           Commission tracking is available on Pro and Enterprise plans. Upgrade to enable per-technician commission rules and payout reports.
         </div>
-        <button style={{ padding: '10px 24px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+        <button style={{ padding: '10px 24px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
           Upgrade Plan
         </button>
       </div>
@@ -163,7 +163,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
       {/* Stats */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 24 }}>
         {[
-          { label: 'Total Payout This Period', value: `R ${totalPayout.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Total Payout This Period', value: `R ${totalPayout.toFixed(2)}`, color: '#00A9AC', bg: '#E6F7F7' },
           { label: 'Active Rules', value: rules.length, color: '#2980B9', bg: '#EBF5FB' },
           { label: 'Technicians Earning', value: Object.keys(byTech).length, color: '#27AE60', bg: '#D1FAE5' },
         ].map(s => (
@@ -180,7 +180,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 15, color: '#1A1A1A' }}>Commission Rules</div>
             <button onClick={() => { setEditingRule(undefined); setShowRuleModal(true); }}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 12px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 12px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
               <Plus size={13} /> Add Rule
             </button>
           </div>
@@ -211,7 +211,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
                     <div style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A' }}>{tech.name}</div>
                     <div style={{ fontSize: 12, color: '#6B7280' }}>{tech.role} · {tech.entries.length} jobs</div>
                   </div>
-                  <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: '#C0392B' }}>${tech.amount.toFixed(2)}</div>
+                  <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: '#00A9AC' }}>${tech.amount.toFixed(2)}</div>
                   <ChevronDown size={16} color="#6B7280" style={{ transform: expandTech === id ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
                 </div>
                 {expandTech === id && (
@@ -231,7 +231,7 @@ export function CommissionTracking({ enabled = true }: { enabled?: boolean }) {
                             <td style={{ padding: '6px 10px', color: '#6B7280' }}>
                               {rules.find(r => r.id === e.ruleId)?.name ?? e.ruleId}
                             </td>
-                            <td style={{ padding: '6px 10px', fontWeight: 600, color: '#C0392B' }}>${e.amount.toFixed(2)}</td>
+                            <td style={{ padding: '6px 10px', fontWeight: 600, color: '#00A9AC' }}>${e.amount.toFixed(2)}</td>
                           </tr>
                         ))}
                       </tbody>

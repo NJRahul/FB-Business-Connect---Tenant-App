@@ -80,9 +80,9 @@ export function BookingCalendar({ onSlotBooked }: Props) {
             onClick={() => { setServiceTypeId(s.id); setSelectedDate(null); setSelectedSlot(null); }}
             className="px-3 py-1.5 rounded-full text-sm font-medium transition-colors"
             style={{
-              background: serviceTypeId === s.id ? '#C0392B' : '#F3F4F6',
+              background: serviceTypeId === s.id ? '#00A9AC' : '#F3F4F6',
               color: serviceTypeId === s.id ? '#fff' : '#6B7280',
-              border: serviceTypeId === s.id ? '1.5px solid #C0392B' : '1.5px solid transparent',
+              border: serviceTypeId === s.id ? '1.5px solid #00A9AC' : '1.5px solid transparent',
             }}
           >
             {s.name}
@@ -130,22 +130,22 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                   onClick={() => { setSelectedDate(dateStr); setSelectedSlot(null); }}
                   className="relative flex flex-col items-center justify-center rounded-[6px] aspect-square transition-all"
                   style={{
-                    background: isSelected ? '#C0392B' : isToday ? '#FDEDEC' : hasSlots && !isPast ? '#FFF' : 'transparent',
-                    border: isSelected ? '2px solid #C0392B' : isToday ? '1.5px solid #F5B7B1' : hasSlots && !isPast ? '1.5px solid #E5E7EB' : 'none',
+                    background: isSelected ? '#00A9AC' : isToday ? '#E6F7F7' : hasSlots && !isPast ? '#FFF' : 'transparent',
+                    border: isSelected ? '2px solid #00A9AC' : isToday ? '1.5px solid #80D4D5' : hasSlots && !isPast ? '1.5px solid #E5E7EB' : 'none',
                     cursor: hasSlots && !isPast ? 'pointer' : 'default',
                     opacity: isPast ? 0.35 : 1,
                   }}
-                  onMouseEnter={e => { if (hasSlots && !isPast && !isSelected) e.currentTarget.style.borderColor = '#C0392B'; }}
+                  onMouseEnter={e => { if (hasSlots && !isPast && !isSelected) e.currentTarget.style.borderColor = '#00A9AC'; }}
                   onMouseLeave={e => { if (hasSlots && !isPast && !isSelected) e.currentTarget.style.borderColor = '#E5E7EB'; }}
                 >
                   <span style={{
                     fontSize: '0.8125rem', fontWeight: isSelected || isToday ? 700 : 400,
-                    color: isSelected ? '#fff' : isToday ? '#C0392B' : isPast ? '#9CA3AF' : '#1A1A1A',
+                    color: isSelected ? '#fff' : isToday ? '#00A9AC' : isPast ? '#9CA3AF' : '#1A1A1A',
                   }}>
                     {new Date(dateStr + 'T12:00:00').getDate()}
                   </span>
                   {hasSlots && !isPast && !isSelected && (
-                    <span className="absolute bottom-1 w-1 h-1 rounded-full" style={{ background: '#C0392B' }} />
+                    <span className="absolute bottom-1 w-1 h-1 rounded-full" style={{ background: '#00A9AC' }} />
                   )}
                   {av && av.bookingCount > 0 && !isSelected && (
                     <span className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: '#F3F4F6', fontSize: '0.5rem', color: '#6B7280', fontWeight: 700 }}>
@@ -160,7 +160,7 @@ export function BookingCalendar({ onSlotBooked }: Props) {
           {/* Legend */}
           <div className="flex items-center gap-4 mt-4 pt-4" style={{ borderTop: '1px solid #E5E7EB' }}>
             <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full" style={{ background: '#C0392B' }} />
+              <span className="w-2 h-2 rounded-full" style={{ background: '#00A9AC' }} />
               <span style={{ fontSize: '0.75rem', color: '#6B7280' }}>Slots available</span>
             </div>
             <div className="flex items-center gap-1.5">
@@ -182,8 +182,8 @@ export function BookingCalendar({ onSlotBooked }: Props) {
         <div className="bg-white rounded-[10px] p-5" style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.08)', border: '1px solid #E5E7EB' }}>
           {!selectedDate ? (
             <div className="h-full flex flex-col items-center justify-center py-12">
-              <div className="w-14 h-14 rounded-full flex items-center justify-center mb-3" style={{ background: '#FDEDEC' }}>
-                <Clock size={24} style={{ color: '#C0392B' }} />
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mb-3" style={{ background: '#E6F7F7' }}>
+                <Clock size={24} style={{ color: '#00A9AC' }} />
               </div>
               <p style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '1rem' }}>Select a date</p>
               <p style={{ color: '#9CA3AF', fontSize: '0.875rem', marginTop: '4px', textAlign: 'center' }}>
@@ -237,22 +237,22 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                         }}
                         className="w-full text-left p-4 rounded-[8px] transition-all"
                         style={{
-                          border: isSelected ? '2px solid #C0392B' : '1.5px solid #E5E7EB',
-                          background: isSelected ? '#FDEDEC' : available === 0 ? '#F9FAFB' : '#fff',
+                          border: isSelected ? '2px solid #00A9AC' : '1.5px solid #E5E7EB',
+                          background: isSelected ? '#E6F7F7' : available === 0 ? '#F9FAFB' : '#fff',
                           opacity: available === 0 ? 0.5 : 1,
                           cursor: available === 0 ? 'not-allowed' : 'pointer',
                         }}
                       >
                         <div className="flex items-center justify-between">
                           <div>
-                            <p style={{ fontWeight: 600, color: isSelected ? '#C0392B' : '#1A1A1A', fontSize: '1rem' }}>{label}</p>
+                            <p style={{ fontWeight: 600, color: isSelected ? '#00A9AC' : '#1A1A1A', fontSize: '1rem' }}>{label}</p>
                             <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginTop: '2px' }}>
                               {fmtTime(slots[0].slotStart)} – {fmtTime(slots[slots.length - 1].slotEnd)}
                             </p>
                           </div>
                           <div className="text-right">
                             {available > 0 ? (
-                              <span className="px-2 py-0.5 rounded" style={{ background: isSelected ? '#C0392B' : '#FDEDEC', color: isSelected ? '#fff' : '#C0392B', fontSize: '0.75rem', fontWeight: 700 }}>
+                              <span className="px-2 py-0.5 rounded" style={{ background: isSelected ? '#00A9AC' : '#E6F7F7', color: isSelected ? '#fff' : '#00A9AC', fontSize: '0.75rem', fontWeight: 700 }}>
                                 {available === 1 ? '1 spot left' : `${available} spots`}
                               </span>
                             ) : (
@@ -264,7 +264,7 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                           </div>
                         </div>
                         {isSelected && (
-                          <div className="mt-3 flex items-center gap-1.5" style={{ color: '#C0392B' }}>
+                          <div className="mt-3 flex items-center gap-1.5" style={{ color: '#00A9AC' }}>
                             <CheckCircle size={14} />
                             <span style={{ fontSize: '0.8125rem', fontWeight: 600 }}>
                               We'll text 30 min before your tech arrives
@@ -294,12 +294,12 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                             onClick={() => setSelectedSlot(slot)}
                             className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] text-sm transition-all"
                             style={{
-                              background: isSelected ? '#C0392B' : blocked ? '#F9FAFB' : '#fff',
-                              border: isSelected ? '1.5px solid #C0392B' : blocked ? '1.5px solid #E5E7EB' : '1.5px solid #E5E7EB',
+                              background: isSelected ? '#00A9AC' : blocked ? '#F9FAFB' : '#fff',
+                              border: isSelected ? '1.5px solid #00A9AC' : blocked ? '1.5px solid #E5E7EB' : '1.5px solid #E5E7EB',
                               color: isSelected ? '#fff' : blocked ? '#D1D5DB' : '#1A1A1A',
                               cursor: blocked ? 'not-allowed' : 'pointer',
                             }}
-                            onMouseEnter={e => { if (!blocked && !isSelected) { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.color = '#C0392B'; } }}
+                            onMouseEnter={e => { if (!blocked && !isSelected) { e.currentTarget.style.borderColor = '#00A9AC'; e.currentTarget.style.color = '#00A9AC'; } }}
                             onMouseLeave={e => { if (!blocked && !isSelected) { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.color = '#1A1A1A'; } }}
                           >
                             <Clock size={12} />
@@ -315,8 +315,8 @@ export function BookingCalendar({ onSlotBooked }: Props) {
 
               {/* Selected slot summary + confirm */}
               {selectedSlot && (
-                <div className="mt-5 p-4 rounded-[8px]" style={{ background: '#FDEDEC', border: '1.5px solid #F5B7B1' }}>
-                  <p style={{ fontWeight: 600, color: '#C0392B', fontSize: '0.9375rem' }}>
+                <div className="mt-5 p-4 rounded-[8px]" style={{ background: '#E6F7F7', border: '1.5px solid #80D4D5' }}>
+                  <p style={{ fontWeight: 600, color: '#00A9AC', fontSize: '0.9375rem' }}>
                     {st.slotModel === 'time-slot' ? `${selectedSlot.windowLabel} window selected` : `${fmtTime(selectedSlot.slotStart)} selected`}
                   </p>
                   <div className="flex items-center gap-2 mt-2">
@@ -333,9 +333,9 @@ export function BookingCalendar({ onSlotBooked }: Props) {
                     <button
                       onClick={() => onSlotBooked(selectedSlot, serviceTypeId)}
                       className="mt-3 w-full py-2.5 rounded-[6px] text-white font-semibold text-sm"
-                      style={{ background: '#C0392B' }}
-                      onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                      onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                      style={{ background: '#00A9AC' }}
+                      onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                      onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
                     >
                       Book This Slot
                     </button>

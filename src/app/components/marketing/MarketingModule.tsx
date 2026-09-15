@@ -15,9 +15,9 @@ class ErrorBoundary extends Component<{ children: React.ReactNode }, { error: st
   render() {
     if (this.state.error) {
       return (
-        <div style={{ padding: 24, background: '#FEF2F2', border: '1px solid #FCA5A5', borderRadius: 10, margin: 24 }}>
+        <div style={{ padding: 24, background: '#F0FBFB', border: '1px solid #80D4D5', borderRadius: 10, margin: 24 }}>
           <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: 8 }}>Render error</div>
-          <pre style={{ fontSize: 12, color: '#991B1B', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
+          <pre style={{ fontSize: 12, color: '#005F62', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
         </div>
       );
     }
@@ -109,7 +109,7 @@ function OverviewDashboard() {
           {
             icon: Megaphone, title: 'Campaigns',
             lines: [`${activeCampaigns} active`, `R ${totalRevenue.toLocaleString()} attributed revenue`],
-            color: '#C0392B', bg: '#FDEDEC',
+            color: '#00A9AC', bg: '#E6F7F7',
           },
           {
             icon: Star, title: 'Reviews',
@@ -160,7 +160,7 @@ function OverviewDashboard() {
                 sending:   { color: '#2563EB', bg: '#EFF6FF' },
                 sent:      { color: '#15803D', bg: '#F0FDF4' },
                 paused:    { color: '#D97706', bg: '#FEF3C7' },
-                cancelled: { color: '#DC2626', bg: '#FEF2F2' },
+                cancelled: { color: '#DC2626', bg: '#F0FBFB' },
               };
               const sc = STATUS_COLORS[c.status] ?? { color: '#6B7280', bg: '#F3F4F6' };
               return (
@@ -221,8 +221,8 @@ export default function MarketingModule() {
                 display: 'flex', alignItems: 'center', gap: 6,
                 padding: '10px 18px', border: 'none', background: 'none', cursor: 'pointer',
                 fontWeight: 600, fontSize: 13,
-                color: tab === t.id ? '#C0392B' : '#6B7280',
-                borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+                color: tab === t.id ? '#00A9AC' : '#6B7280',
+                borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
                 marginBottom: -2, position: 'relative',
               }}
             >
@@ -230,7 +230,7 @@ export default function MarketingModule() {
               {t.label}
               {(badge ?? 0) > 0 && (
                 <span style={{
-                  minWidth: 18, height: 18, borderRadius: 99, background: '#C0392B', color: '#fff',
+                  minWidth: 18, height: 18, borderRadius: 99, background: '#00A9AC', color: '#fff',
                   fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center',
                   padding: '0 5px',
                 }}>

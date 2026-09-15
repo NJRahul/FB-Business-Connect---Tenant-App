@@ -54,7 +54,7 @@ function PlatformAdminView() {
   const statusCfg: Record<string, { label: string; color: string; bg: string }> = {
     approved:       { label: 'Approved',    color: '#27AE60', bg: '#F0FDF4' },
     pending_review: { label: 'In review',   color: '#F39C12', bg: '#FFF8E1' },
-    denied:         { label: 'Denied',      color: '#E74C3C', bg: '#FEF2F2' },
+    denied:         { label: 'Denied',      color: '#00BFC3', bg: '#F0FBFB' },
     submitted:      { label: 'Submitted',   color: '#2980B9', bg: '#EBF5FB' },
   };
 
@@ -148,7 +148,7 @@ function RoleBanner({ role, onRoleChange }: { role: BankingRole; onRoleChange: (
           { label: 'Cards',     can: perms.issue_freeze_cards },
           { label: 'Export',    can: perms.export_accounting },
         ].map(p => (
-          <span key={p.label} className="flex items-center gap-1 text-xs" style={{ color: p.can ? '#27AE60' : '#E74C3C' }}>
+          <span key={p.label} className="flex items-center gap-1 text-xs" style={{ color: p.can ? '#27AE60' : '#00BFC3' }}>
             {p.can ? <CheckCircle2 size={11} /> : <XCircle size={11} />} {p.label}
           </span>
         ))}

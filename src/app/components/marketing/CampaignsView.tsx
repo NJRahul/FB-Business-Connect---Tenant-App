@@ -13,7 +13,7 @@ const STATUS_CFG: Record<CampaignStatus, { bg: string; color: string; border: st
   sending:   { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Sending' },
   sent:      { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'Sent' },
   paused:    { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Paused' },
-  cancelled: { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Cancelled' },
+  cancelled: { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Cancelled' },
 };
 
 const TOKENS = ['{{first_name}}', '{{last_vehicle}}', '{{last_service}}', '{{promo_code}}'];
@@ -106,7 +106,7 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
       {/* Step bar */}
       <div style={{ display: 'flex', borderBottom: '1px solid #E5E7EB', background: '#F9FAFB' }}>
         {STEPS.map((s, i) => (
-          <div key={s} onClick={() => setStep(s)} style={{ flex: 1, padding: '12px 0', textAlign: 'center', fontSize: 13, fontWeight: step === s ? 700 : 500, color: step === s ? '#C0392B' : STEPS.indexOf(step) > i ? '#059669' : '#9CA3AF', borderBottom: step === s ? '2px solid #C0392B' : '2px solid transparent', cursor: 'pointer', textTransform: 'capitalize' }}>
+          <div key={s} onClick={() => setStep(s)} style={{ flex: 1, padding: '12px 0', textAlign: 'center', fontSize: 13, fontWeight: step === s ? 700 : 500, color: step === s ? '#00A9AC' : STEPS.indexOf(step) > i ? '#059669' : '#9CA3AF', borderBottom: step === s ? '2px solid #00A9AC' : '2px solid transparent', cursor: 'pointer', textTransform: 'capitalize' }}>
             {STEPS.indexOf(step) > i ? '✓ ' : `${i + 1}. `}{s}
           </div>
         ))}
@@ -129,8 +129,8 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                   {SEGMENTS.map(s => <option key={s.id} value={s.id}>{s.name} ({s.memberCount})</option>)}
                 </select>
               </div>
-              <div style={{ background: '#FDEDEC', border: '1px solid #F5B7B1', borderRadius: 10, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
-                <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#C0392B' }}>{seg.memberCount}</div>
+              <div style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#00A9AC' }}>{seg.memberCount}</div>
                 <div>
                   <div style={{ fontWeight: 700, color: '#1A1A1A' }}>customers will receive this campaign</div>
                   <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 2 }}>Only opted-in customers per channel will receive messages</div>
@@ -141,9 +141,9 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                 <div style={{ display: 'flex', gap: 10 }}>
                   {(['email', 'sms'] as const).map(ch => (
                     <div key={ch} onClick={() => setChannels(prev => prev.includes(ch) ? prev.filter(x => x !== ch) : [...prev, ch])}
-                      style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', border: `2px solid ${channels.includes(ch) ? '#C0392B' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: channels.includes(ch) ? '#FDEDEC' : '#fff' }}>
-                      {ch === 'email' ? <Mail size={16} color={channels.includes(ch) ? '#C0392B' : '#9CA3AF'} /> : <MessageSquare size={16} color={channels.includes(ch) ? '#C0392B' : '#9CA3AF'} />}
-                      <span style={{ fontWeight: 600, color: channels.includes(ch) ? '#C0392B' : '#6B7280', textTransform: 'capitalize' }}>{ch}</span>
+                      style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 16px', border: `2px solid ${channels.includes(ch) ? '#00A9AC' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: channels.includes(ch) ? '#E6F7F7' : '#fff' }}>
+                      {ch === 'email' ? <Mail size={16} color={channels.includes(ch) ? '#00A9AC' : '#9CA3AF'} /> : <MessageSquare size={16} color={channels.includes(ch) ? '#00A9AC' : '#9CA3AF'} />}
+                      <span style={{ fontWeight: 600, color: channels.includes(ch) ? '#00A9AC' : '#6B7280', textTransform: 'capitalize' }}>{ch}</span>
                     </div>
                   ))}
                 </div>
@@ -235,9 +235,9 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                 <div style={{ display: 'flex', gap: 10 }}>
                   {[{ v: true, label: 'Send Now', icon: <Zap size={14} /> }, { v: false, label: 'Schedule', icon: <Calendar size={14} /> }].map(opt => (
                     <div key={String(opt.v)} onClick={() => setScheduleNow(opt.v)}
-                      style={{ flex: 1, padding: '12px 16px', border: `2px solid ${scheduleNow === opt.v ? '#C0392B' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: scheduleNow === opt.v ? '#FDEDEC' : '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span style={{ color: scheduleNow === opt.v ? '#C0392B' : '#9CA3AF' }}>{opt.icon}</span>
-                      <span style={{ fontWeight: 700, color: scheduleNow === opt.v ? '#C0392B' : '#6B7280' }}>{opt.label}</span>
+                      style={{ flex: 1, padding: '12px 16px', border: `2px solid ${scheduleNow === opt.v ? '#00A9AC' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: scheduleNow === opt.v ? '#E6F7F7' : '#fff', display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <span style={{ color: scheduleNow === opt.v ? '#00A9AC' : '#9CA3AF' }}>{opt.icon}</span>
+                      <span style={{ fontWeight: 700, color: scheduleNow === opt.v ? '#00A9AC' : '#6B7280' }}>{opt.label}</span>
                     </div>
                   ))}
                 </div>
@@ -282,14 +282,14 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                 { ok: !smsEnabled || smsText.includes('STOP'), label: 'SMS includes STOP keyword (TCPA)' },
                 { ok: !smsEnabled || smsValid.ok, label: `SMS length ≤ 480 chars (${smsValid.charCount} chars, ${smsValid.segmentCount} segments)` },
               ].map((check, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', background: check.ok ? '#F0FDF4' : '#FEF2F2', border: `1px solid ${check.ok ? '#86EFAC' : '#FCA5A5'}`, borderRadius: 8 }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', background: check.ok ? '#F0FDF4' : '#F0FBFB', border: `1px solid ${check.ok ? '#86EFAC' : '#80D4D5'}`, borderRadius: 8 }}>
                   {check.ok ? <CheckCircle size={16} color="#22C55E" /> : <AlertTriangle size={16} color="#EF4444" />}
                   <span style={{ fontSize: 13, color: check.ok ? '#15803D' : '#DC2626', fontWeight: check.ok ? 400 : 600 }}>{check.label}</span>
                 </div>
               ))}
-              <div style={{ background: '#FDEDEC', border: '1px solid #F5B7B1', borderRadius: 10, padding: '14px 16px' }}>
+              <div style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, padding: '14px 16px' }}>
                 <div style={{ fontWeight: 700, color: '#1A1A1A', marginBottom: 6 }}>Ready to send to</div>
-                <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#C0392B' }}>
+                <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 32, fontWeight: 800, color: '#00A9AC' }}>
                   {seg.memberCount} customers
                 </div>
                 <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 4 }}>
@@ -306,7 +306,7 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
             <div style={{ display: 'flex', gap: 6, marginBottom: 14 }}>
               {(['email', 'sms'] as const).map(ch => (
                 <button key={ch} onClick={() => setPreview(ch)} disabled={!channels.includes(ch)}
-                  style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: preview === ch ? 700 : 400, cursor: channels.includes(ch) ? 'pointer' : 'not-allowed', border: preview === ch ? '1.5px solid #C0392B' : '1px solid #E5E7EB', background: preview === ch ? '#FDEDEC' : '#fff', color: preview === ch ? '#C0392B' : channels.includes(ch) ? '#6B7280' : '#D1D5DB', textTransform: 'capitalize' }}>
+                  style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: preview === ch ? 700 : 400, cursor: channels.includes(ch) ? 'pointer' : 'not-allowed', border: preview === ch ? '1.5px solid #00A9AC' : '1px solid #E5E7EB', background: preview === ch ? '#E6F7F7' : '#fff', color: preview === ch ? '#00A9AC' : channels.includes(ch) ? '#6B7280' : '#D1D5DB', textTransform: 'capitalize' }}>
                   {ch} Preview
                 </button>
               ))}
@@ -321,7 +321,7 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
                   <pre style={{ fontSize: 13, color: '#374151', whiteSpace: 'pre-wrap', fontFamily: 'inherit', lineHeight: 1.7, margin: 0 }}>{previewBody(body) || '(no body)'}</pre>
                   {ctaLabel && (
                     <div style={{ marginTop: 16, textAlign: 'center' }}>
-                      <span style={{ display: 'inline-block', background: '#C0392B', color: '#fff', borderRadius: 8, padding: '10px 24px', fontWeight: 700, fontSize: 14 }}>{ctaLabel}</span>
+                      <span style={{ display: 'inline-block', background: '#00A9AC', color: '#fff', borderRadius: 8, padding: '10px 24px', fontWeight: 700, fontSize: 14 }}>{ctaLabel}</span>
                     </div>
                   )}
                   <div style={{ marginTop: 20, borderTop: '1px solid #E5E7EB', paddingTop: 12, fontSize: 11, color: '#9CA3AF', textAlign: 'center' }}>
@@ -355,10 +355,10 @@ function CampaignComposer({ onSave, onCancel }: { onSave: (c: Campaign) => void;
           )}
           {step !== 'review' ? (
             <button onClick={() => setStep(STEPS[STEPS.indexOf(step) + 1])}
-              style={{ padding: '9px 18px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>Continue →</button>
+              style={{ padding: '9px 18px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>Continue →</button>
           ) : (
             <button onClick={handleSend} disabled={sending}
-              style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 20px', background: sending ? '#E5E7EB' : '#C0392B', color: sending ? '#9CA3AF' : '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: sending ? 'not-allowed' : 'pointer' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 20px', background: sending ? '#E5E7EB' : '#00A9AC', color: sending ? '#9CA3AF' : '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: sending ? 'not-allowed' : 'pointer' }}>
               <Send size={14} /> {sending ? 'Sending...' : `Send to ${seg.memberCount} customers`}
             </button>
           )}
@@ -400,7 +400,7 @@ function AttributionTable({ campaigns }: { campaigns: Campaign[] }) {
                 </td>
                 <td style={{ padding: '12px 14px', color: '#374151', fontWeight: 600 }}>{c.bookings}</td>
                 <td style={{ padding: '12px 14px' }}>
-                  <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: 15, color: c.revenue > 0 ? '#C0392B' : '#6B7280' }}>
+                  <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: 15, color: c.revenue > 0 ? '#00A9AC' : '#6B7280' }}>
                     ${c.revenue.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                   </span>
                 </td>
@@ -430,7 +430,7 @@ export function CampaignsView() {
           { label: 'Total Opens', value: campaigns.reduce((s, c) => s + c.opens, 0).toLocaleString(), color: '#27AE60', bg: '#D1FAE5' },
           { label: 'Total Clicks', value: campaigns.reduce((s, c) => s + c.clicks, 0).toLocaleString(), color: '#7C3AED', bg: '#EDE9FE' },
           { label: 'Attributed Bookings', value: campaigns.reduce((s, c) => s + c.bookings, 0), color: '#D97706', bg: '#FEF3C7' },
-          { label: 'Attributed Revenue', value: `R ${campaigns.reduce((s, c) => s + c.revenue, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Attributed Revenue', value: `R ${campaigns.reduce((s, c) => s + c.revenue, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#00A9AC', bg: '#E6F7F7' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, border: '1px solid #E5E7EB', borderRadius: 12, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: s.color }}>{s.value}</div>
@@ -450,13 +450,13 @@ export function CampaignsView() {
             <div style={{ display: 'flex', gap: 6 }}>
               {(['all', 'draft', 'scheduled', 'sending', 'sent'] as const).map(f => (
                 <button key={f} onClick={() => setFilterStatus(f)}
-                  style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #C0392B' : '1px solid #E5E7EB', background: filterStatus === f ? '#FDEDEC' : '#fff', color: filterStatus === f ? '#C0392B' : '#6B7280', textTransform: 'capitalize' }}>
+                  style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #00A9AC' : '1px solid #E5E7EB', background: filterStatus === f ? '#E6F7F7' : '#fff', color: filterStatus === f ? '#00A9AC' : '#6B7280', textTransform: 'capitalize' }}>
                   {f === 'all' ? 'All' : STATUS_CFG[f]?.label ?? f}
                 </button>
               ))}
             </div>
             <button onClick={() => setComposing(true)}
-              style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
               <Plus size={14} /> New Campaign
             </button>
           </div>
@@ -487,7 +487,7 @@ export function CampaignsView() {
                           { label: 'Revenue', value: `R ${c.revenue.toLocaleString('en-US', { minimumFractionDigits: 0 })}`, red: true },
                         ].map(m => (
                           <div key={m.label} style={{ textAlign: 'right' }}>
-                            <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: (m as { red?: boolean }).red ? '#C0392B' : '#1A1A1A' }}>{m.value}</div>
+                            <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: (m as { red?: boolean }).red ? '#00A9AC' : '#1A1A1A' }}>{m.value}</div>
                             <div style={{ fontSize: 11, color: '#9CA3AF' }}>{m.label}</div>
                           </div>
                         ))}

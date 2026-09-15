@@ -47,10 +47,10 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
 
       {/* Live alert */}
       {inProgress.length > 0 && (
-        <div className="rounded-[8px] p-4 mb-5 flex items-center gap-3" style={{ background: '#FDEDEC', border: '1.5px solid #F5B7B1' }}>
-          <div className="w-2.5 h-2.5 rounded-full shrink-0 animate-pulse" style={{ background: '#C0392B' }} />
+        <div className="rounded-[8px] p-4 mb-5 flex items-center gap-3" style={{ background: '#E6F7F7', border: '1.5px solid #80D4D5' }}>
+          <div className="w-2.5 h-2.5 rounded-full shrink-0 animate-pulse" style={{ background: '#00A9AC' }} />
           <div>
-            <p style={{ color: '#C0392B', fontWeight: 700, fontSize: '0.9375rem' }}>
+            <p style={{ color: '#00A9AC', fontWeight: 700, fontSize: '0.9375rem' }}>
               {inProgress.length} visit{inProgress.length > 1 ? 's' : ''} in progress right now
             </p>
             <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>
@@ -60,7 +60,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
           <button
             onClick={() => onNavigate('appointments')}
             className="ml-auto px-3 py-1.5 rounded-[6px] text-sm font-semibold"
-            style={{ background: '#C0392B', color: '#fff' }}
+            style={{ background: '#00A9AC', color: '#fff' }}
           >
             View
           </button>
@@ -70,7 +70,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
       {/* Stats row */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {[
-          { label: "Today's Visits", value: todayVisits.length.toString(), sub: 'Scheduled & active', icon: CalendarDays, color: '#C0392B', action: () => onNavigate('appointments') },
+          { label: "Today's Visits", value: todayVisits.length.toString(), sub: 'Scheduled & active', icon: CalendarDays, color: '#00A9AC', action: () => onNavigate('appointments') },
           { label: "Today's Revenue", value: fmtMoney(todayRevenue), sub: 'Across all jobs', icon: TrendingUp, color: '#27AE60', action: null },
           { label: 'Parts Pending', value: partsPending.length.toString(), sub: 'Awaiting arrival', icon: Package, color: '#F39C12', action: () => onNavigate('appointments') },
           { label: 'This Week', value: (todayVisits.length + upcoming.filter(v => v.scheduledStart <= '2026-06-20').length).toString(), sub: 'Jobs through Sunday', icon: Clock, color: '#2980B9', action: null },
@@ -103,7 +103,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
         <div className="bg-white rounded-[10px] p-5" style={{ border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
           <div className="flex items-center justify-between mb-4">
             <h3 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>Today's Schedule</h3>
-            <button onClick={() => onNavigate('appointments')} style={{ color: '#C0392B', fontSize: '0.8125rem', fontWeight: 600 }}>See all →</button>
+            <button onClick={() => onNavigate('appointments')} style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600 }}>See all →</button>
           </div>
           {todayVisits.length === 0 ? (
             <div className="text-center py-8">
@@ -119,8 +119,8 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
                     key={v.id}
                     className="flex items-center gap-3 p-3 rounded-[6px]"
                     style={{
-                      background: isActive ? '#FDEDEC' : '#F9FAFB',
-                      borderLeft: isActive ? '3px solid #C0392B' : '3px solid #E5E7EB',
+                      background: isActive ? '#E6F7F7' : '#F9FAFB',
+                      borderLeft: isActive ? '3px solid #00A9AC' : '3px solid #E5E7EB',
                     }}
                   >
                     <div className="text-right shrink-0 w-14">
@@ -135,7 +135,7 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
                       <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{v.serviceTypeName} · {v.technicianName.split(' ')[0]}</p>
                     </div>
                     {isActive && (
-                      <span className="px-1.5 py-0.5 rounded text-xs font-bold shrink-0" style={{ background: '#C0392B', color: '#fff' }}>LIVE</span>
+                      <span className="px-1.5 py-0.5 rounded text-xs font-bold shrink-0" style={{ background: '#00A9AC', color: '#fff' }}>LIVE</span>
                     )}
                   </div>
                 );
@@ -164,8 +164,8 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
               const c = colors[v.partsStatus] ?? colors.ordered;
               return (
                 <div key={v.id} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FDEDEC' }}>
-                    <Package size={14} style={{ color: '#C0392B' }} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#E6F7F7' }}>
+                    <Package size={14} style={{ color: '#00A9AC' }} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -194,17 +194,17 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: BookingTab) => void
           const Icon = item.icon;
           return (
             <div key={item.title} className="bg-white rounded-[8px] p-5" style={{ border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.07)' }}>
-              <div className="w-10 h-10 rounded-[8px] flex items-center justify-center mb-3" style={{ background: '#FDEDEC' }}>
-                <Icon size={18} style={{ color: '#C0392B' }} />
+              <div className="w-10 h-10 rounded-[8px] flex items-center justify-center mb-3" style={{ background: '#E6F7F7' }}>
+                <Icon size={18} style={{ color: '#00A9AC' }} />
               </div>
               <h4 style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>{item.title}</h4>
               <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginTop: '4px', lineHeight: 1.5 }}>{item.desc}</p>
               <button
                 onClick={item.action}
                 className="mt-4 px-4 py-2 rounded-[6px] text-white text-sm font-semibold"
-                style={{ background: '#C0392B' }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                style={{ background: '#00A9AC' }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
               >
                 {item.cta}
               </button>
@@ -232,9 +232,9 @@ export function BookingModule() {
               onClick={() => setActiveTab(tab.id)}
               className="flex items-center gap-2 px-4 py-2.5 rounded-t-[6px] text-sm font-medium whitespace-nowrap transition-colors shrink-0"
               style={{
-                color: active ? '#C0392B' : '#6B7280',
-                borderBottom: active ? '2px solid #C0392B' : '2px solid transparent',
-                background: active ? '#FDEDEC' : 'transparent',
+                color: active ? '#00A9AC' : '#6B7280',
+                borderBottom: active ? '2px solid #00A9AC' : '2px solid transparent',
+                background: active ? '#E6F7F7' : 'transparent',
                 marginBottom: '-1px',
               }}
             >

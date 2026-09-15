@@ -13,7 +13,7 @@ function CardVisual({ card, small = false }: { card: BankingCard; small?: boolea
   return (
     <div style={{ ...size, borderRadius: 12, background: frozen ? '#888' : '#1A1A1A', position: 'relative', overflow: 'hidden', flexShrink: 0, fontFamily: 'monospace' }}>
       {/* Red accent stripe */}
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: small ? 6 : 12, background: frozen ? '#555' : '#C0392B' }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: small ? 6 : 12, background: frozen ? '#555' : '#00A9AC' }} />
       {/* Chip */}
       <div style={{ position: 'absolute', top: small ? 10 : 24, left: small ? 12 : 24, width: small ? 18 : 32, height: small ? 14 : 24, borderRadius: 3, background: '#C9A227', border: '1px solid #b8921e' }} />
       {/* Card name */}
@@ -46,7 +46,7 @@ function CardStatusPill({ status }: { status: CardStatus }) {
   const cfg: Record<CardStatus, { label: string; color: string; bg: string }> = {
     active:              { label: 'Active',        color: '#27AE60', bg: '#F0FDF4' },
     frozen:              { label: 'Frozen',        color: '#6B7280', bg: '#F3F4F6' },
-    lost_stolen:         { label: 'Lost/Stolen',   color: '#E74C3C', bg: '#FEF2F2' },
+    lost_stolen:         { label: 'Lost/Stolen',   color: '#00BFC3', bg: '#F0FBFB' },
     cancelled:           { label: 'Cancelled',     color: '#9CA3AF', bg: '#F3F4F6' },
     pending_activation:  { label: 'Activate',      color: '#F39C12', bg: '#FFF8E1' },
   };
@@ -70,11 +70,11 @@ function MFAModal({ title, onConfirm, onClose }: { title: string; onConfirm: () 
         <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginBottom: 16 }}>Enter your 6-digit MFA code. (Demo: 123456)</p>
         <input type="text" inputMode="numeric" maxLength={6} value={code} onChange={e => { setCode(e.target.value.replace(/\D/g,'')); setError(false); }} onKeyDown={e => e.key==='Enter'&&submit()} placeholder="000000" autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl"
-          style={{ border: `1.5px solid ${error?'#C0392B':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace', letterSpacing: '0.4em' }} />
-        {error && <p style={{ color: '#C0392B', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid code.</p>}
+          style={{ border: `1.5px solid ${error?'#00A9AC':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace', letterSpacing: '0.4em' }} />
+        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid code.</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
-          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#C0392B', color: '#fff' }}>Verify</button>
+          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>
         </div>
       </div>
     </div>
@@ -226,7 +226,7 @@ function ControlsDrawer({ card, controls, onClose, onUpdate, onFreeze, onReportL
               {card.status === 'frozen' ? '🔓 Unfreeze card' : '🔒 Freeze card'}
             </button>
             <button onClick={onReportLost} className="w-full py-2.5 rounded-[8px] font-semibold"
-              style={{ background: '#FEF2F2', color: '#C0392B' }}>
+              style={{ background: '#F0FBFB', color: '#00A9AC' }}>
               Report lost / stolen
             </button>
           </div>
@@ -275,7 +275,7 @@ function IssueCardModal({ onClose, onIssue }: { onClose: () => void; onIssue: (n
         <div className="flex gap-2 mt-6">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
           <button onClick={() => cardName && onIssue(cardName, form, assignee)} disabled={!cardName} className="flex-1 py-2.5 rounded-[8px] font-semibold"
-            style={{ background: cardName ? '#C0392B' : '#E5E7EB', color: cardName ? '#fff' : '#9CA3AF' }}>
+            style={{ background: cardName ? '#00A9AC' : '#E5E7EB', color: cardName ? '#fff' : '#9CA3AF' }}>
             Issue card
           </button>
         </div>
@@ -313,7 +313,7 @@ function MissingReceiptsQueue() {
             <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{txn.card_name} · {new Date(txn.posted_at).toLocaleDateString()}</p>
           </div>
           <div className="flex items-center gap-3">
-            <span style={{ fontFeatureSettings: '"tnum"', fontWeight: 700, color: '#C0392B' }}>−{formatCents(txn.amount)}</span>
+            <span style={{ fontFeatureSettings: '"tnum"', fontWeight: 700, color: '#00A9AC' }}>−{formatCents(txn.amount)}</span>
             <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] cursor-pointer font-semibold text-sm" style={{ background: '#1A1A1A', color: '#fff' }}>
               <Paperclip size={13} /> Attach
               <input type="file" className="hidden" />
@@ -378,7 +378,7 @@ export function CardsPage() {
           ))}
         </div>
         {tab === 'cards' && (
-          <button onClick={() => setShowIssue(true)} className="flex items-center gap-1.5 px-4 py-2 rounded-[8px] font-semibold text-sm" style={{ background: '#C0392B', color: '#fff' }}>
+          <button onClick={() => setShowIssue(true)} className="flex items-center gap-1.5 px-4 py-2 rounded-[8px] font-semibold text-sm" style={{ background: '#00A9AC', color: '#fff' }}>
             {issuing ? <><Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} /> Issuing…</> : <><Plus size={14} /> Issue card</>}
           </button>
         )}

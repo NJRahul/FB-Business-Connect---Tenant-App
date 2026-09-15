@@ -27,7 +27,7 @@ function StockBadge({ sku }: { sku: SkuRecord }) {
       </span>
     );
   }
-  if (!sku.inStock) return <span style={{ background: '#FEE2E2', color: '#991B1B', border: '1px solid #FCA5A5', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>Out of Stock</span>;
+  if (!sku.inStock) return <span style={{ background: '#FEE2E2', color: '#005F62', border: '1px solid #80D4D5', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>Out of Stock</span>;
   return <span style={{ background: '#D1FAE5', color: '#065F46', border: '1px solid #10B981', borderRadius: 6, padding: '2px 8px', fontSize: 11, fontWeight: 600 }}>In Stock ({sku.stockQty})</span>;
 }
 
@@ -76,7 +76,7 @@ function AddSkuModal({ onClose }: { onClose: () => void }) {
         </div>
         <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-          <button onClick={onClose} style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Add SKU</button>
+          <button onClick={onClose} style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>Add SKU</button>
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@ export function CatalogView() {
           ['manual_orders', `Manual Orders${pendingOrders > 0 ? ` (${pendingOrders})` : ''}`, orders.length],
         ].map(([id, label, count]) => (
           <button key={id} onClick={() => setTab(id as typeof tab)}
-            style={{ padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: tab === id ? 700 : 500, cursor: 'pointer', border: 'none', background: tab === id ? '#fff' : 'transparent', color: tab === id ? '#C0392B' : '#6B7280', boxShadow: tab === id ? '0 1px 3px rgba(0,0,0,0.08)' : 'none', whiteSpace: 'nowrap' }}>
+            style={{ padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: tab === id ? 700 : 500, cursor: 'pointer', border: 'none', background: tab === id ? '#fff' : 'transparent', color: tab === id ? '#00A9AC' : '#6B7280', boxShadow: tab === id ? '0 1px 3px rgba(0,0,0,0.08)' : 'none', whiteSpace: 'nowrap' }}>
             {label}
           </button>
         ))}
@@ -206,7 +206,7 @@ export function CatalogView() {
               <option value="out">Out of Stock</option>
             </select>
             <button onClick={() => setShowAddSku(true)}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>
               <Plus size={13} /> Add Local SKU
             </button>
           </div>

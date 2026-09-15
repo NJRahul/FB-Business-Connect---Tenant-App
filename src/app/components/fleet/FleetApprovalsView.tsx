@@ -82,7 +82,7 @@ export function FleetApprovalsView() {
             <div className="rounded-xl p-4 mb-4" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
               <p style={{ fontSize: '0.825rem', fontWeight: 600, color: '#1A1A1A' }}>{actionModal.req.fleetAccountName}</p>
               <p style={{ fontSize: '0.8rem', color: '#6B7280', marginTop: 2 }}>Buyer: {actionModal.req.buyerName}</p>
-              <p style={{ fontSize: '1rem', fontWeight: 700, color: '#C0392B', marginTop: 4 }}>{cents(actionModal.req.totalCents)}</p>
+              <p style={{ fontSize: '1rem', fontWeight: 700, color: '#00A9AC', marginTop: 4 }}>{cents(actionModal.req.totalCents)}</p>
               {actionModal.req.poNumber && <p style={{ fontSize: '0.775rem', color: '#9CA3AF', marginTop: 2 }}>PO: {actionModal.req.poNumber}</p>}
             </div>
             {actionModal.type === 'reject' && (

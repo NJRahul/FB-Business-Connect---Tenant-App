@@ -133,7 +133,7 @@ export function ManualBooking({ onComplete }: Props) {
           {booking.customerName} · {st.name}
         </p>
         {booking.selectedSlot && (
-          <p style={{ color: '#C0392B', fontWeight: 600, marginBottom: '24px' }}>
+          <p style={{ color: '#00A9AC', fontWeight: 600, marginBottom: '24px' }}>
             {booking.selectedDate} at {fmtTime(booking.selectedSlot.slotStart)} · {booking.selectedSlot.technicianName}
           </p>
         )}
@@ -145,9 +145,9 @@ export function ManualBooking({ onComplete }: Props) {
         <button
           onClick={() => { setStep(1); setBooking(INIT); setConfirmed(false); if (onComplete) onComplete(); }}
           className="px-6 py-2.5 rounded-[6px] text-white font-semibold"
-          style={{ background: '#C0392B' }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+          style={{ background: '#00A9AC' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
         >
           Book Another
         </button>
@@ -168,11 +168,11 @@ export function ManualBooking({ onComplete }: Props) {
               <div className="flex flex-col items-center gap-1">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center"
-                  style={{ background: done ? '#27AE60' : active ? '#C0392B' : '#E5E7EB', color: done || active ? '#fff' : '#9CA3AF' }}
+                  style={{ background: done ? '#27AE60' : active ? '#00A9AC' : '#E5E7EB', color: done || active ? '#fff' : '#9CA3AF' }}
                 >
                   {done ? <Check size={14} /> : <span style={{ fontSize: '0.8125rem', fontWeight: 700 }}>{n}</span>}
                 </div>
-                <span style={{ fontSize: '0.625rem', color: active ? '#C0392B' : done ? '#27AE60' : '#9CA3AF', fontWeight: active ? 700 : 400, whiteSpace: 'nowrap' }}>
+                <span style={{ fontSize: '0.625rem', color: active ? '#00A9AC' : done ? '#27AE60' : '#9CA3AF', fontWeight: active ? 700 : 400, whiteSpace: 'nowrap' }}>
                   {label}
                 </span>
               </div>
@@ -212,18 +212,18 @@ export function ManualBooking({ onComplete }: Props) {
                   }}
                   className="w-full text-left p-3 rounded-[8px] flex items-center gap-3 transition-all"
                   style={{
-                    border: booking.customerId === c.id ? '2px solid #C0392B' : '1.5px solid #E5E7EB',
-                    background: booking.customerId === c.id ? '#FDEDEC' : '#fff',
+                    border: booking.customerId === c.id ? '2px solid #00A9AC' : '1.5px solid #E5E7EB',
+                    background: booking.customerId === c.id ? '#E6F7F7' : '#fff',
                   }}
                 >
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700 }}>
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700 }}>
                     {c.name[0]}
                   </div>
                   <div className="flex-1 min-w-0">
                     <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{c.name}</p>
                     <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{c.phone} · {c.totalVisits} visits · {c.vehicles.length} vehicles</p>
                   </div>
-                  {booking.customerId === c.id && <CheckCircle2 size={18} style={{ color: '#C0392B', flexShrink: 0 }} />}
+                  {booking.customerId === c.id && <CheckCircle2 size={18} style={{ color: '#00A9AC', flexShrink: 0 }} />}
                 </button>
               ))}
             </div>
@@ -236,9 +236,9 @@ export function ManualBooking({ onComplete }: Props) {
               }}
               className="flex items-center gap-2 w-full p-3 rounded-[8px] text-sm"
               style={{
-                border: booking.customerId === 'new' ? '2px solid #C0392B' : '1.5px dashed #D1D5DB',
-                background: booking.customerId === 'new' ? '#FDEDEC' : '#F9FAFB',
-                color: booking.customerId === 'new' ? '#C0392B' : '#9CA3AF',
+                border: booking.customerId === 'new' ? '2px solid #00A9AC' : '1.5px dashed #D1D5DB',
+                background: booking.customerId === 'new' ? '#E6F7F7' : '#F9FAFB',
+                color: booking.customerId === 'new' ? '#00A9AC' : '#9CA3AF',
               }}
             >
               <Plus size={15} /> Create New Customer
@@ -285,16 +285,16 @@ export function ManualBooking({ onComplete }: Props) {
                           set('vehiclePlate', v.licensePlate ?? '');
                         }}
                         className="w-full text-left p-3 rounded-[8px] flex items-center gap-3"
-                        style={{ border: match ? '2px solid #C0392B' : '1.5px solid #E5E7EB', background: match ? '#FDEDEC' : '#fff' }}
+                        style={{ border: match ? '2px solid #00A9AC' : '1.5px solid #E5E7EB', background: match ? '#E6F7F7' : '#fff' }}
                       >
-                        <Car size={16} style={{ color: match ? '#C0392B' : '#9CA3AF', flexShrink: 0 }} />
+                        <Car size={16} style={{ color: match ? '#00A9AC' : '#9CA3AF', flexShrink: 0 }} />
                         <div>
                           <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>
                             {v.year} {v.make} {v.model} {v.trim ?? ''}
                           </p>
                           <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{v.licensePlate ?? ''} {v.attribute ? `· ${v.attribute}` : ''}</p>
                         </div>
-                        {match && <CheckCircle2 size={16} style={{ color: '#C0392B', marginLeft: 'auto' }} />}
+                        {match && <CheckCircle2 size={16} style={{ color: '#00A9AC', marginLeft: 'auto' }} />}
                       </button>
                     );
                   })}
@@ -340,12 +340,12 @@ export function ManualBooking({ onComplete }: Props) {
                   onClick={() => applyTemplate(tpl)}
                   className="p-3 rounded-[8px] text-left transition-all"
                   style={{
-                    border: booking.templateId === tpl.id ? '2px solid #C0392B' : '1.5px solid #E5E7EB',
-                    background: booking.templateId === tpl.id ? '#FDEDEC' : '#fff',
+                    border: booking.templateId === tpl.id ? '2px solid #00A9AC' : '1.5px solid #E5E7EB',
+                    background: booking.templateId === tpl.id ? '#E6F7F7' : '#fff',
                   }}
                 >
                   <span style={{ fontSize: '1.5rem' }}>{tpl.icon}</span>
-                  <p style={{ fontWeight: 600, color: booking.templateId === tpl.id ? '#C0392B' : '#1A1A1A', fontSize: '0.8125rem', marginTop: '6px' }}>{tpl.name}</p>
+                  <p style={{ fontWeight: 600, color: booking.templateId === tpl.id ? '#00A9AC' : '#1A1A1A', fontSize: '0.8125rem', marginTop: '6px' }}>{tpl.name}</p>
                   <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{fmtMoney(tpl.price)}</p>
                 </button>
               ))}
@@ -360,20 +360,20 @@ export function ManualBooking({ onComplete }: Props) {
                   onClick={() => { set('serviceTypeId', s.id); set('templateId', ''); }}
                   className="w-full text-left p-3 rounded-[8px] flex items-center justify-between"
                   style={{
-                    border: booking.serviceTypeId === s.id && !booking.templateId ? '2px solid #C0392B' : '1.5px solid #E5E7EB',
-                    background: booking.serviceTypeId === s.id && !booking.templateId ? '#FDEDEC' : '#fff',
+                    border: booking.serviceTypeId === s.id && !booking.templateId ? '2px solid #00A9AC' : '1.5px solid #E5E7EB',
+                    background: booking.serviceTypeId === s.id && !booking.templateId ? '#E6F7F7' : '#fff',
                   }}
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <span style={{ fontWeight: 600, color: booking.serviceTypeId === s.id && !booking.templateId ? '#C0392B' : '#1A1A1A', fontSize: '0.9375rem' }}>{s.name}</span>
-                      <span className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: s.requiresParts ? '#FDEDEC' : '#F0FDF4', color: s.requiresParts ? '#C0392B' : '#15803D' }}>
+                      <span style={{ fontWeight: 600, color: booking.serviceTypeId === s.id && !booking.templateId ? '#00A9AC' : '#1A1A1A', fontSize: '0.9375rem' }}>{s.name}</span>
+                      <span className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: s.requiresParts ? '#E6F7F7' : '#F0FDF4', color: s.requiresParts ? '#00A9AC' : '#15803D' }}>
                         {s.requiresParts ? 'Parts-Install' : 'No-Parts'}
                       </span>
                     </div>
                     <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{s.durationMinutes} min · {s.skillRequired}</p>
                   </div>
-                  <span style={{ fontWeight: 700, color: '#C0392B' }}>{fmtMoney(s.price)}</span>
+                  <span style={{ fontWeight: 700, color: '#00A9AC' }}>{fmtMoney(s.price)}</span>
                 </button>
               ))}
             </div>
@@ -394,12 +394,12 @@ export function ManualBooking({ onComplete }: Props) {
                   key={a.id}
                   onClick={() => set('selectedAddons', { ...booking.selectedAddons, [a.id]: selected ? 0 : 1 })}
                   className="w-full text-left p-4 rounded-[8px] mb-2 flex items-center justify-between transition-all"
-                  style={{ border: selected ? '2px solid #C0392B' : '1.5px solid #E5E7EB', background: selected ? '#FDEDEC' : '#fff' }}
+                  style={{ border: selected ? '2px solid #00A9AC' : '1.5px solid #E5E7EB', background: selected ? '#E6F7F7' : '#fff' }}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className="w-5 h-5 rounded flex items-center justify-center mt-0.5 shrink-0"
-                      style={{ background: selected ? '#C0392B' : '#fff', border: selected ? 'none' : '1.5px solid #D1D5DB' }}
+                      style={{ background: selected ? '#00A9AC' : '#fff', border: selected ? 'none' : '1.5px solid #D1D5DB' }}
                     >
                       {selected && <Check size={12} color="#fff" />}
                     </div>
@@ -412,7 +412,7 @@ export function ManualBooking({ onComplete }: Props) {
                     </div>
                   </div>
                   <div className="text-right shrink-0 ml-3">
-                    <p style={{ fontWeight: 700, color: '#C0392B' }}>{fmtMoney(a.price)}{a.perUnit ? '/unit' : ''}</p>
+                    <p style={{ fontWeight: 700, color: '#00A9AC' }}>{fmtMoney(a.price)}{a.perUnit ? '/unit' : ''}</p>
                     {selected && a.perUnit && (
                       <div className="flex items-center gap-2 mt-1 justify-end">
                         <button
@@ -447,11 +447,11 @@ export function ManualBooking({ onComplete }: Props) {
               ))}
               <div className="flex justify-between pt-2 mt-1" style={{ borderTop: '1px solid #E5E7EB' }}>
                 <span style={{ fontWeight: 700, color: '#1A1A1A' }}>Total duration</span>
-                <span style={{ fontWeight: 700, color: '#C0392B' }}>{(st?.durationMinutes ?? 0) + totalAddonDuration} min</span>
+                <span style={{ fontWeight: 700, color: '#00A9AC' }}>{(st?.durationMinutes ?? 0) + totalAddonDuration} min</span>
               </div>
               <div className="flex justify-between mt-0.5">
                 <span style={{ fontWeight: 700, color: '#1A1A1A' }}>Estimated total (incl. tax)</span>
-                <span style={{ fontWeight: 700, color: '#C0392B' }}>{fmtMoney(total)}</span>
+                <span style={{ fontWeight: 700, color: '#00A9AC' }}>{fmtMoney(total)}</span>
               </div>
             </div>
           </div>
@@ -500,11 +500,11 @@ export function ManualBooking({ onComplete }: Props) {
                         onClick={() => { set('selectedDate', dateStr); set('selectedSlot', null); }}
                         className="aspect-square rounded-[4px] flex items-center justify-center text-xs transition-all"
                         style={{
-                          background: isSel ? '#C0392B' : avail ? '#FDEDEC' : 'transparent',
-                          color: isSel ? '#fff' : avail ? '#C0392B' : isPast ? '#D1D5DB' : '#9CA3AF',
+                          background: isSel ? '#00A9AC' : avail ? '#E6F7F7' : 'transparent',
+                          color: isSel ? '#fff' : avail ? '#00A9AC' : isPast ? '#D1D5DB' : '#9CA3AF',
                           fontWeight: isSel ? 700 : 400,
                           cursor: avail ? 'pointer' : 'not-allowed',
-                          border: isSel ? '1.5px solid #C0392B' : 'none',
+                          border: isSel ? '1.5px solid #00A9AC' : 'none',
                           opacity: isPast ? 0.4 : 1,
                         }}
                       >
@@ -540,8 +540,8 @@ export function ManualBooking({ onComplete }: Props) {
                               onClick={() => set('selectedSlot', slot)}
                               className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] text-sm transition-all"
                               style={{
-                                background: isSel ? '#C0392B' : blocked ? '#F9FAFB' : '#fff',
-                                border: isSel ? '1.5px solid #C0392B' : '1.5px solid #E5E7EB',
+                                background: isSel ? '#00A9AC' : blocked ? '#F9FAFB' : '#fff',
+                                border: isSel ? '1.5px solid #00A9AC' : '1.5px solid #E5E7EB',
                                 color: isSel ? '#fff' : blocked ? '#D1D5DB' : '#1A1A1A',
                                 cursor: blocked ? 'not-allowed' : 'pointer',
                               }}
@@ -553,8 +553,8 @@ export function ManualBooking({ onComplete }: Props) {
                       </div>
                     )}
                     {booking.selectedSlot && (
-                      <div className="mt-4 p-3 rounded-[6px]" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-                        <p style={{ fontWeight: 600, color: '#C0392B', fontSize: '0.875rem' }}>
+                      <div className="mt-4 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+                        <p style={{ fontWeight: 600, color: '#00A9AC', fontSize: '0.875rem' }}>
                           {fmtTime(booking.selectedSlot.slotStart)} · {booking.selectedSlot.technicianName}
                         </p>
                         <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>
@@ -586,7 +586,7 @@ export function ManualBooking({ onComplete }: Props) {
                     onChange={e => set('overrideReason', e.target.value)}
                     placeholder="Enter override reason (required)…"
                     className="w-full px-3 py-2 rounded-[6px] text-sm mb-2"
-                    style={{ border: '1.5px solid #FCA5A5', outline: 'none' }}
+                    style={{ border: '1.5px solid #80D4D5', outline: 'none' }}
                   />
                   <label className="flex items-center gap-2 cursor-pointer">
                     <input
@@ -620,10 +620,10 @@ export function ManualBooking({ onComplete }: Props) {
                     key={pm.id}
                     onClick={() => set('paymentMethod', pm.id)}
                     className="p-4 rounded-[8px] text-left transition-all"
-                    style={{ border: sel ? '2px solid #C0392B' : '1.5px solid #E5E7EB', background: sel ? '#FDEDEC' : '#fff' }}
+                    style={{ border: sel ? '2px solid #00A9AC' : '1.5px solid #E5E7EB', background: sel ? '#E6F7F7' : '#fff' }}
                   >
-                    <Icon size={20} style={{ color: sel ? '#C0392B' : '#9CA3AF', marginBottom: '6px' }} />
-                    <p style={{ fontWeight: 600, color: sel ? '#C0392B' : '#1A1A1A', fontSize: '0.9375rem' }}>{pm.label}</p>
+                    <Icon size={20} style={{ color: sel ? '#00A9AC' : '#9CA3AF', marginBottom: '6px' }} />
+                    <p style={{ fontWeight: 600, color: sel ? '#00A9AC' : '#1A1A1A', fontSize: '0.9375rem' }}>{pm.label}</p>
                     <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{pm.desc}</p>
                   </button>
                 );
@@ -656,7 +656,7 @@ export function ManualBooking({ onComplete }: Props) {
                 )}
                 <div className="flex justify-between pt-2 mt-1" style={{ borderTop: '1px solid #E5E7EB' }}>
                   <span style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>Total (labor only)</span>
-                  <span style={{ fontWeight: 700, color: '#C0392B', fontSize: '1rem' }}>{fmtMoney(total)}</span>
+                  <span style={{ fontWeight: 700, color: '#00A9AC', fontSize: '1rem' }}>{fmtMoney(total)}</span>
                 </div>
               </div>
             </div>
@@ -687,9 +687,9 @@ export function ManualBooking({ onComplete }: Props) {
           <button
             onClick={() => setStep(s => (s + 1) as Step)}
             className="flex items-center gap-2 px-5 py-2.5 rounded-[6px] text-white font-semibold"
-            style={{ background: '#C0392B' }}
-            onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-            onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+            style={{ background: '#00A9AC' }}
+            onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+            onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
           >
             Continue <ChevronRight size={16} />
           </button>
@@ -699,7 +699,7 @@ export function ManualBooking({ onComplete }: Props) {
             disabled={!booking.selectedSlot && !booking.overrideConstraints}
             className="flex items-center gap-2 px-5 py-2.5 rounded-[6px] text-white font-semibold"
             style={{
-              background: booking.selectedSlot || booking.overrideConstraints ? '#C0392B' : '#D1D5DB',
+              background: booking.selectedSlot || booking.overrideConstraints ? '#00A9AC' : '#D1D5DB',
               cursor: booking.selectedSlot || booking.overrideConstraints ? 'pointer' : 'not-allowed',
             }}
           >

@@ -203,14 +203,14 @@ export function RefundManager() {
                   onClick={() => setSelectedOrder(isSelected ? null : order)}
                   className="w-full bg-white rounded-[8px] p-4 text-left transition-all"
                   style={{
-                    boxShadow: isSelected ? '0 0 0 2px #C0392B' : '0 1px 3px rgba(0,0,0,0.06)',
-                    border: isSelected ? '1.5px solid #C0392B' : '1.5px solid transparent',
+                    boxShadow: isSelected ? '0 0 0 2px #00A9AC' : '0 1px 3px rgba(0,0,0,0.06)',
+                    border: isSelected ? '1.5px solid #00A9AC' : '1.5px solid transparent',
                   }}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#C0392B', fontSize: '0.9375rem' }}>{order.orderNumber}</span>
+                        <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#00A9AC', fontSize: '0.9375rem' }}>{order.orderNumber}</span>
                         <span className="px-2 py-0.5 rounded-[4px] text-xs font-semibold" style={{ background: cfg.bg, color: cfg.color }}>{cfg.label}</span>
                       </div>
                       <p style={{ color: '#1A1A1A', fontWeight: 500, fontSize: '0.875rem', marginTop: '4px' }}>{order.customer}</p>
@@ -222,7 +222,7 @@ export function RefundManager() {
                     <div className="text-right shrink-0">
                       <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1rem', fontFamily: 'Sora, sans-serif' }}>${order.total.toFixed(2)}</p>
                       {totalRefunded > 0 && (
-                        <p style={{ color: '#E74C3C', fontSize: '0.75rem', fontWeight: 500 }}>-${totalRefunded.toFixed(2)} refunded</p>
+                        <p style={{ color: '#00BFC3', fontSize: '0.75rem', fontWeight: 500 }}>-${totalRefunded.toFixed(2)} refunded</p>
                       )}
                       <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '2px' }}>{order.paymentMethod}</p>
                     </div>
@@ -287,7 +287,7 @@ export function RefundManager() {
                 <div className="mt-4 pt-4 border-t" style={{ borderColor: '#E5E7EB' }}>
                   <p style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Refund History</p>
                   {selectedOrder.refunds.map(r => (
-                    <div key={r.id} className="mb-2 p-3 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
+                    <div key={r.id} className="mb-2 p-3 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
                       <div className="flex justify-between mb-1">
                         <span style={{ color: '#B91C1C', fontWeight: 700, fontSize: '0.9375rem' }}>-${r.amount.toFixed(2)}</span>
                         <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{r.createdAt}</span>
@@ -309,9 +309,9 @@ export function RefundManager() {
                   <button
                     onClick={() => setRefundModal(true)}
                     className="flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-white transition-colors"
-                    style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem' }}
-                    onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                    onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                    style={{ background: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                    onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
                   >
                     <DollarSign size={15} /> Issue Refund
                   </button>
@@ -351,7 +351,7 @@ export function RefundManager() {
                   key={t}
                   onClick={() => { setRefundType(t); if (t === 'full') setRefundAmount(availableRefund.toString()); else setRefundAmount(''); }}
                   className="py-2.5 rounded-[8px] font-semibold transition-all"
-                  style={{ border: refundType === t ? '2px solid #C0392B' : '2px solid #E5E7EB', background: refundType === t ? '#FDEDEC' : '#fff', color: refundType === t ? '#C0392B' : '#6B7280', fontSize: '0.9375rem' }}
+                  style={{ border: refundType === t ? '2px solid #00A9AC' : '2px solid #E5E7EB', background: refundType === t ? '#E6F7F7' : '#fff', color: refundType === t ? '#00A9AC' : '#6B7280', fontSize: '0.9375rem' }}
                 >
                   {t === 'full' ? `Full — R ${availableRefund.toFixed(2)}` : 'Partial amount'}
                 </button>
@@ -373,7 +373,7 @@ export function RefundManager() {
                   />
                 </div>
                 {parseFloat(refundAmount) > availableRefund && (
-                  <p style={{ color: '#E74C3C', fontSize: '0.75rem', marginTop: '4px' }}>
+                  <p style={{ color: '#00BFC3', fontSize: '0.75rem', marginTop: '4px' }}>
                     Exceeds available refund amount
                   </p>
                 )}
@@ -404,7 +404,7 @@ export function RefundManager() {
 
             {/* Slot release */}
             <label className="flex items-center gap-2.5 mb-5 cursor-pointer">
-              <input type="checkbox" checked={releaseSlot} onChange={e => setReleaseSlot(e.target.checked)} style={{ accentColor: '#C0392B' }} />
+              <input type="checkbox" checked={releaseSlot} onChange={e => setReleaseSlot(e.target.checked)} style={{ accentColor: '#00A9AC' }} />
               <div>
                 <p style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: 500 }}>Release appointment slot on refund</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Slot becomes available for other customers</p>
@@ -426,7 +426,7 @@ export function RefundManager() {
                 onClick={handleRefund}
                 disabled={processing || !refundReason || (refundReason === 'Other (explain below)' && !customReason) || (refundType === 'partial' && (!refundAmount || parseFloat(refundAmount) > availableRefund))}
                 className="flex-1 py-2.5 rounded-[6px] text-white flex items-center justify-center gap-2 transition-colors"
-                style={{ background: processing ? '#9CA3AF' : '#C0392B', fontWeight: 600 }}
+                style={{ background: processing ? '#9CA3AF' : '#00A9AC', fontWeight: 600 }}
               >
                 {processing ? (
                   <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing...</>

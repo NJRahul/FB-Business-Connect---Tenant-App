@@ -147,7 +147,7 @@ function PlanCard({ plan }: { plan: ServicePlan }) {
           {plan.exclusions.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">
               {plan.exclusions.map((ex, i) => (
-                <span key={i} className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs" style={{ background: '#FEF2F2', color: '#991B1B' }}>
+                <span key={i} className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs" style={{ background: '#F0FBFB', color: '#005F62' }}>
                   <XCircle size={9} /> {ex}
                 </span>
               ))}
@@ -231,7 +231,7 @@ function CreatePlanModal({ onClose }: { onClose: () => void }) {
             </div>
             <div>
               <label className="block mb-1" style={{ fontSize: '0.8125rem', fontWeight: 600, color: '#374151' }}>Plan Color</label>
-              <input type="color" className="w-full h-9 rounded-[6px] cursor-pointer" style={{ border: '1.5px solid #E5E7EB' }} defaultValue="#C0392B" />
+              <input type="color" className="w-full h-9 rounded-[6px] cursor-pointer" style={{ border: '1.5px solid #E5E7EB' }} defaultValue="#00A9AC" />
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -250,7 +250,7 @@ function CreatePlanModal({ onClose }: { onClose: () => void }) {
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold" style={{ border: '1.5px solid #E5E7EB', color: '#6B7280' }}>
             Cancel
           </button>
-          <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>
+          <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>
             Create Plan
           </button>
         </div>
@@ -275,7 +275,7 @@ export function PlansGridView() {
         <button
           onClick={() => setShowCreate(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white"
-          style={{ background: '#C0392B' }}
+          style={{ background: '#00A9AC' }}
         >
           <Plus size={15} /> New Plan
         </button>

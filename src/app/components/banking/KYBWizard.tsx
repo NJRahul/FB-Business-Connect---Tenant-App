@@ -83,7 +83,7 @@ const STATUS_CONFIG: Record<ApplicationStatus, { label: string; color: string; b
   pending_review:     { label: 'Under review',      color: '#F39C12', bg: '#FFF8E1', icon: Clock },
   approved:           { label: 'Approved',          color: '#27AE60', bg: '#F0FDF4', icon: CheckCircle },
   requires_documents: { label: 'Documents needed',  color: '#F39C12', bg: '#FFF8E1', icon: AlertTriangle },
-  denied:             { label: 'Not approved',      color: '#E74C3C', bg: '#FEF2F2', icon: XCircle },
+  denied:             { label: 'Not approved',      color: '#00BFC3', bg: '#F0FBFB', icon: XCircle },
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -308,9 +308,9 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
       </div>
 
       {overLimit && (
-        <div className="p-3 rounded-[8px] flex items-center gap-2" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
-          <AlertCircle size={16} style={{ color: '#E74C3C' }} />
-          <span style={{ color: '#991B1B', fontSize: '0.875rem', fontWeight: 600 }}>Total ownership ({totalPct}%) exceeds 100%.</span>
+        <div className="p-3 rounded-[8px] flex items-center gap-2" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+          <AlertCircle size={16} style={{ color: '#00BFC3' }} />
+          <span style={{ color: '#005F62', fontSize: '0.875rem', fontWeight: 600 }}>Total ownership ({totalPct}%) exceeds 100%.</span>
         </div>
       )}
 
@@ -368,7 +368,7 @@ function Step2({ owners, onChange }: { owners: OwnerInfo[]; onChange: (owners: O
               type="checkbox"
               checked={owner.is_control_person}
               onChange={e => update(owner.id, { is_control_person: e.target.checked })}
-              style={{ accentColor: '#C0392B' }}
+              style={{ accentColor: '#00A9AC' }}
             />
             <span style={{ fontSize: '0.875rem', color: '#374151' }}>This person is also the control person (primary officer)</span>
           </label>
@@ -544,8 +544,8 @@ function ApplicationStatusPage({
             {status === 'submitted'      && <p style={{ color: '#6B7280', fontSize: '0.9375rem' }}>Your application has been submitted and is in the queue for review.</p>}
             {status === 'approved'       && <p style={{ color: '#6B7280', fontSize: '0.9375rem' }}>Your business bank account is ready. Setting up your account…</p>}
             {status === 'denied' && denialReason && (
-              <div className="mt-3 p-3 rounded-[8px] text-left" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
-                <p style={{ color: '#991B1B', fontWeight: 600, fontSize: '0.875rem', marginBottom: 4 }}>Reason provided by our banking partner:</p>
+              <div className="mt-3 p-3 rounded-[8px] text-left" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+                <p style={{ color: '#005F62', fontWeight: 600, fontSize: '0.875rem', marginBottom: 4 }}>Reason provided by our banking partner:</p>
                 <p style={{ color: '#7F1D1D', fontSize: '0.875rem' }}>{denialReason}</p>
               </div>
             )}
@@ -585,10 +585,10 @@ function ApplicationStatusPage({
                   <div key={doc.id} className="flex items-center justify-between px-5 py-4" style={{ background: '#fff' }}>
                     <div>
                       <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{doc.label}</p>
-                      {doc.rejection_reason && <p style={{ color: '#C0392B', fontSize: '0.8125rem', marginTop: 2 }}>{doc.rejection_reason}</p>}
+                      {doc.rejection_reason && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 2 }}>{doc.rejection_reason}</p>}
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: doc.status === 'uploaded' ? '#EBF5FB' : '#FEF2F2', color: doc.status === 'uploaded' ? '#2980B9' : '#C0392B' }}>
+                      <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: doc.status === 'uploaded' ? '#EBF5FB' : '#F0FBFB', color: doc.status === 'uploaded' ? '#2980B9' : '#00A9AC' }}>
                         {doc.status}
                       </span>
                       <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] cursor-pointer font-semibold text-sm" style={{ background: '#1A1A1A', color: '#fff' }}>
@@ -751,12 +751,12 @@ export function KYBWizard({ tenantName, tenantEmail, industryPack, ein, onApprov
                   key={s.id}
                   onClick={() => step > s.id && setStep(s.id)}
                   className="w-full flex items-center gap-3 px-3 py-2.5 rounded-[8px] text-left"
-                  style={{ background: active ? '#FDEDEC' : 'transparent', cursor: done ? 'pointer' : 'default' }}
+                  style={{ background: active ? '#E6F7F7' : 'transparent', cursor: done ? 'pointer' : 'default' }}
                 >
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: done ? '#27AE60' : active ? '#C0392B' : '#E5E7EB' }}>
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ background: done ? '#27AE60' : active ? '#00A9AC' : '#E5E7EB' }}>
                     {done ? <CheckCircle2 size={14} color="#fff" /> : <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: active ? '#fff' : '#9CA3AF' }}>{s.id}</span>}
                   </div>
-                  <span style={{ fontSize: '0.9375rem', fontWeight: active ? 600 : 400, color: active ? '#C0392B' : done ? '#1A1A1A' : '#6B7280' }}>
+                  <span style={{ fontSize: '0.9375rem', fontWeight: active ? 600 : 400, color: active ? '#00A9AC' : done ? '#1A1A1A' : '#6B7280' }}>
                     {s.label}
                   </span>
                 </button>
@@ -776,7 +776,7 @@ export function KYBWizard({ tenantName, tenantEmail, industryPack, ein, onApprov
         <main className="flex-1 overflow-auto p-6 lg:p-8">
           <div style={{ maxWidth: 600 }}>
             <div className="mb-6">
-              <p style={{ fontSize: '0.75rem', fontWeight: 700, color: '#C0392B', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>Step {step} of {STEPS.length}</p>
+              <p style={{ fontSize: '0.75rem', fontWeight: 700, color: '#00A9AC', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>Step {step} of {STEPS.length}</p>
               <h2 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.375rem', fontWeight: 700, color: '#1A1A1A' }}>{STEPS[step - 1].label}</h2>
             </div>
 
@@ -799,7 +799,7 @@ export function KYBWizard({ tenantName, tenantEmail, industryPack, ein, onApprov
                 <button
                   onClick={() => setStep(s => Math.min(4, s + 1))}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-[8px] font-semibold"
-                  style={{ background: '#C0392B', color: '#fff' }}
+                  style={{ background: '#00A9AC', color: '#fff' }}
                 >
                   Continue <ChevronRight size={16} />
                 </button>
@@ -808,7 +808,7 @@ export function KYBWizard({ tenantName, tenantEmail, industryPack, ein, onApprov
                   onClick={handleSubmit}
                   disabled={!allDisclosuresAccepted || submitting}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-[8px] font-semibold"
-                  style={{ background: allDisclosuresAccepted && !submitting ? '#C0392B' : '#E5E7EB', color: allDisclosuresAccepted && !submitting ? '#fff' : '#9CA3AF', cursor: allDisclosuresAccepted && !submitting ? 'pointer' : 'not-allowed' }}
+                  style={{ background: allDisclosuresAccepted && !submitting ? '#00A9AC' : '#E5E7EB', color: allDisclosuresAccepted && !submitting ? '#fff' : '#9CA3AF', cursor: allDisclosuresAccepted && !submitting ? 'pointer' : 'not-allowed' }}
                 >
                   {submitting ? <><Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} /> Submitting…</> : <>Submit application <ChevronRight size={16} /></>}
                 </button>

@@ -139,7 +139,7 @@ export const TECH_LOCATIONS: TechLocation[] = [
   {
     technicianId: 'tech-1', technicianName: 'Mike Torres',
     lat: 32.8141, lng: -96.9475, capturedAt: '2026-06-14T10:08:00',
-    onClock: true, currentVisitId: 'v-001', color: '#C0392B',
+    onClock: true, currentVisitId: 'v-001', color: '#00A9AC',
   },
   {
     technicianId: 'tech-2', technicianName: 'Sarah Chen',

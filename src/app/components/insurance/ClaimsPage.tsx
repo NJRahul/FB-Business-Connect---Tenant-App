@@ -25,7 +25,7 @@ const STATUS_CFG: Record<ClaimStatus, { label: string; color: string; bg: string
   acknowledged:  { label: 'Acknowledged',  color: '#2980B9', bg: '#EBF5FB' },
   investigating: { label: 'Investigating', color: '#F39C12', bg: '#FFF8E1' },
   approved:      { label: 'Approved',      color: '#27AE60', bg: '#F0FDF4' },
-  denied:        { label: 'Denied',        color: '#E74C3C', bg: '#FEF2F2' },
+  denied:        { label: 'Denied',        color: '#00BFC3', bg: '#F0FBFB' },
   paid:          { label: 'Paid',          color: '#27AE60', bg: '#F0FDF4' },
   closed:        { label: 'Closed',        color: '#6B7280', bg: '#F3F4F6' },
 };
@@ -106,7 +106,7 @@ function ClaimCard({ claim }: { claim: InsuranceClaim }) {
             <span style={{ color: '#6B7280' }}>Location</span>
             <span style={{ fontWeight: 600, color: '#1A1A1A' }}>{claim.location_json.address}</span>
             <span style={{ color: '#6B7280' }}>Injuries</span>
-            <span style={{ fontWeight: 600, color: claim.injuries ? '#C0392B' : '#27AE60' }}>{claim.injuries ? 'Yes' : 'No'}</span>
+            <span style={{ fontWeight: 600, color: claim.injuries ? '#00A9AC' : '#27AE60' }}>{claim.injuries ? 'Yes' : 'No'}</span>
             {claim.adjuster_name && (
               <>
                 <span style={{ color: '#6B7280' }}>Adjuster</span>
@@ -228,9 +228,9 @@ function FNOLForm({ onSubmitted }: { onSubmitted: () => void }) {
   return (
     <div className="space-y-4">
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-          <AlertTriangle size={14} style={{ color: '#C0392B' }} />
-          <p style={{ color: '#C0392B', fontSize: '0.875rem' }}>{error}</p>
+        <div className="flex items-center gap-2 p-3 rounded-[8px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+          <AlertTriangle size={14} style={{ color: '#00A9AC' }} />
+          <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
         </div>
       )}
 
@@ -308,7 +308,7 @@ function FNOLForm({ onSubmitted }: { onSubmitted: () => void }) {
 
       <button onClick={submit} disabled={loading}
         className="flex items-center gap-2 px-5 py-2.5 rounded-[8px] font-semibold"
-        style={{ background: loading ? '#9CA3AF' : '#C0392B', color: '#fff', cursor: loading ? 'not-allowed' : 'pointer' }}>
+        style={{ background: loading ? '#9CA3AF' : '#00A9AC', color: '#fff', cursor: loading ? 'not-allowed' : 'pointer' }}>
         {loading ? <Loader2 size={15} className="animate-spin" /> : <AlertTriangle size={15} />}
         {loading ? 'Submitting claim…' : 'Submit claim report'}
       </button>
@@ -358,7 +358,7 @@ export function ClaimsPage({ canFileClaim }: Props) {
             <div className="mb-4">
               <button onClick={() => setTab('fnol')}
                 className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold"
-                style={{ background: '#C0392B', color: '#fff' }}>
+                style={{ background: '#00A9AC', color: '#fff' }}>
                 <Plus size={14} /> Report a claim
               </button>
             </div>

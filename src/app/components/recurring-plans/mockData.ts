@@ -15,7 +15,7 @@ export const SERVICE_PLANS: ServicePlan[] = [
     cancellationPolicy: 'end_of_period',
     customerSelfEnrollable: true,
     active: true,
-    color: '#C0392B',
+    color: '#00A9AC',
     tiers: [
       {
         id: 'tier-1a',

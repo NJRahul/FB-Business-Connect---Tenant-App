@@ -79,7 +79,7 @@ function LogRow({ log, expanded, onToggle }: { log: DistributorApiLog; expanded:
               </div>
               <div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>Response</div>
-                <pre style={{ color: log.error ? '#FCA5A5' : '#86EFAC', fontSize: 12, fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
+                <pre style={{ color: log.error ? '#80D4D5' : '#86EFAC', fontSize: 12, fontFamily: 'monospace', margin: 0, whiteSpace: 'pre-wrap', lineHeight: 1.6 }}>
                   HTTP {log.responseStatus}{'\n'}
                   Latency: {log.latencyMs}ms{'\n'}
                   {log.error ? `\nError: ${log.error}` : '\nStatus: OK'}
@@ -138,7 +138,7 @@ export function ApiLogsView() {
         <div style={{ display: 'flex', gap: 4 }}>
           {(['all', 'success', 'error'] as const).map(f => (
             <button key={f} onClick={() => setFilterStatus(f)}
-              style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #C0392B' : '1px solid #E5E7EB', background: filterStatus === f ? '#FDEDEC' : '#fff', color: filterStatus === f ? '#C0392B' : '#6B7280', textTransform: 'capitalize' }}>
+              style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #00A9AC' : '1px solid #E5E7EB', background: filterStatus === f ? '#E6F7F7' : '#fff', color: filterStatus === f ? '#00A9AC' : '#6B7280', textTransform: 'capitalize' }}>
               {f === 'all' ? 'All' : f === 'success' ? '2xx Only' : '4xx/5xx Only'}
             </button>
           ))}

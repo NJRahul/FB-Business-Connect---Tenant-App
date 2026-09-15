@@ -8,7 +8,7 @@ const STATUS_META: Record<WaitlistStatus, { label: string; color: string; bg: st
   offered: { label: 'Offered',  color: '#D97706', bg: '#FEF3C7' },
   claimed: { label: 'Claimed',  color: '#15803D', bg: '#F0FDF4' },
   expired: { label: 'Expired',  color: '#9CA3AF', bg: '#F3F4F6' },
-  removed: { label: 'Removed',  color: '#DC2626', bg: '#FEF2F2' },
+  removed: { label: 'Removed',  color: '#DC2626', bg: '#F0FBFB' },
 };
 
 function Countdown({ expiresAt }: { expiresAt: string }) {
@@ -101,7 +101,7 @@ function AddModal({ onClose }: AddModalProps) {
           <button
             onClick={handleSave}
             disabled={!canSave || saved}
-            style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : canSave ? '#C0392B' : '#D1D5DB', color: '#fff', fontWeight: 600, fontSize: 13, cursor: canSave && !saved ? 'pointer' : 'default', display: 'flex', alignItems: 'center', gap: 6 }}
+            style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : canSave ? '#00A9AC' : '#D1D5DB', color: '#fff', fontWeight: 600, fontSize: 13, cursor: canSave && !saved ? 'pointer' : 'default', display: 'flex', alignItems: 'center', gap: 6 }}
           >
             {saved ? <><Check size={14} /> Added</> : 'Add to Waitlist'}
           </button>
@@ -164,12 +164,12 @@ export function WaitlistView() {
       <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', overflow: 'hidden' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid #F3F4F6' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <Users size={16} color="#C0392B" />
+            <Users size={16} color="#00A9AC" />
             <span style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>Waitlist Queue</span>
           </div>
           <button
             onClick={() => setShowModal(true)}
-            style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', borderRadius: 8, border: 'none', background: '#C0392B', color: '#fff', fontWeight: 600, fontSize: 12, cursor: 'pointer' }}
+            style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', borderRadius: 8, border: 'none', background: '#00A9AC', color: '#fff', fontWeight: 600, fontSize: 12, cursor: 'pointer' }}
           >
             <Plus size={13} /> Add to Waitlist
           </button>
@@ -187,7 +187,7 @@ export function WaitlistView() {
               const sm = STATUS_META[entry.status];
               return (
                 <tr key={entry.id} style={{ background: i % 2 === 0 ? '#fff' : '#F9FAFB', borderBottom: '1px solid #F3F4F6' }}>
-                  <td style={{ padding: '12px 16px', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 16, color: entry.status === 'active' || entry.status === 'offered' ? '#C0392B' : '#D1D5DB' }}>
+                  <td style={{ padding: '12px 16px', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 16, color: entry.status === 'active' || entry.status === 'offered' ? '#00A9AC' : '#D1D5DB' }}>
                     {entry.queuePosition > 0 ? `#${entry.queuePosition}` : '—'}
                   </td>
                   <td style={{ padding: '12px 16px' }}>
@@ -229,7 +229,7 @@ export function WaitlistView() {
             'On decline or expiry, slot is re-offered to the next eligible customer',
           ].map(r => (
             <div key={r} style={{ display: 'flex', gap: 8, fontSize: 12, color: '#6B7280' }}>
-              <span style={{ color: '#C0392B', flexShrink: 0 }}>•</span>
+              <span style={{ color: '#00A9AC', flexShrink: 0 }}>•</span>
               <span>{r}</span>
             </div>
           ))}

@@ -7,7 +7,7 @@ import type { DistributorWebhook, WebhookStatus } from './types';
 const STATUS_CFG: Record<WebhookStatus, { bg: string; color: string; border: string; label: string; icon: React.ReactNode }> = {
   processed: { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Processed',  icon: <CheckCircle size={13} /> },
   duplicate: { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'Duplicate',  icon: <Copy size={13} /> },
-  rejected:  { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Rejected',   icon: <XCircle size={13} /> },
+  rejected:  { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Rejected',   icon: <XCircle size={13} /> },
   failed:    { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Failed',     icon: <RefreshCw size={13} /> },
 };
 
@@ -82,8 +82,8 @@ function WebhookRow({ wh, expanded, onToggle }: { wh: DistributorWebhook; expand
                   </div>
                   {wh.autoAction && (
                     <div style={{ marginTop: 10, background: wh.status === 'processed' ? '#D1FAE5' : wh.status === 'rejected' ? '#FEE2E2' : '#FEF3C7', border: `1px solid ${wh.status === 'processed' ? '#10B981' : wh.status === 'rejected' ? '#EF4444' : '#F59E0B'}`, borderRadius: 8, padding: '8px 12px' }}>
-                      <div style={{ fontSize: 11, fontWeight: 600, color: wh.status === 'processed' ? '#065F46' : wh.status === 'rejected' ? '#991B1B' : '#92400E', marginBottom: 2 }}>Auto Action</div>
-                      <div style={{ fontSize: 12, color: wh.status === 'processed' ? '#065F46' : wh.status === 'rejected' ? '#991B1B' : '#92400E' }}>{wh.autoAction}</div>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: wh.status === 'processed' ? '#065F46' : wh.status === 'rejected' ? '#005F62' : '#92400E', marginBottom: 2 }}>Auto Action</div>
+                      <div style={{ fontSize: 12, color: wh.status === 'processed' ? '#065F46' : wh.status === 'rejected' ? '#005F62' : '#92400E' }}>{wh.autoAction}</div>
                     </div>
                   )}
                 </div>
@@ -143,7 +143,7 @@ export function WebhooksView() {
       <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' }}>
         {(['all', 'processed', 'duplicate', 'rejected', 'failed'] as const).map(f => (
           <button key={f} onClick={() => setFilterStatus(f)}
-            style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #C0392B' : '1px solid #E5E7EB', background: filterStatus === f ? '#FDEDEC' : '#fff', color: filterStatus === f ? '#C0392B' : '#6B7280', textTransform: 'capitalize' }}>
+            style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filterStatus === f ? 700 : 400, cursor: 'pointer', border: filterStatus === f ? '1.5px solid #00A9AC' : '1px solid #E5E7EB', background: filterStatus === f ? '#E6F7F7' : '#fff', color: filterStatus === f ? '#00A9AC' : '#6B7280', textTransform: 'capitalize' }}>
             {f === 'all' ? 'All' : STATUS_CFG[f]?.label ?? f}
           </button>
         ))}

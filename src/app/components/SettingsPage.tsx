@@ -112,8 +112,8 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
               onClick={() => setActiveTab(tab.id)}
               className="flex items-center gap-2 px-4 py-3 whitespace-nowrap border-b-2 transition-colors"
               style={{
-                borderColor: active ? '#C0392B' : 'transparent',
-                color: active ? '#C0392B' : '#6B7280',
+                borderColor: active ? '#00A9AC' : 'transparent',
+                color: active ? '#00A9AC' : '#6B7280',
                 fontWeight: active ? 600 : 400,
                 fontSize: '0.9375rem',
                 marginBottom: '-1px',
@@ -265,18 +265,18 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                   }
                 }}
                 className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white"
-                style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
+                style={{ background: '#00A9AC', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
               >
                 <Plus size={14} /> Add postal code
               </button>
             </div>
             <div className="flex flex-wrap gap-2">
               {serviceZips.map(zip => (
-                <span key={zip} className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px]" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 600, fontSize: '0.875rem' }}>
+                <span key={zip} className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px]" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}>
                   <MapPin size={12} />
                   {zip}
                   <button onClick={() => setServiceZips(z => z.filter(v => v !== zip))}>
-                    <X size={12} style={{ color: '#F5B7B1' }} />
+                    <X size={12} style={{ color: '#80D4D5' }} />
                   </button>
                 </span>
               ))}
@@ -304,7 +304,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                         checked={!h.closed}
                         onChange={e => setHours(prev => ({ ...prev, [day]: { ...h, closed: !e.target.checked } }))}
                         className="w-4 h-4"
-                        style={{ accentColor: '#C0392B' }}
+                        style={{ accentColor: '#00A9AC' }}
                       />
                       <span style={{ color: '#6B7280', fontSize: '0.875rem' }}>Open</span>
                     </label>
@@ -347,8 +347,8 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                     key={tz.value}
                     className="flex items-center gap-3 p-4 rounded-[8px] cursor-pointer transition-colors"
                     style={{
-                      border: timezone === tz.value ? '2px solid #C0392B' : '2px solid #E5E7EB',
-                      background: timezone === tz.value ? '#FDEDEC' : '#fff',
+                      border: timezone === tz.value ? '2px solid #00A9AC' : '2px solid #E5E7EB',
+                      background: timezone === tz.value ? '#E6F7F7' : '#fff',
                     }}
                   >
                     <input
@@ -357,7 +357,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                       value={tz.value}
                       checked={timezone === tz.value}
                       onChange={() => setTimezone(tz.value)}
-                      style={{ accentColor: '#C0392B' }}
+                      style={{ accentColor: '#00A9AC' }}
                     />
                     <div>
                       <p style={{ color: '#1A1A1A', fontWeight: timezone === tz.value ? 600 : 400, fontSize: '0.9375rem' }}>
@@ -366,7 +366,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                       <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '2px' }}>{tz.value}</p>
                     </div>
                     {timezone === tz.value && (
-                      <CheckCircle2 size={18} style={{ color: '#C0392B', marginLeft: 'auto' }} />
+                      <CheckCircle2 size={18} style={{ color: '#00A9AC', marginLeft: 'auto' }} />
                     )}
                   </label>
                 ))}
@@ -389,13 +389,13 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                     <label
                       key={h}
                       className="flex items-center gap-3 py-2.5 px-4 rounded-[6px] cursor-pointer transition-colors"
-                      style={{ background: checked ? '#FDEDEC' : '#F9FAFB', border: `1px solid ${checked ? '#F5B7B1' : '#E5E7EB'}` }}
+                      style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#80D4D5' : '#E5E7EB'}` }}
                     >
                       <input
                         type="checkbox"
                         checked={checked}
                         onChange={() => setHolidays(prev => checked ? prev.filter(v => v !== h) : [...prev, h])}
-                        style={{ accentColor: '#C0392B' }}
+                        style={{ accentColor: '#00A9AC' }}
                       />
                       <span style={{ color: '#1A1A1A', fontSize: '0.9375rem', fontWeight: checked ? 500 : 400 }}>{h}</span>
                     </label>
@@ -420,7 +420,7 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
                       }
                     }}
                     className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white"
-                    style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
+                    style={{ background: '#00A9AC', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
                   >
                     <Plus size={14} /> Add
                   </button>
@@ -444,9 +444,9 @@ export function SettingsPage({ planTier }: SettingsPageProps) {
             onClick={handleSave}
             disabled={saveStatus === 'saving'}
             className="flex items-center gap-2 px-6 py-2.5 rounded-[6px] text-white transition-colors"
-            style={{ background: saveStatus === 'saving' ? '#9CA3AF' : '#C0392B', fontWeight: 600, fontSize: '0.9375rem' }}
-            onMouseEnter={e => { if (saveStatus !== 'saving') e.currentTarget.style.background = '#A93226'; }}
-            onMouseLeave={e => { if (saveStatus !== 'saving') e.currentTarget.style.background = '#C0392B'; }}
+            style={{ background: saveStatus === 'saving' ? '#9CA3AF' : '#00A9AC', fontWeight: 600, fontSize: '0.9375rem' }}
+            onMouseEnter={e => { if (saveStatus !== 'saving') e.currentTarget.style.background = '#007F82'; }}
+            onMouseLeave={e => { if (saveStatus !== 'saving') e.currentTarget.style.background = '#00A9AC'; }}
           >
             {saveStatus === 'saving' ? (
               <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Saving...</>

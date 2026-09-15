@@ -5,7 +5,7 @@ import { TIME_ENTRIES } from './mockData';
 import type { TimeEntry } from './types';
 
 const TECHS = [
-  { id: 'tech-1', name: 'Mike Torres', color: '#C0392B' },
+  { id: 'tech-1', name: 'Mike Torres', color: '#00A9AC' },
   { id: 'tech-2', name: 'Sarah Chen', color: '#2980B9' },
   { id: 'tech-3', name: 'Carlos Rivera', color: '#27AE60' },
   { id: 'tech-4', name: 'Derek Smith', color: '#8B5CF6' },

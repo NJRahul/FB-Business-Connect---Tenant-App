@@ -70,13 +70,13 @@ export default function RecallModule() {
           <button key={t.id} onClick={() => setTab(t.id)}
             className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-colors relative"
             style={{
-              color: tab === t.id ? '#C0392B' : '#6B7280',
-              borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+              color: tab === t.id ? '#00A9AC' : '#6B7280',
+              borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
             }}>
             <t.icon size={14} /> {t.label}
             {t.badge ? (
               <span className="ml-1 text-xs font-bold px-1.5 py-0.5 rounded-full"
-                style={{ background: '#C0392B', color: '#fff', fontSize: '0.65rem' }}>
+                style={{ background: '#00A9AC', color: '#fff', fontSize: '0.65rem' }}>
                 {t.badge}
               </span>
             ) : null}

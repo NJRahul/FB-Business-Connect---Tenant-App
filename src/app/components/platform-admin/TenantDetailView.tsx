@@ -180,7 +180,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
                 <AlertTriangle size={16} color="#F87171" className="mt-0.5 shrink-0" />
                 <div>
                   <p style={{ fontWeight: 600, fontSize: '0.825rem', color: '#F87171' }}>Suspension Reason</p>
-                  <p style={{ fontSize: '0.825rem', color: '#FCA5A5', marginTop: 2 }}>{tenantState.suspendedReason}</p>
+                  <p style={{ fontSize: '0.825rem', color: '#80D4D5', marginTop: 2 }}>{tenantState.suspendedReason}</p>
                 </div>
               </div>
             )}
@@ -386,7 +386,7 @@ export function TenantDetailView({ tenant, onBack }: Props) {
             {actionModal.action === 'delete' && (
               <div className="flex items-start gap-2 rounded-lg p-3 mb-4" style={{ background: '#1C0A0A', border: '1px solid #3F1515' }}>
                 <AlertTriangle size={14} color="#EF4444" className="mt-0.5 shrink-0" />
-                <p style={{ fontSize: '0.8rem', color: '#FCA5A5' }}>
+                <p style={{ fontSize: '0.8rem', color: '#80D4D5' }}>
                   This action is irreversible. All tenant data will be permanently erased.
                 </p>
               </div>

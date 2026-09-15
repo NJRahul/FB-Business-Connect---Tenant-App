@@ -142,7 +142,7 @@ export function RecallDetailView({ recall, onBack }: Props) {
             <p style={{ fontSize: '0.875rem', fontWeight: 600, color: '#1A1A1A' }}>{recall.effectiveFrom}</p>
             {recall.effectiveTo && <p style={{ fontSize: '0.75rem', color: '#9CA3AF' }}>to {recall.effectiveTo}</p>}
             <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 8 }}>Category</p>
-            <p style={{ fontSize: '0.8rem', fontWeight: 600, color: '#C0392B' }}>Safety/Recall</p>
+            <p style={{ fontSize: '0.8rem', fontWeight: 600, color: '#00A9AC' }}>Safety/Recall</p>
             <p style={{ fontSize: '0.7rem', color: '#9CA3AF' }}>Not marketing · No opt-in required</p>
           </div>
         </div>
@@ -155,7 +155,7 @@ export function RecallDetailView({ recall, onBack }: Props) {
           {uncontactedCount > 0 && (
             <button onClick={sendAllUncontacted}
               className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium"
-              style={{ background: '#C0392B', color: '#fff' }}>
+              style={{ background: '#00A9AC', color: '#fff' }}>
               <Send size={13} /> Send All Uncontacted ({uncontactedCount})
             </button>
           )}
@@ -377,7 +377,7 @@ export function RecallDetailView({ recall, onBack }: Props) {
                   <td className="px-4 py-2.5">
                     <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
                       style={{
-                        background: entry.deliveryStatus === 'delivered' ? '#F0FDF4' : '#FEF2F2',
+                        background: entry.deliveryStatus === 'delivered' ? '#F0FDF4' : '#F0FBFB',
                         color: entry.deliveryStatus === 'delivered' ? '#15803D' : '#B91C1C',
                       }}>
                       {entry.deliveryStatus}

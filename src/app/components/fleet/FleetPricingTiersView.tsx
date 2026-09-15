@@ -41,7 +41,7 @@ export function FleetPricingTiersView() {
         </div>
         <button onClick={() => setShowCreate(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> New Tier
         </button>
       </div>
@@ -62,15 +62,15 @@ export function FleetPricingTiersView() {
           return (
             <div key={tier.id} className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
               <div className="flex items-start justify-between mb-3">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                  <Tag size={17} color="#C0392B" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                  <Tag size={17} color="#00A9AC" />
                 </div>
                 <button style={{ color: '#9CA3AF' }}><Pencil size={14} /></button>
               </div>
               <h3 style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1A1A1A', marginBottom: 4 }}>{tier.name}</h3>
               <p style={{ fontSize: '0.825rem', color: '#6B7280', marginBottom: 12, lineHeight: 1.5 }}>{tier.description}</p>
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl font-bold" style={{ color: '#C0392B' }}>
+                <span className="text-2xl font-bold" style={{ color: '#00A9AC' }}>
                   {tier.discountType === 'percentage' ? `${tier.discountValue}%` : `R ${tier.discountValue}`}
                 </span>
                 <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>
@@ -142,7 +142,7 @@ export function FleetPricingTiersView() {
             <button onClick={() => setShowCreate(false)} className="px-4 py-2 rounded-lg text-sm" style={{ background: '#fff', color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
             <button onClick={createTier} disabled={!name || !discountValue}
               className="px-4 py-2 rounded-lg text-sm font-medium"
-              style={{ background: '#C0392B', color: '#fff', opacity: name && discountValue ? 1 : 0.4 }}>
+              style={{ background: '#00A9AC', color: '#fff', opacity: name && discountValue ? 1 : 0.4 }}>
               Create Tier
             </button>
           </div>

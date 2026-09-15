@@ -8,7 +8,7 @@ function WarrantyStatusBadge({ status }: { status: WarrantyStatus }) {
     active:  { label: 'Active',   color: '#16A34A', bg: '#F0FDF4' },
     expired: { label: 'Expired',  color: '#9CA3AF', bg: '#F3F4F6' },
     claimed: { label: 'Claimed',  color: '#2563EB', bg: '#EFF6FF' },
-    voided:  { label: 'Voided',   color: '#DC2626', bg: '#FEF2F2' },
+    voided:  { label: 'Voided',   color: '#DC2626', bg: '#F0FBFB' },
   };
   const s = map[status];
   return <span style={{ padding: '2px 8px', borderRadius: 99, background: s.bg, color: s.color, fontSize: 11, fontWeight: 600 }}>{s.label}</span>;
@@ -19,7 +19,7 @@ function ClaimStatusBadge({ status }: { status: ClaimStatus }) {
     open:         { label: 'Open',         color: '#2563EB', bg: '#EFF6FF', icon: <Clock size={10} /> },
     under_review: { label: 'Under Review', color: '#D97706', bg: '#FFFBEB', icon: <AlertTriangle size={10} /> },
     approved:     { label: 'Approved',     color: '#16A34A', bg: '#F0FDF4', icon: <CheckCircle size={10} /> },
-    denied:       { label: 'Denied',       color: '#DC2626', bg: '#FEF2F2', icon: <XCircle size={10} /> },
+    denied:       { label: 'Denied',       color: '#DC2626', bg: '#F0FBFB', icon: <XCircle size={10} /> },
     resolved:     { label: 'Resolved',     color: '#6B7280', bg: '#F3F4F6', icon: <CheckCircle size={10} /> },
   };
   const s = map[status];
@@ -89,13 +89,13 @@ function ConfigTab() {
         <label style={{ fontSize: 12, color: '#6B7280', display: 'block', marginBottom: 6 }}>Recommendation Level</label>
         <div style={{ display: 'flex', gap: 8 }}>
           {(['required', 'recommended', 'optional'] as const).map(lvl => (
-            <button key={lvl} onClick={() => setCfg(c => ({ ...c, recommendationLevel: lvl }))} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: cfg.recommendationLevel === lvl ? '#C0392B' : '#E5E7EB', background: cfg.recommendationLevel === lvl ? '#FEF2F2' : '#fff', color: cfg.recommendationLevel === lvl ? '#C0392B' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+            <button key={lvl} onClick={() => setCfg(c => ({ ...c, recommendationLevel: lvl }))} style={{ padding: '6px 14px', borderRadius: 7, border: '1px solid', borderColor: cfg.recommendationLevel === lvl ? '#00A9AC' : '#E5E7EB', background: cfg.recommendationLevel === lvl ? '#F0FBFB' : '#fff', color: cfg.recommendationLevel === lvl ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
               {lvl}
             </button>
           ))}
         </div>
       </div>
-      <button onClick={save} style={{ padding: '8px 20px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+      <button onClick={save} style={{ padding: '8px 20px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
         {saved ? '✓ Saved' : 'Save Configuration'}
       </button>
     </div>
@@ -159,7 +159,7 @@ function ClaimsTab() {
           <div key={r.techName} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
             <div style={{ width: 70, fontSize: 12, color: '#374151', flexShrink: 0 }}>{r.techName}</div>
             <div style={{ flex: 1, background: '#F3F4F6', borderRadius: 99, height: 8, overflow: 'hidden' }}>
-              <div style={{ width: `${(r.rate / 5) * 100}%`, background: r.rate > 3 ? '#DC2626' : '#C0392B', height: '100%', borderRadius: 99 }} />
+              <div style={{ width: `${(r.rate / 5) * 100}%`, background: r.rate > 3 ? '#DC2626' : '#00A9AC', height: '100%', borderRadius: 99 }} />
             </div>
             <div style={{ width: 36, fontSize: 12, color: '#6B7280', textAlign: 'right' }}>{r.rate}%</div>
           </div>
@@ -208,18 +208,18 @@ export function WarrantiesView() {
     <div>
       {/* Sub-tabs */}
       <div style={{ display: 'flex', gap: 0, borderBottom: '2px solid #E5E7EB', marginBottom: 20, alignItems: 'flex-end' }}>
-        <button onClick={() => setSubtab('warranties')} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'warranties' ? '#C0392B' : '#6B7280', borderBottom: subtab === 'warranties' ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2 }}>
+        <button onClick={() => setSubtab('warranties')} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'warranties' ? '#00A9AC' : '#6B7280', borderBottom: subtab === 'warranties' ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2 }}>
           Warranties
         </button>
-        <button onClick={() => setSubtab('claims')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'claims' ? '#C0392B' : '#6B7280', borderBottom: subtab === 'claims' ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2 }}>
+        <button onClick={() => setSubtab('claims')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'claims' ? '#00A9AC' : '#6B7280', borderBottom: subtab === 'claims' ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2 }}>
           Claims
           {openClaims > 0 && <span style={{ background: '#DC2626', color: '#fff', borderRadius: 99, padding: '1px 6px', fontSize: 10, fontWeight: 700 }}>{openClaims}</span>}
         </button>
-        <button onClick={() => setSubtab('config')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'config' ? '#C0392B' : '#6B7280', borderBottom: subtab === 'config' ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2 }}>
+        <button onClick={() => setSubtab('config')} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === 'config' ? '#00A9AC' : '#6B7280', borderBottom: subtab === 'config' ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2 }}>
           <Settings size={13} /> Config
         </button>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 8, paddingBottom: 8 }}>
-          <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
+          <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
             <Plus size={13} /> Issue Warranty
           </button>
           {subtab === 'claims' && (

@@ -43,7 +43,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
         <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 18 }}>
             {[
-              { label: 'Lifetime Value', value: `R ${customer.ltv.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, color: '#C0392B' },
+              { label: 'Lifetime Value', value: `R ${customer.ltv.toLocaleString('en-US', { minimumFractionDigits: 2 })}`, color: '#00A9AC' },
               { label: 'Total Visits', value: customer.visitCount, color: '#2980B9' },
               { label: 'Last Visit', value: customer.lastVisitDate ?? '—', color: '#1A1A1A' },
               { label: 'Member Since', value: customer.createdAt.slice(0, 7), color: '#1A1A1A' },
@@ -75,7 +75,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Tags</div>
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                 {customer.tags.map(t => (
-                  <span key={t} style={{ background: '#FDEDEC', color: '#C0392B', border: '1px solid #F5B7B1', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 600 }}>{t}</span>
+                  <span key={t} style={{ background: '#E6F7F7', color: '#00A9AC', border: '1px solid #80D4D5', borderRadius: 6, padding: '3px 10px', fontSize: 12, fontWeight: 600 }}>{t}</span>
                 ))}
               </div>
             </div>
@@ -128,7 +128,7 @@ function CustomerDetail({ customer, onClose, onToggleOptIn }: CustomerDetailProp
                 {logs.map(l => (
                   <div key={l.id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '6px 10px', background: '#F9FAFB', borderRadius: 7, fontSize: 12 }}>
                     <span style={{ fontFamily: 'monospace', color: '#9CA3AF', fontSize: 11 }}>{l.createdAt.slice(0, 16)}</span>
-                    <span style={{ background: l.eventType.includes('opt_in') ? '#D1FAE5' : '#FEE2E2', color: l.eventType.includes('opt_in') ? '#065F46' : '#991B1B', borderRadius: 5, padding: '1px 7px', fontWeight: 700 }}>{l.eventType}</span>
+                    <span style={{ background: l.eventType.includes('opt_in') ? '#D1FAE5' : '#FEE2E2', color: l.eventType.includes('opt_in') ? '#065F46' : '#005F62', borderRadius: 5, padding: '1px 7px', fontWeight: 700 }}>{l.eventType}</span>
                     <span style={{ color: '#374151', textTransform: 'capitalize' }}>{l.channel}</span>
                     <span style={{ color: '#9CA3AF' }}>{l.source}</span>
                   </div>
@@ -180,7 +180,7 @@ export function CustomersView() {
           { label: 'Total Customers', value: customers.length, color: '#2980B9', bg: '#EBF5FB' },
           { label: 'Email Opted-In', value: emailOptCount, color: '#27AE60', bg: '#D1FAE5' },
           { label: 'SMS Opted-In', value: smsOptCount, color: '#7C3AED', bg: '#EDE9FE' },
-          { label: 'Total LTV', value: `R ${customers.reduce((s, c) => s + c.ltv, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Total LTV', value: `R ${customers.reduce((s, c) => s + c.ltv, 0).toLocaleString('en-US', { minimumFractionDigits: 0 })}`, color: '#00A9AC', bg: '#E6F7F7' },
         ].map(s => (
           <div key={s.label} style={{ background: s.bg, border: '1px solid #E5E7EB', borderRadius: 12, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 26, fontWeight: 800, color: s.color }}>{s.value}</div>
@@ -229,7 +229,7 @@ export function CustomersView() {
               <tr key={c.id} style={{ borderTop: i > 0 ? '1px solid #E5E7EB' : 'none' }}>
                 <td style={{ padding: '12px 14px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#FDEDEC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#C0392B', flexShrink: 0 }}>
+                    <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#E6F7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, color: '#00A9AC', flexShrink: 0 }}>
                       {c.firstName[0]}{c.lastName[0]}
                     </div>
                     <div>
@@ -247,7 +247,7 @@ export function CustomersView() {
                   {c.vehicles.length > 2 && <div style={{ color: '#9CA3AF' }}>+{c.vehicles.length - 2} more</div>}
                 </td>
                 <td style={{ padding: '12px 14px' }}>
-                  <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: 15, color: c.ltv >= 1000 ? '#C0392B' : '#1A1A1A' }}>
+                  <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: 15, color: c.ltv >= 1000 ? '#00A9AC' : '#1A1A1A' }}>
                     ${c.ltv.toLocaleString('en-US', { minimumFractionDigits: 0 })}
                   </span>
                 </td>

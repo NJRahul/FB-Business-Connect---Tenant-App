@@ -255,7 +255,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
       </div>
       <div className="flex justify-between mt-3 pt-3 border-t" style={{ borderColor: '#E5E7EB' }}>
         <span style={{ color: '#1A1A1A', fontWeight: 700 }}>Due now</span>
-        <span style={{ color: '#C0392B', fontWeight: 800, fontFamily: 'Sora, sans-serif', fontSize: '1.125rem' }}>${dueNow.toFixed(2)}</span>
+        <span style={{ color: '#00A9AC', fontWeight: 800, fontFamily: 'Sora, sans-serif', fontSize: '1.125rem' }}>${dueNow.toFixed(2)}</span>
       </div>
       {slot && (
         <div className="mt-3 p-3 rounded-[6px]" style={{ background: '#F0FDF4', border: '1px solid #BBF7D0' }}>
@@ -282,10 +282,10 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
               return (
                 <div key={s.n} className="flex items-center gap-1 sm:gap-2">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: isDone ? '#27AE60' : isCurrent ? '#C0392B' : '#E5E7EB', color: isDone || isCurrent ? '#fff' : '#9CA3AF', fontSize: '0.6875rem', fontWeight: 700 }}>
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: isDone ? '#27AE60' : isCurrent ? '#00A9AC' : '#E5E7EB', color: isDone || isCurrent ? '#fff' : '#9CA3AF', fontSize: '0.6875rem', fontWeight: 700 }}>
                       {isDone ? '✓' : s.n}
                     </span>
-                    <span className="hidden sm:inline" style={{ color: isCurrent ? '#C0392B' : isDone ? '#27AE60' : '#9CA3AF', fontSize: '0.8125rem', fontWeight: isCurrent ? 600 : 400, whiteSpace: 'nowrap' }}>
+                    <span className="hidden sm:inline" style={{ color: isCurrent ? '#00A9AC' : isDone ? '#27AE60' : '#9CA3AF', fontSize: '0.8125rem', fontWeight: isCurrent ? 600 : 400, whiteSpace: 'nowrap' }}>
                       {s.label}
                     </span>
                   </div>
@@ -305,8 +305,8 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
           {step === 1 && (
             <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                  <User size={18} style={{ color: '#C0392B' }} />
+                <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                  <User size={18} style={{ color: '#00A9AC' }} />
                 </div>
                 <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Contact Information</h2>
               </div>
@@ -327,7 +327,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                   <input type="tel" value={contact.phone} onChange={e => setContact(c => ({ ...c, phone: e.target.value }))} style={{ ...inputStyle, marginTop: '6px', display: 'block' }} placeholder="+27 11 555 0100" />
                 </div>
                 <label className="flex items-start gap-2.5 cursor-pointer">
-                  <input type="checkbox" checked={contact.smsConsent} onChange={e => setContact(c => ({ ...c, smsConsent: e.target.checked }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+                  <input type="checkbox" checked={contact.smsConsent} onChange={e => setContact(c => ({ ...c, smsConsent: e.target.checked }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
                   <span style={{ color: '#6B7280', fontSize: '0.875rem', lineHeight: 1.5 }}>
                     I agree to receive booking confirmations and updates via SMS. Message & data rates may apply.
                   </span>
@@ -341,8 +341,8 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
             <div className="space-y-4">
               <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                    <Car size={18} style={{ color: '#C0392B' }} />
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                    <Car size={18} style={{ color: '#00A9AC' }} />
                   </div>
                   <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Your Vehicle</h2>
                 </div>
@@ -376,8 +376,8 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
 
               <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                    <MapPin size={18} style={{ color: '#C0392B' }} />
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                    <MapPin size={18} style={{ color: '#00A9AC' }} />
                   </div>
                   <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Install Address</h2>
                 </div>
@@ -418,15 +418,15 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
             <div className="bg-white rounded-[8px] p-6" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                    <Clock size={18} style={{ color: '#C0392B' }} />
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                    <Clock size={18} style={{ color: '#00A9AC' }} />
                   </div>
                   <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Choose Install Slot</h2>
                 </div>
                 {slot && holdSeconds !== null && !holdExpired && (
-                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px]" style={{ background: holdSeconds < 120 ? '#FEF2F2' : '#F0FDF4', border: `1px solid ${holdSeconds < 120 ? '#FECACA' : '#BBF7D0'}` }}>
-                    <Clock size={13} style={{ color: holdSeconds < 120 ? '#E74C3C' : '#27AE60' }} />
-                    <span style={{ color: holdSeconds < 120 ? '#E74C3C' : '#27AE60', fontWeight: 700, fontSize: '0.875rem', fontVariantNumeric: 'tabular-nums' }}>
+                  <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px]" style={{ background: holdSeconds < 120 ? '#F0FBFB' : '#F0FDF4', border: `1px solid ${holdSeconds < 120 ? '#FECACA' : '#BBF7D0'}` }}>
+                    <Clock size={13} style={{ color: holdSeconds < 120 ? '#00BFC3' : '#27AE60' }} />
+                    <span style={{ color: holdSeconds < 120 ? '#00BFC3' : '#27AE60', fontWeight: 700, fontSize: '0.875rem', fontVariantNumeric: 'tabular-nums' }}>
                       {formatHoldTime(holdSeconds)}
                     </span>
                     <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>hold</span>
@@ -435,8 +435,8 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
               </div>
 
               {holdExpired && (
-                <div className="mb-4 p-4 rounded-[8px] flex items-start gap-3" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-                  <AlertTriangle size={16} style={{ color: '#E74C3C', marginTop: '2px' }} />
+                <div className="mb-4 p-4 rounded-[8px] flex items-start gap-3" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+                  <AlertTriangle size={16} style={{ color: '#00BFC3', marginTop: '2px' }} />
                   <div>
                     <p style={{ color: '#B91C1C', fontWeight: 600, fontSize: '0.9375rem' }}>Your hold expired</p>
                     <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '4px' }}>
@@ -467,14 +467,14 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                     onClick={() => { setSelectedDateIdx(idx); setSlot(null); }}
                     className="rounded-[8px] p-2 text-center transition-all"
                     style={{
-                      border: selectedDateIdx === idx ? '2px solid #C0392B' : '2px solid #E5E7EB',
-                      background: selectedDateIdx === idx ? '#FDEDEC' : '#fff',
+                      border: selectedDateIdx === idx ? '2px solid #00A9AC' : '2px solid #E5E7EB',
+                      background: selectedDateIdx === idx ? '#E6F7F7' : '#fff',
                     }}
                   >
                     <p style={{ color: '#9CA3AF', fontSize: '0.625rem', textTransform: 'uppercase', fontWeight: 600 }}>
                       {date.toLocaleDateString('en-US', { weekday: 'short' })}
                     </p>
-                    <p style={{ color: selectedDateIdx === idx ? '#C0392B' : '#1A1A1A', fontWeight: 700, fontSize: '1.0625rem', fontFamily: 'Sora, sans-serif', marginTop: '2px' }}>
+                    <p style={{ color: selectedDateIdx === idx ? '#00A9AC' : '#1A1A1A', fontWeight: 700, fontSize: '1.0625rem', fontFamily: 'Sora, sans-serif', marginTop: '2px' }}>
                       {date.getDate()}
                     </p>
                     <p style={{ color: '#9CA3AF', fontSize: '0.625rem' }}>
@@ -499,9 +499,9 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                           onClick={() => selectSlot(selectedDateIdx, time)}
                           className="py-2.5 rounded-[8px] text-sm font-semibold transition-all"
                           style={{
-                            border: selected ? '2px solid #C0392B' : available ? '2px solid #E5E7EB' : '2px solid #F3F4F6',
-                            background: selected ? '#FDEDEC' : available ? '#fff' : '#F9FAFB',
-                            color: selected ? '#C0392B' : available ? '#1A1A1A' : '#D1D5DB',
+                            border: selected ? '2px solid #00A9AC' : available ? '2px solid #E5E7EB' : '2px solid #F3F4F6',
+                            background: selected ? '#E6F7F7' : available ? '#fff' : '#F9FAFB',
+                            color: selected ? '#00A9AC' : available ? '#1A1A1A' : '#D1D5DB',
                             cursor: available ? 'pointer' : 'not-allowed',
                           }}
                         >
@@ -531,11 +531,11 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                       key={opt.id}
                       onClick={() => { setDepositMode(opt.id); setTenders([{ id: '1', method: primaryMethod, amount: grandTotal * opt.multiplier, label: PAYMENT_METHODS.find(p => p.id === primaryMethod)?.label || 'Card' }]); setSplitEnabled(false); }}
                       className="p-4 rounded-[8px] text-left transition-all"
-                      style={{ border: depositMode === opt.id ? '2px solid #C0392B' : '2px solid #E5E7EB', background: depositMode === opt.id ? '#FDEDEC' : '#fff' }}
+                      style={{ border: depositMode === opt.id ? '2px solid #00A9AC' : '2px solid #E5E7EB', background: depositMode === opt.id ? '#E6F7F7' : '#fff' }}
                     >
-                      <p style={{ fontWeight: 700, color: depositMode === opt.id ? '#C0392B' : '#1A1A1A', fontSize: '0.9375rem' }}>{opt.label}</p>
+                      <p style={{ fontWeight: 700, color: depositMode === opt.id ? '#00A9AC' : '#1A1A1A', fontSize: '0.9375rem' }}>{opt.label}</p>
                       <p style={{ color: '#6B7280', fontSize: '0.75rem', marginTop: '4px', lineHeight: 1.4 }}>{opt.desc}</p>
-                      <p style={{ color: depositMode === opt.id ? '#C0392B' : '#1A1A1A', fontWeight: 700, fontSize: '1rem', marginTop: '8px', fontFamily: 'Sora, sans-serif' }}>
+                      <p style={{ color: depositMode === opt.id ? '#00A9AC' : '#1A1A1A', fontWeight: 700, fontSize: '1rem', marginTop: '8px', fontFamily: 'Sora, sans-serif' }}>
                         ${(grandTotal * opt.multiplier).toFixed(2)} now
                       </p>
                     </button>
@@ -549,7 +549,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                   <div className="flex items-center justify-between mb-3">
                     <h3 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1rem' }}>Payment Method</h3>
                     {!splitEnabled && (
-                      <button onClick={() => { setSplitEnabled(true); addTender(); }} style={{ color: '#C0392B', fontSize: '0.8125rem', fontWeight: 600 }}>
+                      <button onClick={() => { setSplitEnabled(true); addTender(); }} style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600 }}>
                         + Split payment
                       </button>
                     )}
@@ -562,7 +562,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                       <button
                         onClick={() => setPrimaryMethod('card')}
                         className="w-full flex items-center justify-between p-3.5 rounded-[8px] transition-all"
-                        style={{ border: primaryMethod === 'card' ? '2px solid #C0392B' : '2px solid #E5E7EB', background: primaryMethod === 'card' ? '#FDEDEC' : '#F9FAFB' }}
+                        style={{ border: primaryMethod === 'card' ? '2px solid #00A9AC' : '2px solid #E5E7EB', background: primaryMethod === 'card' ? '#E6F7F7' : '#F9FAFB' }}
                       >
                         <div className="flex items-center gap-2.5">
                           <span style={{ fontSize: '1.25rem' }}>💳</span>
@@ -621,7 +621,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                             onClick={() => setPrimaryMethod(id)}
                             className="flex items-center justify-center gap-2 p-3.5 rounded-[8px] font-semibold transition-all"
                             style={{
-                              border: primaryMethod === id ? '2px solid #C0392B' : '2px solid #E5E7EB',
+                              border: primaryMethod === id ? '2px solid #00A9AC' : '2px solid #E5E7EB',
                               background: id === 'apple-pay' ? (primaryMethod === id ? '#1A1A1A' : '#1A1A1A') : primaryMethod === id ? '#4285F4' : '#fff',
                               color: '#fff',
                             }}
@@ -643,7 +643,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                             onClick={() => setPrimaryMethod(id)}
                             className="flex items-center justify-center gap-2 p-3 rounded-[8px] font-semibold transition-all"
                             style={{
-                              border: primaryMethod === id ? '2px solid #C0392B' : '2px solid #E5E7EB',
+                              border: primaryMethod === id ? '2px solid #00A9AC' : '2px solid #E5E7EB',
                               background: id === 'paypal' ? '#0070BA' : '#3D95CE',
                               color: '#fff',
                             }}
@@ -666,10 +666,10 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                               key={id}
                               onClick={() => setPrimaryMethod(id)}
                               className="p-3 rounded-[8px] text-left transition-all"
-                              style={{ border: primaryMethod === id ? '2px solid #C0392B' : '2px solid #E5E7EB', background: primaryMethod === id ? '#FDEDEC' : '#fff' }}
+                              style={{ border: primaryMethod === id ? '2px solid #00A9AC' : '2px solid #E5E7EB', background: primaryMethod === id ? '#E6F7F7' : '#fff' }}
                             >
                               <span style={{ fontSize: '1.25rem' }}>{m.icon}</span>
-                              <p style={{ color: primaryMethod === id ? '#C0392B' : '#1A1A1A', fontWeight: 600, fontSize: '0.875rem', marginTop: '4px' }}>{m.label}</p>
+                              <p style={{ color: primaryMethod === id ? '#00A9AC' : '#1A1A1A', fontWeight: 600, fontSize: '0.875rem', marginTop: '4px' }}>{m.label}</p>
                               <p style={{ color: '#9CA3AF', fontSize: '0.6875rem', marginTop: '2px' }}>Apply now →</p>
                             </button>
                           );
@@ -706,7 +706,7 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                         ))}
                         <div className="flex justify-between mt-2 pt-2 border-t" style={{ borderColor: '#E5E7EB' }}>
                           <span style={{ color: '#6B7280', fontSize: '0.8125rem' }}>Total allocated</span>
-                          <span style={{ color: tenders.reduce((a, t) => a + t.amount, 0) === dueNow ? '#27AE60' : '#E74C3C', fontWeight: 600, fontSize: '0.8125rem' }}>
+                          <span style={{ color: tenders.reduce((a, t) => a + t.amount, 0) === dueNow ? '#27AE60' : '#00BFC3', fontWeight: 600, fontSize: '0.8125rem' }}>
                             ${tenders.reduce((a, t) => a + t.amount, 0).toFixed(2)} / ${dueNow.toFixed(2)}
                           </span>
                         </div>
@@ -722,13 +722,13 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                 disabled={processing || !canPay || (dueNow > 0 && splitEnabled && tenders.reduce((a, t) => a + t.amount, 0) !== dueNow)}
                 className="w-full py-4 rounded-[6px] text-white flex items-center justify-center gap-2 transition-colors"
                 style={{
-                  background: processing || !canPay ? '#9CA3AF' : '#C0392B',
+                  background: processing || !canPay ? '#9CA3AF' : '#00A9AC',
                   fontWeight: 700,
                   fontSize: '1.0625rem',
                   cursor: processing || !canPay ? 'not-allowed' : 'pointer',
                 }}
-                onMouseEnter={e => { if (!processing && canPay) e.currentTarget.style.background = '#A93226'; }}
-                onMouseLeave={e => { if (!processing && canPay) e.currentTarget.style.background = '#C0392B'; }}
+                onMouseEnter={e => { if (!processing && canPay) e.currentTarget.style.background = '#007F82'; }}
+                onMouseLeave={e => { if (!processing && canPay) e.currentTarget.style.background = '#00A9AC'; }}
               >
                 {processing ? (
                   <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing payment...</>
@@ -763,11 +763,11 @@ export function CheckoutFlow({ items, grandTotal, onComplete, onBack }: Checkout
                 }
                 className="flex items-center gap-2 px-6 py-2.5 rounded-[6px] text-white transition-colors"
                 style={{
-                  background: (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3) ? '#9CA3AF' : '#C0392B',
+                  background: (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3) ? '#9CA3AF' : '#00A9AC',
                   fontWeight: 600,
                 }}
-                onMouseEnter={e => { const d = (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3); if (!d) e.currentTarget.style.background = '#A93226'; }}
-                onMouseLeave={e => { const d = (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3); if (!d) e.currentTarget.style.background = '#C0392B'; }}
+                onMouseEnter={e => { const d = (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3); if (!d) e.currentTarget.style.background = '#007F82'; }}
+                onMouseLeave={e => { const d = (step === 1 && !canProceedStep1) || (step === 2 && !canProceedStep2) || (step === 3 && !canProceedStep3); if (!d) e.currentTarget.style.background = '#00A9AC'; }}
               >
                 Continue <ChevronRight size={16} />
               </button>

@@ -94,7 +94,7 @@ export function FleetAccountsView({ onSelect }: Props) {
         </div>
         <button onClick={() => setShowCreate(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> New Fleet Account
         </button>
       </div>
@@ -105,7 +105,7 @@ export function FleetAccountsView({ onSelect }: Props) {
         <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search by company or contact email…"
           className="w-full pl-9 pr-4 py-2.5 rounded-[8px] text-sm outline-none"
           style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', color: '#1A1A1A' }}
-          onFocus={e => (e.target.style.borderColor = '#C0392B')}
+          onFocus={e => (e.target.style.borderColor = '#00A9AC')}
           onBlur={e => (e.target.style.borderColor = '#E5E7EB')} />
       </div>
 
@@ -133,7 +133,7 @@ export function FleetAccountsView({ onSelect }: Props) {
                   <td className="px-4 py-3">
                     <div className="flex items-center gap-2.5">
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                        style={{ background: '#FDEDEC', color: '#C0392B' }}>
+                        style={{ background: '#E6F7F7', color: '#00A9AC' }}>
                         <Building2 size={15} />
                       </div>
                       <div>
@@ -153,7 +153,7 @@ export function FleetAccountsView({ onSelect }: Props) {
                     <div className="mt-0.5 h-1 rounded-full overflow-hidden" style={{ background: '#F3F4F6', width: 64 }}>
                       <div className="h-full rounded-full" style={{
                         width: `${Math.min(100, (a.outstandingBalanceCents / a.creditLimitCents) * 100)}%`,
-                        background: a.outstandingBalanceCents > a.creditLimitCents * 0.8 ? '#EF4444' : '#C0392B',
+                        background: a.outstandingBalanceCents > a.creditLimitCents * 0.8 ? '#EF4444' : '#00A9AC',
                       }} />
                     </div>
                   </td>
@@ -237,7 +237,7 @@ export function FleetAccountsView({ onSelect }: Props) {
                 className="flex-1 py-2.5 rounded-lg text-sm" style={{ background: '#F9FAFB', color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
               <button onClick={handleCreate} disabled={!canCreate || creating}
                 className="flex-1 py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-2"
-                style={{ background: '#C0392B', color: '#fff', opacity: canCreate && !creating ? 1 : 0.4 }}>
+                style={{ background: '#00A9AC', color: '#fff', opacity: canCreate && !creating ? 1 : 0.4 }}>
                 {creating ? <Loader2 size={14} className="animate-spin" /> : null}
                 {creating ? 'Creating…' : 'Create Fleet Account'}
               </button>

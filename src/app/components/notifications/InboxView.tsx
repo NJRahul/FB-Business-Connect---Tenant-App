@@ -43,8 +43,8 @@ function ConversationItem({
       onClick={onClick}
       style={{
         padding: '14px 16px', cursor: 'pointer', borderBottom: '1px solid #F3F4F6',
-        background: selected ? '#FDEDEC' : '#fff',
-        borderLeft: selected ? '3px solid #C0392B' : '3px solid transparent',
+        background: selected ? '#E6F7F7' : '#fff',
+        borderLeft: selected ? '3px solid #00A9AC' : '3px solid transparent',
         transition: 'background 0.1s',
       }}
     >
@@ -53,7 +53,7 @@ function ConversationItem({
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
           <span style={{ fontSize: 11, color: '#9CA3AF' }}>{fmtDate(conv.lastMessageAt)}</span>
           {conv.unreadCount > 0 && (
-            <span style={{ minWidth: 18, height: 18, borderRadius: 99, background: '#C0392B', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 5px' }}>
+            <span style={{ minWidth: 18, height: 18, borderRadius: 99, background: '#00A9AC', color: '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 5px' }}>
               {conv.unreadCount}
             </span>
           )}
@@ -78,7 +78,7 @@ function MessageBubble({ msg }: { msg: SmsMessage }) {
       )}
       <div style={{
         maxWidth: '72%', padding: '9px 13px', borderRadius: isOut ? '14px 14px 2px 14px' : '14px 14px 14px 2px',
-        background: isOut ? '#C0392B' : '#F3F4F6',
+        background: isOut ? '#00A9AC' : '#F3F4F6',
         color: isOut ? '#fff' : '#1A1A1A',
         fontSize: 13, lineHeight: 1.5,
       }}>
@@ -138,7 +138,7 @@ export function InboxView() {
         <div style={{ padding: '14px 16px', borderBottom: '1px solid #E5E7EB', fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>
           SMS Inbox
           {SMS_CONVERSATIONS.filter(c => c.unreadCount > 0).length > 0 && (
-            <span style={{ marginLeft: 8, minWidth: 18, height: 18, borderRadius: 99, background: '#C0392B', color: '#fff', fontSize: 10, fontWeight: 700, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0 5px' }}>
+            <span style={{ marginLeft: 8, minWidth: 18, height: 18, borderRadius: 99, background: '#00A9AC', color: '#fff', fontSize: 10, fontWeight: 700, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '0 5px' }}>
               {SMS_CONVERSATIONS.reduce((s, c) => s + c.unreadCount, 0)}
             </span>
           )}
@@ -224,7 +224,7 @@ export function InboxView() {
             disabled={!input.trim() || quiet}
             style={{
               width: 40, height: 40, borderRadius: 99, border: 'none',
-              background: input.trim() && !quiet ? '#C0392B' : '#E5E7EB',
+              background: input.trim() && !quiet ? '#00A9AC' : '#E5E7EB',
               cursor: input.trim() && !quiet ? 'pointer' : 'default',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
             }}

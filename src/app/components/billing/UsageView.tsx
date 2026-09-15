@@ -40,7 +40,7 @@ function UsageMeter({ used, included, label }: { used: number; included: number 
         <span>{included.toLocaleString()}</span>
       </div>
       {overage > 0 && (
-        <div style={{ marginTop: 8, padding: '6px 10px', borderRadius: 6, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 12, color: '#DC2626', fontWeight: 600 }}>
+        <div style={{ marginTop: 8, padding: '6px 10px', borderRadius: 6, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 12, color: '#DC2626', fontWeight: 600 }}>
           {overage.toLocaleString()} overage SMS · ${overageCost.toFixed(2)} will be added to next invoice
         </div>
       )}
@@ -54,7 +54,7 @@ function MiniBar({ value, max, date }: { value: number; max: number; date: strin
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
       <div style={{ fontSize: 10, color: '#9CA3AF' }}>{value > 300 ? value : ''}</div>
       <div style={{ width: 18, height: 60, background: '#F3F4F6', borderRadius: 3, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-        <div style={{ height: h, background: '#C0392B', borderRadius: 3 }} />
+        <div style={{ height: h, background: '#00A9AC', borderRadius: 3 }} />
       </div>
       <div style={{ fontSize: 9, color: '#9CA3AF', transform: 'rotate(-45deg)', transformOrigin: 'top center', whiteSpace: 'nowrap' }}>
         {new Date(date).getDate()}
@@ -85,7 +85,7 @@ export function UsageView({ currentPlan }: Props) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
       {/* Alert banners */}
       {atAlert100 && (
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#991B1B' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', color: '#005F62' }}>
           <AlertTriangle size={16} style={{ marginTop: 2, flexShrink: 0 }} />
           <div>
             <div style={{ fontWeight: 700, fontSize: 13 }}>SMS inclusion exhausted</div>
@@ -106,7 +106,7 @@ export function UsageView({ currentPlan }: Props) {
       {/* Main usage card */}
       <div style={{ border: '1px solid #E5E7EB', borderRadius: 12, background: '#fff', padding: '22px 24px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
-          <MessageSquare size={16} color="#C0392B" />
+          <MessageSquare size={16} color="#00A9AC" />
           <span style={{ fontWeight: 700, fontSize: 15, color: '#1A1A1A' }}>SMS Usage — June 2026</span>
         </div>
 
@@ -151,8 +151,8 @@ export function UsageView({ currentPlan }: Props) {
             const p = PLAN_CONFIGS[tier];
             const active = tier === currentPlan;
             return (
-              <div key={tier} style={{ padding: '14px 16px', borderRadius: 8, border: `1.5px solid ${active ? '#C0392B' : '#E5E7EB'}`, background: active ? '#FDEDEC' : '#F9FAFB' }}>
-                <div style={{ fontWeight: 700, fontSize: 13, color: active ? '#C0392B' : '#374151', marginBottom: 6 }}>
+              <div key={tier} style={{ padding: '14px 16px', borderRadius: 8, border: `1.5px solid ${active ? '#00A9AC' : '#E5E7EB'}`, background: active ? '#E6F7F7' : '#F9FAFB' }}>
+                <div style={{ fontWeight: 700, fontSize: 13, color: active ? '#00A9AC' : '#374151', marginBottom: 6 }}>
                   {p.name} {active && '← current'}
                 </div>
                 <div style={{ fontSize: 12, color: '#6B7280' }}>
@@ -173,10 +173,10 @@ export function UsageView({ currentPlan }: Props) {
 
       {/* Upgrade CTA if approaching limit */}
       {pct >= 80 && currentPlan !== 'enterprise' && (
-        <div style={{ padding: '16px 20px', borderRadius: 10, background: '#FDEDEC', border: '1.5px solid #C0392B', display: 'flex', alignItems: 'center', gap: 14 }}>
-          <Zap size={20} color="#C0392B" style={{ flexShrink: 0 }} />
+        <div style={{ padding: '16px 20px', borderRadius: 10, background: '#E6F7F7', border: '1.5px solid #00A9AC', display: 'flex', alignItems: 'center', gap: 14 }}>
+          <Zap size={20} color="#00A9AC" style={{ flexShrink: 0 }} />
           <div style={{ flex: 1 }}>
-            <div style={{ fontWeight: 700, fontSize: 14, color: '#C0392B' }}>
+            <div style={{ fontWeight: 700, fontSize: 14, color: '#00A9AC' }}>
               {currentPlan === 'starter' ? 'Upgrade to Pro for 10× more SMS' : 'Upgrade to Enterprise for unlimited SMS'}
             </div>
             <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 3 }}>
@@ -186,7 +186,7 @@ export function UsageView({ currentPlan }: Props) {
               }
             </div>
           </div>
-          <button style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', flexShrink: 0 }}>
+          <button style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', flexShrink: 0 }}>
             Upgrade Plan
           </button>
         </div>

@@ -10,7 +10,7 @@ function StatusPill({ status }: { status: BankingTransaction['status'] }) {
   const cfg = {
     posted:    { label: 'Posted',    bg: '#F0FDF4', color: '#27AE60' },
     pending:   { label: 'Pending',   bg: '#FFF8E1', color: '#F39C12' },
-    returned:  { label: 'Returned',  bg: '#FEF2F2', color: '#E74C3C' },
+    returned:  { label: 'Returned',  bg: '#F0FBFB', color: '#00BFC3' },
     cancelled: { label: 'Cancelled', bg: '#F3F4F6', color: '#6B7280' },
   }[status];
   return (
@@ -25,7 +25,7 @@ function StatusPill({ status }: { status: BankingTransaction['status'] }) {
 function AmountCell({ txn }: { txn: BankingTransaction }) {
   const color = txn.status === 'pending' ? '#6B7280'
     : txn.direction === 'credit' ? '#27AE60'
-    : '#C0392B';
+    : '#00A9AC';
   const prefix = txn.direction === 'credit' ? '+' : '−';
   return (
     <span style={{ fontFeatureSettings: '"tnum"', fontVariantNumeric: 'tabular-nums', fontWeight: 700, color, fontSize: '0.9375rem', whiteSpace: 'nowrap' }}>

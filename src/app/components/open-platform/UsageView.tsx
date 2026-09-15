@@ -55,7 +55,7 @@ export function UsageView() {
           <a
             href="#"
             className="flex items-center gap-2 px-4 py-2.5 rounded-[8px] text-sm font-semibold"
-            style={{ background: '#C0392B', color: '#fff' }}
+            style={{ background: '#00A9AC', color: '#fff' }}
           >
             <ExternalLink size={14} /> Open Developer Portal
           </a>
@@ -71,8 +71,8 @@ export function UsageView() {
                 className="flex items-start gap-2.5 p-3 rounded-[8px] group"
                 style={{ background: '#1e2938', border: '1px solid #2d3748' }}
               >
-                <div className="w-7 h-7 rounded-[6px] flex items-center justify-center shrink-0 mt-0.5" style={{ background: '#C0392B20' }}>
-                  <Icon size={14} style={{ color: '#C0392B' }} />
+                <div className="w-7 h-7 rounded-[6px] flex items-center justify-center shrink-0 mt-0.5" style={{ background: '#00A9AC20' }}>
+                  <Icon size={14} style={{ color: '#00A9AC' }} />
                 </div>
                 <div>
                   <p style={{ fontWeight: 600, color: '#e6edf3', fontSize: '0.8125rem' }}>{link.label}</p>
@@ -89,10 +89,10 @@ export function UsageView() {
         {/* API usage */}
         <div className="bg-white rounded-[10px] p-5" style={{ border: '1px solid #E5E7EB', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
           <div className="flex items-center gap-2 mb-4">
-            <Activity size={16} style={{ color: '#C0392B' }} />
+            <Activity size={16} style={{ color: '#00A9AC' }} />
             <h3 style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>API Requests</h3>
           </div>
-          <UsageBar used={s.apiCallsThisPeriod} limit={s.apiCallsLimit} label="Requests this period" color="#C0392B" />
+          <UsageBar used={s.apiCallsThisPeriod} limit={s.apiCallsLimit} label="Requests this period" color="#00A9AC" />
 
           <div className="mt-4 pt-4" style={{ borderTop: '1px solid #F3F4F6' }}>
             <p style={{ fontWeight: 700, color: '#374151', fontSize: '0.8125rem', marginBottom: '8px' }}>Top Endpoints</p>
@@ -106,7 +106,7 @@ export function UsageView() {
                       <span style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600 }}>{fmtNum(ep.calls)}</span>
                     </div>
                     <div className="h-1.5 rounded-full" style={{ background: '#F3F4F6' }}>
-                      <div className="h-1.5 rounded-full" style={{ width: `${pct}%`, background: '#FDEDEC' }} />
+                      <div className="h-1.5 rounded-full" style={{ width: `${pct}%`, background: '#E6F7F7' }} />
                     </div>
                   </div>
                 );
@@ -135,9 +135,9 @@ export function UsageView() {
               ))}
             </div>
             {s.webhookFailures > 0 && (
-              <div className="mt-3 flex items-center gap-2 p-2 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
+              <div className="mt-3 flex items-center gap-2 p-2 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
                 <AlertTriangle size={13} style={{ color: '#DC2626', flexShrink: 0 }} />
-                <p style={{ color: '#991B1B', fontSize: '0.8125rem' }}>
+                <p style={{ color: '#005F62', fontSize: '0.8125rem' }}>
                   {s.webhookFailures} deliveries failed after max retries. Review the Webhooks tab.
                 </p>
               </div>
@@ -179,7 +179,7 @@ export function UsageView() {
               </div>
               <button
                 className="px-3 py-1.5 rounded-[6px] text-sm font-semibold shrink-0"
-                style={{ border: `1.5px solid ${item.danger ? '#FCA5A5' : '#E5E7EB'}`, color: item.danger ? '#DC2626' : '#374151', background: item.danger ? '#FEF2F2' : '#fff' }}
+                style={{ border: `1.5px solid ${item.danger ? '#80D4D5' : '#E5E7EB'}`, color: item.danger ? '#DC2626' : '#374151', background: item.danger ? '#F0FBFB' : '#fff' }}
               >
                 {item.action}
               </button>

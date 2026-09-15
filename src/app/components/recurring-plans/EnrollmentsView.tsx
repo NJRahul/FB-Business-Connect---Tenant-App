@@ -54,7 +54,7 @@ function EnrollmentRow({ enrollment, onAction }: {
         <p style={{ color: '#6B7280', fontSize: '0.75rem' }}>{enrollment.tierName}</p>
       </td>
       <td className="px-4 py-3">
-        <p style={{ fontWeight: 600, color: '#C0392B', fontSize: '0.875rem', fontFamily: 'Sora, sans-serif' }}>
+        <p style={{ fontWeight: 600, color: '#00A9AC', fontSize: '0.875rem', fontFamily: 'Sora, sans-serif' }}>
           ${enrollment.tierPrice.toFixed(2)}
         </p>
         <p style={{ color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'capitalize' }}>{enrollment.billingCadence}</p>
@@ -79,7 +79,7 @@ function EnrollmentRow({ enrollment, onAction }: {
                   <span style={{ fontSize: '0.6875rem', fontWeight: 600, color: '#374151' }}>{u.used}/{u.included}</span>
                 </div>
                 <div className="w-24 h-1.5 rounded-full" style={{ background: '#F3F4F6' }}>
-                  <div className="h-1.5 rounded-full" style={{ width: `${Math.min(pct, 100)}%`, background: pct >= 100 ? '#C0392B' : '#F39C12' }} />
+                  <div className="h-1.5 rounded-full" style={{ width: `${Math.min(pct, 100)}%`, background: pct >= 100 ? '#00A9AC' : '#F39C12' }} />
                 </div>
               </div>
             );
@@ -173,7 +173,7 @@ export function EnrollmentsView() {
         {[
           { label: 'Active Enrollments', value: stats.active, color: '#16A34A', bg: '#DCFCE7' },
           { label: 'Past Due', value: stats.past_due, color: '#D97706', bg: '#FEF3C7' },
-          { label: 'Est. MRR', value: `R ${stats.mrr.toFixed(2)}`, color: '#C0392B', bg: '#FDEDEC' },
+          { label: 'Est. MRR', value: `R ${stats.mrr.toFixed(2)}`, color: '#00A9AC', bg: '#E6F7F7' },
         ].map(s => (
           <div key={s.label} className="bg-white rounded-[10px] p-4" style={{ border: '1px solid #E5E7EB', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
             <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{s.label}</p>
@@ -213,7 +213,7 @@ export function EnrollmentsView() {
         <button
           onClick={() => setShowEnroll(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white"
-          style={{ background: '#C0392B' }}
+          style={{ background: '#00A9AC' }}
         >
           <UserPlus size={14} /> Enroll Customer
         </button>

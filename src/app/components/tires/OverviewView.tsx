@@ -8,7 +8,7 @@ const MODULE_CARDS = [
   { id: 'warranties',   label: 'T4/T9 — Road Hazard + Claims', icon: Shield,       color: '#7C3AED', tab: 'warranties' },
   { id: 'services',     label: 'T5–T8 — Services + Swap/Store', icon: Wrench,      color: '#D97706', tab: 'services' },
   { id: 'reports',      label: 'T10 — Registration Reporting',  icon: BarChart2,   color: '#0891B2', tab: 'reports' },
-  { id: 'rebates',      label: 'T11 — Manufacturer Rebates',    icon: Tag,         color: '#C0392B', tab: 'rebates' },
+  { id: 'rebates',      label: 'T11 — Manufacturer Rebates',    icon: Tag,         color: '#00A9AC', tab: 'rebates' },
   { id: 'inspections',  label: 'T12 — Inspection Templates',    icon: ClipboardCheck, color: '#64748B', tab: 'inspections' },
 ];
 
@@ -29,7 +29,7 @@ export function OverviewView({ onNavigate }: OverviewViewProps) {
     { label: 'Reg. Completion', value: `${overallRate.rate}%`, icon: FileCheck, color: '#059669', sub: `${pendingRegs} pending` },
     { label: 'Active Warranties', value: activeWarranties, icon: Shield, color: '#7C3AED', sub: `${activeClaims} open claims` },
     { label: 'Tires in Storage', value: SWAP_STORE_ENTRIES.reduce((a, e) => a + e.tires.length, 0), icon: Package, color: '#D97706', sub: overdueSwaps > 0 ? `${overdueSwaps} overdue retrieval` : 'All current' },
-    { label: 'Active Rebates', value: activeRebates, icon: Tag, color: '#C0392B', sub: `${REBATES.filter(r => r.active && r.platformPublished).length} platform-published` },
+    { label: 'Active Rebates', value: activeRebates, icon: Tag, color: '#00A9AC', sub: `${REBATES.filter(r => r.active && r.platformPublished).length} platform-published` },
   ];
 
   return (
@@ -38,7 +38,7 @@ export function OverviewView({ onNavigate }: OverviewViewProps) {
       {(activeClaims > 0 || overdueSwaps > 0) && (
         <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
           {activeClaims > 0 && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 13, color: '#DC2626', cursor: 'pointer' }} onClick={() => onNavigate('warranties')}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 13, color: '#DC2626', cursor: 'pointer' }} onClick={() => onNavigate('warranties')}>
               <AlertCircle size={14} />
               {activeClaims} warranty claim{activeClaims > 1 ? 's' : ''} need attention
             </div>

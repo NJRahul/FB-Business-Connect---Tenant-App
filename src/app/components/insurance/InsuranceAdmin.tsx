@@ -7,7 +7,7 @@ import {
 const STATUS_CFG: Record<string, { label: string; color: string; bg: string }> = {
   active:    { label: 'Active',    color: '#27AE60', bg: '#F0FDF4' },
   quoted:    { label: 'Quoted',    color: '#F39C12', bg: '#FFF8E1' },
-  declined:  { label: 'Declined', color: '#E74C3C', bg: '#FEF2F2' },
+  declined:  { label: 'Declined', color: '#00BFC3', bg: '#F0FBFB' },
   pending:   { label: 'Pending',  color: '#2980B9', bg: '#EBF5FB' },
 };
 
@@ -94,7 +94,7 @@ export function InsuranceAdmin() {
               <span className="px-1.5 py-0.5 rounded text-xs font-semibold w-fit" style={{ background: '#EBF5FB', color: '#2980B9' }}>AM {c.rating}</span>
               <p style={{ fontVariantNumeric: 'tabular-nums', color: '#1A1A1A' }}>{c.bound}</p>
               <p style={{ fontVariantNumeric: 'tabular-nums', color: '#1A1A1A' }}>{formatCents(c.avg_premium)}</p>
-              <p style={{ fontVariantNumeric: 'tabular-nums', color: c.loss_ratio > 0.5 ? '#C0392B' : '#1A1A1A', fontWeight: 600 }}>{(c.loss_ratio * 100).toFixed(0)}%</p>
+              <p style={{ fontVariantNumeric: 'tabular-nums', color: c.loss_ratio > 0.5 ? '#00A9AC' : '#1A1A1A', fontWeight: 600 }}>{(c.loss_ratio * 100).toFixed(0)}%</p>
               <p style={{ fontVariantNumeric: 'tabular-nums', color: c.on_time_pct >= 97 ? '#27AE60' : '#F39C12', fontWeight: 600 }}>{c.on_time_pct}%</p>
             </div>
           ))}

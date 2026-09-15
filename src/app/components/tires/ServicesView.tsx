@@ -21,7 +21,7 @@ function MountBalanceTab() {
     <div>
       <div style={{ display: 'flex', gap: 8, marginBottom: 20 }}>
         {(['bundle', 'standalone'] as const).map(m => (
-          <button key={m} onClick={() => setBundleMode(m)} style={{ padding: '6px 16px', borderRadius: 7, border: '1px solid', borderColor: bundleMode === m ? '#C0392B' : '#E5E7EB', background: bundleMode === m ? '#FEF2F2' : '#fff', color: bundleMode === m ? '#C0392B' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+          <button key={m} onClick={() => setBundleMode(m)} style={{ padding: '6px 16px', borderRadius: 7, border: '1px solid', borderColor: bundleMode === m ? '#00A9AC' : '#E5E7EB', background: bundleMode === m ? '#F0FBFB' : '#fff', color: bundleMode === m ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
             {m === 'bundle' ? 'Bundle Pricing' : 'Standalone'}
           </button>
         ))}
@@ -48,7 +48,7 @@ function MountBalanceTab() {
                 </td>
                 <td style={{ padding: '12px 14px', color: '#6B7280' }}>{s.time}</td>
                 <td style={{ padding: '12px 14px' }}>
-                  <button style={{ fontSize: 11, color: '#C0392B', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Edit</button>
+                  <button style={{ fontSize: 11, color: '#00A9AC', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}>Edit</button>
                 </td>
               </tr>
             ))}
@@ -96,7 +96,7 @@ function PositionTab() {
 // ── T7: Take-offs ─────────────────────────────────────────────────────────────
 function DispositionBadge({ disposition }: { disposition: TakeOffDisposition }) {
   const map: Record<TakeOffDisposition, { label: string; color: string; bg: string }> = {
-    disposal:          { label: 'Disposal',         color: '#DC2626', bg: '#FEF2F2' },
+    disposal:          { label: 'Disposal',         color: '#DC2626', bg: '#F0FBFB' },
     customer_retained: { label: 'Customer Kept',    color: '#2563EB', bg: '#EFF6FF' },
     shop_resale:       { label: 'Shop Resale',      color: '#16A34A', bg: '#F0FDF4' },
   };
@@ -143,7 +143,7 @@ function TakeOffTab() {
                 <td style={{ padding: '11px 14px' }}>
                   <div style={{ display: 'flex', gap: 2 }}>
                     {[1,2,3,4,5].map(n => (
-                      <div key={n} style={{ width: 8, height: 8, borderRadius: 2, background: n <= r.conditionRating ? '#C0392B' : '#E5E7EB' }} />
+                      <div key={n} style={{ width: 8, height: 8, borderRadius: 2, background: n <= r.conditionRating ? '#00A9AC' : '#E5E7EB' }} />
                     ))}
                   </div>
                 </td>
@@ -172,7 +172,7 @@ function SwapStoreTab() {
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
         <div style={{ fontSize: 13, color: '#6B7280' }}>{SWAP_STORE_ENTRIES.length} sets in storage · {SWAP_STORE_ENTRIES.reduce((a, e) => a + e.tires.length, 0)} total tires</div>
-        <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
+        <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
           <Plus size={13} /> Store New Set
         </button>
       </div>
@@ -181,13 +181,13 @@ function SwapStoreTab() {
         {SWAP_STORE_ENTRIES.map(entry => {
           const overdue = isOverdue(entry.retrieveBy);
           return (
-            <div key={entry.id} style={{ background: '#fff', border: `1px solid ${overdue ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px' }}>
+            <div key={entry.id} style={{ background: '#fff', border: `1px solid ${overdue ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 10, padding: '14px 16px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ fontWeight: 600, fontSize: 14, color: '#1A1A1A' }}>{entry.customerName}</span>
                     <span style={{ padding: '2px 8px', borderRadius: 99, background: '#F3F4F6', color: '#6B7280', fontSize: 11, fontWeight: 600 }}>Bay {entry.storageBay}</span>
-                    {overdue && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '2px 8px', borderRadius: 99, background: '#FEF2F2', color: '#DC2626', fontSize: 11, fontWeight: 600 }}><AlertTriangle size={10} />Overdue</span>}
+                    {overdue && <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, padding: '2px 8px', borderRadius: 99, background: '#F0FBFB', color: '#DC2626', fontSize: 11, fontWeight: 600 }}><AlertTriangle size={10} />Overdue</span>}
                   </div>
                   <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>{entry.vehicleLabel}</div>
                   <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 2, display: 'flex', gap: 12 }}>
@@ -197,7 +197,7 @@ function SwapStoreTab() {
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button style={{ padding: '6px 12px', background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 6, fontSize: 12, cursor: 'pointer', color: '#374151' }}>View Tires</button>
-                  <button style={{ padding: '6px 12px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>Schedule Swap</button>
+                  <button style={{ padding: '6px 12px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>Schedule Swap</button>
                 </div>
               </div>
               {/* Tire mini-list */}
@@ -234,7 +234,7 @@ export function ServicesView() {
         {SUBTABS.map(t => {
           const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => setSubtab(t.id)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t.id ? '#C0392B' : '#6B7280', borderBottom: subtab === t.id ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2, whiteSpace: 'nowrap' }}>
+            <button key={t.id} onClick={() => setSubtab(t.id)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t.id ? '#00A9AC' : '#6B7280', borderBottom: subtab === t.id ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2, whiteSpace: 'nowrap' }}>
               <Icon size={13} />
               {t.label}
               {t.id === 'swap' && overdueCount > 0 && (

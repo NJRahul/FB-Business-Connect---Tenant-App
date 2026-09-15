@@ -5,7 +5,7 @@ import { PLAN_CONFIGS, type PlanTier, type CapabilityKey } from './types';
 
 const TIER_ORDER: PlanTier[] = ['starter', 'pro', 'enterprise'];
 const TIER_ICONS: Record<PlanTier, React.ElementType> = { starter: Zap, pro: Star, enterprise: Shield };
-const TIER_COLORS: Record<PlanTier, string> = { starter: '#6B7280', pro: '#C0392B', enterprise: '#1A1A1A' };
+const TIER_COLORS: Record<PlanTier, string> = { starter: '#6B7280', pro: '#00A9AC', enterprise: '#1A1A1A' };
 
 const CATEGORY_LABEL: Record<string, { label: string; desc: string }> = {
   feature:  { label: 'Feature Gates',  desc: 'UI and API features enabled by plan tier' },
@@ -61,8 +61,8 @@ export function CapabilitiesView({ currentPlan }: Props) {
       </div>
 
       {/* Gate error example */}
-      <div style={{ padding: '12px 16px', borderRadius: 8, background: '#FDEDEC', border: '1.5px solid #C0392B' }}>
-        <div style={{ fontWeight: 700, fontSize: 12, color: '#C0392B', marginBottom: 6 }}>EXAMPLE GATE ERROR (API response when limit exceeded)</div>
+      <div style={{ padding: '12px 16px', borderRadius: 8, background: '#E6F7F7', border: '1.5px solid #00A9AC' }}>
+        <div style={{ fontWeight: 700, fontSize: 12, color: '#00A9AC', marginBottom: 6 }}>EXAMPLE GATE ERROR (API response when limit exceeded)</div>
         <pre style={{ margin: 0, fontSize: 11, color: '#374151', fontFamily: 'monospace', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
 {`{
   "error": "CAPABILITY_GATE",
@@ -91,9 +91,9 @@ export function CapabilitiesView({ currentPlan }: Props) {
               onClick={() => setFilterCategory(cat)}
               style={{
                 padding: '5px 12px', borderRadius: 99, border: '1px solid',
-                borderColor: filterCategory === cat ? '#C0392B' : '#E5E7EB',
-                background: filterCategory === cat ? '#FDEDEC' : '#fff',
-                color: filterCategory === cat ? '#C0392B' : '#6B7280',
+                borderColor: filterCategory === cat ? '#00A9AC' : '#E5E7EB',
+                background: filterCategory === cat ? '#E6F7F7' : '#fff',
+                color: filterCategory === cat ? '#00A9AC' : '#6B7280',
                 fontWeight: 600, fontSize: 12, cursor: 'pointer',
               }}
             >
@@ -123,8 +123,8 @@ export function CapabilitiesView({ currentPlan }: Props) {
                     return (
                       <th key={tier} style={{
                         padding: '10px 16px', textAlign: 'center', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em',
-                        color: isCurrent ? '#C0392B' : '#6B7280',
-                        background: isCurrent ? '#FDEDEC' : 'transparent',
+                        color: isCurrent ? '#00A9AC' : '#6B7280',
+                        background: isCurrent ? '#E6F7F7' : 'transparent',
                         borderBottom: '1px solid #E5E7EB',
                       }}>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
@@ -149,7 +149,7 @@ export function CapabilitiesView({ currentPlan }: Props) {
                             <div style={{ fontSize: 13, fontWeight: 600, color: currentlyHas ? '#1A1A1A' : '#9CA3AF' }}>{cap.label}</div>
                             <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 2 }}>{cap.description}</div>
                             {!currentlyHas && (
-                              <div style={{ marginTop: 4, fontSize: 11, color: '#C0392B', fontWeight: 600 }}>
+                              <div style={{ marginTop: 4, fontSize: 11, color: '#00A9AC', fontWeight: 600 }}>
                                 Available on {PLAN_CONFIGS[cap.requiredTier].name}
                                 {cap.requiredTier === 'enterprise' ? '' : ' and above'}
                               </div>

@@ -163,7 +163,7 @@ export function AffectedCustomersView() {
             <div className="flex flex-col gap-2">
               <button onClick={runQuery}
                 className="w-full py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-2"
-                style={{ background: '#C0392B', color: '#fff', opacity: hasAnyFilter ? 1 : 0.6 }}>
+                style={{ background: '#00A9AC', color: '#fff', opacity: hasAnyFilter ? 1 : 0.6 }}>
                 <Search size={13} /> Run Query
               </button>
               {hasQueried && (
@@ -214,7 +214,7 @@ export function AffectedCustomersView() {
                   <button
                     onClick={() => showToast('Recall segment created. Find it in Marketing → Campaigns → Segments.')}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-semibold"
-                    style={{ background: '#C0392B', color: '#fff', opacity: allResults.length === 0 ? 0.4 : 1 }}
+                    style={{ background: '#00A9AC', color: '#fff', opacity: allResults.length === 0 ? 0.4 : 1 }}
                     disabled={allResults.length === 0}>
                     <Users size={13} /> Create Campaign Segment
                   </button>

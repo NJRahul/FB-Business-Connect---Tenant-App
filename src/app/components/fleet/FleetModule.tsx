@@ -54,7 +54,7 @@ export default function FleetModule() {
       {/* Act-as-customer banner */}
       {actAs && (
         <div className="flex items-center justify-between px-4 py-2.5 mb-4 rounded-xl"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <div className="flex items-center gap-2">
             <Zap size={15} />
             <span style={{ fontWeight: 700, fontSize: '0.875rem' }}>Acting as: {actAs.accountName}</span>
@@ -95,8 +95,8 @@ export default function FleetModule() {
               <button key={t.id} onClick={() => setTab(t.id)}
                 className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-colors"
                 style={{
-                  color: tab === t.id ? '#C0392B' : '#6B7280',
-                  borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+                  color: tab === t.id ? '#00A9AC' : '#6B7280',
+                  borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
                 }}>
                 <t.icon size={14} /> {t.label}
               </button>
@@ -142,7 +142,7 @@ export default function FleetModule() {
                 className="flex-1 py-2.5 rounded-lg text-sm" style={{ background: '#F9FAFB', color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
               <button onClick={startActAs} disabled={!actAsAccountId}
                 className="flex-1 py-2.5 rounded-lg text-sm font-semibold flex items-center justify-center gap-2"
-                style={{ background: '#C0392B', color: '#fff', opacity: actAsAccountId ? 1 : 0.4 }}>
+                style={{ background: '#00A9AC', color: '#fff', opacity: actAsAccountId ? 1 : 0.4 }}>
                 <Zap size={14} /> Enter Act-As Mode
               </button>
             </div>

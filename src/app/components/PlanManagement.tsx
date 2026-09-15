@@ -47,7 +47,7 @@ const PLANS = [
     period: '/mo',
     description: 'For growing multi-location businesses',
     icon: Star,
-    color: '#C0392B',
+    color: '#00A9AC',
     popular: true,
   },
   {
@@ -127,7 +127,7 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
               <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontSize: '1.75rem', fontWeight: 700 }}>
                 {currentPlan.charAt(0).toUpperCase() + currentPlan.slice(1)}
               </h2>
-              <span className="px-2.5 py-1 rounded-[4px]" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.75rem', fontWeight: 700 }}>
+              <span className="px-2.5 py-1 rounded-[4px]" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.75rem', fontWeight: 700 }}>
                 ACTIVE
               </span>
             </div>
@@ -162,12 +162,12 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
               key={plan.id}
               className="relative bg-white rounded-[8px] p-5"
               style={{
-                boxShadow: isCurrent ? '0 0 0 2px #C0392B, 0 4px 12px rgba(192,57,43,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
-                border: isCurrent ? '2px solid #C0392B' : '2px solid #E5E7EB',
+                boxShadow: isCurrent ? '0 0 0 2px #00A9AC, 0 4px 12px rgba(192,57,43,0.15)' : '0 1px 3px rgba(0,0,0,0.08)',
+                border: isCurrent ? '2px solid #00A9AC' : '2px solid #E5E7EB',
               }}
             >
               {plan.popular && !isCurrent && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-white" style={{ background: '#C0392B', fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full text-white" style={{ background: '#00A9AC', fontSize: '0.625rem', fontWeight: 700, letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
                   MOST POPULAR
                 </span>
               )}
@@ -195,9 +195,9 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
                 <button
                   onClick={() => handleAction(plan.id)}
                   className="w-full py-2 rounded-[6px] text-white flex items-center justify-center gap-2 transition-colors"
-                  style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem' }}
-                  onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                  onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                  style={{ background: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}
+                  onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                  onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
                 >
                   <ArrowUp size={14} /> Upgrade to {plan.name}
                 </button>
@@ -226,7 +226,7 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
               <tr style={{ borderBottom: '2px solid #E5E7EB' }}>
                 <th className="text-left px-5 py-3" style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', width: '40%' }}>Feature</th>
                 {PLANS.map(plan => (
-                  <th key={plan.id} className="text-center px-4 py-3" style={{ color: currentPlan === plan.id ? '#C0392B' : '#6B7280', fontSize: '0.8125rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', background: currentPlan === plan.id ? '#FDEDEC' : 'transparent' }}>
+                  <th key={plan.id} className="text-center px-4 py-3" style={{ color: currentPlan === plan.id ? '#00A9AC' : '#6B7280', fontSize: '0.8125rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', background: currentPlan === plan.id ? '#E6F7F7' : 'transparent' }}>
                     {plan.name}
                     {currentPlan === plan.id && <span className="block" style={{ fontSize: '0.6rem', marginTop: '2px' }}>YOUR PLAN</span>}
                   </th>
@@ -255,8 +255,8 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
           <div className="bg-white rounded-[8px] p-6 max-w-md w-full" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.2)' }}>
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: modal.type === 'upgrade' ? '#FDEDEC' : '#FFF7ED' }}>
-                  {modal.type === 'upgrade' ? <ArrowUp size={20} style={{ color: '#C0392B' }} /> : <AlertTriangle size={20} style={{ color: '#F39C12' }} />}
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: modal.type === 'upgrade' ? '#E6F7F7' : '#FFF7ED' }}>
+                  {modal.type === 'upgrade' ? <ArrowUp size={20} style={{ color: '#00A9AC' }} /> : <AlertTriangle size={20} style={{ color: '#F39C12' }} />}
                 </div>
                 <h3 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>
                   {modal.type === 'upgrade' ? 'Confirm Upgrade' : 'Confirm Downgrade'}
@@ -316,7 +316,7 @@ export function PlanManagement({ currentPlan, onPlanChange }: PlanManagementProp
                 onClick={confirmAction}
                 disabled={processing}
                 className="flex-1 py-2.5 rounded-[6px] text-white flex items-center justify-center gap-2 transition-colors"
-                style={{ background: processing ? '#9CA3AF' : modal.type === 'upgrade' ? '#C0392B' : '#F39C12', fontWeight: 600, fontSize: '0.9375rem' }}
+                style={{ background: processing ? '#9CA3AF' : modal.type === 'upgrade' ? '#00A9AC' : '#F39C12', fontWeight: 600, fontSize: '0.9375rem' }}
               >
                 {processing ? (
                   <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> Processing...</>

@@ -73,7 +73,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
 
           {/* Hero */}
           <div className="rounded-[12px] p-8 mb-6 text-center" style={{ background: '#1A1A1A', color: '#fff' }}>
-            <div className="w-16 h-16 rounded-[12px] flex items-center justify-center mx-auto mb-4" style={{ background: '#C0392B' }}>
+            <div className="w-16 h-16 rounded-[12px] flex items-center justify-center mx-auto mb-4" style={{ background: '#00A9AC' }}>
               <Building2 size={32} color="#fff" />
             </div>
             <h1 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.75rem', fontWeight: 700, marginBottom: 8 }}>
@@ -152,7 +152,7 @@ export function BankingIntro({ hasEIN, isUS, onGetStarted, onSkipToDemo }: Props
           <button
             onClick={onGetStarted}
             className="w-full flex items-center justify-center gap-2 py-3.5 rounded-[8px] font-semibold text-base"
-            style={{ background: '#C0392B', color: '#fff', fontSize: '1rem' }}
+            style={{ background: '#00A9AC', color: '#fff', fontSize: '1rem' }}
           >
             Get started <ArrowRight size={18} />
           </button>

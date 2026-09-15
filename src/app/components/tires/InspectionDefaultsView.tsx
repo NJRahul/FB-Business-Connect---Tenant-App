@@ -78,7 +78,7 @@ function TemplateEditor({ items, title }: { items: TemplateItem[]; title: string
           <button style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '5px 12px', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 6, fontSize: 12, cursor: 'pointer', color: '#374151' }}>
             <Plus size={11} /> Add Item
           </button>
-          <button onClick={save} style={{ padding: '5px 12px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+          <button onClick={save} style={{ padding: '5px 12px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
             {saved ? '✓ Saved' : 'Save Template'}
           </button>
         </div>
@@ -185,7 +185,7 @@ export function InspectionDefaultsView() {
         {SUBTABS.map(t => {
           const Icon = t.icon;
           return (
-            <button key={t.id} onClick={() => setSubtab(t.id)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t.id ? '#C0392B' : '#6B7280', borderBottom: subtab === t.id ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2 }}>
+            <button key={t.id} onClick={() => setSubtab(t.id)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t.id ? '#00A9AC' : '#6B7280', borderBottom: subtab === t.id ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2 }}>
               <Icon size={13} />{t.label}
             </button>
           );

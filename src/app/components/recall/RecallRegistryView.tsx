@@ -3,13 +3,13 @@ import { Plus, Search, ChevronRight, X, Shield, AlertTriangle, Info, Check } fro
 import type { Recall, RecallSeverity, RecallStatus, RecallSource, AffectedDOTRange, AffectedVehicle } from './types';
 
 export const SEVERITY_CONFIG: Record<RecallSeverity, { label: string; bg: string; color: string; dot: string }> = {
-  critical: { label: 'Critical',  bg: '#FEF2F2', color: '#B91C1C', dot: '#DC2626' },
+  critical: { label: 'Critical',  bg: '#F0FBFB', color: '#B91C1C', dot: '#DC2626' },
   warning:  { label: 'Warning',   bg: '#FFFBEB', color: '#B45309', dot: '#D97706' },
   info:     { label: 'Advisory',  bg: '#EFF6FF', color: '#1D4ED8', dot: '#3B82F6' },
 };
 
 export const STATUS_CONFIG: Record<RecallStatus, { label: string; bg: string; color: string }> = {
-  active:   { label: 'Active',    bg: '#FEF2F2', color: '#B91C1C' },
+  active:   { label: 'Active',    bg: '#F0FBFB', color: '#B91C1C' },
   resolved: { label: 'Resolved',  bg: '#F0FDF4', color: '#15803D' },
   withdrawn:{ label: 'Withdrawn', bg: '#F9FAFB', color: '#6B7280' },
 };
@@ -55,7 +55,7 @@ export function RecallRegistryView({ recalls, onSelect, onAdd }: Props) {
         </div>
         <button onClick={() => setShowNewForm(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> New Recall
         </button>
       </div>
@@ -198,7 +198,7 @@ function ChipInput({ label, chips, onAdd, onRemove, placeholder }: {
       <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#374151' }}>{label}</label>
       <div className="flex flex-wrap gap-1.5 mt-1 p-2 rounded-lg min-h-10" style={{ border: '1px solid #E5E7EB', background: '#fff' }}>
         {chips.map(c => (
-          <span key={c} className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full" style={{ background: '#FDEDEC', color: '#C0392B' }}>
+          <span key={c} className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full" style={{ background: '#E6F7F7', color: '#00A9AC' }}>
             {c} <button onClick={() => onRemove(c)}><X size={10} /></button>
           </span>
         ))}
@@ -274,10 +274,10 @@ function NewRecallModal({ onClose, onCreate }: { onClose: () => void; onCreate: 
           {[1, 2, 3].map(s => (
             <div key={s} className="flex items-center gap-2">
               <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                style={{ background: step >= s ? '#C0392B' : '#E5E7EB', color: step >= s ? '#fff' : '#9CA3AF' }}>
+                style={{ background: step >= s ? '#00A9AC' : '#E5E7EB', color: step >= s ? '#fff' : '#9CA3AF' }}>
                 {s}
               </div>
-              {s < 3 && <div className="w-8 h-0.5" style={{ background: step > s ? '#C0392B' : '#E5E7EB' }} />}
+              {s < 3 && <div className="w-8 h-0.5" style={{ background: step > s ? '#00A9AC' : '#E5E7EB' }} />}
             </div>
           ))}
         </div>
@@ -350,7 +350,7 @@ function NewRecallModal({ onClose, onCreate }: { onClose: () => void; onCreate: 
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <label style={labelStyle}>DOT Code Ranges</label>
-                  <button onClick={addDotRange} className="text-xs px-2 py-1 rounded" style={{ color: '#C0392B', background: '#FDEDEC' }}>+ Add Range</button>
+                  <button onClick={addDotRange} className="text-xs px-2 py-1 rounded" style={{ color: '#00A9AC', background: '#E6F7F7' }}>+ Add Range</button>
                 </div>
                 <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginBottom: 8 }}>Format: WWYY (week + 2-digit year). E.g. "2415" = week 24 of 2015.</p>
                 {dotRanges.map((r, i) => (
@@ -375,7 +375,7 @@ function NewRecallModal({ onClose, onCreate }: { onClose: () => void; onCreate: 
             <div className="flex flex-col gap-4">
               <div className="flex items-center justify-between">
                 <p style={labelStyle}>Affected Vehicles (YMMT)</p>
-                <button onClick={addVehicle} className="text-xs px-2 py-1 rounded" style={{ color: '#C0392B', background: '#FDEDEC' }}>+ Add Vehicle</button>
+                <button onClick={addVehicle} className="text-xs px-2 py-1 rounded" style={{ color: '#00A9AC', background: '#E6F7F7' }}>+ Add Vehicle</button>
               </div>
               <p style={{ fontSize: '0.775rem', color: '#9CA3AF' }}>Leave blank if recall applies to all vehicles (product/lot-based). Add vehicle entries if the recall is vehicle-specific.</p>
               {vehicles.map((v, i) => (
@@ -426,13 +426,13 @@ function NewRecallModal({ onClose, onCreate }: { onClose: () => void; onCreate: 
           {step < 3 ? (
             <button onClick={() => setStep(s => s + 1)} disabled={step === 1 && !canNext1}
               className="px-5 py-2 rounded-lg text-sm font-semibold"
-              style={{ background: '#C0392B', color: '#fff', opacity: step === 1 && !canNext1 ? 0.4 : 1 }}>
+              style={{ background: '#00A9AC', color: '#fff', opacity: step === 1 && !canNext1 ? 0.4 : 1 }}>
               Next →
             </button>
           ) : (
             <button onClick={submit} disabled={!canSubmit}
               className="px-5 py-2 rounded-lg text-sm font-semibold"
-              style={{ background: '#C0392B', color: '#fff', opacity: !canSubmit ? 0.4 : 1 }}>
+              style={{ background: '#00A9AC', color: '#fff', opacity: !canSubmit ? 0.4 : 1 }}>
               Publish Recall
             </button>
           )}

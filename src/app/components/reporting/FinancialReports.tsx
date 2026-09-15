@@ -12,7 +12,7 @@ function fmtK(cents: number) {
   return d >= 1000 ? `R ${(d / 1000).toFixed(1)}k` : `R ${d.toFixed(0)}`;
 }
 
-function LineChart({ data, color = '#C0392B', h = 120 }: { data: { label: string; value: number }[]; color?: string; h?: number }) {
+function LineChart({ data, color = '#00A9AC', h = 120 }: { data: { label: string; value: number }[]; color?: string; h?: number }) {
   const w = 500;
   if (data.length < 2) return null;
   const values = data.map(d => d.value);
@@ -42,7 +42,7 @@ function LineChart({ data, color = '#C0392B', h = 120 }: { data: { label: string
   );
 }
 
-function BarChart({ data, color = '#C0392B', h = 80 }: { data: { label: string; value: number }[]; color?: string; h?: number }) {
+function BarChart({ data, color = '#00A9AC', h = 80 }: { data: { label: string; value: number }[]; color?: string; h?: number }) {
   const mx = Math.max(...data.map(d => d.value)) || 1;
   return (
     <div style={{ display: 'flex', alignItems: 'flex-end', gap: 3, height: h }}>
@@ -108,7 +108,7 @@ export function FinancialReports() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
         <div style={{ display: 'flex', gap: 4, background: '#F3F4F6', borderRadius: 8, padding: 3 }}>
           {PERIOD_OPTS.map(o => (
-            <button key={o.value} onClick={() => setPeriod(o.value)} style={{ padding: '5px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600, background: period === o.value ? '#fff' : 'transparent', color: period === o.value ? '#C0392B' : '#6B7280', boxShadow: period === o.value ? '0 1px 3px rgba(0,0,0,0.08)' : 'none' }}>
+            <button key={o.value} onClick={() => setPeriod(o.value)} style={{ padding: '5px 14px', borderRadius: 6, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600, background: period === o.value ? '#fff' : 'transparent', color: period === o.value ? '#00A9AC' : '#6B7280', boxShadow: period === o.value ? '0 1px 3px rgba(0,0,0,0.08)' : 'none' }}>
               {o.label}
             </button>
           ))}
@@ -174,10 +174,10 @@ export function FinancialReports() {
           <div style={{ fontWeight: 700, fontSize: 13, color: '#1A1A1A', marginBottom: 14 }}>Revenue by Technician</div>
           {byTech.map(t => (
             <div key={t.initials} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-              <div style={{ width: 28, height: 28, borderRadius: 99, background: '#FDEDEC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#C0392B', flexShrink: 0 }}>{t.initials}</div>
+              <div style={{ width: 28, height: 28, borderRadius: 99, background: '#E6F7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, color: '#00A9AC', flexShrink: 0 }}>{t.initials}</div>
               <div style={{ width: 80, fontSize: 12, color: '#374151', flexShrink: 0 }}>{t.name}</div>
               <div style={{ flex: 1, height: 8, background: '#F3F4F6', borderRadius: 99 }}>
-                <div style={{ height: '100%', borderRadius: 99, background: '#C0392B', width: `${(t.rev / maxTechRev) * 100}%` }} />
+                <div style={{ height: '100%', borderRadius: 99, background: '#00A9AC', width: `${(t.rev / maxTechRev) * 100}%` }} />
               </div>
               <div style={{ fontSize: 12, fontWeight: 600, color: '#1A1A1A', minWidth: 70, textAlign: 'right' }}>{fmtK(t.rev * 100)}</div>
             </div>
@@ -261,7 +261,7 @@ export function FinancialReports() {
                 <td style={{ padding: '11px 16px', fontSize: 13, color: '#374151' }}>{r.description}</td>
                 <td style={{ padding: '11px 16px', fontSize: 13, fontWeight: 500, color: '#1A1A1A' }}>{fmtMoney(r.shopRevenue)}</td>
                 <td style={{ padding: '11px 16px', fontSize: 13, color: '#374151' }}>{fmtMoney(r.stripePayout)}</td>
-                <td style={{ padding: '11px 16px', fontSize: 12, color: '#C0392B' }}>{fmtMoney(r.platformFee)}</td>
+                <td style={{ padding: '11px 16px', fontSize: 12, color: '#00A9AC' }}>{fmtMoney(r.platformFee)}</td>
                 <td style={{ padding: '11px 16px', fontSize: 12, color: '#6B7280' }}>{fmtMoney(r.stripeFee)}</td>
                 <td style={{ padding: '11px 16px' }}>
                   {r.matched

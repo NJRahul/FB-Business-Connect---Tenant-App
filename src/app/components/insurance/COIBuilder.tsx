@@ -22,7 +22,7 @@ function COICard({ cert }: { cert: InsuranceCertificate }) {
           <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>{cert.holder_email}</p>
         </div>
         {cert.reissue_required && (
-          <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: '#FEF2F2', color: '#C0392B' }}>Reissue required</span>
+          <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: '#F0FBFB', color: '#00A9AC' }}>Reissue required</span>
         )}
         {!cert.reissue_required && !isExpired && (
           <span className="px-2 py-0.5 rounded text-xs font-semibold" style={{ background: '#F0FDF4', color: '#27AE60' }}>Active</span>
@@ -134,9 +134,9 @@ function NewCOIForm({ onCreated }: { onCreated: (cert: InsuranceCertificate) => 
       <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem', marginBottom: 16 }}>Issue new certificate</p>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-          <AlertTriangle size={14} style={{ color: '#C0392B' }} />
-          <p style={{ color: '#C0392B', fontSize: '0.875rem' }}>{error}</p>
+        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+          <AlertTriangle size={14} style={{ color: '#00A9AC' }} />
+          <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
         </div>
       )}
 

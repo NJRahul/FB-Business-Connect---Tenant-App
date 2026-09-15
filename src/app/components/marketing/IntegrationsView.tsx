@@ -9,7 +9,7 @@ const POST_STATUS_CFG: Record<PostStatus, { label: string; color: string; bg: st
   draft:     { label: 'Draft', color: '#6B7280', bg: '#F3F4F6' },
   scheduled: { label: 'Scheduled', color: '#D97706', bg: '#FEF3C7' },
   published: { label: 'Published', color: '#15803D', bg: '#F0FDF4' },
-  failed:    { label: 'Failed', color: '#DC2626', bg: '#FEF2F2' },
+  failed:    { label: 'Failed', color: '#DC2626', bg: '#F0FBFB' },
 };
 
 const PLATFORM_CFG: Record<SocialPlatform, { label: string; color: string; bg: string }> = {
@@ -70,7 +70,7 @@ function SocialSection() {
 
       {/* Composer */}
       {composing && (
-        <div style={{ border: '1px solid #C0392B', borderRadius: 10, background: '#fff', padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 16 }}>
+        <div style={{ border: '1px solid #00A9AC', borderRadius: 10, background: '#fff', padding: '20px 22px', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ fontWeight: 700, fontSize: 15, color: '#1A1A1A' }}>New Social Post</div>
 
           <div>
@@ -114,9 +114,9 @@ function SocialSection() {
               {(['now', 'later'] as const).map(m => (
                 <button key={m} onClick={() => setScheduleMode(m)} style={{
                   padding: '6px 14px', borderRadius: 7,
-                  border: `1.5px solid ${scheduleMode === m ? '#C0392B' : '#E5E7EB'}`,
-                  background: scheduleMode === m ? '#FDEDEC' : '#fff',
-                  color: scheduleMode === m ? '#C0392B' : '#6B7280',
+                  border: `1.5px solid ${scheduleMode === m ? '#00A9AC' : '#E5E7EB'}`,
+                  background: scheduleMode === m ? '#E6F7F7' : '#fff',
+                  color: scheduleMode === m ? '#00A9AC' : '#6B7280',
                   cursor: 'pointer', fontSize: 13, fontWeight: 600,
                 }}>
                   {m === 'now' ? 'Post Now' : 'Schedule'}
@@ -139,7 +139,7 @@ function SocialSection() {
               disabled={!caption.trim() || platforms.length === 0}
               style={{
                 padding: '9px 18px', borderRadius: 7, border: 'none',
-                background: sent ? '#27AE60' : (caption.trim() && platforms.length > 0 ? '#C0392B' : '#E5E7EB'),
+                background: sent ? '#27AE60' : (caption.trim() && platforms.length > 0 ? '#00A9AC' : '#E5E7EB'),
                 color: caption.trim() && platforms.length > 0 ? '#fff' : '#9CA3AF',
                 cursor: caption.trim() && platforms.length > 0 ? 'pointer' : 'not-allowed',
                 fontWeight: 600, fontSize: 13,
@@ -230,7 +230,7 @@ function EmailProviderSection() {
               onClick={() => p.connected ? p.setConnected(false) : handleConnect(p.id, p.setConnected)}
               style={{
                 padding: '8px 16px', borderRadius: 7, border: '1px solid #E5E7EB',
-                background: p.connected ? '#fff' : '#C0392B', color: p.connected ? '#6B7280' : '#fff',
+                background: p.connected ? '#fff' : '#00A9AC', color: p.connected ? '#6B7280' : '#fff',
                 cursor: 'pointer', fontWeight: 600, fontSize: 13,
                 display: 'flex', alignItems: 'center', gap: 6,
               }}
@@ -282,7 +282,7 @@ function GBPSection() {
                 onClick={() => handleConnect(gbp.id)}
                 style={{
                   padding: '7px 14px', borderRadius: 7, border: '1px solid #E5E7EB',
-                  background: gbp.connected ? '#fff' : '#C0392B', color: gbp.connected ? '#6B7280' : '#fff',
+                  background: gbp.connected ? '#fff' : '#00A9AC', color: gbp.connected ? '#6B7280' : '#fff',
                   cursor: 'pointer', fontWeight: 600, fontSize: 13,
                   display: 'flex', alignItems: 'center', gap: 6,
                 }}
@@ -348,7 +348,7 @@ function LSASection() {
                 <CheckCircle size={14} /> Connected · Synced {lsa.lastSyncAt ? new Date(lsa.lastSyncAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) : ''}
               </span>
             ) : (
-              <button style={{ padding: '7px 14px', borderRadius: 7, border: 'none', background: '#C0392B', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
+              <button style={{ padding: '7px 14px', borderRadius: 7, border: 'none', background: '#00A9AC', color: '#fff', cursor: 'pointer', fontWeight: 600, fontSize: 13 }}>
                 Connect LSA
               </button>
             )}
@@ -439,7 +439,7 @@ function WebAnalyticsSection() {
               onClick={() => setConfig(prev => ({ ...prev, [s.key]: !(prev as any)[s.key] }))}
               style={{
                 width: 44, height: 24, borderRadius: 99, border: 'none', cursor: 'pointer',
-                background: (config as any)[s.key] ? '#C0392B' : '#D1D5DB',
+                background: (config as any)[s.key] ? '#00A9AC' : '#D1D5DB',
                 position: 'relative', transition: 'background 0.2s', flexShrink: 0,
               }}
             >
@@ -458,7 +458,7 @@ function WebAnalyticsSection() {
           onClick={handleSave}
           style={{
             padding: '10px 22px', borderRadius: 8, border: 'none',
-            background: saved ? '#27AE60' : '#C0392B', color: '#fff',
+            background: saved ? '#27AE60' : '#00A9AC', color: '#fff',
             fontWeight: 600, fontSize: 14, cursor: 'pointer',
           }}
         >
@@ -494,11 +494,11 @@ export default function IntegrationsView() {
             style={{
               display: 'flex', alignItems: 'center', gap: 10,
               width: '100%', padding: '12px 16px', border: 'none',
-              background: active === s.id ? '#FDEDEC' : 'transparent',
-              color: active === s.id ? '#C0392B' : '#6B7280',
+              background: active === s.id ? '#E6F7F7' : 'transparent',
+              color: active === s.id ? '#00A9AC' : '#6B7280',
               fontWeight: active === s.id ? 700 : 500, fontSize: 13,
               cursor: 'pointer', textAlign: 'left',
-              borderRight: active === s.id ? '3px solid #C0392B' : '3px solid transparent',
+              borderRight: active === s.id ? '3px solid #00A9AC' : '3px solid transparent',
             }}
           >
             <s.icon size={15} /> {s.label}

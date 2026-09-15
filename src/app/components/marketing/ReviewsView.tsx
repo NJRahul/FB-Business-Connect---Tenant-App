@@ -38,9 +38,9 @@ function ReviewCard({ review }: { review: Review }) {
       <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div style={{
-            width: 40, height: 40, borderRadius: '50%', background: '#FDEDEC',
+            width: 40, height: 40, borderRadius: '50%', background: '#E6F7F7',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#C0392B', fontSize: 15,
+            fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#00A9AC', fontSize: 15,
           }}>
             {review.customerName.split(' ').map(n => n[0]).join('')}
           </div>
@@ -111,7 +111,7 @@ function ReviewCard({ review }: { review: Review }) {
             style={{
               display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px',
               borderRadius: 7, border: 'none', cursor: response.trim() ? 'pointer' : 'not-allowed',
-              background: saved ? '#27AE60' : (response.trim() ? '#C0392B' : '#E5E7EB'),
+              background: saved ? '#27AE60' : (response.trim() ? '#00A9AC' : '#E5E7EB'),
               color: response.trim() ? '#fff' : '#9CA3AF', fontSize: 13, fontWeight: 600,
               transition: 'background 0.2s',
             }}
@@ -233,8 +233,8 @@ export default function ReviewsView() {
           <button key={t.id} onClick={() => setTab(t.id)} style={{
             padding: '10px 20px', border: 'none', background: 'none', cursor: 'pointer',
             fontWeight: 600, fontSize: 14,
-            color: tab === t.id ? '#C0392B' : '#6B7280',
-            borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+            color: tab === t.id ? '#00A9AC' : '#6B7280',
+            borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
             marginBottom: -2,
           }}>
             {t.label}
@@ -254,8 +254,8 @@ export default function ReviewsView() {
                   onClick={() => setFilterRating(r)}
                   style={{
                     padding: '4px 10px', borderRadius: 6, border: '1px solid #E5E7EB',
-                    background: filterRating === r ? '#FDEDEC' : '#fff',
-                    color: filterRating === r ? '#C0392B' : '#6B7280',
+                    background: filterRating === r ? '#E6F7F7' : '#fff',
+                    color: filterRating === r ? '#00A9AC' : '#6B7280',
                     cursor: 'pointer', fontSize: 12, fontWeight: 500,
                   }}
                 >
@@ -271,8 +271,8 @@ export default function ReviewsView() {
                   onClick={() => setFilterSource(v)}
                   style={{
                     padding: '4px 10px', borderRadius: 6, border: '1px solid #E5E7EB',
-                    background: filterSource === v ? '#FDEDEC' : '#fff',
-                    color: filterSource === v ? '#C0392B' : '#6B7280',
+                    background: filterSource === v ? '#E6F7F7' : '#fff',
+                    color: filterSource === v ? '#00A9AC' : '#6B7280',
                     cursor: 'pointer', fontSize: 12, fontWeight: 500,
                   }}
                 >

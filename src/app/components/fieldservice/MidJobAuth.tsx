@@ -7,7 +7,7 @@ import type { MidJobAuth as MidJobAuthType, AuthStatus } from './types';
 const STATUS_CONFIG: Record<AuthStatus, { bg: string; color: string; border: string; label: string; icon: React.ReactNode }> = {
   pending:   { bg: '#FEF3C7', color: '#B45309', border: '#F59E0B', label: 'Awaiting Response', icon: <Clock size={14} /> },
   approved:  { bg: '#D1FAE5', color: '#065F46', border: '#10B981', label: 'Approved',           icon: <CheckCircle size={14} /> },
-  declined:  { bg: '#FEE2E2', color: '#991B1B', border: '#EF4444', label: 'Declined',           icon: <XCircle size={14} /> },
+  declined:  { bg: '#FEE2E2', color: '#005F62', border: '#EF4444', label: 'Declined',           icon: <XCircle size={14} /> },
   timeout:   { bg: '#F3F4F6', color: '#4B5563', border: '#9CA3AF', label: 'Timed Out',          icon: <Clock size={14} /> },
   bypassed:  { bg: '#EDE9FE', color: '#5B21B6', border: '#7C3AED', label: 'Bypassed',           icon: <AlertTriangle size={14} /> },
 };
@@ -68,7 +68,7 @@ function AuthDetail({ auth, onStatusChange }: AuthDetailProps) {
           <div style={{ fontSize: 13, color: '#6B7280' }}>{auth.visitSummary}</div>
         </div>
         <div style={{ textAlign: 'right', flexShrink: 0 }}>
-          <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#C0392B' }}>${auth.price.toFixed(2)}</div>
+          <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#00A9AC' }}>${auth.price.toFixed(2)}</div>
           <div style={{ fontSize: 11, color: '#9CA3AF' }}>additional charge</div>
         </div>
       </div>
@@ -164,7 +164,7 @@ function AuthDetail({ auth, onStatusChange }: AuthDetailProps) {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20 }}>
           <div style={{ background: '#fff', borderRadius: 16, width: '100%', maxWidth: 400, overflow: 'hidden', boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}>
             {/* Mobile-style header */}
-            <div style={{ background: '#C0392B', padding: '20px 20px 16px', color: '#fff' }}>
+            <div style={{ background: '#00A9AC', padding: '20px 20px 16px', color: '#fff' }}>
               <div style={{ fontSize: 11, opacity: 0.8, marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.08em' }}>Authorization Request</div>
               <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 20, fontWeight: 800 }}>Additional Work Found</div>
               <div style={{ fontSize: 13, opacity: 0.85, marginTop: 4 }}>{auth.visitSummary}</div>
@@ -179,13 +179,13 @@ function AuthDetail({ auth, onStatusChange }: AuthDetailProps) {
                   ))}
                 </div>
               )}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: '#FDEDEC', border: '1px solid #C0392B', borderRadius: 10, marginBottom: 16 }}>
-                <span style={{ fontWeight: 600, color: '#C0392B' }}>Additional Charge</span>
-                <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#C0392B' }}>${auth.price.toFixed(2)}</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', background: '#E6F7F7', border: '1px solid #00A9AC', borderRadius: 10, marginBottom: 16 }}>
+                <span style={{ fontWeight: 600, color: '#00A9AC' }}>Additional Charge</span>
+                <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#00A9AC' }}>${auth.price.toFixed(2)}</span>
               </div>
               <div style={{ display: 'flex', gap: 10 }}>
                 <button style={{ flex: 1, padding: '12px 0', border: '2px solid #E5E7EB', borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: 'pointer', background: '#fff', color: '#6B7280' }}>Decline</button>
-                <button style={{ flex: 2, padding: '12px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Approve & Authorize</button>
+                <button style={{ flex: 2, padding: '12px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 10, fontSize: 15, fontWeight: 700, cursor: 'pointer' }}>Approve & Authorize</button>
               </div>
               <div style={{ fontSize: 11, color: '#9CA3AF', textAlign: 'center', marginTop: 10 }}>
                 Secured link · expires in {auth.timeoutMinutes} min · {auth.customerPhone}
@@ -278,7 +278,7 @@ function NewAuthModal({ onClose, onCreate }: NewAuthModalProps) {
         </div>
         <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          <button onClick={handleSubmit} style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
             Send Authorization Request
           </button>
         </div>
@@ -321,16 +321,16 @@ export function MidJobAuth() {
         <div style={{ display: 'flex', gap: 6 }}>
           {(['all', 'pending', 'approved', 'declined', 'bypassed'] as const).map(f => (
             <button key={f} onClick={() => setFilter(f)}
-              style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filter === f ? 700 : 400, cursor: 'pointer', border: filter === f ? '1.5px solid #C0392B' : '1px solid #E5E7EB', background: filter === f ? '#FDEDEC' : '#fff', color: filter === f ? '#C0392B' : '#6B7280', textTransform: 'capitalize' }}>
+              style={{ padding: '6px 14px', borderRadius: 8, fontSize: 13, fontWeight: filter === f ? 700 : 400, cursor: 'pointer', border: filter === f ? '1.5px solid #00A9AC' : '1px solid #E5E7EB', background: filter === f ? '#E6F7F7' : '#fff', color: filter === f ? '#00A9AC' : '#6B7280', textTransform: 'capitalize' }}>
               {f === 'all' ? 'All' : STATUS_CONFIG[f]?.label ?? f}
               {f === 'pending' && pendingCount > 0 && (
-                <span style={{ marginLeft: 6, background: '#C0392B', color: '#fff', borderRadius: '50%', padding: '0 6px', fontSize: 11, fontWeight: 700 }}>{pendingCount}</span>
+                <span style={{ marginLeft: 6, background: '#00A9AC', color: '#fff', borderRadius: '50%', padding: '0 6px', fontSize: 11, fontWeight: 700 }}>{pendingCount}</span>
               )}
             </button>
           ))}
         </div>
         <button onClick={() => setShowNew(true)}
-          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
           <Send size={14} /> New Authorization
         </button>
       </div>

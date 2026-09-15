@@ -36,7 +36,7 @@ function CopyButton({ text }: { text: string }) {
       style={{
         display: 'flex', alignItems: 'center', gap: 6, padding: '10px 18px',
         borderRadius: 8, border: 'none', cursor: 'pointer',
-        background: copied ? '#27AE60' : '#C0392B', color: '#fff',
+        background: copied ? '#27AE60' : '#00A9AC', color: '#fff',
         fontWeight: 700, fontSize: 14, transition: 'background 0.2s',
       }}
     >
@@ -55,10 +55,10 @@ function ReferralCodeCard({ codeId }: { codeId: string }) {
   return (
     <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', overflow: 'hidden' }}>
       {/* Code display */}
-      <div style={{ background: '#FDEDEC', padding: '20px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ background: '#E6F7F7', padding: '20px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div>
           <div style={{ fontSize: 12, color: '#9CA3AF', marginBottom: 4 }}>Referral Code for {rc.customerName}</div>
-          <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 32, letterSpacing: 2, color: '#C0392B' }}>{rc.code}</div>
+          <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 32, letterSpacing: 2, color: '#00A9AC' }}>{rc.code}</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 4 }}>
             Reward: {rc.rewardType === 'fixed_credit' ? `R ${rc.rewardValue} credit` : rc.rewardType === 'pct_discount' ? `${rc.rewardValue}% off` : 'Free service'}
           </div>
@@ -160,7 +160,7 @@ function IdMeSection() {
           onClick={handleSave}
           style={{
             padding: '7px 14px', borderRadius: 7, border: 'none', cursor: 'pointer',
-            background: saved ? '#27AE60' : '#C0392B', color: '#fff',
+            background: saved ? '#27AE60' : '#00A9AC', color: '#fff',
             fontSize: 13, fontWeight: 600,
           }}
         >
@@ -177,9 +177,9 @@ function IdMeSection() {
             <div key={c.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', background: '#F9FAFB', borderRadius: 8 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <div style={{
-                  width: 36, height: 36, borderRadius: '50%', background: '#FDEDEC',
+                  width: 36, height: 36, borderRadius: '50%', background: '#E6F7F7',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#C0392B', fontSize: 13,
+                  fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#00A9AC', fontSize: 13,
                 }}>
                   {c.firstName[0]}{c.lastName[0]}
                 </div>
@@ -252,7 +252,7 @@ function ProgramSettings() {
             onClick={handleSave}
             style={{
               width: '100%', padding: '10px 18px', borderRadius: 7, border: 'none',
-              background: saved ? '#27AE60' : '#C0392B', color: '#fff',
+              background: saved ? '#27AE60' : '#00A9AC', color: '#fff',
               fontWeight: 600, fontSize: 14, cursor: 'pointer',
             }}
           >
@@ -291,7 +291,7 @@ export default function ReferralsView() {
           <div key={s.label} style={{ border: '1px solid #E5E7EB', borderRadius: 10, padding: '16px 20px', background: '#fff' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
               <span style={{ fontSize: 12, color: '#6B7280' }}>{s.label}</span>
-              <s.icon size={16} color="#C0392B" />
+              <s.icon size={16} color="#00A9AC" />
             </div>
             <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 28, color: '#1A1A1A' }}>{s.value}</div>
             <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 2 }}>{s.sub}</div>
@@ -305,8 +305,8 @@ export default function ReferralsView() {
           <button key={t.id} onClick={() => setTab(t.id)} style={{
             padding: '10px 20px', border: 'none', background: 'none', cursor: 'pointer',
             fontWeight: 600, fontSize: 14,
-            color: tab === t.id ? '#C0392B' : '#6B7280',
-            borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+            color: tab === t.id ? '#00A9AC' : '#6B7280',
+            borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
             marginBottom: -2,
           }}>
             {t.label}

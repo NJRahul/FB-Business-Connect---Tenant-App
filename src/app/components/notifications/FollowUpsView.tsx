@@ -7,7 +7,7 @@ const CATEGORY_META: Record<FollowUpCategory, { label: string; color: string; bg
   maintenance:      { label: 'Maintenance',      color: '#2563EB', bg: '#EFF6FF' },
   rotation:         { label: 'Tire Rotation',    color: '#7E22CE', bg: '#FDF4FF' },
   seasonal:         { label: 'Seasonal',         color: '#D97706', bg: '#FEF3C7' },
-  'vehicle-specific': { label: 'Vehicle Specific', color: '#C0392B', bg: '#FDEDEC' },
+  'vehicle-specific': { label: 'Vehicle Specific', color: '#00A9AC', bg: '#E6F7F7' },
 };
 
 const STATUS_META: Record<FollowUpStatus, { label: string; color: string; bg: string; icon: React.ElementType }> = {
@@ -66,8 +66,8 @@ export function FollowUpsView() {
             style={{
               padding: '9px 16px', border: 'none', background: 'none', cursor: 'pointer',
               fontWeight: 600, fontSize: 13,
-              color: activeTab === t.id ? '#C0392B' : '#6B7280',
-              borderBottom: activeTab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+              color: activeTab === t.id ? '#00A9AC' : '#6B7280',
+              borderBottom: activeTab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
               marginBottom: -2,
             }}
           >

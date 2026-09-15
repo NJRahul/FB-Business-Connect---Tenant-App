@@ -21,7 +21,7 @@ const AGING_CONFIG: Record<AgingBucket, { label: string; color: string; bg: stri
   current:  { label: 'Current',   color: '#15803D', bg: '#F0FDF4' },
   '1_30':   { label: '1–30 days', color: '#B45309', bg: '#FFF7ED' },
   '31_60':  { label: '31–60 days',color: '#C2410C', bg: '#FFF3CD' },
-  '61_90':  { label: '61–90 days',color: '#B91C1C', bg: '#FEF2F2' },
+  '61_90':  { label: '61–90 days',color: '#B91C1C', bg: '#F0FBFB' },
   '90_plus':{ label: '90+ days',  color: '#7F1D1D', bg: '#FEE2E2' },
 };
 
@@ -29,7 +29,7 @@ const INV_STATUS: Record<InvoiceStatus, { label: string; color: string; bg: stri
   draft:   { label: 'Draft',   color: '#6B7280', bg: '#F9FAFB' },
   open:    { label: 'Open',    color: '#2563EB', bg: '#EFF6FF' },
   paid:    { label: 'Paid',    color: '#15803D', bg: '#F0FDF4' },
-  overdue: { label: 'Overdue', color: '#B91C1C', bg: '#FEF2F2' },
+  overdue: { label: 'Overdue', color: '#B91C1C', bg: '#F0FBFB' },
   voided:  { label: 'Voided',  color: '#6B7280', bg: '#F9FAFB' },
 };
 
@@ -117,8 +117,8 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
           <ArrowLeft size={14} /> Back
         </button>
         <div className="flex items-center gap-3 flex-1">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-            <Building2 size={18} color="#C0392B" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+            <Building2 size={18} color="#00A9AC" />
           </div>
           <div>
             <div className="flex items-center gap-2">
@@ -133,7 +133,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
         </div>
         <button onClick={() => onOpenSession(acct.id)}
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> Start Fleet Session
         </button>
       </div>
@@ -144,8 +144,8 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
           <button key={t.id} onClick={() => setTab(t.id)}
             className="flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium transition-colors"
             style={{
-              color: tab === t.id ? '#C0392B' : '#6B7280',
-              borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+              color: tab === t.id ? '#00A9AC' : '#6B7280',
+              borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
             }}>
             <t.icon size={14} /> {t.label}
           </button>
@@ -203,7 +203,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
           <div className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
             <div className="flex items-center justify-between mb-4">
               <h3 style={{ fontWeight: 600, fontSize: '0.875rem', color: '#1A1A1A' }}>Authorized Buyers</h3>
-              <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg" style={{ background: '#FDEDEC', color: '#C0392B' }}>
+              <button className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg" style={{ background: '#E6F7F7', color: '#00A9AC' }}>
                 <Plus size={12} /> Add Buyer
               </button>
             </div>
@@ -238,7 +238,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             <div className="h-3 rounded-full overflow-hidden" style={{ background: '#F3F4F6' }}>
               <div className="h-full rounded-full transition-all" style={{
                 width: `${Math.min(100, (acct.outstandingBalanceCents / acct.creditLimitCents) * 100)}%`,
-                background: acct.outstandingBalanceCents / acct.creditLimitCents > 0.8 ? '#EF4444' : '#C0392B',
+                background: acct.outstandingBalanceCents / acct.creditLimitCents > 0.8 ? '#EF4444' : '#00A9AC',
               }} />
             </div>
             <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 4 }}>
@@ -265,7 +265,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
               </button>
               <button onClick={() => setShowAddVehicle(true)}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium"
-                style={{ background: '#C0392B', color: '#fff' }}>
+                style={{ background: '#00A9AC', color: '#fff' }}>
                 <Plus size={13} /> Add Vehicle
               </button>
             </div>
@@ -346,7 +346,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
                   className="px-4 py-2 rounded-lg text-sm" style={{ background: '#fff', color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
                 <button onClick={addVehicle} disabled={!vYear || !vMake || !vModel}
                   className="px-4 py-2 rounded-lg text-sm font-medium"
-                  style={{ background: '#C0392B', color: '#fff', opacity: vYear && vMake && vModel ? 1 : 0.4 }}>
+                  style={{ background: '#00A9AC', color: '#fff', opacity: vYear && vMake && vModel ? 1 : 0.4 }}>
                   Add Vehicle
                 </button>
               </div>
@@ -366,7 +366,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
                 {pricingTier ? `${pricingTier.name} — ${pricingTier.discountValue}% off retail` : 'No tier assigned (retail pricing)'}
               </p>
             </div>
-            <button className="px-3 py-1.5 rounded-lg text-sm" style={{ background: '#FDEDEC', color: '#C0392B' }}>Change Tier</button>
+            <button className="px-3 py-1.5 rounded-lg text-sm" style={{ background: '#E6F7F7', color: '#00A9AC' }}>Change Tier</button>
           </div>
 
           {pricingMenu ? (
@@ -418,7 +418,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
                         <td className="px-4 py-3" style={{ fontSize: '0.825rem', color: '#9CA3AF', textDecoration: 'line-through', fontVariantNumeric: 'tabular-nums' }}>
                           ${line.retailPrice.toFixed(2)}
                         </td>
-                        <td className="px-4 py-3" style={{ fontSize: '0.9rem', fontWeight: 700, color: '#C0392B', fontVariantNumeric: 'tabular-nums' }}>
+                        <td className="px-4 py-3" style={{ fontSize: '0.9rem', fontWeight: 700, color: '#00A9AC', fontVariantNumeric: 'tabular-nums' }}>
                           ${line.agreedPrice.toFixed(2)}
                         </td>
                         <td className="px-4 py-3">
@@ -458,7 +458,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             <div className="rounded-xl p-10 text-center" style={{ background: '#F9FAFB', border: '1px dashed #D1D5DB' }}>
               <Tag size={28} color="#D1D5DB" className="mx-auto mb-3" />
               <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: 12 }}>No pre-agreed pricing menu for this fleet.</p>
-              <button className="px-4 py-2 rounded-lg text-sm font-medium" style={{ background: '#C0392B', color: '#fff' }}>
+              <button className="px-4 py-2 rounded-lg text-sm font-medium" style={{ background: '#00A9AC', color: '#fff' }}>
                 Create Pricing Menu
               </button>
             </div>
@@ -561,7 +561,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
               <button className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg" style={{ background: '#F9FAFB', color: '#374151', border: '1px solid #E5E7EB' }}>
                 <Download size={13} /> CSV
               </button>
-              <button className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg" style={{ background: '#C0392B', color: '#fff' }}>
+              <button className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-lg" style={{ background: '#00A9AC', color: '#fff' }}>
                 <Download size={13} /> PDF
               </button>
             </div>
@@ -585,7 +585,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
           <div className="rounded-xl p-5" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
             <div className="flex items-center justify-between mb-4">
               <h4 style={{ fontWeight: 600, fontSize: '0.875rem', color: '#1A1A1A' }}>Closing Balance</h4>
-              <span style={{ fontWeight: 700, fontSize: '1.125rem', color: '#C0392B' }}>{cents(acct.outstandingBalanceCents)}</span>
+              <span style={{ fontWeight: 700, fontSize: '1.125rem', color: '#00A9AC' }}>{cents(acct.outstandingBalanceCents)}</span>
             </div>
             <div className="grid grid-cols-5 gap-2">
               {(Object.entries(AGING_CONFIG) as [AgingBucket, typeof AGING_CONFIG[AgingBucket]][]).map(([bucket, cfg]) => (
@@ -626,7 +626,7 @@ export function FleetDetailView({ account, onBack, onOpenSession }: Props) {
             { date: '2026-04-01', event: 'Invoice INV-2026-0422 issued — Net 30 due 2026-05-01', actor: 'System', type: 'invoice' },
           ].map((e, i) => (
             <div key={i} className="flex items-start gap-3 px-4 py-3 rounded-xl" style={{ background: '#fff', border: '1px solid #F3F4F6' }}>
-              <div className="w-2 h-2 rounded-full mt-2 shrink-0" style={{ background: e.type === 'session' ? '#60A5FA' : e.type === 'payment' ? '#4ADE80' : e.type === 'approval' ? '#FBBF24' : '#C0392B' }} />
+              <div className="w-2 h-2 rounded-full mt-2 shrink-0" style={{ background: e.type === 'session' ? '#60A5FA' : e.type === 'payment' ? '#4ADE80' : e.type === 'approval' ? '#FBBF24' : '#00A9AC' }} />
               <div className="flex-1">
                 <p style={{ fontSize: '0.825rem', color: '#1A1A1A' }}>{e.event}</p>
                 <p style={{ fontSize: '0.75rem', color: '#9CA3AF', marginTop: 1 }}>{new Date(e.date).toLocaleDateString()} · {e.actor}</p>

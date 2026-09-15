@@ -26,9 +26,9 @@ export function JobTemplates({ onUseTemplate }: Props) {
         <button
           onClick={() => setAdding(true)}
           className="flex items-center gap-2 px-4 py-2 rounded-[6px] text-white text-sm font-semibold"
-          style={{ background: '#C0392B' }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+          style={{ background: '#00A9AC' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
         >
           <Plus size={15} /> New Template
         </button>
@@ -42,7 +42,7 @@ export function JobTemplates({ onUseTemplate }: Props) {
               key={tpl.id}
               className="bg-white rounded-[10px] p-5 flex flex-col"
               style={{
-                border: isSelected ? '2px solid #C0392B' : '1px solid #E5E7EB',
+                border: isSelected ? '2px solid #00A9AC' : '1px solid #E5E7EB',
                 boxShadow: '0 1px 4px rgba(0,0,0,0.07)',
               }}
             >
@@ -85,7 +85,7 @@ export function JobTemplates({ onUseTemplate }: Props) {
                     {tpl.recommendedAddonIds.map(id => {
                       const ao = ADDON_SERVICES.find(a => a.id === id);
                       return ao ? (
-                        <span key={id} className="px-1.5 py-0.5 rounded text-xs" style={{ background: '#FDEDEC', color: '#C0392B' }}>+{ao.name}</span>
+                        <span key={id} className="px-1.5 py-0.5 rounded text-xs" style={{ background: '#E6F7F7', color: '#00A9AC' }}>+{ao.name}</span>
                       ) : null;
                     })}
                   </div>
@@ -99,11 +99,11 @@ export function JobTemplates({ onUseTemplate }: Props) {
                 }}
                 className="w-full flex items-center justify-center gap-2 py-2.5 rounded-[6px] text-sm font-semibold transition-all"
                 style={{
-                  background: isSelected ? '#27AE60' : '#C0392B',
+                  background: isSelected ? '#27AE60' : '#00A9AC',
                   color: '#fff',
                 }}
-                onMouseEnter={e => { if (!isSelected) e.currentTarget.style.background = '#A93226'; }}
-                onMouseLeave={e => { if (!isSelected) e.currentTarget.style.background = '#C0392B'; }}
+                onMouseEnter={e => { if (!isSelected) e.currentTarget.style.background = '#007F82'; }}
+                onMouseLeave={e => { if (!isSelected) e.currentTarget.style.background = '#00A9AC'; }}
               >
                 {isSelected ? <><Check size={14} /> Applied</> : <><Zap size={14} /> Use Template</>}
               </button>
@@ -151,7 +151,7 @@ export function JobTemplates({ onUseTemplate }: Props) {
             </div>
             <div className="flex gap-2 mt-5">
               <button onClick={() => setAdding(false)} className="flex-1 py-2 rounded-[6px] text-sm" style={{ border: '1.5px solid #E5E7EB', color: '#6B7280' }}>Cancel</button>
-              <button onClick={() => setAdding(false)} className="flex-1 py-2.5 rounded-[6px] text-sm text-white font-semibold" style={{ background: '#C0392B' }}>Save Template</button>
+              <button onClick={() => setAdding(false)} className="flex-1 py-2.5 rounded-[6px] text-sm text-white font-semibold" style={{ background: '#00A9AC' }}>Save Template</button>
             </div>
           </div>
         </div>

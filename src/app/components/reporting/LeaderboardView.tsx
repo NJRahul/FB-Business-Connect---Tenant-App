@@ -118,11 +118,11 @@ export function LeaderboardView() {
           return (
             <div key={t.techId} style={{ border: `2px solid ${borderColors[rank]}`, borderRadius: 10, background: '#fff', padding: '18px 18px', textAlign: 'center' }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>{medals[rank] || `#${rank + 1}`}</div>
-              <div style={{ width: 44, height: 44, borderRadius: 99, background: '#FDEDEC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 16, color: '#C0392B', margin: '0 auto 10px' }}>
+              <div style={{ width: 44, height: 44, borderRadius: 99, background: '#E6F7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 16, color: '#00A9AC', margin: '0 auto 10px' }}>
                 {t.initials}
               </div>
               <div style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A', marginBottom: 2 }}>{t.name}</div>
-              <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 22, color: '#C0392B' }}>{fmtMoney(t.revenue * 100)}</div>
+              <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 22, color: '#00A9AC' }}>{fmtMoney(t.revenue * 100)}</div>
               <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 4 }}>{t.visitsCompleted} jobs completed</div>
               <div style={{ marginTop: 8, display: 'flex', justifyContent: 'center' }}>
                 <Stars rating={t.avgRating} />
@@ -156,7 +156,7 @@ export function LeaderboardView() {
                   </td>
                   <td style={{ padding: '12px 14px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <div style={{ width: 32, height: 32, borderRadius: 99, background: '#FDEDEC', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#C0392B' }}>{t.initials}</div>
+                      <div style={{ width: 32, height: 32, borderRadius: 99, background: '#E6F7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, color: '#00A9AC' }}>{t.initials}</div>
                       <div>
                         <div style={{ fontSize: 13, fontWeight: 600, color: '#1A1A1A' }}>{t.name}</div>
                         <RankChange delta={t.rankChange} />

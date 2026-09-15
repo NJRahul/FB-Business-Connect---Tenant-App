@@ -7,7 +7,7 @@ const cents = (c: number) => c ? `R ${(c / 100).toFixed(2)}` : '—';
 
 function ServiceTypeBadge({ type }: { type: string }) {
   const colors: Record<string, { bg: string; color: string }> = {
-    'Full Inspection': { bg: '#FDEDEC', color: '#C0392B' },
+    'Full Inspection': { bg: '#E6F7F7', color: '#00A9AC' },
     'Tire Service':    { bg: '#EFF6FF', color: '#1D4ED8' },
     'Oil Change':      { bg: '#F0FDF4', color: '#15803D' },
   };
@@ -50,7 +50,7 @@ export function InspectionTemplatesView({ templates, onUpdate }: Props) {
           const blank: InspectionTemplate = { id: `tmpl_${Date.now()}`, shopId: 'shop_001', name: 'New Template', serviceType: 'Full Inspection', categories: ['General'], items: [], isDefault: false, version: 1, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() };
           onUpdate([...templates, blank]);
           setEditing(blank);
-        }} className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#C0392B', color: '#fff' }}>
+        }} className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> New Template
         </button>
       </div>
@@ -88,7 +88,7 @@ export function InspectionTemplatesView({ templates, onUpdate }: Props) {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={() => setEditing(t)} className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium" style={{ background: '#C0392B', color: '#fff' }}>
+                  <button onClick={() => setEditing(t)} className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-sm font-medium" style={{ background: '#00A9AC', color: '#fff' }}>
                     <Settings size={12} /> Edit
                   </button>
                   <button onClick={() => cloneTemplate(t)} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm" style={{ background: '#F9FAFB', color: '#6B7280', border: '1px solid #E5E7EB' }}>
@@ -190,7 +190,7 @@ function TemplateBuilder({ template, onSave, onCancel }: {
         </div>
         <button onClick={() => onSave({ ...template, name, serviceType, items, categories, version: template.version + 1, updatedAt: new Date().toISOString() })}
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold"
-          style={{ background: '#C0392B', color: '#fff' }}>
+          style={{ background: '#00A9AC', color: '#fff' }}>
           <Check size={13} /> Save Template
         </button>
       </div>
@@ -200,7 +200,7 @@ function TemplateBuilder({ template, onSave, onCancel }: {
         <div className="w-72 shrink-0 flex flex-col overflow-hidden rounded-xl" style={{ border: '1px solid #E5E7EB', background: '#fff' }}>
           <div className="px-3 py-2.5 flex items-center justify-between" style={{ borderBottom: '1px solid #F3F4F6', background: '#F9FAFB' }}>
             <p style={{ fontSize: '0.775rem', fontWeight: 600, color: '#374151' }}>{items.length} Items</p>
-            <button onClick={addCategory} className="text-xs px-2 py-0.5 rounded" style={{ color: '#C0392B', background: '#FDEDEC' }}>+ Category</button>
+            <button onClick={addCategory} className="text-xs px-2 py-0.5 rounded" style={{ color: '#00A9AC', background: '#E6F7F7' }}>+ Category</button>
           </div>
           <div className="flex-1 overflow-y-auto">
             {categories.map(cat => {
@@ -233,13 +233,13 @@ function TemplateBuilder({ template, onSave, onCancel }: {
                             onClick={() => setSelectedItemId(item.id)}
                             className="flex items-center gap-2 px-3 py-2.5 cursor-pointer"
                             style={{
-                              background: isSelected ? '#FDEDEC' : isDragOver ? '#F5F5F5' : 'transparent',
+                              background: isSelected ? '#E6F7F7' : isDragOver ? '#F5F5F5' : 'transparent',
                               borderBottom: '1px solid #F9FAFB',
-                              borderTop: isDragOver ? '2px solid #C0392B' : undefined,
+                              borderTop: isDragOver ? '2px solid #00A9AC' : undefined,
                             }}>
                             <GripVertical size={12} color="#D1D5DB" style={{ cursor: 'grab', shrink: 0 }} />
                             <div className="flex-1 min-w-0">
-                              <p style={{ fontSize: '0.8rem', fontWeight: isSelected ? 600 : 400, color: isSelected ? '#C0392B' : '#1A1A1A', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.name}</p>
+                              <p style={{ fontSize: '0.8rem', fontWeight: isSelected ? 600 : 400, color: isSelected ? '#00A9AC' : '#1A1A1A', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.name}</p>
                               <div className="flex items-center gap-1.5 mt-0.5">
                                 {item.photoRequirement === 'required' && <Camera size={9} color="#9CA3AF" />}
                                 {item.allowVoiceNote && <Mic size={9} color="#9CA3AF" />}
@@ -328,7 +328,7 @@ function TemplateBuilder({ template, onSave, onCancel }: {
                 </div>
                 <label className="flex items-center gap-3 cursor-pointer">
                   <div onClick={() => updateItem(selectedItem.id, { allowVoiceNote: !selectedItem.allowVoiceNote })}
-                    className="w-10 h-5 rounded-full relative transition-colors" style={{ background: selectedItem.allowVoiceNote ? '#C0392B' : '#E5E7EB' }}>
+                    className="w-10 h-5 rounded-full relative transition-colors" style={{ background: selectedItem.allowVoiceNote ? '#00A9AC' : '#E5E7EB' }}>
                     <div className="absolute top-0.5 w-4 h-4 rounded-full bg-white transition-transform" style={{ left: selectedItem.allowVoiceNote ? 'calc(100% - 18px)' : '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' }} />
                   </div>
                   <span style={{ fontSize: '0.825rem', color: '#374151' }}>Allow voice notes on this item</span>
@@ -340,7 +340,7 @@ function TemplateBuilder({ template, onSave, onCancel }: {
                 <p style={{ fontWeight: 600, fontSize: '0.825rem', color: '#374151', marginBottom: 12 }}>Recommended Actions per Status</p>
                 <div className="flex flex-col gap-3">
                   {(['attention', 'critical'] as ItemStatus[]).map(status => {
-                    const colors: Record<string, { bg: string; color: string }> = { attention: { bg: '#FFFBEB', color: '#B45309' }, critical: { bg: '#FEF2F2', color: '#B91C1C' } };
+                    const colors: Record<string, { bg: string; color: string }> = { attention: { bg: '#FFFBEB', color: '#B45309' }, critical: { bg: '#F0FBFB', color: '#B91C1C' } };
                     const c = colors[status];
                     return (
                       <div key={status}>

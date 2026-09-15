@@ -32,7 +32,7 @@ const ACTION_LABELS: Record<WorkflowActionType, { label: string; icon: string; c
   create_task:        { label: 'Create Staff Task',        icon: '✅', color: '#D97706' },
   send_slack:         { label: 'Send Slack / Teams',       icon: '📣', color: '#16A34A' },
   send_webhook:       { label: 'Send Webhook',             icon: '🔗', color: '#374151' },
-  create_discount:    { label: 'Create Discount Code',     icon: '🎟️', color: '#C0392B' },
+  create_discount:    { label: 'Create Discount Code',     icon: '🎟️', color: '#00A9AC' },
   add_tag:            { label: 'Add Tag',                  icon: '🔖', color: '#9CA3AF' },
   schedule_trigger:   { label: 'Schedule Future Trigger',  icon: '⏰', color: '#F59E0B' },
   send_campaign_step: { label: 'Send Campaign Step',       icon: '📧', color: '#EA580C' },
@@ -55,8 +55,8 @@ function TriggerCard({ trigger, onChange }: { trigger: WorkflowTrigger; onChange
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-[12px] p-5 relative" style={{ border: '2px solid #C0392B', background: '#fff', boxShadow: '0 2px 12px rgba(192,57,43,0.12)' }}>
-      <div className="absolute -top-3 left-4 flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-bold" style={{ background: '#C0392B', color: '#fff' }}>
+    <div className="rounded-[12px] p-5 relative" style={{ border: '2px solid #00A9AC', background: '#fff', boxShadow: '0 2px 12px rgba(192,57,43,0.12)' }}>
+      <div className="absolute -top-3 left-4 flex items-center gap-1.5 px-3 py-0.5 rounded-full text-xs font-bold" style={{ background: '#00A9AC', color: '#fff' }}>
         <Zap size={11} fill="#fff" /> TRIGGER
       </div>
       <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
@@ -79,7 +79,7 @@ function TriggerCard({ trigger, onChange }: { trigger: WorkflowTrigger; onChange
               key={t}
               onClick={() => { onChange(t); setOpen(false); }}
               className="w-full text-left px-3 py-2 text-sm"
-              style={{ background: t === trigger ? '#FDEDEC' : 'transparent', color: t === trigger ? '#C0392B' : '#374151', borderBottom: '1px solid #F3F4F6' }}
+              style={{ background: t === trigger ? '#E6F7F7' : 'transparent', color: t === trigger ? '#00A9AC' : '#374151', borderBottom: '1px solid #F3F4F6' }}
             >
               {TRIGGER_LABELS[t]}
             </button>
@@ -309,11 +309,11 @@ function WorkflowCanvas({ workflow, onChange }: { workflow: Workflow; onChange: 
       <div className="rounded-[12px] p-4" style={{ border: '1.5px solid #E5E7EB', background: '#fff' }}>
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <Play size={14} style={{ color: '#C0392B' }} />
+            <Play size={14} style={{ color: '#00A9AC' }} />
             <span style={{ fontWeight: 700, color: '#374151', fontSize: '0.875rem' }}>Actions</span>
             <span style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{workflow.actions.length} action{workflow.actions.length !== 1 ? 's' : ''}</span>
           </div>
-          <button onClick={addAction} className="flex items-center gap-1 text-xs font-semibold" style={{ color: '#C0392B' }}>
+          <button onClick={addAction} className="flex items-center gap-1 text-xs font-semibold" style={{ color: '#00A9AC' }}>
             <Plus size={12} /> Add action
           </button>
         </div>
@@ -395,7 +395,7 @@ function ExecutionLog() {
                             key={i}
                             title={`${ACTION_LABELS[a.type]?.label}: ${a.detail}`}
                             className="w-5 h-5 rounded-full flex items-center justify-center"
-                            style={{ background: a.status === 'success' ? '#DCFCE7' : '#FEF2F2' }}
+                            style={{ background: a.status === 'success' ? '#DCFCE7' : '#F0FBFB' }}
                           >
                             {a.status === 'success'
                               ? <CheckCircle2 size={12} style={{ color: '#16A34A' }} />
@@ -413,7 +413,7 @@ function ExecutionLog() {
                     <span
                       className="px-2 py-0.5 rounded-full text-xs font-semibold"
                       style={{
-                        background: ex.status === 'success' ? '#DCFCE7' : ex.status === 'partial' ? '#FEF3C7' : '#FEF2F2',
+                        background: ex.status === 'success' ? '#DCFCE7' : ex.status === 'partial' ? '#FEF3C7' : '#F0FBFB',
                         color: ex.status === 'success' ? '#16A34A' : ex.status === 'partial' ? '#D97706' : '#DC2626',
                       }}
                     >
@@ -427,7 +427,7 @@ function ExecutionLog() {
                     <button
                       onClick={() => setReplayedIds(s => new Set([...s, ex.id]))}
                       className="flex items-center gap-1 text-xs font-semibold"
-                      style={{ color: replayed ? '#16A34A' : '#C0392B' }}
+                      style={{ color: replayed ? '#16A34A' : '#00A9AC' }}
                     >
                       {replayed ? <CheckCircle2 size={12} /> : <RotateCcw size={12} />}
                       {replayed ? 'Replayed' : 'Replay'}
@@ -572,7 +572,7 @@ export function WorkflowBuilderView() {
             ))}
           </div>
           {view !== 'builder' && (
-            <button onClick={createNew} className="flex items-center gap-1.5 px-4 py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>
+            <button onClick={createNew} className="flex items-center gap-1.5 px-4 py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>
               <Plus size={14} /> New Workflow
             </button>
           )}
@@ -619,7 +619,7 @@ export function WorkflowBuilderView() {
               <button
                 onClick={() => setView('list')}
                 className="flex items-center gap-1.5 px-4 py-1.5 rounded-[6px] text-sm font-semibold text-white"
-                style={{ background: '#C0392B' }}
+                style={{ background: '#00A9AC' }}
               >
                 Save
               </button>
@@ -643,7 +643,7 @@ export function WorkflowBuilderView() {
               </p>
               <div className="p-3 rounded-[8px] mb-3" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
                 <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.875rem' }}>Match estimate</p>
-                <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: '#C0392B', fontSize: '1.5rem' }}>47</p>
+                <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: '#00A9AC', fontSize: '1.5rem' }}>47</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>customers would have matched in the last 90 days</p>
               </div>
               <div className="space-y-2 mb-3">
@@ -655,7 +655,7 @@ export function WorkflowBuilderView() {
                 ))}
                 <p style={{ color: '#9CA3AF', fontSize: '0.75rem', textAlign: 'center' }}>+ 44 more matches</p>
               </div>
-              <button className="w-full py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>
+              <button className="w-full py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>
                 Run Full Preview
               </button>
             </div>

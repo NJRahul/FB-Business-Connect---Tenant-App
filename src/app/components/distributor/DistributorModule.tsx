@@ -83,9 +83,9 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: DSTab) => void }) {
 
           return (
             <div key={dist.id} onClick={() => onNavigate('connectors')}
-              style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 12, padding: '16px', cursor: 'pointer' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(192,57,43,0.1)'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
+              style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 12, padding: '16px', cursor: 'pointer' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#00A9AC'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(192,57,43,0.1)'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                 <span style={{ fontSize: 24 }}>{dist.logoEmoji}</span>
                 <div style={{ flex: 1, minWidth: 0 }}>
@@ -122,15 +122,15 @@ function OverviewDashboard({ onNavigate }: { onNavigate: (t: DSTab) => void }) {
           return (
             <div key={card.tab} onClick={() => onNavigate(card.tab)}
               style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, padding: '16px', cursor: 'pointer', position: 'relative' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(192,57,43,0.1)'; }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = '#00A9AC'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(192,57,43,0.1)'; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.boxShadow = 'none'; }}>
               {(card as { badge?: number }).badge != null && (card as { badge?: number }).badge! > 0 && (
-                <span style={{ position: 'absolute', top: 12, right: 12, background: '#C0392B', color: '#fff', borderRadius: '50%', width: 18, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700 }}>
+                <span style={{ position: 'absolute', top: 12, right: 12, background: '#00A9AC', color: '#fff', borderRadius: '50%', width: 18, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700 }}>
                   {(card as { badge?: number }).badge}
                 </span>
               )}
-              <div style={{ width: 40, height: 40, background: '#FDEDEC', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                <Icon size={18} color="#C0392B" />
+              <div style={{ width: 40, height: 40, background: '#E6F7F7', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                <Icon size={18} color="#00A9AC" />
               </div>
               <div style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A', marginBottom: 4 }}>{card.label}</div>
               <div style={{ fontSize: 12, color: '#6B7280', lineHeight: 1.5 }}>{card.desc}</div>
@@ -173,16 +173,16 @@ export function DistributorModule() {
               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 7, padding: '12px 16px',
-                  borderBottom: active ? '2.5px solid #C0392B' : '2.5px solid transparent',
-                  background: active ? '#FDEDEC' : 'transparent',
-                  color: active ? '#C0392B' : '#6B7280',
+                  borderBottom: active ? '2.5px solid #00A9AC' : '2.5px solid transparent',
+                  background: active ? '#E6F7F7' : 'transparent',
+                  color: active ? '#00A9AC' : '#6B7280',
                   fontWeight: active ? 700 : 500, fontSize: 13, cursor: 'pointer', border: 'none',
                   borderBottomStyle: 'solid', whiteSpace: 'nowrap',
                 }}>
                 <Icon size={14} />
                 {tab.label}
                 {badge != null && badge > 0 && (
-                  <span style={{ background: '#C0392B', color: '#fff', borderRadius: '50%', minWidth: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, padding: '0 4px' }}>
+                  <span style={{ background: '#00A9AC', color: '#fff', borderRadius: '50%', minWidth: 18, height: 18, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, fontWeight: 700, padding: '0 4px' }}>
                     {badge}
                   </span>
                 )}

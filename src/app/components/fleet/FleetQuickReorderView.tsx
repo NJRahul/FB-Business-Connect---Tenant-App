@@ -33,7 +33,7 @@ export function FleetQuickReorderView() {
             Named recurring-order lists for fleet accounts. All items priced at the fleet's pre-agreed menu.
           </p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#C0392B', color: '#fff' }}>
+        <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> New List
         </button>
       </div>
@@ -49,13 +49,13 @@ export function FleetQuickReorderView() {
             <div key={list.id} className="rounded-xl overflow-hidden" style={{ background: '#fff', border: '1px solid #E5E7EB' }}>
               <div className="px-5 py-4 flex items-center justify-between" style={{ borderBottom: '1px solid #F3F4F6' }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                    <ShoppingCart size={16} color="#C0392B" />
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                    <ShoppingCart size={16} color="#00A9AC" />
                   </div>
                   <div>
                     <p style={{ fontWeight: 700, fontSize: '0.9rem', color: '#1A1A1A' }}>{list.name}</p>
                     <p style={{ fontSize: '0.775rem', color: '#9CA3AF', marginTop: 1 }}>
-                      {account?.businessName} · {list.lines.length} items · Fleet price: <span style={{ color: '#C0392B', fontWeight: 600 }}>{cents(totalCents)}</span>
+                      {account?.businessName} · {list.lines.length} items · Fleet price: <span style={{ color: '#00A9AC', fontWeight: 600 }}>{cents(totalCents)}</span>
                     </p>
                     {list.lastOrderedAt && (
                       <p style={{ fontSize: '0.7rem', color: '#9CA3AF' }}>Last ordered: {new Date(list.lastOrderedAt).toLocaleDateString()}</p>
@@ -65,7 +65,7 @@ export function FleetQuickReorderView() {
                 <button onClick={() => placeOrder(list)} disabled={isOrdering || wasOrdered}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all"
                   style={{
-                    background: wasOrdered ? '#F0FDF4' : '#C0392B',
+                    background: wasOrdered ? '#F0FDF4' : '#00A9AC',
                     color: wasOrdered ? '#15803D' : '#fff',
                     border: wasOrdered ? '1px solid #BBF7D0' : 'none',
                     opacity: isOrdering ? 0.7 : 1,

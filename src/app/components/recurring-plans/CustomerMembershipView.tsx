@@ -20,18 +20,18 @@ function UsageBar({ used, included, label }: { used: number; included: number; l
     <div>
       <div className="flex items-center justify-between mb-1">
         <span style={{ color: '#374151', fontSize: '0.875rem', fontWeight: 500 }}>{label}</span>
-        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: exhausted ? '#C0392B' : '#1A1A1A' }}>
+        <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: exhausted ? '#00A9AC' : '#1A1A1A' }}>
           {used} of {included} used
         </span>
       </div>
       <div className="h-2.5 rounded-full" style={{ background: '#F3F4F6' }}>
         <div
           className="h-2.5 rounded-full transition-all"
-          style={{ width: `${pct}%`, background: exhausted ? '#C0392B' : pct >= 75 ? '#F39C12' : '#C0392B' }}
+          style={{ width: `${pct}%`, background: exhausted ? '#00A9AC' : pct >= 75 ? '#F39C12' : '#00A9AC' }}
         />
       </div>
       {exhausted && (
-        <p style={{ color: '#C0392B', fontSize: '0.75rem', marginTop: '3px' }}>
+        <p style={{ color: '#00A9AC', fontSize: '0.75rem', marginTop: '3px' }}>
           All included {label.toLowerCase()} for this period have been used.
         </p>
       )}
@@ -43,19 +43,19 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
   const [cancelOpen, setCancelOpen] = useState(false);
 
   return (
-    <div className="bg-white rounded-[12px] overflow-hidden" style={{ border: '1.5px solid #E5E7EB', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', borderTop: '4px solid #C0392B' }}>
+    <div className="bg-white rounded-[12px] overflow-hidden" style={{ border: '1.5px solid #E5E7EB', boxShadow: '0 2px 12px rgba(0,0,0,0.07)', borderTop: '4px solid #00A9AC' }}>
       <div className="p-5">
         {/* Plan header */}
         <div className="flex items-start justify-between gap-3 mb-4">
           <div>
             <div className="flex items-center gap-2 mb-0.5">
-              <Shield size={16} style={{ color: '#C0392B' }} />
+              <Shield size={16} style={{ color: '#00A9AC' }} />
               <h3 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>
                 {enrollment.planName}
               </h3>
             </div>
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FDEDEC', color: '#C0392B' }}>
+              <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#E6F7F7', color: '#00A9AC' }}>
                 {enrollment.tierName}
               </span>
               <span className="px-2 py-0.5 rounded-full text-xs font-semibold" style={{ background: '#DCFCE7', color: '#16A34A' }}>
@@ -64,7 +64,7 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
             </div>
           </div>
           <div className="text-right">
-            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: '#C0392B', fontSize: '1.5rem' }}>
+            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: '#00A9AC', fontSize: '1.5rem' }}>
               ${enrollment.tierPrice.toFixed(2)}
             </p>
             <p style={{ color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'capitalize' }}>
@@ -110,13 +110,13 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
         <div className="flex gap-2">
           <button
             className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-[8px] text-sm font-semibold"
-            style={{ background: '#C0392B', color: '#fff' }}
+            style={{ background: '#00A9AC', color: '#fff' }}
           >
             <ArrowUpCircle size={14} /> Upgrade
           </button>
           <button
             className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-[8px] text-sm font-semibold"
-            style={{ border: '1.5px solid #FCA5A5', color: '#DC2626', background: '#FEF2F2' }}
+            style={{ border: '1.5px solid #80D4D5', color: '#DC2626', background: '#F0FBFB' }}
             onClick={() => setCancelOpen(true)}
           >
             <XCircle size={14} /> Cancel
@@ -126,11 +126,11 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
 
       {cancelOpen && (
         <div className="px-5 pb-5 pt-0">
-          <div className="rounded-[8px] p-4" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
+          <div className="rounded-[8px] p-4" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
             <div className="flex items-start gap-2 mb-3">
               <AlertTriangle size={15} style={{ color: '#DC2626', marginTop: '1px', flexShrink: 0 }} />
               <div>
-                <p style={{ fontWeight: 700, color: '#991B1B', fontSize: '0.875rem' }}>Cancel Membership?</p>
+                <p style={{ fontWeight: 700, color: '#005F62', fontSize: '0.875rem' }}>Cancel Membership?</p>
                 <p style={{ color: '#B91C1C', fontSize: '0.8125rem', marginTop: '2px' }}>
                   Your plan stays active until <strong>{fmtDate(enrollment.termEnd)}</strong>. After that date, you won't be charged and entitlements will end.
                 </p>
@@ -140,7 +140,7 @@ function PlanCard({ enrollment }: { enrollment: PlanEnrollment }) {
               <button
                 onClick={() => setCancelOpen(false)}
                 className="flex-1 py-2 rounded-[6px] text-sm font-semibold"
-                style={{ border: '1.5px solid #FCA5A5', color: '#DC2626' }}
+                style={{ border: '1.5px solid #80D4D5', color: '#DC2626' }}
               >
                 Keep Plan
               </button>
@@ -255,7 +255,7 @@ export function CustomerMembershipView() {
                   <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{p.highlight}</p>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span style={{ fontWeight: 700, color: '#C0392B', fontSize: '0.875rem' }}>{p.price}</span>
+                  <span style={{ fontWeight: 700, color: '#00A9AC', fontSize: '0.875rem' }}>{p.price}</span>
                   <ChevronRight size={14} style={{ color: '#D1D5DB' }} />
                 </div>
               </div>

@@ -346,7 +346,7 @@ export function VisualBrandingView({ plan }: { plan: BrandingPlanTier }) {
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <button
             onClick={save}
-            style={{ padding: '10px 28px', borderRadius: 8, background: saved ? '#15803D' : '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, transition: 'background 0.2s' }}
+            style={{ padding: '10px 28px', borderRadius: 8, background: saved ? '#15803D' : '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8, transition: 'background 0.2s' }}
           >
             {saved && <CheckCircle size={16} />}
             {saved ? 'Saved!' : 'Save Changes'}
@@ -358,7 +358,7 @@ export function VisualBrandingView({ plan }: { plan: BrandingPlanTier }) {
       <div style={{ position: 'sticky', top: 20, display: 'flex', flexDirection: 'column', gap: 0 }}>
         <div style={{ display: 'flex', gap: 0, borderBottom: '1px solid #E5E7EB', marginBottom: 0 }}>
           {(['storefront', 'email'] as const).map(t => (
-            <button key={t} onClick={() => setPreviewTab(t)} style={{ padding: '8px 16px', border: 'none', background: 'none', fontSize: 12, fontWeight: 600, cursor: 'pointer', color: previewTab === t ? '#C0392B' : '#6B7280', borderBottom: previewTab === t ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -1 }}>
+            <button key={t} onClick={() => setPreviewTab(t)} style={{ padding: '8px 16px', border: 'none', background: 'none', fontSize: 12, fontWeight: 600, cursor: 'pointer', color: previewTab === t ? '#00A9AC' : '#6B7280', borderBottom: previewTab === t ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -1 }}>
               {t === 'storefront' ? '🌐 Storefront' : '✉️ Email'}
             </button>
           ))}

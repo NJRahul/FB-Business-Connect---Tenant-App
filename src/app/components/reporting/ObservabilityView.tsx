@@ -6,7 +6,7 @@ function StatusDot({ status }: { status: 'healthy' | 'degraded' | 'down' }) {
   const MAP = {
     healthy:  { color: '#15803D', bg: '#F0FDF4', label: 'Healthy',  icon: CheckCircle },
     degraded: { color: '#D97706', bg: '#FFFBEB', label: 'Degraded', icon: AlertTriangle },
-    down:     { color: '#DC2626', bg: '#FEF2F2', label: 'Down',     icon: XCircle },
+    down:     { color: '#DC2626', bg: '#F0FBFB', label: 'Down',     icon: XCircle },
   };
   const m = MAP[status];
   const Icon = m.icon;
@@ -18,7 +18,7 @@ function StatusDot({ status }: { status: 'healthy' | 'degraded' | 'down' }) {
   );
 }
 
-function BarChart({ data, color = '#C0392B', h = 80 }: { data: number[]; color?: string; h?: number }) {
+function BarChart({ data, color = '#00A9AC', h = 80 }: { data: number[]; color?: string; h?: number }) {
   const mx = Math.max(...data) || 1;
   return (
     <div style={{ display: 'flex', alignItems: 'flex-end', gap: 3, height: h }}>
@@ -40,7 +40,7 @@ function ErrorRateChart({ data, h = 80 }: { data: { requests: number; errors: nu
           <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'stretch', justifyContent: 'flex-end', height: h }}>
             <div style={{ flex: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: barH }}>
               <div style={{ height: errH, background: '#DC2626', borderRadius: '2px 2px 0 0' }} />
-              <div style={{ height: barH - errH, background: '#C0392B', borderRadius: 2, opacity: 0.7 }} />
+              <div style={{ height: barH - errH, background: '#00A9AC', borderRadius: 2, opacity: 0.7 }} />
             </div>
           </div>
         );
@@ -68,7 +68,7 @@ export function ObservabilityView() {
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 420 }}>
           API metrics, connector health, uptime tracking, and error rate charts are available on Pro and Enterprise plans.
         </div>
-        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
+        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
           Upgrade to Pro
         </button>
       </div>
@@ -80,10 +80,10 @@ export function ObservabilityView() {
 
       {/* Alerts */}
       {(degradedCount > 0 || downCount > 0) && (
-        <div style={{ padding: '12px 16px', borderRadius: 8, background: degradedCount > 0 ? '#FFFBEB' : '#FEF2F2', border: `1px solid ${degradedCount > 0 ? '#FDE68A' : '#FCA5A5'}` }}>
+        <div style={{ padding: '12px 16px', borderRadius: 8, background: degradedCount > 0 ? '#FFFBEB' : '#F0FBFB', border: `1px solid ${degradedCount > 0 ? '#FDE68A' : '#80D4D5'}` }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <AlertTriangle size={14} color={degradedCount > 0 ? '#D97706' : '#DC2626'} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: degradedCount > 0 ? '#92400E' : '#991B1B' }}>
+            <span style={{ fontSize: 13, fontWeight: 700, color: degradedCount > 0 ? '#92400E' : '#005F62' }}>
               {downCount > 0 ? `${downCount} connector down` : `${degradedCount} connector degraded`} — check connector health below
             </span>
           </div>
@@ -110,7 +110,7 @@ export function ObservabilityView() {
       <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, background: '#fff', padding: '18px 20px' }}>
         <div style={{ fontWeight: 700, fontSize: 13, color: '#1A1A1A', marginBottom: 6 }}>API Request Volume & Error Rate (24h)</div>
         <div style={{ fontSize: 11, color: '#9CA3AF', marginBottom: 16, display: 'flex', gap: 16 }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}><span style={{ width: 10, height: 10, borderRadius: 2, background: '#C0392B', opacity: 0.7, display: 'inline-block' }} /> Requests</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}><span style={{ width: 10, height: 10, borderRadius: 2, background: '#00A9AC', opacity: 0.7, display: 'inline-block' }} /> Requests</span>
           <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}><span style={{ width: 10, height: 10, borderRadius: 2, background: '#DC2626', display: 'inline-block' }} /> Errors</span>
         </div>
         <ErrorRateChart data={API_METRICS} />

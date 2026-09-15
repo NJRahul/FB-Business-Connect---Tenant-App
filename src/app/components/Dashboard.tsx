@@ -65,7 +65,7 @@ const NAV_ITEMS: { id: DashboardSection; label: string; icon: typeof Settings; g
 
 const PLAN_COLOR: Record<PlanTier, string> = {
   starter: '#6B7280',
-  pro: '#C0392B',
+  pro: '#00A9AC',
   enterprise: '#1A1A1A',
 };
 
@@ -84,7 +84,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-56 xl:w-64 bg-white border-r shrink-0" style={{ borderColor: '#E5E7EB', height: '100vh', overflowY: 'auto' }}>
         <div className="p-4 border-b flex items-center gap-2.5" style={{ borderColor: '#E5E7EB' }}>
-          <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#C0392B' }}>
+          <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#00A9AC' }}>
             <Wrench size={16} color="#fff" />
           </div>
           <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>FB Business Connect</span>
@@ -93,7 +93,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
         {/* Tenant info */}
         <div className="p-4 border-b" style={{ borderColor: '#E5E7EB' }}>
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '0.875rem' }}>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '0.875rem' }}>
               {(tenant.businessName || 'T')[0].toUpperCase()}
             </div>
             <div className="min-w-0">
@@ -101,7 +101,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
                 {tenant.businessName || 'Your Shop'}
               </p>
               <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="px-1.5 py-0.5 rounded" style={{ background: plan === 'pro' ? '#FDEDEC' : '#F3F4F6', color: PLAN_COLOR[plan], fontSize: '0.625rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                <span className="px-1.5 py-0.5 rounded" style={{ background: plan === 'pro' ? '#E6F7F7' : '#F3F4F6', color: PLAN_COLOR[plan], fontSize: '0.625rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   {plan}
                 </span>
               </div>
@@ -120,8 +120,8 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
                 onClick={() => setSection(item.id)}
                 className="w-full flex items-center gap-3 px-3 py-2.5 rounded-[6px] text-left transition-colors"
                 style={{
-                  background: active ? '#FDEDEC' : 'transparent',
-                  color: active ? '#C0392B' : '#6B7280',
+                  background: active ? '#E6F7F7' : 'transparent',
+                  color: active ? '#00A9AC' : '#6B7280',
                   fontWeight: active ? 600 : 400,
                   fontSize: '0.9375rem',
                 }}
@@ -165,7 +165,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
           <aside className="absolute left-0 top-0 bottom-0 w-64 bg-white flex flex-col" style={{ boxShadow: '4px 0 20px rgba(0,0,0,0.15)' }}>
             <div className="p-4 border-b flex items-center justify-between" style={{ borderColor: '#E5E7EB' }}>
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-[6px] flex items-center justify-center" style={{ background: '#C0392B' }}>
+                <div className="w-8 h-8 rounded-[6px] flex items-center justify-center" style={{ background: '#00A9AC' }}>
                   <Wrench size={16} color="#fff" />
                 </div>
                 <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A' }}>FB Business Connect</span>
@@ -183,7 +183,7 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
                     key={item.id}
                     onClick={() => { setSection(item.id); setMobileNavOpen(false); }}
                     className="w-full flex items-center gap-3 px-3 py-2.5 rounded-[6px] text-left"
-                    style={{ background: active ? '#FDEDEC' : 'transparent', color: active ? '#C0392B' : '#6B7280', fontWeight: active ? 600 : 400 }}
+                    style={{ background: active ? '#E6F7F7' : 'transparent', color: active ? '#00A9AC' : '#6B7280', fontWeight: active ? 600 : 400 }}
                   >
                     <Icon size={16} />
                     {item.label}
@@ -216,10 +216,10 @@ export function Dashboard({ tenant, onPlatformAdmin }: DashboardProps) {
           <div className="flex items-center gap-2">
             <button className="p-2 rounded-[6px] relative" style={{ color: '#6B7280', background: '#F9FAFB' }}>
               <Bell size={18} />
-              <span className="absolute top-1 right-1 w-2 h-2 rounded-full" style={{ background: '#C0392B' }} />
+              <span className="absolute top-1 right-1 w-2 h-2 rounded-full" style={{ background: '#00A9AC' }} />
             </button>
             <button className="flex items-center gap-2 px-3 py-2 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
-              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '0.75rem' }}>
+              <div className="w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '0.75rem' }}>
                 {(tenant.ownerName || tenant.businessName || 'U')[0].toUpperCase()}
               </div>
               <span style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: 500, maxWidth: '120px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
@@ -276,7 +276,7 @@ function OverviewSection({ tenant, plan, onNavigate }: { tenant: TenantData; pla
           Welcome back, {tenant.ownerName || tenant.businessName}! 👋
         </h1>
         <p style={{ color: '#6B7280', marginTop: '4px', fontSize: '0.9375rem' }}>
-          Your storefront is live at <span style={{ color: '#C0392B', fontWeight: 600 }}>{slug}.fb-business-connect.app</span>
+          Your storefront is live at <span style={{ color: '#00A9AC', fontWeight: 600 }}>{slug}.fb-business-connect.app</span>
         </p>
       </div>
 
@@ -292,7 +292,7 @@ function OverviewSection({ tenant, plan, onNavigate }: { tenant: TenantData; pla
       {/* Quick stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
         {[
-          { label: 'Customers', value: '0', sub: 'Import to get started', color: '#C0392B', action: () => onNavigate('import') },
+          { label: 'Customers', value: '0', sub: 'Import to get started', color: '#00A9AC', action: () => onNavigate('import') },
           { label: 'Active SKUs', value: '1,247', sub: 'From your distributor', color: '#27AE60', action: null },
           { label: 'Plan', value: plan.charAt(0).toUpperCase() + plan.slice(1), sub: 'Active subscription', color: PLAN_COLOR[plan], action: () => onNavigate('billing') },
           { label: 'Lifecycle', value: 'Active', sub: 'Storefront visible', color: '#27AE60', action: () => onNavigate('lifecycle') },
@@ -333,9 +333,9 @@ function OverviewSection({ tenant, plan, onNavigate }: { tenant: TenantData; pla
             <button
               onClick={item.action}
               className="mt-4 px-4 py-2 rounded-[6px] text-white transition-colors text-sm font-semibold"
-              style={{ background: '#C0392B' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+              style={{ background: '#00A9AC' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
             >
               {item.cta}
             </button>

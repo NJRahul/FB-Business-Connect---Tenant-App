@@ -25,7 +25,7 @@ const STATE_COLOR: Record<VisitState, { bg: string; color: string }> = {
   parts_ready: { bg: '#F0FDF4', color: '#15803D' },
   en_route: { bg: '#F5F3FF', color: '#6D28D9' },
   on_site: { bg: '#F5F3FF', color: '#6D28D9' },
-  in_progress: { bg: '#FDEDEC', color: '#C0392B' },
+  in_progress: { bg: '#E6F7F7', color: '#00A9AC' },
   completed: { bg: '#F0FDF4', color: '#15803D' },
   no_show: { bg: '#F9FAFB', color: '#6B7280' },
   cancelled: { bg: '#F9FAFB', color: '#9CA3AF' },
@@ -123,13 +123,13 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
                         <div
                           className="w-6 h-6 rounded-full flex items-center justify-center"
                           style={{
-                            background: done ? '#27AE60' : active ? '#C0392B' : '#E5E7EB',
+                            background: done ? '#27AE60' : active ? '#00A9AC' : '#E5E7EB',
                             color: done || active ? '#fff' : '#9CA3AF',
                           }}
                         >
                           {done ? <CheckCircle2 size={12} /> : active ? <Circle size={8} style={{ fill: '#fff' }} /> : <span style={{ fontSize: '0.5rem', fontWeight: 700 }}>{i + 1}</span>}
                         </div>
-                        <span style={{ fontSize: '0.5rem', color: active ? '#C0392B' : done ? '#27AE60' : '#9CA3AF', whiteSpace: 'nowrap', fontWeight: active ? 700 : 400 }}>
+                        <span style={{ fontSize: '0.5rem', color: active ? '#00A9AC' : done ? '#27AE60' : '#9CA3AF', whiteSpace: 'nowrap', fontWeight: active ? 700 : 400 }}>
                           {STATE_LABEL[s].split(' ')[0]}
                         </span>
                       </div>
@@ -155,7 +155,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
             <div>
               <p style={{ fontSize: '0.6875rem', fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>Technician</p>
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '0.75rem' }}>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '0.75rem' }}>
                   {visit.technicianName[0]}
                 </div>
                 <p style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '0.9375rem' }}>{visit.technicianName}</p>
@@ -224,7 +224,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
               <p style={{ fontSize: '0.6875rem', fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '8px' }}>Add-ons</p>
               <div className="flex flex-wrap gap-2">
                 {visit.addons.map((a, i) => (
-                  <span key={i} className="px-2.5 py-1 rounded-full text-sm" style={{ background: '#FDEDEC', color: '#C0392B' }}>
+                  <span key={i} className="px-2.5 py-1 rounded-full text-sm" style={{ background: '#E6F7F7', color: '#00A9AC' }}>
                     {a.name} {a.qty > 1 ? `×${a.qty}` : ''} — {fmtMoney(a.price * a.qty)}
                   </span>
                 ))}
@@ -258,7 +258,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
               ))}
               <div className="flex justify-between pt-2" style={{ borderTop: '1px solid #E5E7EB' }}>
                 <span style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '0.9375rem' }}>Total</span>
-                <span style={{ color: '#C0392B', fontWeight: 700, fontSize: '1rem' }}>{fmtMoney(visit.totalPrice)}</span>
+                <span style={{ color: '#00A9AC', fontWeight: 700, fontSize: '1rem' }}>{fmtMoney(visit.totalPrice)}</span>
               </div>
             </div>
           </div>
@@ -278,7 +278,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
               <button
                 onClick={() => onStateChange(visit.id, 'cancelled')}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-[6px] text-sm"
-                style={{ border: '1.5px solid #FCA5A5', color: '#DC2626', background: '#FEF2F2' }}
+                style={{ border: '1.5px solid #80D4D5', color: '#DC2626', background: '#F0FBFB' }}
               >
                 <BanIcon size={14} /> Cancel
               </button>
@@ -287,9 +287,9 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
               <button
                 onClick={() => onStateChange(visit.id, next)}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-white font-semibold text-sm"
-                style={{ background: '#C0392B' }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                style={{ background: '#00A9AC' }}
+                onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
               >
                 {STATE_NEXT_LABEL[visit.visitState]} <ChevronRight size={14} />
               </button>
@@ -324,7 +324,7 @@ function VisitDetailModal({ visit, onClose, onStateChange }: DetailModalProps) {
                 <button
                   onClick={() => setShowReschedule(false)}
                   className="flex-1 py-2 rounded-[6px] text-sm text-white font-semibold"
-                  style={{ background: '#C0392B' }}
+                  style={{ background: '#00A9AC' }}
                 >
                   Pick New Slot
                 </button>
@@ -408,7 +408,7 @@ export function AppointmentsList() {
               onClick={() => setActiveFilter(f.id)}
               className="px-3 py-1.5 rounded-[6px] text-sm font-medium transition-colors"
               style={{
-                background: activeFilter === f.id ? '#C0392B' : '#F3F4F6',
+                background: activeFilter === f.id ? '#00A9AC' : '#F3F4F6',
                 color: activeFilter === f.id ? '#fff' : '#6B7280',
               }}
             >
@@ -442,8 +442,8 @@ export function AppointmentsList() {
               className="w-full text-left bg-white rounded-[8px] p-4 flex items-center gap-4 transition-all"
               style={{
                 boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-                border: v.visitState === 'in_progress' ? '1.5px solid #C0392B' : '1px solid #E5E7EB',
-                borderLeft: ['in_progress', 'en_route', 'on_site'].includes(v.visitState) ? '4px solid #C0392B' : undefined,
+                border: v.visitState === 'in_progress' ? '1.5px solid #00A9AC' : '1px solid #E5E7EB',
+                borderLeft: ['in_progress', 'en_route', 'on_site'].includes(v.visitState) ? '4px solid #00A9AC' : undefined,
               }}
               onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)')}
               onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)')}
@@ -481,7 +481,7 @@ export function AppointmentsList() {
                 <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>
                   {fmtTime(v.scheduledStart)} · {v.technicianName.split(' ')[0]}
                 </p>
-                <p style={{ color: '#C0392B', fontWeight: 600, fontSize: '0.875rem', marginTop: '2px' }}>
+                <p style={{ color: '#00A9AC', fontWeight: 600, fontSize: '0.875rem', marginTop: '2px' }}>
                   {fmtMoney(v.totalPrice)}
                 </p>
               </div>

@@ -11,7 +11,7 @@ function VerificationBadge({ status }: { status: VerificationStatus }) {
   const MAP = {
     pending:  { bg: '#FEF3C7', color: '#D97706', icon: Clock,         label: 'Pending verification' },
     verified: { bg: '#F0FDF4', color: '#15803D', icon: CheckCircle,   label: 'Verified' },
-    failed:   { bg: '#FEF2F2', color: '#DC2626', icon: XCircle,       label: 'Verification failed' },
+    failed:   { bg: '#F0FBFB', color: '#DC2626', icon: XCircle,       label: 'Verification failed' },
   };
   const m = MAP[status];
   const Icon = m.icon;
@@ -43,7 +43,7 @@ function SslBadge({ daysRemaining }: { daysRemaining: number | null }) {
   if (daysRemaining === null) return <span style={{ fontSize: 12, color: '#9CA3AF' }}>—</span>;
   const urgent = daysRemaining <= 7;
   const warning = daysRemaining <= 30;
-  const bg    = urgent ? '#FEF2F2' : warning ? '#FFFBEB' : '#F0FDF4';
+  const bg    = urgent ? '#F0FBFB' : warning ? '#FFFBEB' : '#F0FDF4';
   const color = urgent ? '#DC2626' : warning ? '#D97706' : '#15803D';
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, padding: '4px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, background: bg, color }}>
@@ -183,12 +183,12 @@ function DomainConfigured({ domain, plan }: { domain: CustomDomain; plan: Brandi
       </div>
 
       {/* Release */}
-      <div style={{ border: '1px solid #FCA5A5', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
+      <div style={{ border: '1px solid #80D4D5', borderRadius: 10, padding: '14px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
         <div>
           <div style={{ fontWeight: 600, fontSize: 13, color: '#1A1A1A' }}>Release Custom Domain</div>
           <div style={{ fontSize: 12, color: '#6B7280', marginTop: 2 }}>Storefront immediately falls back to acmetires.fb-business-connect.app. You can re-add the domain anytime.</div>
         </div>
-        <button onClick={release} disabled={releasing} style={{ flexShrink: 0, padding: '8px 16px', borderRadius: 7, border: '1px solid #FCA5A5', background: '#FEF2F2', color: '#DC2626', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
+        <button onClick={release} disabled={releasing} style={{ flexShrink: 0, padding: '8px 16px', borderRadius: 7, border: '1px solid #80D4D5', background: '#F0FBFB', color: '#DC2626', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
           {releasing ? 'Releasing…' : 'Release Domain'}
         </button>
       </div>
@@ -220,7 +220,7 @@ function AddDomainForm({ onAdd }: { onAdd: (domain: string) => void }) {
           onKeyDown={e => e.key === 'Enter' && submit()}
           style={{ flex: 1, padding: '10px 14px', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 13, color: '#1A1A1A', outline: 'none' }}
         />
-        <button onClick={submit} disabled={submitting || !value.trim()} style={{ padding: '10px 20px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 13, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
+        <button onClick={submit} disabled={submitting || !value.trim()} style={{ padding: '10px 20px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 13, border: 'none', cursor: 'pointer', whiteSpace: 'nowrap' }}>
           {submitting ? 'Adding…' : 'Add Domain'}
         </button>
       </div>
@@ -246,7 +246,7 @@ export function CustomDomainView({ plan }: { plan: BrandingPlanTier }) {
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 420 }}>
           Connect your own domain (www.yourshop.com) to your FB Business Connect storefront. Automatic SSL, subdomain fallback, and DNS guidance included.
         </div>
-        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
+        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
           Upgrade to Pro
         </button>
       </div>

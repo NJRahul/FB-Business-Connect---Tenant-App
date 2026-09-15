@@ -41,7 +41,7 @@ function RecordRow({ label, record, onVerify }: { label: string; record: EmailDn
 
   const statusLabel = localStatus === 'pass' ? 'Pass' : localStatus === 'fail' ? 'Failed' : 'Pending';
   const statusColor = localStatus === 'pass' ? '#15803D' : localStatus === 'fail' ? '#DC2626' : '#D97706';
-  const statusBg    = localStatus === 'pass' ? '#F0FDF4' : localStatus === 'fail' ? '#FEF2F2' : '#FFFBEB';
+  const statusBg    = localStatus === 'pass' ? '#F0FDF4' : localStatus === 'fail' ? '#F0FBFB' : '#FFFBEB';
 
   return (
     <div style={{ border: '1px solid #E5E7EB', borderRadius: 10, overflow: 'hidden' }}>
@@ -91,7 +91,7 @@ function RecordRow({ label, record, onVerify }: { label: string; record: EmailDn
           </div>
 
           {localStatus === 'fail' && (
-            <div style={{ marginTop: 12, padding: '10px 12px', borderRadius: 7, background: '#FEF2F2', border: '1px solid #FCA5A5', fontSize: 12, color: '#991B1B' }}>
+            <div style={{ marginTop: 12, padding: '10px 12px', borderRadius: 7, background: '#F0FBFB', border: '1px solid #80D4D5', fontSize: 12, color: '#005F62' }}>
               Record not found or incorrect. Verify the value above matches exactly, including any trailing periods your DNS provider may require.
             </div>
           )}
@@ -159,7 +159,7 @@ function EmailSenderConfigured({ sender }: { sender: CustomEmailSender }) {
               sub: 'Alert threshold: 0.08%',
             },
           ].map(m => (
-            <div key={m.label} style={{ padding: '14px 16px', borderRadius: 8, border: '1px solid #E5E7EB', background: m.ok ? '#F0FDF4' : '#FEF2F2' }}>
+            <div key={m.label} style={{ padding: '14px 16px', borderRadius: 8, border: '1px solid #E5E7EB', background: m.ok ? '#F0FDF4' : '#F0FBFB' }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 4 }}>{m.label}</div>
               <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 26, color: m.ok ? '#15803D' : '#DC2626' }}>{m.value}</div>
               <div style={{ fontSize: 11, color: '#9CA3AF', marginTop: 4 }}>{m.sub}</div>
@@ -216,7 +216,7 @@ function AddEmailSenderForm({ onAdd }: { onAdd: (domain: string, fromName: strin
           <label style={{ fontSize: 12, fontWeight: 600, color: '#374151', display: 'block', marginBottom: 4 }}>From Name</label>
           <input value={fromName} onChange={e => setFromName(e.target.value)} placeholder="Acme Tires" style={{ width: '100%', padding: '9px 12px', border: '1px solid #E5E7EB', borderRadius: 7, fontSize: 13, outline: 'none', boxSizing: 'border-box' }} />
         </div>
-        <button onClick={submit} disabled={submitting || !domain.trim() || !fromName.trim()} style={{ padding: '10px 20px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 13, border: 'none', cursor: 'pointer', alignSelf: 'flex-start' }}>
+        <button onClick={submit} disabled={submitting || !domain.trim() || !fromName.trim()} style={{ padding: '10px 20px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 13, border: 'none', cursor: 'pointer', alignSelf: 'flex-start' }}>
           {submitting ? 'Setting up…' : 'Configure Sender'}
         </button>
       </div>
@@ -235,7 +235,7 @@ export function EmailSenderView({ plan }: { plan: BrandingPlanTier }) {
         <div style={{ fontSize: 14, color: '#6B7280', textAlign: 'center', maxWidth: 420 }}>
           Send emails from your own domain (bookings@yourshop.com). Includes DKIM, SPF, and DMARC setup with guided DNS configuration.
         </div>
-        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
+        <button style={{ padding: '10px 24px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 700, fontSize: 14, border: 'none', cursor: 'pointer' }}>
           Upgrade to Pro
         </button>
       </div>

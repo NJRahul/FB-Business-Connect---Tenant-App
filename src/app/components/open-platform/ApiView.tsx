@@ -13,7 +13,7 @@ const METHOD_COLOR: Record<string, { bg: string; color: string }> = {
   POST:   { bg: '#EFF6FF', color: '#1D4ED8' },
   PUT:    { bg: '#FEF3C7', color: '#D97706' },
   PATCH:  { bg: '#FDF4FF', color: '#7E22CE' },
-  DELETE: { bg: '#FEF2F2', color: '#DC2626' },
+  DELETE: { bg: '#F0FBFB', color: '#DC2626' },
 };
 
 function MethodBadge({ method }: { method: string }) {
@@ -133,7 +133,7 @@ function CodeBlock({ endpoint }: { endpoint: ApiEndpoint }) {
               key={l}
               onClick={() => setLang(l)}
               className="px-3 py-1 rounded text-xs font-bold"
-              style={{ background: lang === l ? '#C0392B' : '#1e2938', color: lang === l ? '#fff' : '#8b9cb3' }}
+              style={{ background: lang === l ? '#00A9AC' : '#1e2938', color: lang === l ? '#fff' : '#8b9cb3' }}
             >
               {l === 'curl' ? 'cURL' : l === 'js' ? 'JavaScript' : 'Python'}
             </button>
@@ -238,7 +238,7 @@ function EndpointDetail({ endpoint }: { endpoint: ApiEndpoint }) {
           {rateLimitInfo.map(r => (
             <div key={r.tier} className="flex-1 p-3 rounded-[8px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
               <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.8125rem' }}>{r.tier}</p>
-              <p style={{ color: '#C0392B', fontWeight: 600, fontFamily: 'monospace', fontSize: '0.875rem' }}>{r.limit}</p>
+              <p style={{ color: '#00A9AC', fontWeight: 600, fontFamily: 'monospace', fontSize: '0.875rem' }}>{r.limit}</p>
             </div>
           ))}
         </div>
@@ -258,7 +258,7 @@ function EndpointDetail({ endpoint }: { endpoint: ApiEndpoint }) {
               { param: 'created_after', desc: 'ISO 8601 date — only return records created after' },
             ].map(p => (
               <div key={p.param} className="flex gap-2 mb-1">
-                <code style={{ fontFamily: 'monospace', color: '#C0392B', minWidth: '120px', flexShrink: 0 }}>{p.param}</code>
+                <code style={{ fontFamily: 'monospace', color: '#00A9AC', minWidth: '120px', flexShrink: 0 }}>{p.param}</code>
                 <span style={{ color: '#374151' }}>{p.desc}</span>
               </div>
             ))}
@@ -321,7 +321,7 @@ function EndpointDetail({ endpoint }: { endpoint: ApiEndpoint }) {
 function ScopeChip({ scope }: { scope: string }) {
   const [res, op] = scope.split(':');
   return (
-    <span className="px-2 py-0.5 rounded text-xs font-mono font-semibold" style={{ background: op === 'write' ? '#FDEDEC' : '#F0F9FF', color: op === 'write' ? '#C0392B' : '#0369A1' }}>
+    <span className="px-2 py-0.5 rounded text-xs font-mono font-semibold" style={{ background: op === 'write' ? '#E6F7F7' : '#F0F9FF', color: op === 'write' ? '#00A9AC' : '#0369A1' }}>
       {scope}
     </span>
   );
@@ -424,7 +424,7 @@ function CreateTokenModal({ onClose }: { onClose: () => void }) {
             </code>
             <button style={{ color: '#8b9cb3', flexShrink: 0 }}><Copy size={14} /></button>
           </div>
-          <button onClick={onClose} className="w-full py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>
+          <button onClick={onClose} className="w-full py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>
             Done
           </button>
         </div>
@@ -458,7 +458,7 @@ function CreateTokenModal({ onClose }: { onClose: () => void }) {
               {ALL_SCOPES.map(s => {
                 const [, op] = s.split(':');
                 return (
-                  <label key={s} className="flex items-center gap-2 p-2 rounded-[6px] cursor-pointer" style={{ border: selected.has(s) ? `1.5px solid ${op === 'write' ? '#C0392B' : '#1D4ED8'}` : '1.5px solid #E5E7EB', background: selected.has(s) ? (op === 'write' ? '#FDEDEC' : '#EFF6FF') : '#fff' }}>
+                  <label key={s} className="flex items-center gap-2 p-2 rounded-[6px] cursor-pointer" style={{ border: selected.has(s) ? `1.5px solid ${op === 'write' ? '#00A9AC' : '#1D4ED8'}` : '1.5px solid #E5E7EB', background: selected.has(s) ? (op === 'write' ? '#E6F7F7' : '#EFF6FF') : '#fff' }}>
                     <input type="checkbox" checked={selected.has(s)} onChange={() => toggle(s)} className="accent-red-600" />
                     <span style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#374151' }}>{s}</span>
                   </label>
@@ -470,7 +470,7 @@ function CreateTokenModal({ onClose }: { onClose: () => void }) {
 
         <div className="mt-4 flex gap-2">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold" style={{ border: '1.5px solid #E5E7EB', color: '#6B7280' }}>Cancel</button>
-          <button onClick={() => setCreated(true)} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: name && selected.size > 0 ? '#C0392B' : '#F3F4F6', color: name && selected.size > 0 ? '#fff' : '#D1D5DB' }}>
+          <button onClick={() => setCreated(true)} className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white" style={{ background: name && selected.size > 0 ? '#00A9AC' : '#F3F4F6', color: name && selected.size > 0 ? '#fff' : '#D1D5DB' }}>
             Generate Token
           </button>
         </div>
@@ -591,7 +591,7 @@ export function ApiView() {
             <button
               onClick={() => setShowCreate(true)}
               className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white"
-              style={{ background: '#C0392B' }}
+              style={{ background: '#00A9AC' }}
             >
               <Plus size={14} /> New Token
             </button>
@@ -622,7 +622,7 @@ export function ApiView() {
               <h3 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>OAuth 2.0 Clients</h3>
               <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '2px' }}>Server-to-server client-credentials flow. Clients are scoped per tenant.</p>
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#C0392B' }}>
+            <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold text-white" style={{ background: '#00A9AC' }}>
               <Plus size={14} /> New Client
             </button>
           </div>

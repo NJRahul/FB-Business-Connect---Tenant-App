@@ -48,7 +48,7 @@ function RoleBanner({ role, onRoleChange }: { role: InsuranceRole; onRoleChange:
           { label: 'COI',           can: perms.issue_coi },
           { label: 'File claim',    can: perms.file_fnol },
         ].map(p => (
-          <span key={p.label} className="flex items-center gap-1 text-xs" style={{ color: p.can ? '#27AE60' : '#E74C3C' }}>
+          <span key={p.label} className="flex items-center gap-1 text-xs" style={{ color: p.can ? '#27AE60' : '#00BFC3' }}>
             {p.can ? <CheckCircle2 size={11} /> : <XCircle size={11} />} {p.label}
           </span>
         ))}

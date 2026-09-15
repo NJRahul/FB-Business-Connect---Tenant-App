@@ -23,7 +23,7 @@ export function FleetSessionsView({ onSelectSession }: Props) {
           <h2 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: '1.125rem', color: '#1A1A1A' }}>Fleet Sessions</h2>
           <p style={{ fontSize: '0.825rem', color: '#6B7280', marginTop: 2 }}>Scheduled multi-vehicle service blocks</p>
         </div>
-        <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#C0392B', color: '#fff' }}>
+        <button className="flex items-center gap-2 px-4 py-2 rounded-[8px] text-sm font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>
           <Plus size={14} /> Schedule Session
         </button>
       </div>
@@ -34,12 +34,12 @@ export function FleetSessionsView({ onSelectSession }: Props) {
         {sessions.filter(s => s.status === 'in_progress' || s.status === 'scheduled').map(s => (
           <div key={s.id} onClick={() => s.status === 'in_progress' && onSelectSession(s.id)}
             className="shrink-0 rounded-lg px-4 py-2.5 cursor-pointer"
-            style={{ background: s.status === 'in_progress' ? '#C0392B' : '#fff', border: '1px solid #FED7AA', minWidth: 200 }}>
+            style={{ background: s.status === 'in_progress' ? '#00A9AC' : '#fff', border: '1px solid #FED7AA', minWidth: 200 }}>
             <p style={{ fontSize: '0.8rem', fontWeight: 700, color: s.status === 'in_progress' ? '#fff' : '#1A1A1A' }}>{s.fleetAccountName}</p>
             <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#FECACA' : '#9CA3AF', marginTop: 2 }}>
               {new Date(s.scheduledStart).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} – {new Date(s.scheduledEnd).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
             </p>
-            <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#FCA5A5' : '#9CA3AF' }}>{s.locationName}</p>
+            <p style={{ fontSize: '0.7rem', color: s.status === 'in_progress' ? '#80D4D5' : '#9CA3AF' }}>{s.locationName}</p>
           </div>
         ))}
       </div>
@@ -56,8 +56,8 @@ export function FleetSessionsView({ onSelectSession }: Props) {
               onMouseLeave={e => (e.currentTarget.style.background = '#fff')}>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: s.status === 'in_progress' ? '#FDEDEC' : '#F9FAFB' }}>
-                  <Calendar size={18} color={s.status === 'in_progress' ? '#C0392B' : '#9CA3AF'} />
+                  style={{ background: s.status === 'in_progress' ? '#E6F7F7' : '#F9FAFB' }}>
+                  <Calendar size={18} color={s.status === 'in_progress' ? '#00A9AC' : '#9CA3AF'} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">

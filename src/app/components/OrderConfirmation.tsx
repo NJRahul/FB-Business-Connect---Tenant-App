@@ -57,9 +57,9 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
           <p className="mt-2" style={{ color: '#6B7280', fontSize: '1rem' }}>
             Your appointment is locked in. We'll see you soon!
           </p>
-          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
+          <div className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
             <span style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>Order</span>
-            <span style={{ color: '#C0392B', fontWeight: 800, fontSize: '1rem', fontFamily: 'Sora, sans-serif', letterSpacing: '0.05em' }}>{order.orderNumber}</span>
+            <span style={{ color: '#00A9AC', fontWeight: 800, fontSize: '1rem', fontFamily: 'Sora, sans-serif', letterSpacing: '0.05em' }}>{order.orderNumber}</span>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
             <div>
               <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Date & Time</p>
               <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1.0625rem', marginTop: '4px' }}>{order.slot.displayDate}</p>
-              <p style={{ color: '#C0392B', fontWeight: 600, fontSize: '0.9375rem' }}>{order.slot.time}</p>
+              <p style={{ color: '#00A9AC', fontWeight: 600, fontSize: '0.9375rem' }}>{order.slot.time}</p>
             </div>
             <div>
               <p style={{ color: '#9CA3AF', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Install Address</p>
@@ -167,7 +167,7 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
               <span style={{ color: '#1A1A1A', fontWeight: 700 }}>
                 {order.depositMode === 'full' ? 'Total Paid' : 'Deposit Paid'}
               </span>
-              <span style={{ color: '#C0392B', fontWeight: 800, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif' }}>
+              <span style={{ color: '#00A9AC', fontWeight: 800, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif' }}>
                 ${order.total.toFixed(2)}
               </span>
             </div>
@@ -228,7 +228,7 @@ export function OrderConfirmation({ order, onNewOrder }: OrderConfirmationProps)
           <a
             href="#"
             className="flex-1 flex items-center justify-center gap-2 py-3 rounded-[6px] text-white transition-colors"
-            style={{ background: '#C0392B', fontWeight: 600 }}
+            style={{ background: '#00A9AC', fontWeight: 600 }}
           >
             <ExternalLink size={16} /> Visit Your Storefront
           </a>

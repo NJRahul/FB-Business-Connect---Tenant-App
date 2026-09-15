@@ -14,7 +14,7 @@ function NetBadge({ net }: { net: number }) {
     );
   }
   return (
-    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FEF2F2', color: '#DC2626' }}>
+    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#F0FBFB', color: '#DC2626' }}>
       <TrendingDown size={11} /> {fmtMoney(net)}
     </span>
   );
@@ -59,7 +59,7 @@ export function PlanPnLView() {
 
       {/* Summary cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <SummaryCard label="MRR" value={fmtMoney(totalMRR)} sub={`~${fmtMoney(annualRevEst)} ARR`} color="#C0392B" icon={DollarSign} />
+        <SummaryCard label="MRR" value={fmtMoney(totalMRR)} sub={`~${fmtMoney(annualRevEst)} ARR`} color="#00A9AC" icon={DollarSign} />
         <SummaryCard label="Active Enrollments" value={String(totalEnrolled)} sub="across all tiers" color="#1D4ED8" icon={Users} />
         <SummaryCard label="Services Under Entitlement" value={String(totalServices)} sub="this period" color="#D97706" icon={Wrench} />
         <SummaryCard label="Net Contribution" value={fmtMoney(totalNet)} sub="revenue − cost" color={totalNet >= 0 ? '#16A34A' : '#DC2626'} icon={BarChart2} />
@@ -100,7 +100,7 @@ export function PlanPnLView() {
                     </div>
                   </td>
                   <td className="px-4 py-3">
-                    <p style={{ fontWeight: 700, color: '#C0392B', fontFamily: 'Sora, sans-serif', fontSize: '0.9375rem' }}>
+                    <p style={{ fontWeight: 700, color: '#00A9AC', fontFamily: 'Sora, sans-serif', fontSize: '0.9375rem' }}>
                       {fmtMoney(row.mrr)}
                     </p>
                   </td>
@@ -141,7 +141,7 @@ export function PlanPnLView() {
                 <span style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.875rem' }}>{totalEnrolled}</span>
               </td>
               <td className="px-4 py-3">
-                <span style={{ fontWeight: 800, color: '#C0392B', fontFamily: 'Sora, sans-serif', fontSize: '1rem' }}>{fmtMoney(totalMRR)}</span>
+                <span style={{ fontWeight: 800, color: '#00A9AC', fontFamily: 'Sora, sans-serif', fontSize: '1rem' }}>{fmtMoney(totalMRR)}</span>
               </td>
               <td className="px-4 py-3">
                 <span style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.875rem' }}>{totalServices}</span>

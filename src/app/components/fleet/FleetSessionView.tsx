@@ -115,7 +115,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
           Consolidated invoice <strong>INV-2026-0542</strong> generated for {cents(totalCents)} (fleet pricing applied).<br />
           Sent to AP contact: {account?.apContact.email}
         </p>
-        <button onClick={onBack} className="px-6 py-2.5 rounded-lg text-sm font-semibold" style={{ background: '#C0392B', color: '#fff' }}>
+        <button onClick={onBack} className="px-6 py-2.5 rounded-lg text-sm font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>
           Back to Fleet Accounts
         </button>
       </div>
@@ -152,7 +152,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
           </div>
           <button onClick={() => setShowCloseModal(true)}
             className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold"
-            style={{ background: '#C0392B', color: '#fff' }}>
+            style={{ background: '#00A9AC', color: '#fff' }}>
             Close Session & Generate Invoice
           </button>
         </div>
@@ -168,7 +168,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
             </p>
             <button onClick={() => setShowAddVehicle(true)}
               className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-lg"
-              style={{ background: '#FDEDEC', color: '#C0392B' }}>
+              style={{ background: '#E6F7F7', color: '#00A9AC' }}>
               <Plus size={11} /> Add Vehicle
             </button>
           </div>
@@ -181,12 +181,12 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
                 onClick={() => { setSelectedVehicleId(w.vehicleId); setFindingsText(w.findings); }}
                 className="rounded-xl p-4 cursor-pointer transition-all"
                 style={{
-                  border: `2px solid ${isSelected ? '#C0392B' : '#E5E7EB'}`,
-                  background: isSelected ? '#FDEDEC' : '#fff',
+                  border: `2px solid ${isSelected ? '#00A9AC' : '#E5E7EB'}`,
+                  background: isSelected ? '#E6F7F7' : '#fff',
                 }}>
                 <div className="flex items-center justify-between mb-1.5">
-                  <p style={{ fontWeight: 600, fontSize: '0.825rem', color: isSelected ? '#C0392B' : '#1A1A1A' }}>{w.vehicleLabel}</p>
-                  {isSelected && <div className="w-2 h-2 rounded-full" style={{ background: '#C0392B' }} />}
+                  <p style={{ fontWeight: 600, fontSize: '0.825rem', color: isSelected ? '#00A9AC' : '#1A1A1A' }}>{w.vehicleLabel}</p>
+                  {isSelected && <div className="w-2 h-2 rounded-full" style={{ background: '#00A9AC' }} />}
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
@@ -223,7 +223,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
                 <button key={v.id} onClick={() => addVehicleToSession(v.id, `${v.year} ${v.make} ${v.model} · ${v.plate}`)}
                   className="w-full text-left px-3 py-2 rounded-lg text-sm mb-1 transition-colors"
                   style={{ background: '#fff', border: '1px solid #E5E7EB', color: '#1A1A1A' }}
-                  onMouseEnter={e => (e.currentTarget.style.background = '#FDEDEC')}
+                  onMouseEnter={e => (e.currentTarget.style.background = '#E6F7F7')}
                   onMouseLeave={e => (e.currentTarget.style.background = '#fff')}>
                   <span style={{ fontWeight: 500 }}>{v.year} {v.make} {v.model}</span>
                   <span style={{ color: '#9CA3AF', marginLeft: 6 }}>{v.plate}</span>
@@ -244,7 +244,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
             <>
               <div className="flex items-center justify-between">
                 <h3 style={{ fontWeight: 700, fontSize: '0.95rem', color: '#1A1A1A' }}>{selectedWork.vehicleLabel}</h3>
-                <span style={{ fontSize: '0.825rem', color: '#C0392B', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.825rem', color: '#00A9AC', fontWeight: 600 }}>
                   Fleet pricing applied
                 </span>
               </div>
@@ -277,7 +277,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
                     style={{ border: '1px solid #E5E7EB', color: '#1A1A1A', background: '#fff' }} />
                   <button onClick={addService} disabled={!newServiceDesc || !newServicePrice}
                     className="px-3 py-1.5 rounded-lg text-xs font-medium"
-                    style={{ background: '#C0392B', color: '#fff', opacity: newServiceDesc && newServicePrice ? 1 : 0.4 }}>
+                    style={{ background: '#00A9AC', color: '#fff', opacity: newServiceDesc && newServicePrice ? 1 : 0.4 }}>
                     Add
                   </button>
                 </div>
@@ -364,7 +364,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
                 })}
                 <div className="flex justify-between pt-2 mt-1" style={{ borderTop: '1px solid #FED7AA' }}>
                   <p style={{ fontSize: '0.875rem', fontWeight: 700, color: '#1A1A1A' }}>Total</p>
-                  <p style={{ fontSize: '0.875rem', fontWeight: 700, color: '#C0392B' }}>{cents(totalCents)}</p>
+                  <p style={{ fontSize: '0.875rem', fontWeight: 700, color: '#00A9AC' }}>{cents(totalCents)}</p>
                 </div>
               </div>
             </div>
@@ -376,7 +376,7 @@ export function FleetSessionView({ sessionId, onBack }: Props) {
                 className="flex-1 py-2.5 rounded-lg text-sm" style={{ background: '#F9FAFB', color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
               <button onClick={handleClose} disabled={closing}
                 className="flex-1 py-2.5 rounded-lg text-sm font-bold flex items-center justify-center gap-2"
-                style={{ background: '#C0392B', color: '#fff', opacity: closing ? 0.7 : 1 }}>
+                style={{ background: '#00A9AC', color: '#fff', opacity: closing ? 0.7 : 1 }}>
                 {closing ? <Loader2 size={14} className="animate-spin" /> : null}
                 {closing ? 'Generating…' : 'Close & Invoice'}
               </button>

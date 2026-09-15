@@ -34,16 +34,16 @@ function MFAGate({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () 
     <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.45)' }}>
       <div className="bg-white rounded-[12px] p-6 shadow-xl" style={{ width: 340 }}>
         <div className="flex items-center gap-3 mb-4">
-          <Lock size={18} style={{ color: '#C0392B' }} />
+          <Lock size={18} style={{ color: '#00A9AC' }} />
           <p style={{ fontWeight: 700, color: '#1A1A1A' }}>Confirm identity to send funds</p>
         </div>
         <input type="text" inputMode="numeric" maxLength={6} value={code} onChange={e => { setCode(e.target.value.replace(/\D/g,'')); setError(false); }} onKeyDown={e => e.key==='Enter'&&submit()} placeholder="6-digit MFA code" autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl tracking-[0.4em]"
-          style={{ border: `1.5px solid ${error?'#C0392B':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace' }} />
-        {error && <p style={{ color: '#C0392B', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid. (Demo: 123456)</p>}
+          style={{ border: `1.5px solid ${error?'#00A9AC':'#E5E7EB'}`, outline: 'none', fontFamily: 'monospace' }} />
+        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', textAlign: 'center', marginTop: 4 }}>Invalid. (Demo: 123456)</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onCancel} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
-          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#C0392B', color: '#fff' }}>Verify</button>
+          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>
         </div>
       </div>
     </div>
@@ -235,12 +235,12 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         <div className="relative">
           <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF' }}>$</span>
           <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00"
-            className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#C0392B' : '#E5E7EB'}`, outline: 'none' }} />
+            className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#00A9AC' : '#E5E7EB'}`, outline: 'none' }} />
         </div>
         {insufficient && (
-          <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
-            <AlertCircle size={14} style={{ color: '#C0392B', flexShrink: 0 }} />
-            <p style={{ color: '#991B1B', fontSize: '0.8125rem', fontWeight: 600 }}>
+          <div className="flex items-center gap-2 mt-2 p-2.5 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #80D4D5' }}>
+            <AlertCircle size={14} style={{ color: '#00A9AC', flexShrink: 0 }} />
+            <p style={{ color: '#005F62', fontSize: '0.8125rem', fontWeight: 600 }}>
               Insufficient funds. Shortfall: {formatCents(shortfall)}
             </p>
           </div>
@@ -269,7 +269,7 @@ function OutboundForm({ vaults }: { vaults: BankingVault[] }) {
         onClick={() => !insufficient && amountCents > 0 && setShowMFA(true)}
         disabled={insufficient || amountCents <= 0 || submitting}
         className="w-full flex items-center justify-center gap-2 py-3 rounded-[8px] font-semibold"
-        style={{ background: insufficient || amountCents <= 0 ? '#E5E7EB' : '#C0392B', color: insufficient || amountCents <= 0 ? '#9CA3AF' : '#fff', cursor: insufficient || amountCents <= 0 ? 'not-allowed' : 'pointer' }}
+        style={{ background: insufficient || amountCents <= 0 ? '#E5E7EB' : '#00A9AC', color: insufficient || amountCents <= 0 ? '#9CA3AF' : '#fff', cursor: insufficient || amountCents <= 0 ? 'not-allowed' : 'pointer' }}
       >
         {submitting ? <><Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} /> Processing…</> : <><Lock size={15} /> Confirm & send</>}
       </button>
@@ -301,12 +301,12 @@ function ScheduledTransfers({ transfers }: { transfers: BankingTransfer[] }) {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <span style={{ fontFeatureSettings: '"tnum"', fontWeight: 700, color: '#C0392B', fontSize: '0.9375rem' }}>
+            <span style={{ fontFeatureSettings: '"tnum"', fontWeight: 700, color: '#00A9AC', fontSize: '0.9375rem' }}>
               −{formatCents(t.amount)}
             </span>
             <div className="flex gap-1">
               <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#FFF8E1', color: '#F39C12' }}>Skip next</button>
-              <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#FEF2F2', color: '#C0392B' }}>Cancel</button>
+              <button className="px-2 py-1 rounded-[4px] text-xs font-semibold" style={{ background: '#F0FBFB', color: '#00A9AC' }}>Cancel</button>
             </div>
           </div>
         </div>
@@ -375,7 +375,7 @@ function PayoutRouting() {
             <span style={{ color: '#15803D', fontSize: '0.9375rem', fontWeight: 600 }}>Payouts routing to FB Business Connect Banking ···4471</span>
           </div>
         ) : (
-          <button onClick={() => setRouted(true)} className="flex items-center gap-2 px-4 py-2.5 rounded-[8px] font-semibold" style={{ background: '#C0392B', color: '#fff' }}>
+          <button onClick={() => setRouted(true)} className="flex items-center gap-2 px-4 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>
             Route my shop payouts here <ArrowRight size={16} />
           </button>
         )}
@@ -392,7 +392,7 @@ function PayoutRouting() {
             { value: 'instant',  label: 'Instant — Same day', sub: 'Fee: 1.5% of payout (min R 5).', fee: '1.5%' },
           ].map(opt => (
             <label key={opt.value} className="flex items-center gap-3 p-4 rounded-[8px] cursor-pointer" style={{ border: `1.5px solid ${speed === opt.value ? '#1A1A1A' : '#E5E7EB'}`, background: speed === opt.value ? '#F9FAFB' : '#fff' }}>
-              <input type="radio" name="speed" value={opt.value} checked={speed === opt.value} onChange={() => setSpeed(opt.value as typeof speed)} style={{ accentColor: '#C0392B' }} />
+              <input type="radio" name="speed" value={opt.value} checked={speed === opt.value} onChange={() => setSpeed(opt.value as typeof speed)} style={{ accentColor: '#00A9AC' }} />
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{opt.label}</p>

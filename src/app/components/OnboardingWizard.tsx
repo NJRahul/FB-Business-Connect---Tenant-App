@@ -294,7 +294,7 @@ const inp: React.CSSProperties = {
 // ─── Confetti ───────────────────────────────────────────────────────────────
 
 function fireConfetti() {
-  const colors = ['#C0392B', '#ffffff', '#E74C3C', '#F5B7B1', '#FDEDEC'];
+  const colors = ['#00A9AC', '#FA9D1E', '#ffffff', '#00BFC3', '#FFD08A'];
   const fire = (particleRatio: number, opts: object) => {
     const count = 200;
     (window as any).confetti?.({
@@ -334,7 +334,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
     teamMembers: [], techInput: { name: '', email: '', role: 'Technician' },
     licenseNumber: '', insurancePolicy: '', certType: '',
     bankAccountName: '', bankName: '', bankAccountNumber: '', bankBranchCode: '', bankAccountType: 'Cheque / Current', cipcNumber: '', bankSkipped: false,
-    brandColor: '#C0392B', tagline: '', businessDescription: '',
+    brandColor: '#00A9AC', tagline: '', businessDescription: '',
     serviceAreaText: '', published: false,
   });
 
@@ -388,7 +388,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-60 xl:w-64 bg-white border-r shrink-0 overflow-y-auto" style={{ borderColor: '#E5E7EB' }}>
         <div className="p-4 border-b flex items-center gap-2.5" style={{ borderColor: '#E5E7EB' }}>
-          <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#C0392B' }}>
+          <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0" style={{ background: '#00A9AC' }}>
             <Wrench size={16} color="#fff" />
           </div>
           <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', fontSize: '1.0625rem' }}>FB Business Connect</span>
@@ -396,7 +396,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
 
         <div className="p-4 border-b" style={{ borderColor: '#E5E7EB' }}>
           <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-            <div className="h-full rounded-full transition-all" style={{ width: `${(completedSteps.size / 12) * 100}%`, background: '#C0392B' }} />
+            <div className="h-full rounded-full transition-all" style={{ width: `${(completedSteps.size / 12) * 100}%`, background: '#00A9AC' }} />
           </div>
           <p className="mt-1.5" style={{ color: '#9CA3AF', fontSize: '0.6875rem' }}>
             {completedSteps.size}/12 steps · ~{remaining} min left
@@ -413,20 +413,20 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
                 key={step.id}
                 onClick={() => setCurrentStep(step.id)}
                 className="w-full flex items-center gap-2.5 px-3 py-2 rounded-[6px] text-left transition-colors mb-0.5"
-                style={{ background: isActive ? '#FDEDEC' : 'transparent', color: isActive ? '#C0392B' : isDone ? '#27AE60' : '#6B7280' }}
+                style={{ background: isActive ? '#E6F7F7' : 'transparent', color: isActive ? '#00A9AC' : isDone ? '#27AE60' : '#6B7280' }}
               >
                 <span className="w-4.5 h-4.5 shrink-0 flex items-center justify-center">
                   {isDone
                     ? <CheckCircle2 size={16} style={{ color: '#27AE60' }} />
                     : isActive
-                      ? <span className="w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center" style={{ borderColor: '#C0392B' }}><span className="w-1.5 h-1.5 rounded-full" style={{ background: '#C0392B' }} /></span>
+                      ? <span className="w-3.5 h-3.5 rounded-full border-2 flex items-center justify-center" style={{ borderColor: '#00A9AC' }}><span className="w-1.5 h-1.5 rounded-full" style={{ background: '#00A9AC' }} /></span>
                       : <Circle size={16} style={{ color: '#D1D5DB' }} />
                   }
                 </span>
                 <div className="flex-1 min-w-0 flex items-center justify-between gap-1">
                   <span style={{ fontSize: '0.8125rem', fontWeight: isActive ? 600 : 400, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{step.label}</span>
                   <div className="flex items-center gap-1 shrink-0">
-                    {step.required && <span className="px-1 py-0.5 rounded" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.5rem', fontWeight: 700 }}>REQ</span>}
+                    {step.required && <span className="px-1 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.5rem', fontWeight: 700 }}>REQ</span>}
                     <span style={{ fontSize: '0.625rem', color: '#D1D5DB' }}>{step.time}</span>
                   </div>
                 </div>
@@ -453,10 +453,10 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
             const isActive = currentStep === step.id;
             return (
               <button key={step.id} onClick={() => setCurrentStep(step.id)} className="shrink-0 flex flex-col items-center gap-0.5">
-                <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: isDone ? '#27AE60' : isActive ? '#C0392B' : '#E5E7EB', color: isDone || isActive ? '#fff' : '#9CA3AF' }}>
+                <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: isDone ? '#27AE60' : isActive ? '#00A9AC' : '#E5E7EB', color: isDone || isActive ? '#fff' : '#9CA3AF' }}>
                   {isDone ? <Check size={11} /> : step.id}
                 </span>
-                <span style={{ fontSize: '0.5625rem', color: isActive ? '#C0392B' : '#9CA3AF', whiteSpace: 'nowrap' }}>{step.label.split(' ')[0]}</span>
+                <span style={{ fontSize: '0.5625rem', color: isActive ? '#00A9AC' : '#9CA3AF', whiteSpace: 'nowrap' }}>{step.label.split(' ')[0]}</span>
               </button>
             );
           })}
@@ -469,7 +469,7 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
               <div className="flex items-center gap-2 mb-0.5">
                 <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Step {currentStep} of 12</span>
                 {stepInfo.required && (
-                  <span className="px-1.5 py-0.5 rounded" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.6875rem', fontWeight: 600 }}>Required to publish</span>
+                  <span className="px-1.5 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.6875rem', fontWeight: 600 }}>Required to publish</span>
                 )}
                 {state.industryPack && currentStep > 1 && (
                   <span className="px-1.5 py-0.5 rounded" style={{ background: '#F3F4F6', color: '#6B7280', fontSize: '0.6875rem', fontWeight: 600 }}>
@@ -509,9 +509,9 @@ export function OnboardingWizard({ tenant, onComplete }: OnboardingWizardProps) 
                 onClick={goNext}
                 disabled={currentStep === 1 && !state.industryPack}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-[6px] text-white transition-colors"
-                style={{ background: currentStep === 1 && !state.industryPack ? '#D1D5DB' : '#C0392B', fontWeight: 600, fontSize: '0.9375rem', cursor: currentStep === 1 && !state.industryPack ? 'not-allowed' : 'pointer' }}
-                onMouseEnter={e => { if (!(currentStep === 1 && !state.industryPack)) e.currentTarget.style.background = '#A93226'; }}
-                onMouseLeave={e => { if (!(currentStep === 1 && !state.industryPack)) e.currentTarget.style.background = '#C0392B'; }}
+                style={{ background: currentStep === 1 && !state.industryPack ? '#D1D5DB' : '#00A9AC', fontWeight: 600, fontSize: '0.9375rem', cursor: currentStep === 1 && !state.industryPack ? 'not-allowed' : 'pointer' }}
+                onMouseEnter={e => { if (!(currentStep === 1 && !state.industryPack)) e.currentTarget.style.background = '#007F82'; }}
+                onMouseLeave={e => { if (!(currentStep === 1 && !state.industryPack)) e.currentTarget.style.background = '#00A9AC'; }}
               >
                 {currentStep === 1 ? (state.industryPack ? `Continue with ${state.industryLabel}` : 'Select an industry') : 'Save & Continue'}
                 <ChevronRight size={16} />
@@ -573,19 +573,19 @@ function Step1({ state, setState, setStateField, goNext }: {
                 onClick={() => handleSelect(card)}
                 className="relative p-5 rounded-[8px] text-left transition-all"
                 style={{
-                  border: selected ? '2px solid #C0392B' : '2px solid #E5E7EB',
-                  background: selected ? '#FDEDEC' : '#fff',
+                  border: selected ? '2px solid #00A9AC' : '2px solid #E5E7EB',
+                  background: selected ? '#E6F7F7' : '#fff',
                 }}
               >
                 {selected && (
-                  <span className="absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#C0392B' }}>
+                  <span className="absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center" style={{ background: '#00A9AC' }}>
                     <Check size={13} color="#fff" />
                   </span>
                 )}
                 <div className="flex items-center gap-4">
                   <span style={{ fontSize: '2.25rem' }}>{card.icon}</span>
                   <div>
-                    <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: selected ? '#C0392B' : '#1A1A1A', fontSize: '1.0625rem' }}>{card.label}</p>
+                    <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: selected ? '#00A9AC' : '#1A1A1A', fontSize: '1.0625rem' }}>{card.label}</p>
                     <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '3px' }}>{card.desc}</p>
                   </div>
                 </div>
@@ -628,7 +628,7 @@ function Step1({ state, setState, setStateField, goNext }: {
                       style={{ ...inp, fontSize: '0.75rem', padding: '5px 8px', marginBottom: '6px' }}
                     />
                     <div className="flex gap-1.5">
-                      <button onClick={() => handleNotify(card.id)} disabled={!waitlistEmail.includes('@')} className="flex-1 py-1.5 rounded text-white text-xs font-semibold" style={{ background: waitlistEmail.includes('@') ? '#C0392B' : '#D1D5DB' }}>Notify me</button>
+                      <button onClick={() => handleNotify(card.id)} disabled={!waitlistEmail.includes('@')} className="flex-1 py-1.5 rounded text-white text-xs font-semibold" style={{ background: waitlistEmail.includes('@') ? '#00A9AC' : '#D1D5DB' }}>Notify me</button>
                       <button onClick={() => { setWaitlistCard(null); setWaitlistEmail(''); }} className="px-2 py-1.5 rounded text-xs" style={{ color: '#6B7280', border: '1px solid #E5E7EB', background: '#fff' }}>✕</button>
                     </div>
                   </div>
@@ -637,7 +637,7 @@ function Step1({ state, setState, setStateField, goNext }: {
                     onClick={() => setWaitlistCard(card.id)}
                     className="mt-2.5 py-1.5 rounded-[4px] text-xs font-semibold transition-colors flex items-center justify-center gap-1"
                     style={{ border: '1.5px solid #E5E7EB', color: '#6B7280', background: '#fff' }}
-                    onMouseEnter={e => { e.currentTarget.style.borderColor = '#C0392B'; e.currentTarget.style.color = '#C0392B'; }}
+                    onMouseEnter={e => { e.currentTarget.style.borderColor = '#00A9AC'; e.currentTarget.style.color = '#00A9AC'; }}
                     onMouseLeave={e => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.color = '#6B7280'; }}
                   >
                     <Bell size={11} /> Notify Me
@@ -651,11 +651,11 @@ function Step1({ state, setState, setStateField, goNext }: {
           <button
             onClick={() => setShowCustomForm(v => !v)}
             className="p-4 rounded-[8px] flex flex-col items-center justify-center gap-2 transition-all"
-            style={{ border: '1.5px dashed #E5E7EB', background: showCustomForm ? '#FDEDEC' : '#fff', minHeight: '120px' }}
-            onMouseEnter={e => (e.currentTarget.style.borderColor = '#C0392B')}
-            onMouseLeave={e => (e.currentTarget.style.borderColor = showCustomForm ? '#C0392B' : '#E5E7EB')}
+            style={{ border: '1.5px dashed #E5E7EB', background: showCustomForm ? '#E6F7F7' : '#fff', minHeight: '120px' }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = '#00A9AC')}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = showCustomForm ? '#00A9AC' : '#E5E7EB')}
           >
-            <Plus size={18} style={{ color: '#C0392B' }} />
+            <Plus size={18} style={{ color: '#00A9AC' }} />
             <p style={{ color: '#6B7280', fontSize: '0.75rem', textAlign: 'center', lineHeight: 1.4 }}>
               Don't see your industry?
             </p>
@@ -665,7 +665,7 @@ function Step1({ state, setState, setStateField, goNext }: {
 
       {/* Custom industry form */}
       {showCustomForm && (
-        <div className="bg-white rounded-[8px] p-5" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1.5px solid #F5B7B1' }}>
+        <div className="bg-white rounded-[8px] p-5" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)', border: '1.5px solid #80D4D5' }}>
           <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Tell us about your business</h3>
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>This feeds the product roadmap for future industry packs.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -689,9 +689,9 @@ function Step1({ state, setState, setStateField, goNext }: {
           <div className="flex gap-3 mt-4">
             <button
               className="flex items-center gap-2 px-5 py-2.5 rounded-[6px] text-white font-semibold text-sm transition-colors"
-              style={{ background: '#C0392B' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+              style={{ background: '#00A9AC' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
               onClick={() => setShowCustomForm(false)}
             >
               Submit to Product Team
@@ -996,16 +996,16 @@ function Step2({ state, setState, tenant }: { state: WizardState; setState: Reac
         <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>We'll recommend the right plan for you.</p>
         <div className="space-y-2">
           {[['just-me', 'Just me'], ['2-5', '2–5 people'], ['6-20', '6–20 people'], ['21-50', '21–50 people'], ['50+', '50+ people']].map(([val, label]) => (
-            <label key={val} className="flex items-center gap-3 p-3 rounded-[6px] cursor-pointer transition-all" style={{ border: `1.5px solid ${state.teamSize === val ? '#C0392B' : '#E5E7EB'}`, background: state.teamSize === val ? '#FDEDEC' : '#fff' }}>
-              <input type="radio" name="teamSize" value={val} checked={state.teamSize === val} onChange={() => setState(s => ({ ...s, teamSize: val }))} style={{ accentColor: '#C0392B' }} />
+            <label key={val} className="flex items-center gap-3 p-3 rounded-[6px] cursor-pointer transition-all" style={{ border: `1.5px solid ${state.teamSize === val ? '#00A9AC' : '#E5E7EB'}`, background: state.teamSize === val ? '#E6F7F7' : '#fff' }}>
+              <input type="radio" name="teamSize" value={val} checked={state.teamSize === val} onChange={() => setState(s => ({ ...s, teamSize: val }))} style={{ accentColor: '#00A9AC' }} />
               <span style={{ color: '#1A1A1A', fontWeight: state.teamSize === val ? 600 : 400, fontSize: '0.9375rem' }}>{label}</span>
             </label>
           ))}
         </div>
         {planRec && (
-          <div className="mt-4 flex items-center gap-2.5 p-3 rounded-[6px]" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-            <Star size={14} style={{ color: '#C0392B' }} />
-            <p style={{ color: '#C0392B', fontSize: '0.875rem', fontWeight: 600 }}>Recommended: {planRec}</p>
+          <div className="mt-4 flex items-center gap-2.5 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+            <Star size={14} style={{ color: '#00A9AC' }} />
+            <p style={{ color: '#00A9AC', fontSize: '0.875rem', fontWeight: 600 }}>Recommended: {planRec}</p>
           </div>
         )}
       </div>
@@ -1044,10 +1044,10 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
                 key={opt.id}
                 onClick={() => setState(s => ({ ...s, operationsType: opt.id }))}
                 className="p-4 rounded-[8px] text-left transition-all"
-                style={{ border: sel ? `2px solid #C0392B` : '2px solid #E5E7EB', background: sel ? '#FDEDEC' : '#fff', borderLeft: sel ? '4px solid #C0392B' : '2px solid #E5E7EB' }}
+                style={{ border: sel ? `2px solid #00A9AC` : '2px solid #E5E7EB', background: sel ? '#E6F7F7' : '#fff', borderLeft: sel ? '4px solid #00A9AC' : '2px solid #E5E7EB' }}
               >
                 <span style={{ fontSize: '2rem' }}>{opt.icon}</span>
-                <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: sel ? '#C0392B' : '#1A1A1A', marginTop: '10px', fontSize: '0.9375rem' }}>{opt.label}</p>
+                <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: sel ? '#00A9AC' : '#1A1A1A', marginTop: '10px', fontSize: '0.9375rem' }}>{opt.label}</p>
                 <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '4px', lineHeight: 1.4 }}>{opt.desc}</p>
                 {sel && <p className="mt-2" style={{ color: '#9CA3AF', fontSize: '0.6875rem', lineHeight: 1.4 }}>Activates: {opt.activates}</p>}
               </button>
@@ -1061,7 +1061,7 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
           <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Service Area Definition</h3>
           <div className="flex gap-2 mb-4">
             {(['zips', 'radius'] as const).map(t => (
-              <button key={t} onClick={() => setState(s => ({ ...s, serviceAreaType: t }))} className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all" style={{ background: state.serviceAreaType === t ? '#C0392B' : '#F3F4F6', color: state.serviceAreaType === t ? '#fff' : '#6B7280' }}>
+              <button key={t} onClick={() => setState(s => ({ ...s, serviceAreaType: t }))} className="px-4 py-1.5 rounded-full text-sm font-semibold transition-all" style={{ background: state.serviceAreaType === t ? '#00A9AC' : '#F3F4F6', color: state.serviceAreaType === t ? '#fff' : '#6B7280' }}>
                 {t === 'zips' ? '📍 Postal Codes' : '📏 Radius'}
               </button>
             ))}
@@ -1070,15 +1070,15 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
             <>
               <div className="flex gap-2 mb-3">
                 <input value={state.zipInput} onChange={e => setState(s => ({ ...s, zipInput: e.target.value.replace(/\D/g, '').slice(0, 4) }))} onKeyDown={e => e.key === 'Enter' && addZip()} style={{ ...inp, width: '140px', flex: 'none' }} placeholder="Postal code" />
-                <button onClick={addZip} className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#C0392B', whiteSpace: 'nowrap' }}>
+                <button onClick={addZip} className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#00A9AC', whiteSpace: 'nowrap' }}>
                   <Plus size={13} /> Add ZIP
                 </button>
               </div>
               <div className="flex flex-wrap gap-2">
                 {state.serviceZips.map(z => (
-                  <span key={z} className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px]" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 600, fontSize: '0.875rem' }}>
+                  <span key={z} className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px]" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}>
                     <MapPin size={11} />{z}
-                    <button onClick={() => setState(s => ({ ...s, serviceZips: s.serviceZips.filter(v => v !== z) }))}><X size={11} style={{ color: '#F5B7B1' }} /></button>
+                    <button onClick={() => setState(s => ({ ...s, serviceZips: s.serviceZips.filter(v => v !== z) }))}><X size={11} style={{ color: '#80D4D5' }} /></button>
                   </span>
                 ))}
                 {state.serviceZips.length === 0 && <p style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>No postal codes added yet</p>}
@@ -1097,15 +1097,15 @@ function Step3({ state, setState }: { state: WizardState; setState: React.Dispat
         <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '16px' }}>How many locations?</h3>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {[['1', '1 location'], ['2-5', '2–5'], ['6-20', '6–20'], ['20+', '20+ (chain)']].map(([val, label]) => (
-            <button key={val} onClick={() => setState(s => ({ ...s, locationCount: val }))} className="py-3 rounded-[8px] font-semibold text-sm transition-all" style={{ border: state.locationCount === val ? '2px solid #C0392B' : '2px solid #E5E7EB', background: state.locationCount === val ? '#FDEDEC' : '#fff', color: state.locationCount === val ? '#C0392B' : '#6B7280' }}>
+            <button key={val} onClick={() => setState(s => ({ ...s, locationCount: val }))} className="py-3 rounded-[8px] font-semibold text-sm transition-all" style={{ border: state.locationCount === val ? '2px solid #00A9AC' : '2px solid #E5E7EB', background: state.locationCount === val ? '#E6F7F7' : '#fff', color: state.locationCount === val ? '#00A9AC' : '#6B7280' }}>
               {label}
             </button>
           ))}
         </div>
         {state.locationCount === '20+' && (
-          <div className="mt-3 p-3 rounded-[6px] flex items-center gap-2.5" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-            <Star size={14} style={{ color: '#C0392B' }} />
-            <p style={{ color: '#C0392B', fontSize: '0.875rem', fontWeight: 600 }}>Enterprise plan recommended — <button className="underline">Talk to Sales</button></p>
+          <div className="mt-3 p-3 rounded-[6px] flex items-center gap-2.5" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+            <Star size={14} style={{ color: '#00A9AC' }} />
+            <p style={{ color: '#00A9AC', fontSize: '0.875rem', fontWeight: 600 }}>Enterprise plan recommended — <button className="underline">Talk to Sales</button></p>
           </div>
         )}
       </div>
@@ -1137,7 +1137,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
               <div key={day} className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
                 <div className="w-24 shrink-0"><span style={{ color: '#1A1A1A', fontWeight: 500, fontSize: '0.9375rem' }}>{day.slice(0, 3)}</span></div>
                 <label className="flex items-center gap-2 cursor-pointer shrink-0">
-                  <input type="checkbox" checked={!h.closed} onChange={e => setState(s => ({ ...s, hours: { ...s.hours, [day]: { ...h, closed: !e.target.checked } } }))} style={{ accentColor: '#C0392B' }} />
+                  <input type="checkbox" checked={!h.closed} onChange={e => setState(s => ({ ...s, hours: { ...s.hours, [day]: { ...h, closed: !e.target.checked } } }))} style={{ accentColor: '#00A9AC' }} />
                   <span style={{ color: '#6B7280', fontSize: '0.875rem' }}>Open</span>
                 </label>
                 {!h.closed ? (
@@ -1146,7 +1146,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
                     <span style={{ color: '#9CA3AF' }}>–</span>
                     <input type="time" value={h.close} onChange={e => setState(s => ({ ...s, hours: { ...s.hours, [day]: { ...h, close: e.target.value } } }))} style={{ ...inp, width: 'auto', padding: '6px 10px', fontSize: '0.875rem' }} />
                     <label className="flex items-center gap-1.5 cursor-pointer">
-                      <input type="checkbox" checked={h.break} onChange={e => setState(s => ({ ...s, hours: { ...s.hours, [day]: { ...h, break: e.target.checked } } }))} style={{ accentColor: '#C0392B' }} />
+                      <input type="checkbox" checked={h.break} onChange={e => setState(s => ({ ...s, hours: { ...s.hours, [day]: { ...h, break: e.target.checked } } }))} style={{ accentColor: '#00A9AC' }} />
                       <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Break</span>
                     </label>
                     {h.break && (
@@ -1171,7 +1171,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
           <h3 style={{ color: '#1A1A1A', fontWeight: 600 }}>Extended Availability</h3>
           {showEmergency && (
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" checked={state.emergencyHours} onChange={e => setState(s => ({ ...s, emergencyHours: e.target.checked }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+              <input type="checkbox" checked={state.emergencyHours} onChange={e => setState(s => ({ ...s, emergencyHours: e.target.checked }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
               <div>
                 <p style={{ color: '#1A1A1A', fontWeight: 500 }}>Offer emergency / after-hours service?</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginTop: '2px' }}>Enables after-hours surcharge configuration and emergency booking slots</p>
@@ -1180,7 +1180,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
           )}
           {showWeekend && (
             <label className="flex items-start gap-3 cursor-pointer">
-              <input type="checkbox" checked={state.weekendService} onChange={e => setState(s => ({ ...s, weekendService: e.target.checked }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+              <input type="checkbox" checked={state.weekendService} onChange={e => setState(s => ({ ...s, weekendService: e.target.checked }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
               <div>
                 <p style={{ color: '#1A1A1A', fontWeight: 500 }}>Offer weekend service?</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginTop: '2px' }}>Adds Saturday/Sunday slots to your booking calendar</p>
@@ -1196,8 +1196,8 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
           {FEDERAL_HOLIDAYS.map(h => {
             const checked = state.holidays.includes(h);
             return (
-              <label key={h} className="flex items-center gap-3 py-2 px-3 rounded-[6px] cursor-pointer" style={{ background: checked ? '#FDEDEC' : '#F9FAFB', border: `1px solid ${checked ? '#F5B7B1' : '#E5E7EB'}` }}>
-                <input type="checkbox" checked={checked} onChange={() => setState(s => ({ ...s, holidays: checked ? s.holidays.filter(v => v !== h) : [...s.holidays, h] }))} style={{ accentColor: '#C0392B' }} />
+              <label key={h} className="flex items-center gap-3 py-2 px-3 rounded-[6px] cursor-pointer" style={{ background: checked ? '#E6F7F7' : '#F9FAFB', border: `1px solid ${checked ? '#80D4D5' : '#E5E7EB'}` }}>
+                <input type="checkbox" checked={checked} onChange={() => setState(s => ({ ...s, holidays: checked ? s.holidays.filter(v => v !== h) : [...s.holidays, h] }))} style={{ accentColor: '#00A9AC' }} />
                 <span style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: checked ? 500 : 400 }}>{h}</span>
               </label>
             );
@@ -1205,7 +1205,7 @@ function Step4({ state, setState }: { state: WizardState; setState: React.Dispat
         </div>
         <div className="flex gap-2 border-t pt-4" style={{ borderColor: '#E5E7EB' }}>
           <input value={customHoliday} onChange={e => setCustomHoliday(e.target.value)} style={{ ...inp, flex: 1 }} placeholder="Add custom holiday..." />
-          <button onClick={() => { if (customHoliday.trim()) { setState(s => ({ ...s, holidays: [...s.holidays, customHoliday.trim()] })); setCustomHoliday(''); } }} className="flex items-center gap-1 px-3 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#C0392B', whiteSpace: 'nowrap' }}>
+          <button onClick={() => { if (customHoliday.trim()) { setState(s => ({ ...s, holidays: [...s.holidays, customHoliday.trim()] })); setCustomHoliday(''); } }} className="flex items-center gap-1 px-3 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#00A9AC', whiteSpace: 'nowrap' }}>
             <Plus size={13} /> Add
           </button>
         </div>
@@ -1241,7 +1241,7 @@ function StepBankAccount({ state, setState }: { state: WizardState; setState: Re
     <div className="space-y-5">
       {/* Hero */}
       <div className="rounded-[12px] p-6 text-center" style={{ background: '#1A1A1A', color: '#fff' }}>
-        <div className="w-14 h-14 rounded-[12px] flex items-center justify-center mx-auto mb-3" style={{ background: '#C0392B' }}>
+        <div className="w-14 h-14 rounded-[12px] flex items-center justify-center mx-auto mb-3" style={{ background: '#00A9AC' }}>
           <Building2 size={28} color="#fff" />
         </div>
         <h2 style={{ fontFamily: 'Sora, sans-serif', fontSize: '1.25rem', fontWeight: 700, marginBottom: 6 }}>
@@ -1381,8 +1381,8 @@ function Step5({ state, setState }: { state: WizardState; setState: React.Dispat
                 </div>
               ))}
             </div>
-            <div className="p-3 rounded-[6px] mb-5" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-              <p style={{ color: '#C0392B', fontSize: '0.8125rem', fontWeight: 600 }}>⚠️ Required before storefront can be published</p>
+            <div className="p-3 rounded-[6px] mb-5" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+              <p style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600 }}>⚠️ Required before storefront can be published</p>
             </div>
             <button onClick={connect} disabled={loading} className="w-full flex items-center justify-center gap-2 py-3 rounded-[6px] text-white transition-colors" style={{ background: loading ? '#9CA3AF' : '#635BFF', fontWeight: 600 }}>
               {loading ? <><span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Connecting...</> : <><ExternalLink size={16} />Connect with Stripe</>}
@@ -1482,8 +1482,8 @@ function Step6({ state, setState }: { state: WizardState; setState: React.Dispat
           <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>Where do you source your tire inventory?</h3>
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>At least one source is required before storefront can be published.</p>
           {[['distributor', '🚛', 'From distributors (ATD, TireHub, etc.)', 'Auto-sync catalog and live pricing every 60 minutes'], ['local', '📦', 'I stock my own tires locally', 'Add tires manually or import via CSV'], ['both', '🔀', 'Both (distributor + local stock)', 'Combination of distributor feeds and your own inventory']].map(([val, icon, label, desc]) => (
-            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#C0392B' : '#E5E7EB'}`, background: state.catalogSource === val ? '#FDEDEC' : '#fff' }}>
-              <input type="radio" name="src" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#00A9AC' : '#E5E7EB'}`, background: state.catalogSource === val ? '#E6F7F7' : '#fff' }}>
+              <input type="radio" name="src" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
               <div><p style={{ color: '#1A1A1A', fontWeight: 600 }}>{icon} {label}</p><p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '3px' }}>{desc}</p></div>
             </label>
           ))}
@@ -1506,7 +1506,7 @@ function Step6({ state, setState }: { state: WizardState; setState: React.Dispat
                     {connected ? (
                       <span className="px-3 py-1 rounded-[4px]" style={{ background: '#DCFCE7', color: '#15803D', fontSize: '0.8125rem', fontWeight: 600 }}>Active</span>
                     ) : (
-                      <button onClick={() => connectDist(dist.id)} disabled={connecting === dist.id} className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: connecting === dist.id ? '#9CA3AF' : '#C0392B', whiteSpace: 'nowrap' }}>
+                      <button onClick={() => connectDist(dist.id)} disabled={connecting === dist.id} className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: connecting === dist.id ? '#9CA3AF' : '#00A9AC', whiteSpace: 'nowrap' }}>
                         {connecting === dist.id ? <><span className="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />Connecting...</> : 'Connect'}
                       </button>
                     )}
@@ -1528,8 +1528,8 @@ function Step6({ state, setState }: { state: WizardState; setState: React.Dispat
           <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>{catalogCfg.question}</h3>
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>At least one source is required before your storefront can be published.</p>
           {catalogCfg.options.map(([val, icon, label, desc]) => (
-            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#C0392B' : '#E5E7EB'}`, background: state.catalogSource === val ? '#FDEDEC' : '#fff' }}>
-              <input type="radio" name="cat" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#00A9AC' : '#E5E7EB'}`, background: state.catalogSource === val ? '#E6F7F7' : '#fff' }}>
+              <input type="radio" name="cat" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
               <div>
                 <p style={{ color: '#1A1A1A', fontWeight: 600 }}>{icon} {label}</p>
                 <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '3px' }}>{desc}</p>
@@ -1556,8 +1556,8 @@ function Step6({ state, setState }: { state: WizardState; setState: React.Dispat
         <h3 style={{ color: '#1A1A1A', fontWeight: 600, marginBottom: '4px' }}>What do you use in your work?</h3>
         <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>This determines whether you need inventory management.</p>
         {[['parts', '🔩', 'Physical parts / materials', 'Enables inventory tracking, parts ordering, and parts-based pricing'], ['services', '🔧', 'Services only (no physical parts)', 'Service catalog only — no inventory management needed'], ['both', '🔀', 'Both parts and services', 'Full catalog with inventory and service management']].map(([val, icon, label, desc]) => (
-          <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#C0392B' : '#E5E7EB'}`, background: state.catalogSource === val ? '#FDEDEC' : '#fff' }}>
-            <input type="radio" name="cat" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+          <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer mb-3" style={{ border: `2px solid ${state.catalogSource === val ? '#00A9AC' : '#E5E7EB'}`, background: state.catalogSource === val ? '#E6F7F7' : '#fff' }}>
+            <input type="radio" name="cat" value={val} checked={state.catalogSource === val} onChange={() => setState(s => ({ ...s, catalogSource: val as any }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
             <div><p style={{ color: '#1A1A1A', fontWeight: 600 }}>{icon} {label}</p><p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '3px' }}>{desc}</p></div>
           </label>
         ))}
@@ -1587,10 +1587,10 @@ function Step7({ state, setState }: { state: WizardState; setState: React.Dispat
   return (
     <div className="space-y-5">
       <div className="bg-white rounded-[8px] overflow-hidden" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <div className="px-5 py-4 border-b flex items-center gap-3" style={{ borderColor: '#E5E7EB', background: '#FDEDEC' }}>
+        <div className="px-5 py-4 border-b flex items-center gap-3" style={{ borderColor: '#E5E7EB', background: '#E6F7F7' }}>
           {industryCard && <span style={{ fontSize: '1.25rem' }}>{industryCard.icon}</span>}
           <div>
-            <h3 style={{ color: '#C0392B', fontWeight: 700 }}>Pre-seeded for {state.industryLabel}</h3>
+            <h3 style={{ color: '#00A9AC', fontWeight: 700 }}>Pre-seeded for {state.industryLabel}</h3>
             <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>Check the services you offer. Edit prices and durations inline.</p>
           </div>
         </div>
@@ -1611,7 +1611,7 @@ function Step7({ state, setState }: { state: WizardState; setState: React.Dispat
             {state.serviceTypes.map(svc => (
               <div key={svc.id} className="px-5 py-3 grid grid-cols-12 gap-2 items-center" style={{ background: svc.checked ? '#fff' : '#FAFAFA', opacity: svc.checked ? 1 : 0.55 }}>
                 <div className="col-span-1">
-                  <input type="checkbox" checked={svc.checked} onChange={() => toggle(svc.id)} style={{ accentColor: '#C0392B', width: '16px', height: '16px' }} />
+                  <input type="checkbox" checked={svc.checked} onChange={() => toggle(svc.id)} style={{ accentColor: '#00A9AC', width: '16px', height: '16px' }} />
                 </div>
                 <div className="col-span-4" style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: svc.checked ? 500 : 400 }}>{svc.name}</div>
                 <div className="col-span-2 text-center">
@@ -1652,12 +1652,12 @@ function Step7({ state, setState }: { state: WizardState; setState: React.Dispat
                 </select>
               </div>
               <div className="flex gap-2">
-                <button onClick={addCustom} disabled={!newSvc.name} className="px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: newSvc.name ? '#C0392B' : '#9CA3AF' }}>Add Service</button>
+                <button onClick={addCustom} disabled={!newSvc.name} className="px-4 py-2 rounded-[6px] text-white text-sm font-semibold" style={{ background: newSvc.name ? '#00A9AC' : '#9CA3AF' }}>Add Service</button>
                 <button onClick={() => setAddingNew(false)} className="px-4 py-2 rounded-[6px] text-sm" style={{ color: '#6B7280', border: '1px solid #E5E7EB' }}>Cancel</button>
               </div>
             </div>
           ) : (
-            <button onClick={() => setAddingNew(true)} className="flex items-center gap-2 text-sm font-semibold" style={{ color: '#C0392B' }}>
+            <button onClick={() => setAddingNew(true)} className="flex items-center gap-2 text-sm font-semibold" style={{ color: '#00A9AC' }}>
               <Plus size={14} /> Add another service type
             </button>
           )}
@@ -1690,7 +1690,7 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
           {disposalFeeLabel && (
             <div>
               <label className="flex items-center gap-2 cursor-pointer mb-2">
-                <input type="checkbox" checked={state.disposalFeeEnabled} onChange={e => setState(s => ({ ...s, disposalFeeEnabled: e.target.checked }))} style={{ accentColor: '#C0392B' }} />
+                <input type="checkbox" checked={state.disposalFeeEnabled} onChange={e => setState(s => ({ ...s, disposalFeeEnabled: e.target.checked }))} style={{ accentColor: '#00A9AC' }} />
                 <span style={{ color: '#1A1A1A', fontWeight: 500, fontSize: '0.9375rem' }}>{disposalFeeLabel}</span>
               </label>
               {state.disposalFeeEnabled && (
@@ -1710,8 +1710,8 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
           <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>Charge a fee when dispatch costs aren't covered by the cart.</p>
           <div className="space-y-3">
             {[['true', '✓ Yes — charge a trip fee'], ['false', '✗ No — included in my service pricing']].map(([val, label]) => (
-              <label key={val} className="flex items-center gap-3 p-3.5 rounded-[8px] cursor-pointer" style={{ border: `2px solid ${String(state.calloutFeeEnabled) === val ? '#C0392B' : '#E5E7EB'}`, background: String(state.calloutFeeEnabled) === val ? '#FDEDEC' : '#fff' }}>
-                <input type="radio" name="callout" value={val} checked={String(state.calloutFeeEnabled) === val} onChange={() => setState(s => ({ ...s, calloutFeeEnabled: val === 'true' }))} style={{ accentColor: '#C0392B' }} />
+              <label key={val} className="flex items-center gap-3 p-3.5 rounded-[8px] cursor-pointer" style={{ border: `2px solid ${String(state.calloutFeeEnabled) === val ? '#00A9AC' : '#E5E7EB'}`, background: String(state.calloutFeeEnabled) === val ? '#E6F7F7' : '#fff' }}>
+                <input type="radio" name="callout" value={val} checked={String(state.calloutFeeEnabled) === val} onChange={() => setState(s => ({ ...s, calloutFeeEnabled: val === 'true' }))} style={{ accentColor: '#00A9AC' }} />
                 <span style={{ color: '#1A1A1A', fontWeight: String(state.calloutFeeEnabled) === val ? 600 : 400 }}>{label}</span>
               </label>
             ))}
@@ -1736,8 +1736,8 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
         <p style={{ color: '#6B7280', fontSize: '0.875rem', marginBottom: '16px' }}>This is your default. You can configure per service type later.</p>
         <div className="space-y-2">
           {[['full', 'Full payment at booking', 'Simplest — customer pays everything upfront'], ['deposit', 'Deposit at booking, balance at completion', 'Set a deposit percentage; balance due when job is done'], ['completion', 'Full payment at completion only', 'No charge at booking; customer pays on the day']].map(([val, label, desc]) => (
-            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer" style={{ border: `2px solid ${state.depositPolicy === val ? '#C0392B' : '#E5E7EB'}`, background: state.depositPolicy === val ? '#FDEDEC' : '#fff' }}>
-              <input type="radio" name="dep" value={val} checked={state.depositPolicy === val} onChange={() => setState(s => ({ ...s, depositPolicy: val as any }))} style={{ accentColor: '#C0392B', marginTop: '2px' }} />
+            <label key={val} className="flex items-start gap-3 p-4 rounded-[8px] cursor-pointer" style={{ border: `2px solid ${state.depositPolicy === val ? '#00A9AC' : '#E5E7EB'}`, background: state.depositPolicy === val ? '#E6F7F7' : '#fff' }}>
+              <input type="radio" name="dep" value={val} checked={state.depositPolicy === val} onChange={() => setState(s => ({ ...s, depositPolicy: val as any }))} style={{ accentColor: '#00A9AC', marginTop: '2px' }} />
               <div>
                 <p style={{ color: '#1A1A1A', fontWeight: 600 }}>{label}</p>
                 <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '2px' }}>{desc}</p>
@@ -1749,8 +1749,8 @@ function Step8({ state, setState }: { state: WizardState; setState: React.Dispat
           <div className="mt-3">
             <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Deposit percentage</label>
             <div className="flex items-center gap-2 mt-1.5">
-              <input type="range" min="10" max="90" step="5" value={parseInt(state.depositPercent)} onChange={e => setState(s => ({ ...s, depositPercent: e.target.value }))} style={{ flex: 1, accentColor: '#C0392B' }} />
-              <span style={{ color: '#C0392B', fontWeight: 700, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif', minWidth: '50px' }}>{state.depositPercent}%</span>
+              <input type="range" min="10" max="90" step="5" value={parseInt(state.depositPercent)} onChange={e => setState(s => ({ ...s, depositPercent: e.target.value }))} style={{ flex: 1, accentColor: '#00A9AC' }} />
+              <span style={{ color: '#00A9AC', fontWeight: 700, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif', minWidth: '50px' }}>{state.depositPercent}%</span>
             </div>
           </div>
         )}
@@ -1781,7 +1781,7 @@ function Step9({ state, setState }: { state: WizardState; setState: React.Dispat
             {roles.map(r => <option key={r}>{r}</option>)}
           </select>
         </div>
-        <button onClick={addMember} className="flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#C0392B' }}>
+        <button onClick={addMember} className="flex items-center gap-2 px-4 py-2.5 rounded-[6px] text-white text-sm font-semibold" style={{ background: '#00A9AC' }}>
           <Plus size={14} /> Send Invite
         </button>
 
@@ -1790,7 +1790,7 @@ function Step9({ state, setState }: { state: WizardState; setState: React.Dispat
             {state.teamMembers.map(m => (
               <div key={m.id} className="flex items-center justify-between px-4 py-3 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '0.875rem' }}>{m.name[0].toUpperCase()}</div>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '0.875rem' }}>{m.name[0].toUpperCase()}</div>
                   <div>
                     <p style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '0.875rem' }}>{m.name}</p>
                     <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>{m.email}</p>
@@ -1877,7 +1877,7 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
       </div>
       <div className="mt-3 flex items-center gap-2 px-3 py-2.5 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
         <Globe size={13} style={{ color: '#9CA3AF', shrink: 0 }} />
-        <span style={{ color: '#C0392B', fontWeight: 600, fontSize: '0.8125rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{slug}.fb-business-connect.app</span>
+        <span style={{ color: '#00A9AC', fontWeight: 600, fontSize: '0.8125rem', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{slug}.fb-business-connect.app</span>
         <button onClick={copyUrl} style={{ color: '#9CA3AF' }}>
           {copied ? <CheckCircle2 size={14} style={{ color: '#27AE60' }} /> : <Copy size={14} />}
         </button>
@@ -1895,9 +1895,9 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
               <label style={{ color: '#6B7280', fontSize: '0.8125rem', fontWeight: 600 }}>Primary Brand Color</label>
               <div className="flex items-center gap-3 mt-1.5">
                 <input type="color" value={state.brandColor} onChange={e => setState(s => ({ ...s, brandColor: e.target.value }))} className="w-12 h-10 rounded-[6px] cursor-pointer" style={{ border: '1.5px solid #E5E7EB', padding: '2px' }} />
-                <input value={state.brandColor} onChange={e => setState(s => ({ ...s, brandColor: e.target.value }))} style={{ ...inp, width: '120px', fontFamily: 'monospace' }} placeholder="#C0392B" />
+                <input value={state.brandColor} onChange={e => setState(s => ({ ...s, brandColor: e.target.value }))} style={{ ...inp, width: '120px', fontFamily: 'monospace' }} placeholder="#00A9AC" />
                 <div className="flex gap-1.5">
-                  {['#C0392B', '#1D4ED8', '#059669', '#7C3AED', '#D97706'].map(c => (
+                  {['#00A9AC', '#1D4ED8', '#059669', '#7C3AED', '#D97706'].map(c => (
                     <button key={c} onClick={() => setState(s => ({ ...s, brandColor: c }))} className="w-7 h-7 rounded-full border-2 transition-all" style={{ background: c, borderColor: state.brandColor === c ? '#1A1A1A' : 'transparent' }} />
                   ))}
                 </div>
@@ -1938,10 +1938,10 @@ function Step10({ state, setState, slug }: { state: WizardState; setState: React
           <div className="flex items-center justify-between mb-2">
             <h3 style={{ color: '#1A1A1A', fontWeight: 600 }}>Your Storefront URL</h3>
           </div>
-          <div className="flex items-center gap-3 p-3 rounded-[6px]" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-            <Globe size={16} style={{ color: '#C0392B', shrink: 0 }} />
-            <span style={{ color: '#C0392B', fontWeight: 700, fontFamily: 'Sora, sans-serif', fontSize: '1rem', flex: 1 }}>{slug}.fb-business-connect.app</span>
-            <button onClick={copyUrl} className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold" style={{ border: '1px solid #F5B7B1', color: '#C0392B', background: '#fff' }}>
+          <div className="flex items-center gap-3 p-3 rounded-[6px]" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+            <Globe size={16} style={{ color: '#00A9AC', shrink: 0 }} />
+            <span style={{ color: '#00A9AC', fontWeight: 700, fontFamily: 'Sora, sans-serif', fontSize: '1rem', flex: 1 }}>{slug}.fb-business-connect.app</span>
+            <button onClick={copyUrl} className="flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold" style={{ border: '1px solid #80D4D5', color: '#00A9AC', background: '#fff' }}>
               {copied ? <CheckCircle2 size={12} style={{ color: '#27AE60' }} /> : <Copy size={12} />}
               {copied ? 'Copied!' : 'Copy'}
             </button>
@@ -2000,11 +2000,11 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
           {checklist.map(item => (
             <div key={item.label} className="flex items-center justify-between py-2 border-b" style={{ borderColor: '#F3F4F6' }}>
               <div className="flex items-center gap-3">
-                {item.done ? <CheckCircle2 size={17} style={{ color: '#27AE60' }} /> : <Circle size={17} style={{ color: item.required ? '#E74C3C' : '#D1D5DB' }} />}
+                {item.done ? <CheckCircle2 size={17} style={{ color: '#27AE60' }} /> : <Circle size={17} style={{ color: item.required ? '#00BFC3' : '#D1D5DB' }} />}
                 <span style={{ color: '#1A1A1A', fontSize: '0.9375rem' }}>{item.label}</span>
               </div>
               <div className="flex items-center gap-2">
-                {item.required && !item.done && <span className="px-2 py-0.5 rounded" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.6875rem', fontWeight: 600 }}>Required</span>}
+                {item.required && !item.done && <span className="px-2 py-0.5 rounded" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.6875rem', fontWeight: 600 }}>Required</span>}
                 <span style={{ color: item.done ? '#27AE60' : '#9CA3AF', fontSize: '0.8125rem', fontWeight: 500 }}>{item.done ? 'Complete' : 'Incomplete'}</span>
               </div>
             </div>
@@ -2025,9 +2025,9 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
         </div>
 
         {!canPublish && (
-          <div className="mt-5 rounded-[8px] p-4 flex items-start gap-3" style={{ background: '#FDEDEC', border: '1px solid #F5B7B1' }}>
-            <AlertCircle size={16} style={{ color: '#C0392B', marginTop: '2px' }} />
-            <p style={{ color: '#C0392B', fontSize: '0.875rem' }}>Complete the required steps before publishing: {!state.stripeConnected && 'Payout setup'}{!state.stripeConnected && !state.catalogSource && ' + '}{!state.catalogSource && 'Catalog / inventory setup'}.</p>
+          <div className="mt-5 rounded-[8px] p-4 flex items-start gap-3" style={{ background: '#E6F7F7', border: '1px solid #80D4D5' }}>
+            <AlertCircle size={16} style={{ color: '#00A9AC', marginTop: '2px' }} />
+            <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>Complete the required steps before publishing: {!state.stripeConnected && 'Payout setup'}{!state.stripeConnected && !state.catalogSource && ' + '}{!state.catalogSource && 'Catalog / inventory setup'}.</p>
           </div>
         )}
       </div>
@@ -2035,15 +2035,15 @@ function Step11({ state, canPublish, slug, onPublish, onComplete }: {
       <div className="bg-white rounded-[8px] p-6 text-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
         <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif', marginBottom: '8px' }}>Your storefront is ready. Let's go live.</p>
         <p style={{ color: '#6B7280', fontSize: '0.9375rem', marginBottom: '24px' }}>
-          Publishing at: <span style={{ color: '#C0392B', fontWeight: 700 }}>{slug}.fb-business-connect.app</span>
+          Publishing at: <span style={{ color: '#00A9AC', fontWeight: 700 }}>{slug}.fb-business-connect.app</span>
         </p>
         <button
           onClick={handlePublish}
           disabled={!canPublish || publishing}
           className="w-full flex items-center justify-center gap-2 py-4 rounded-[8px] text-white transition-colors"
-          style={{ background: !canPublish ? '#E5E7EB' : publishing ? '#9CA3AF' : '#C0392B', fontWeight: 800, fontSize: '1.125rem', cursor: !canPublish ? 'not-allowed' : 'pointer', fontFamily: 'Sora, sans-serif' }}
-          onMouseEnter={e => { if (canPublish && !publishing) e.currentTarget.style.background = '#A93226'; }}
-          onMouseLeave={e => { if (canPublish && !publishing) e.currentTarget.style.background = '#C0392B'; }}
+          style={{ background: !canPublish ? '#E5E7EB' : publishing ? '#9CA3AF' : '#00A9AC', fontWeight: 800, fontSize: '1.125rem', cursor: !canPublish ? 'not-allowed' : 'pointer', fontFamily: 'Sora, sans-serif' }}
+          onMouseEnter={e => { if (canPublish && !publishing) e.currentTarget.style.background = '#007F82'; }}
+          onMouseLeave={e => { if (canPublish && !publishing) e.currentTarget.style.background = '#00A9AC'; }}
         >
           {publishing ? <><span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />Publishing...</> : <><Rocket size={20} />Publish Storefront</>}
         </button>
@@ -2062,7 +2062,7 @@ function PublishSuccess({ slug, state, onComplete }: { slug: string; state: Wiza
     fired.current = true;
     let count = 0;
     const burst = () => {
-      const colors = ['#C0392B', '#ffffff', '#E74C3C', '#F5B7B1', '#FDEDEC'];
+      const colors = ['#00A9AC', '#FA9D1E', '#ffffff', '#00BFC3', '#FFD08A'];
       const rand = (min: number, max: number) => Math.random() * (max - min) + min;
       // @ts-ignore
       if (window.confetti) {
@@ -2088,7 +2088,7 @@ function PublishSuccess({ slug, state, onComplete }: { slug: string; state: Wiza
           Your {state.industryLabel} storefront is now published and accepting {state.industryPack?.startsWith('tires') ? 'bookings and orders' : ['cleaning', 'pest_control'].includes(state.industryPack || '') ? 'recurring appointments' : 'service bookings'}.
         </p>
 
-        <div className="mt-6 px-6 py-4 rounded-[10px] inline-block" style={{ background: 'rgba(192,57,43,0.2)', border: '2px solid #C0392B' }}>
+        <div className="mt-6 px-6 py-4 rounded-[10px] inline-block" style={{ background: 'rgba(192,57,43,0.2)', border: '2px solid #00A9AC' }}>
           <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginBottom: '4px' }}>Your storefront is live at</p>
           <p style={{ color: '#fff', fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.375rem', letterSpacing: '0.02em' }}>{slug}.fb-business-connect.app</p>
         </div>
@@ -2116,9 +2116,9 @@ function PublishSuccess({ slug, state, onComplete }: { slug: string; state: Wiza
           </div>
         </div>
 
-        <button onClick={onComplete} className="mt-8 px-8 py-4 rounded-[8px] text-white font-bold text-base transition-colors" style={{ background: '#C0392B', fontFamily: 'Sora, sans-serif' }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+        <button onClick={onComplete} className="mt-8 px-8 py-4 rounded-[8px] text-white font-bold text-base transition-colors" style={{ background: '#00A9AC', fontFamily: 'Sora, sans-serif' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
         >
           Go to Dashboard →
         </button>

@@ -5,7 +5,7 @@ import { TRUCK_INVENTORY, DISPATCH_VISITS } from './mockData';
 import type { TruckInventoryItem } from './types';
 
 const TECHS = [
-  { id: 'tech-1', name: 'Mike Torres', color: '#C0392B' },
+  { id: 'tech-1', name: 'Mike Torres', color: '#00A9AC' },
   { id: 'tech-2', name: 'Sarah Chen', color: '#2980B9' },
   { id: 'tech-3', name: 'Carlos Rivera', color: '#27AE60' },
 ];
@@ -68,7 +68,7 @@ function AddItemModal({ techId, techName, onClose, onAdd }: AddItemModalProps) {
           <button onClick={onClose} style={{ flex: 1, padding: '10px 0', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
           <button
             onClick={() => { if (sku && partName && qty > 0) { onAdd({ technicianId: techId, sku, partName, qtyLoaded: qty }); onClose(); } }}
-            style={{ flex: 1, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
+            style={{ flex: 1, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
           >Add Item</button>
         </div>
       </div>
@@ -205,7 +205,7 @@ function TechTruckCard({ tech, items, onAddItem }: TechTruckCardProps) {
 
           <button
             onClick={onAddItem}
-            style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', border: '1px dashed #C0392B', borderRadius: 8, color: '#C0392B', fontSize: 13, fontWeight: 600, cursor: 'pointer', background: 'transparent' }}
+            style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px', border: '1px dashed #00A9AC', borderRadius: 8, color: '#00A9AC', fontSize: 13, fontWeight: 600, cursor: 'pointer', background: 'transparent' }}
           >
             <Plus size={14} /> Add Item to Truck
           </button>

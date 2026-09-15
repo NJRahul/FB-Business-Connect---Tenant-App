@@ -7,7 +7,7 @@ import { SUBSCRIPTION, ACTIVE_COMMITMENTS } from './mockData';
 import { PLAN_CONFIGS, type PlanTier } from './types';
 
 const PLAN_ICONS: Record<PlanTier, React.ElementType> = { starter: Zap, pro: Star, enterprise: Shield };
-const PLAN_COLORS: Record<PlanTier, string> = { starter: '#6B7280', pro: '#C0392B', enterprise: '#1A1A1A' };
+const PLAN_COLORS: Record<PlanTier, string> = { starter: '#6B7280', pro: '#00A9AC', enterprise: '#1A1A1A' };
 
 const PLAN_FEATURES = [
   { label: 'Monthly price',          starter: 'R 3,499/mo',    pro: 'R 8,999/mo',    enterprise: 'Custom' },
@@ -149,12 +149,12 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
         <span style={{ fontSize: 13, fontWeight: 600, color: interval === 'monthly' ? '#1A1A1A' : '#9CA3AF' }}>Monthly</span>
         <div
           onClick={() => setInterval(v => v === 'monthly' ? 'annual' : 'monthly')}
-          style={{ width: 44, height: 24, borderRadius: 99, background: interval === 'annual' ? '#C0392B' : '#D1D5DB', cursor: 'pointer', position: 'relative', transition: 'background 0.2s' }}
+          style={{ width: 44, height: 24, borderRadius: 99, background: interval === 'annual' ? '#00A9AC' : '#D1D5DB', cursor: 'pointer', position: 'relative', transition: 'background 0.2s' }}
         >
           <div style={{ position: 'absolute', top: 2, left: interval === 'annual' ? 22 : 2, width: 20, height: 20, borderRadius: 99, background: '#fff', transition: 'left 0.2s', boxShadow: '0 1px 3px rgba(0,0,0,0.2)' }} />
         </div>
         <span style={{ fontSize: 13, fontWeight: 600, color: interval === 'annual' ? '#1A1A1A' : '#9CA3AF' }}>Annual</span>
-        <span style={{ padding: '2px 8px', borderRadius: 99, background: '#FDEDEC', color: '#C0392B', fontSize: 11, fontWeight: 700 }}>Save 15%</span>
+        <span style={{ padding: '2px 8px', borderRadius: 99, background: '#E6F7F7', color: '#00A9AC', fontSize: 11, fontWeight: 700 }}>Save 15%</span>
       </div>
 
       {/* Plan cards */}
@@ -170,7 +170,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
 
           return (
             <div key={tier} style={{
-              border: isCurrent ? '2px solid #C0392B' : '2px solid #E5E7EB',
+              border: isCurrent ? '2px solid #00A9AC' : '2px solid #E5E7EB',
               borderRadius: 12, background: '#fff', padding: '20px',
               position: 'relative',
               boxShadow: isCurrent ? '0 0 0 4px rgba(192,57,43,0.08)' : 'none',
@@ -181,7 +181,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
                 </div>
               )}
               {tier === 'pro' && !isCurrent && (
-                <div style={{ position: 'absolute', top: -11, left: '50%', transform: 'translateX(-50%)', padding: '2px 10px', borderRadius: 99, background: '#C0392B', color: '#fff', fontSize: 10, fontWeight: 700, whiteSpace: 'nowrap' }}>
+                <div style={{ position: 'absolute', top: -11, left: '50%', transform: 'translateX(-50%)', padding: '2px 10px', borderRadius: 99, background: '#00A9AC', color: '#fff', fontSize: 10, fontWeight: 700, whiteSpace: 'nowrap' }}>
                   MOST POPULAR
                 </div>
               )}
@@ -217,7 +217,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
               ) : isUpgrade ? (
                 <button
                   onClick={() => handlePlanClick(tier)}
-                  style={{ width: '100%', padding: '9px', borderRadius: 8, background: '#C0392B', color: '#fff', fontWeight: 600, fontSize: 13, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
+                  style={{ width: '100%', padding: '9px', borderRadius: 8, background: '#00A9AC', color: '#fff', fontWeight: 600, fontSize: 13, border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                 >
                   <ArrowUp size={13} /> Upgrade to {p.name}
                 </button>
@@ -247,8 +247,8 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
                 {(['starter', 'pro', 'enterprise'] as PlanTier[]).map(tier => (
                   <th key={tier} style={{
                     padding: '10px 16px', textAlign: 'center', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em',
-                    color: currentPlan === tier ? '#C0392B' : '#6B7280',
-                    background: currentPlan === tier ? '#FDEDEC' : 'transparent',
+                    color: currentPlan === tier ? '#00A9AC' : '#6B7280',
+                    background: currentPlan === tier ? '#E6F7F7' : 'transparent',
                   }}>
                     {PLAN_CONFIGS[tier].name}
                     {currentPlan === tier && <div style={{ fontSize: 9, marginTop: 2 }}>YOUR PLAN</div>}
@@ -280,8 +280,8 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
             {/* Header */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 22px', borderBottom: '1px solid #E5E7EB' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 99, display: 'flex', alignItems: 'center', justifyContent: 'center', background: modal.type === 'upgrade' ? '#FDEDEC' : '#FEF2F2' }}>
-                  {modal.type === 'upgrade' ? <ArrowUp size={18} color="#C0392B" /> : <AlertTriangle size={18} color="#DC2626" />}
+                <div style={{ width: 36, height: 36, borderRadius: 99, display: 'flex', alignItems: 'center', justifyContent: 'center', background: modal.type === 'upgrade' ? '#E6F7F7' : '#F0FBFB' }}>
+                  {modal.type === 'upgrade' ? <ArrowUp size={18} color="#00A9AC" /> : <AlertTriangle size={18} color="#DC2626" />}
                 </div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#1A1A1A' }}>
                   {modal.type === 'upgrade' ? `Upgrade to ${PLAN_CONFIGS[modal.target].name}` :
@@ -332,12 +332,12 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {ACTIVE_COMMITMENTS.map(c => (
-                      <div key={c.key} style={{ padding: '12px 14px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5' }}>
+                      <div key={c.key} style={{ padding: '12px 14px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5' }}>
                         <div style={{ fontWeight: 700, fontSize: 13, color: '#DC2626', marginBottom: 4 }}>
                           <AlertTriangle size={12} style={{ display: 'inline', marginRight: 5, verticalAlign: 'middle' }} />
                           {c.label}
                         </div>
-                        <div style={{ fontSize: 12, color: '#991B1B', marginBottom: 6 }}>{c.description}</div>
+                        <div style={{ fontSize: 12, color: '#005F62', marginBottom: 6 }}>{c.description}</div>
                         <div style={{ fontSize: 11, color: '#6B7280' }}>To resolve: {c.resolveAction}</div>
                       </div>
                     ))}
@@ -362,7 +362,7 @@ export function PlanView({ currentPlan, onPlanChange, onDunningDemo }: Props) {
                   disabled={processing}
                   style={{
                     padding: '9px 18px', borderRadius: 8, border: 'none',
-                    background: processing ? '#9CA3AF' : modal.type === 'upgrade' ? '#C0392B' : '#D97706',
+                    background: processing ? '#9CA3AF' : modal.type === 'upgrade' ? '#00A9AC' : '#D97706',
                     color: '#fff', fontWeight: 600, fontSize: 13, cursor: processing ? 'default' : 'pointer',
                     display: 'flex', alignItems: 'center', gap: 6,
                   }}

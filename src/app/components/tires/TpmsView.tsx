@@ -8,7 +8,7 @@ const POSITION_LABEL: Record<string, string> = { FL: 'Front Left', FR: 'Front Ri
 function RelearnBadge({ outcome }: { outcome: TpmsRelearnOutcome }) {
   const map: Record<TpmsRelearnOutcome, { label: string; color: string; bg: string; icon: React.ReactNode }> = {
     success:      { label: 'Relearn OK',     color: '#16A34A', bg: '#F0FDF4', icon: <CheckCircle size={11} /> },
-    failed:       { label: 'Failed',          color: '#DC2626', bg: '#FEF2F2', icon: <XCircle size={11} /> },
+    failed:       { label: 'Failed',          color: '#DC2626', bg: '#F0FBFB', icon: <XCircle size={11} /> },
     retry_needed: { label: 'Retry Needed',    color: '#D97706', bg: '#FFFBEB', icon: <AlertTriangle size={11} /> },
     pending:      { label: 'Pending',         color: '#6B7280', bg: '#F3F4F6', icon: <Clock size={11} /> },
   };
@@ -41,7 +41,7 @@ function WheelGrid({ wheels }: { wheels: TpmsWheelRecord[] }) {
         const w = byPos[pos];
         if (!w) return null;
         const borderColor = w.action === 'sensor_replaced' ? '#7C3AED' : w.action === 'skipped' ? '#E5E7EB' : '#2563EB';
-        const bgColor = w.relearn === 'failed' ? '#FEF2F2' : w.relearn === 'retry_needed' ? '#FFFBEB' : '#F9FAFB';
+        const bgColor = w.relearn === 'failed' ? '#F0FBFB' : w.relearn === 'retry_needed' ? '#FFFBEB' : '#F9FAFB';
         return (
           <div key={pos} style={{ border: `2px solid ${borderColor}`, borderRadius: 8, padding: '10px 12px', background: bgColor }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#6B7280', marginBottom: 4 }}>{POSITION_LABEL[pos]}</div>
@@ -128,7 +128,7 @@ function ConfigPanel() {
           </div>
         </div>
       </div>
-      <button onClick={save} style={{ marginTop: 14, padding: '8px 20px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+      <button onClick={save} style={{ marginTop: 14, padding: '8px 20px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
         {saved ? '✓ Saved' : 'Save Config'}
       </button>
     </div>
@@ -161,11 +161,11 @@ export function TpmsView() {
       {/* Sub-tabs */}
       <div style={{ display: 'flex', gap: 0, borderBottom: '2px solid #E5E7EB', marginBottom: 20 }}>
         {(['visits', 'config'] as const).map(t => (
-          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#C0392B' : '#6B7280', borderBottom: subtab === t ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
+          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#00A9AC' : '#6B7280', borderBottom: subtab === t ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
             {t === 'config' ? <><Settings size={13} style={{ display: 'inline', marginRight: 5 }} />Config</> : 'Visit Records'}
           </button>
         ))}
-        <button style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, padding: '6px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer', marginBottom: 6 }}>
+        <button style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, padding: '6px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer', marginBottom: 6 }}>
           <Plus size={13} /> New TPMS Visit
         </button>
       </div>

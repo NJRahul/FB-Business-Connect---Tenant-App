@@ -300,7 +300,7 @@ function StepBind({
         <ul className="space-y-1">
           {['Coverage is subject to carrier underwriting approval', 'Policy terms and exclusions apply — review your declarations page', 'Premium is due on the effective date'].map(item => (
             <li key={item} className="flex items-start gap-2">
-              <CheckCircle2 size={13} style={{ color: '#C0392B', marginTop: 2, flexShrink: 0 }} />
+              <CheckCircle2 size={13} style={{ color: '#00A9AC', marginTop: 2, flexShrink: 0 }} />
               <span style={{ color: '#374151', fontSize: '0.875rem' }}>{item}</span>
             </li>
           ))}
@@ -500,9 +500,9 @@ export function ApplicationWizard({ initialCoverageTypeId, tenant, onComplete, o
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
-          <AlertTriangle size={15} style={{ color: '#C0392B' }} />
-          <p style={{ color: '#C0392B', fontSize: '0.875rem' }}>{error}</p>
+        <div className="flex items-center gap-2 p-3 rounded-[8px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
+          <AlertTriangle size={15} style={{ color: '#00A9AC' }} />
+          <p style={{ color: '#00A9AC', fontSize: '0.875rem' }}>{error}</p>
         </div>
       )}
 

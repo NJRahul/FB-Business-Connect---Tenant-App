@@ -82,14 +82,14 @@ export function CartCheckoutPage() {
         <button
           onClick={() => setCartOpen(true)}
           className="relative flex items-center gap-2.5 px-4 py-2.5 rounded-[6px] text-white transition-colors"
-          style={{ background: '#C0392B', fontWeight: 600 }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+          style={{ background: '#00A9AC', fontWeight: 600 }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
         >
           <ShoppingCart size={18} />
           Cart
           {cartItems.length > 0 && (
-            <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: '#fff', color: '#C0392B' }}>
+            <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: '#fff', color: '#00A9AC' }}>
               {cartItems.length}
             </span>
           )}
@@ -145,7 +145,7 @@ export function CartCheckoutPage() {
               <div className="p-4">
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <div>
-                    <p style={{ color: '#C0392B', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{item.brand}</p>
+                    <p style={{ color: '#00A9AC', fontWeight: 700, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{item.brand}</p>
                     <p style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1rem', marginTop: '2px' }}>{item.model}</p>
                     <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{item.size}</p>
                   </div>
@@ -173,9 +173,9 @@ export function CartCheckoutPage() {
                   <button
                     onClick={() => addToCart(item)}
                     className="flex items-center gap-1.5 px-3 py-2 rounded-[6px] text-white text-sm font-semibold transition-colors"
-                    style={{ background: inCart ? '#27AE60' : '#C0392B' }}
-                    onMouseEnter={e => (e.currentTarget.style.background = inCart ? '#1e8449' : '#A93226')}
-                    onMouseLeave={e => (e.currentTarget.style.background = inCart ? '#27AE60' : '#C0392B')}
+                    style={{ background: inCart ? '#27AE60' : '#00A9AC' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = inCart ? '#1e8449' : '#007F82')}
+                    onMouseLeave={e => (e.currentTarget.style.background = inCart ? '#27AE60' : '#00A9AC')}
                   >
                     {inCart ? (
                       <><Star size={13} fill="white" /> In Cart</>
@@ -212,7 +212,7 @@ export function CartCheckoutPage() {
           <button
             onClick={() => setCartOpen(true)}
             className="flex items-center gap-3 px-5 py-3.5 rounded-full text-white shadow-lg"
-            style={{ background: '#C0392B', fontWeight: 700, boxShadow: '0 4px 24px rgba(192,57,43,0.4)' }}
+            style={{ background: '#00A9AC', fontWeight: 700, boxShadow: '0 4px 24px rgba(192,57,43,0.4)' }}
           >
             <ShoppingCart size={20} />
             <span>{totalTires} tire{totalTires !== 1 ? 's' : ''} in cart</span>

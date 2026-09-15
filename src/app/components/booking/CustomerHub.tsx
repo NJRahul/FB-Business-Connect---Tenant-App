@@ -47,7 +47,7 @@ function AppointmentCard({ visit, onReschedule, onCancel }: {
       className="bg-white rounded-[10px] p-5"
       style={{
         border: '1px solid #E5E7EB',
-        borderLeft: isActive ? '4px solid #C0392B' : '1px solid #E5E7EB',
+        borderLeft: isActive ? '4px solid #00A9AC' : '1px solid #E5E7EB',
         boxShadow: '0 1px 4px rgba(0,0,0,0.07)',
       }}
     >
@@ -59,7 +59,7 @@ function AppointmentCard({ visit, onReschedule, onCancel }: {
           </p>
         </div>
         {isActive && (
-          <span className="px-2 py-1 rounded-full text-xs font-bold" style={{ background: '#FDEDEC', color: '#C0392B', whiteSpace: 'nowrap' }}>
+          <span className="px-2 py-1 rounded-full text-xs font-bold" style={{ background: '#E6F7F7', color: '#00A9AC', whiteSpace: 'nowrap' }}>
             🔴 Live
           </span>
         )}
@@ -102,7 +102,7 @@ function AppointmentCard({ visit, onReschedule, onCancel }: {
         <button
           onClick={onCancel}
           className="flex-1 py-2 rounded-[6px] text-sm font-medium"
-          style={{ border: '1.5px solid #FCA5A5', color: '#DC2626', background: '#FEF2F2' }}
+          style={{ border: '1.5px solid #80D4D5', color: '#DC2626', background: '#F0FBFB' }}
         >
           Cancel
         </button>
@@ -135,7 +135,7 @@ function RescheduleModal({ visit, onClose }: { visit: Visit; onClose: () => void
         </div>
         <div className="flex gap-2">
           <button onClick={onClose} className="flex-1 py-2 rounded-[6px] text-sm" style={{ border: '1.5px solid #E5E7EB', color: '#6B7280' }}>Go Back</button>
-          <button onClick={onClose} className="flex-1 py-2.5 rounded-[6px] text-sm text-white font-semibold" style={{ background: '#C0392B' }}>
+          <button onClick={onClose} className="flex-1 py-2.5 rounded-[6px] text-sm text-white font-semibold" style={{ background: '#00A9AC' }}>
             Choose New Time
           </button>
         </div>
@@ -164,7 +164,7 @@ function HistoryItem({ visit }: { visit: Visit }) {
           </div>
         </div>
         <div className="text-right">
-          <p style={{ fontWeight: 700, color: '#C0392B', fontSize: '0.875rem' }}>{fmtMoney(visit.totalPrice)}</p>
+          <p style={{ fontWeight: 700, color: '#00A9AC', fontSize: '0.875rem' }}>{fmtMoney(visit.totalPrice)}</p>
           <ChevronRight size={14} style={{ color: '#D1D5DB', marginLeft: 'auto', transform: open ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s' }} />
         </div>
       </button>
@@ -185,14 +185,14 @@ function HistoryItem({ visit }: { visit: Visit }) {
               <p style={{ fontSize: '0.6875rem', fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', marginBottom: '4px' }}>Add-ons</p>
               <div className="flex flex-wrap gap-1">
                 {visit.addons.map((a, i) => (
-                  <span key={i} className="px-2 py-0.5 rounded text-xs" style={{ background: '#FDEDEC', color: '#C0392B' }}>{a.name}</span>
+                  <span key={i} className="px-2 py-0.5 rounded text-xs" style={{ background: '#E6F7F7', color: '#00A9AC' }}>{a.name}</span>
                 ))}
               </div>
             </div>
           )}
           <button
             className="mt-3 flex items-center gap-1.5 text-sm"
-            style={{ color: '#C0392B', fontWeight: 600 }}
+            style={{ color: '#00A9AC', fontWeight: 600 }}
           >
             <Download size={13} /> Download Invoice (PDF)
           </button>
@@ -222,18 +222,18 @@ export function CustomerHub() {
         {/* Sidebar nav */}
         <aside className="hidden md:flex flex-col w-48 shrink-0">
           <div className="bg-white rounded-[10px] p-3 mb-3" style={{ border: '1px solid #E5E7EB' }}>
-            <div className="w-10 h-10 rounded-full flex items-center justify-center mb-2" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '1rem' }}>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mb-2" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '1rem' }}>
               {DEMO_CUSTOMER.name[0]}
             </div>
             <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>{DEMO_CUSTOMER.name}</p>
             <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Member since {new Date(DEMO_CUSTOMER.memberSince).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</p>
             <div className="flex gap-3 mt-2">
               <div>
-                <p style={{ fontWeight: 700, color: '#C0392B', fontSize: '0.875rem' }}>{DEMO_CUSTOMER.totalVisits}</p>
+                <p style={{ fontWeight: 700, color: '#00A9AC', fontSize: '0.875rem' }}>{DEMO_CUSTOMER.totalVisits}</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.6875rem' }}>Visits</p>
               </div>
               <div>
-                <p style={{ fontWeight: 700, color: '#C0392B', fontSize: '0.875rem' }}>{fmtMoney(DEMO_CUSTOMER.totalSpent)}</p>
+                <p style={{ fontWeight: 700, color: '#00A9AC', fontSize: '0.875rem' }}>{fmtMoney(DEMO_CUSTOMER.totalSpent)}</p>
                 <p style={{ color: '#9CA3AF', fontSize: '0.6875rem' }}>Spent</p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export function CustomerHub() {
                   key={item.id}
                   onClick={() => setSection(item.id)}
                   className="w-full flex items-center gap-2.5 px-3 py-2 rounded-[6px] text-left text-sm transition-colors"
-                  style={{ background: active ? '#FDEDEC' : 'transparent', color: active ? '#C0392B' : '#6B7280', fontWeight: active ? 600 : 400 }}
+                  style={{ background: active ? '#E6F7F7' : 'transparent', color: active ? '#00A9AC' : '#6B7280', fontWeight: active ? 600 : 400 }}
                 >
                   <Icon size={15} />
                   {item.label}
@@ -311,8 +311,8 @@ export function CustomerHub() {
                 {DEMO_CUSTOMER.vehicles.map((v, i) => (
                   <div key={i} className="bg-white rounded-[10px] p-5" style={{ border: '1px solid #E5E7EB' }}>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC' }}>
-                        <Car size={18} style={{ color: '#C0392B' }} />
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7' }}>
+                        <Car size={18} style={{ color: '#00A9AC' }} />
                       </div>
                       <div>
                         <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>
@@ -329,7 +329,7 @@ export function CustomerHub() {
                       ].map(stat => (
                         <div key={stat.label} className="p-3 rounded-[6px]" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
                           <p style={{ color: '#9CA3AF', fontSize: '0.6875rem', fontWeight: 600, textTransform: 'uppercase' }}>{stat.label}</p>
-                          <p style={{ color: '#C0392B', fontWeight: 700, fontSize: '1rem', marginTop: '2px' }}>{stat.value}</p>
+                          <p style={{ color: '#00A9AC', fontWeight: 700, fontSize: '1rem', marginTop: '2px' }}>{stat.value}</p>
                         </div>
                       ))}
                     </div>
@@ -354,7 +354,7 @@ export function CustomerHub() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span style={{ fontWeight: 700, color: '#C0392B' }}>{fmtMoney(v.totalPrice)}</span>
+                      <span style={{ fontWeight: 700, color: '#00A9AC' }}>{fmtMoney(v.totalPrice)}</span>
                       <button className="flex items-center gap-1 text-sm" style={{ color: '#1D4ED8' }}>
                         <Download size={13} /> PDF
                       </button>
@@ -418,7 +418,7 @@ export function CustomerHub() {
                         <span style={{ color: '#1A1A1A', fontSize: '0.875rem' }}>{n.label}</span>
                         <div
                           className="w-9 h-5 rounded-full relative cursor-pointer"
-                          style={{ background: n.on ? '#C0392B' : '#D1D5DB' }}
+                          style={{ background: n.on ? '#00A9AC' : '#D1D5DB' }}
                         >
                           <div className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow" style={{ left: n.on ? '18px' : '2px' }} />
                         </div>

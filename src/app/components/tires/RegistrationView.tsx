@@ -9,7 +9,7 @@ function RegStatusBadge({ status }: { status: RegistrationStatus }) {
     in_batch:   { label: 'In Batch',  color: '#2563EB', bg: '#EFF6FF', icon: <Package size={10} /> },
     submitted:  { label: 'Submitted', color: '#D97706', bg: '#FFFBEB', icon: <Clock size={10} /> },
     confirmed:  { label: 'Confirmed', color: '#16A34A', bg: '#F0FDF4', icon: <CheckCircle size={10} /> },
-    failed:     { label: 'Failed',    color: '#DC2626', bg: '#FEF2F2', icon: <XCircle size={10} /> },
+    failed:     { label: 'Failed',    color: '#DC2626', bg: '#F0FBFB', icon: <XCircle size={10} /> },
   };
   const s = map[status];
   return (
@@ -55,13 +55,13 @@ function DotCaptureModal({ onClose }: { onClose: () => void }) {
               value={dot}
               onChange={e => setDot(e.target.value.toUpperCase())}
               placeholder="DOT M38V LJMR 1824"
-              style={{ width: '100%', padding: '9px 12px', border: `1px solid ${dot && !valid ? '#FCA5A5' : '#D1D5DB'}`, borderRadius: 7, fontSize: 13, boxSizing: 'border-box', fontFamily: 'monospace' }}
+              style={{ width: '100%', padding: '9px 12px', border: `1px solid ${dot && !valid ? '#80D4D5' : '#D1D5DB'}`, borderRadius: 7, fontSize: 13, boxSizing: 'border-box', fontFamily: 'monospace' }}
             />
             {dot && !valid && <div style={{ fontSize: 11, color: '#DC2626', marginTop: 4 }}>Format: DOT XX## XXXX WWYR (e.g. DOT M38V LJMR 1824)</div>}
             {valid && <div style={{ fontSize: 11, color: '#16A34A', marginTop: 4 }}>✓ Valid DOT format — Week 18, Year 2024</div>}
             <div style={{ marginTop: 16, display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
               <button onClick={onClose} style={{ padding: '8px 16px', border: '1px solid #E5E7EB', borderRadius: 7, background: '#fff', fontSize: 13, cursor: 'pointer' }}>Cancel</button>
-              <button onClick={() => valid && setStep('confirm')} style={{ padding: '8px 16px', background: valid ? '#C0392B' : '#E5E7EB', color: valid ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: valid ? 'pointer' : 'default' }}>Continue</button>
+              <button onClick={() => valid && setStep('confirm')} style={{ padding: '8px 16px', background: valid ? '#00A9AC' : '#E5E7EB', color: valid ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: valid ? 'pointer' : 'default' }}>Continue</button>
             </div>
           </div>
         ) : (
@@ -76,7 +76,7 @@ function DotCaptureModal({ onClose }: { onClose: () => void }) {
             </label>
             <div style={{ marginTop: 16, display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
               <button onClick={() => setStep('enter')} style={{ padding: '8px 16px', border: '1px solid #E5E7EB', borderRadius: 7, background: '#fff', fontSize: 13, cursor: 'pointer' }}>Back</button>
-              <button onClick={onClose} style={{ padding: '8px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>Save Registration</button>
+              <button onClick={onClose} style={{ padding: '8px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>Save Registration</button>
             </div>
           </div>
         )}
@@ -146,12 +146,12 @@ export function RegistrationView() {
       {/* Sub-tabs */}
       <div style={{ display: 'flex', gap: 0, borderBottom: '2px solid #E5E7EB', marginBottom: 20, alignItems: 'flex-end' }}>
         {(['list', 'batches'] as const).map(t => (
-          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#C0392B' : '#6B7280', borderBottom: subtab === t ? '2px solid #C0392B' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
+          <button key={t} onClick={() => setSubtab(t)} style={{ padding: '8px 18px', border: 'none', background: 'none', cursor: 'pointer', fontWeight: 600, fontSize: 13, color: subtab === t ? '#00A9AC' : '#6B7280', borderBottom: subtab === t ? '2px solid #00A9AC' : '2px solid transparent', marginBottom: -2, textTransform: 'capitalize' }}>
             {t === 'list' ? 'Tire Registrations' : 'Batch Export'}
           </button>
         ))}
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 8, paddingBottom: 8 }}>
-          <button onClick={() => setDotModal(true)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
+          <button onClick={() => setDotModal(true)} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
             <Camera size={13} /> Capture DOT
           </button>
           <button style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '7px 14px', background: '#1A1A1A', color: '#fff', border: 'none', borderRadius: 7, fontWeight: 600, fontSize: 12, cursor: 'pointer' }}>
@@ -165,7 +165,7 @@ export function RegistrationView() {
           {/* Filter */}
           <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
             {(['all', 'pending', 'failed'] as const).map(f => (
-              <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: filter === f ? '#C0392B' : '#E5E7EB', background: filter === f ? '#FEF2F2' : '#fff', color: filter === f ? '#C0392B' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
+              <button key={f} onClick={() => setFilter(f)} style={{ padding: '5px 12px', borderRadius: 6, border: '1px solid', borderColor: filter === f ? '#00A9AC' : '#E5E7EB', background: filter === f ? '#F0FBFB' : '#fff', color: filter === f ? '#00A9AC' : '#6B7280', fontSize: 12, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize' }}>
                 {f}
               </button>
             ))}
@@ -202,7 +202,7 @@ export function RegistrationView() {
           </div>
 
           {failed > 0 && (
-            <div style={{ marginTop: 12, padding: '10px 14px', background: '#FEF2F2', border: '1px solid #FCA5A5', borderRadius: 8, fontSize: 12, color: '#DC2626', display: 'flex', gap: 8 }}>
+            <div style={{ marginTop: 12, padding: '10px 14px', background: '#F0FBFB', border: '1px solid #80D4D5', borderRadius: 8, fontSize: 12, color: '#DC2626', display: 'flex', gap: 8 }}>
               <AlertTriangle size={14} style={{ flexShrink: 0, marginTop: 1 }} />
               {failed} registration(s) failed. Review DOT code format or resend consent requests before next batch export.
             </div>

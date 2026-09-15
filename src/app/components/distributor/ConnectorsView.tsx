@@ -35,7 +35,7 @@ function RefDocModal({ dist, onClose }: { dist: Distributor; onClose: () => void
       <div style={{ background: '#1A1A1A', borderRadius: 12, width: '100%', maxWidth: 640, maxHeight: '80vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <div style={{ padding: '16px 20px', borderBottom: '1px solid #333', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <Book size={16} color="#C0392B" />
+            <Book size={16} color="#00A9AC" />
             <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: 15, color: '#fff' }}>{dist.name} — Reference Doc</span>
           </div>
           <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6B7280' }}><X size={18} /></button>
@@ -78,7 +78,7 @@ function ConnectModal({ onClose }: { onClose: () => void }) {
         {/* Step indicators */}
         <div style={{ display: 'flex', gap: 0, borderBottom: '1px solid #E5E7EB' }}>
           {['Select Tier', 'Configure', 'Test & Save'].map((s, i) => (
-            <div key={s} style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontSize: 12, fontWeight: step === i + 1 ? 700 : 400, color: step === i + 1 ? '#C0392B' : step > i + 1 ? '#059669' : '#9CA3AF', borderBottom: step === i + 1 ? '2px solid #C0392B' : '2px solid transparent' }}>
+            <div key={s} style={{ flex: 1, padding: '10px 0', textAlign: 'center', fontSize: 12, fontWeight: step === i + 1 ? 700 : 400, color: step === i + 1 ? '#00A9AC' : step > i + 1 ? '#059669' : '#9CA3AF', borderBottom: step === i + 1 ? '2px solid #00A9AC' : '2px solid transparent' }}>
               {step > i + 1 ? '✓ ' : ''}{s}
             </div>
           ))}
@@ -92,7 +92,7 @@ function ConnectModal({ onClose }: { onClose: () => void }) {
                 const cfg = TIER_CFG[t];
                 return (
                   <div key={t} onClick={() => setTier(t)}
-                    style={{ padding: '14px 16px', border: `2px solid ${tier === t ? '#C0392B' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: tier === t ? '#FDEDEC' : '#fff' }}>
+                    style={{ padding: '14px 16px', border: `2px solid ${tier === t ? '#00A9AC' : '#E5E7EB'}`, borderRadius: 10, cursor: 'pointer', background: tier === t ? '#E6F7F7' : '#fff' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                       <span style={{ background: cfg.bg, color: cfg.color, border: `1px solid ${cfg.border}`, borderRadius: 6, padding: '2px 8px', fontSize: 12, fontWeight: 700 }}>{cfg.label}</span>
                       <span style={{ fontSize: 14, fontWeight: 600, color: '#1A1A1A' }}>{cfg.desc}</span>
@@ -177,7 +177,7 @@ function ConnectModal({ onClose }: { onClose: () => void }) {
               )}
               {testResult === 'fail' && (
                 <div style={{ background: '#FEE2E2', border: '1px solid #EF4444', borderRadius: 8, padding: '12px 16px' }}>
-                  <div style={{ fontSize: 14, color: '#991B1B', fontWeight: 600 }}>Connection failed</div>
+                  <div style={{ fontSize: 14, color: '#005F62', fontWeight: 600 }}>Connection failed</div>
                   <div style={{ fontSize: 13, color: '#DC2626', marginTop: 4 }}>Invalid API credentials. Check your key and try again.</div>
                 </div>
               )}
@@ -195,12 +195,12 @@ function ConnectModal({ onClose }: { onClose: () => void }) {
           </button>
           {step < 3 ? (
             <button onClick={() => setStep(s => s + 1)}
-              style={{ flex: 2, padding: '10px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+              style={{ flex: 2, padding: '10px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
               Continue →
             </button>
           ) : (
             <button onClick={onClose} disabled={testResult !== 'ok'}
-              style={{ flex: 2, padding: '10px 0', background: testResult === 'ok' ? '#C0392B' : '#E5E7EB', color: testResult === 'ok' ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: testResult === 'ok' ? 'pointer' : 'not-allowed' }}>
+              style={{ flex: 2, padding: '10px 0', background: testResult === 'ok' ? '#00A9AC' : '#E5E7EB', color: testResult === 'ok' ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: testResult === 'ok' ? 'pointer' : 'not-allowed' }}>
               Save Connection
             </button>
           )}
@@ -233,7 +233,7 @@ function ConnectorCard({ dist, tenant, onViewRef }: ConnectorCardProps) {
   };
 
   return (
-    <div style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#FCA5A5' : '#E5E7EB'}`, borderRadius: 12, overflow: 'hidden' }}>
+    <div style={{ background: '#fff', border: `1px solid ${dist.status === 'degraded' ? '#80D4D5' : '#E5E7EB'}`, borderRadius: 12, overflow: 'hidden' }}>
       {/* Degraded warning stripe */}
       {dist.status === 'degraded' && (
         <div style={{ background: '#FEF3C7', borderBottom: '1px solid #F59E0B', padding: '8px 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -314,7 +314,7 @@ function ConnectorCard({ dist, tenant, onViewRef }: ConnectorCardProps) {
           )}
           {testResult === 'fail' && (
             <div style={{ background: '#FEE2E2', border: '1px solid #EF4444', borderRadius: 8, padding: '10px 14px', marginBottom: 12 }}>
-              <div style={{ fontSize: 13, color: '#991B1B', fontWeight: 600 }}>Test failed — distributor unreachable</div>
+              <div style={{ fontSize: 13, color: '#005F62', fontWeight: 600 }}>Test failed — distributor unreachable</div>
               <div style={{ fontSize: 12, color: '#DC2626', marginTop: 2 }}>503 Service Unavailable (timeout 30s)</div>
             </div>
           )}
@@ -402,7 +402,7 @@ export function ConnectorsView() {
       {/* Toolbar */}
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
         <button onClick={() => setShowAdd(true)}
-          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
           <Plus size={14} /> Add Distributor
         </button>
       </div>

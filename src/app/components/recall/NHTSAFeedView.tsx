@@ -3,7 +3,7 @@ import { Rss, AlertTriangle, ChevronDown, ChevronUp, CheckCircle2, X, Shield, Cl
 import type { NHTSAPendingRecall, RecallSeverity } from './types';
 
 const SEVERITY_CONFIG: Record<RecallSeverity, { label: string; bg: string; color: string; dot: string }> = {
-  critical: { label: 'Critical', bg: '#FEF2F2', color: '#B91C1C', dot: '#DC2626' },
+  critical: { label: 'Critical', bg: '#F0FBFB', color: '#B91C1C', dot: '#DC2626' },
   warning:  { label: 'Warning',  bg: '#FFFBEB', color: '#B45309', dot: '#D97706' },
   info:     { label: 'Advisory', bg: '#EFF6FF', color: '#1D4ED8', dot: '#3B82F6' },
 };
@@ -139,7 +139,7 @@ export function NHTSAFeedView({ queue, onPublish }: Props) {
                     <div className="flex flex-col gap-2 shrink-0">
                       <button onClick={() => publish(item)} disabled={isPublishing}
                         className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold"
-                        style={{ background: isPublishing ? '#E5E7EB' : '#C0392B', color: isPublishing ? '#9CA3AF' : '#fff', minWidth: 140 }}>
+                        style={{ background: isPublishing ? '#E5E7EB' : '#00A9AC', color: isPublishing ? '#9CA3AF' : '#fff', minWidth: 140 }}>
                         {isPublishing ? (
                           <><span className="animate-spin inline-block w-3 h-3 border-2 border-white border-t-transparent rounded-full" /> Publishing…</>
                         ) : (
@@ -162,7 +162,7 @@ export function NHTSAFeedView({ queue, onPublish }: Props) {
 
                 {/* Warning stripe for critical */}
                 {item.severity === 'critical' && (
-                  <div className="px-5 py-2.5 flex items-center gap-2" style={{ background: '#FEF2F2', borderTop: '1px solid #FECACA' }}>
+                  <div className="px-5 py-2.5 flex items-center gap-2" style={{ background: '#F0FBFB', borderTop: '1px solid #FECACA' }}>
                     <AlertTriangle size={13} color="#B91C1C" />
                     <p style={{ fontSize: '0.775rem', color: '#B91C1C', fontWeight: 500 }}>
                       Critical safety campaign — recommend publishing immediately. Affected customers should be notified within 24 hours.

@@ -15,9 +15,9 @@ class ErrorBoundary extends Component<{ children: React.ReactNode; tab: string }
   render() {
     if (this.state.error) {
       return (
-        <div style={{ padding: 24, background: '#FEF2F2', border: '1px solid #FCA5A5', borderRadius: 10, margin: '24px 0' }}>
+        <div style={{ padding: 24, background: '#F0FBFB', border: '1px solid #80D4D5', borderRadius: 10, margin: '24px 0' }}>
           <div style={{ fontWeight: 700, color: '#DC2626', marginBottom: 8 }}>Render error</div>
-          <pre style={{ fontSize: 12, color: '#991B1B', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
+          <pre style={{ fontSize: 12, color: '#005F62', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>{this.state.error}</pre>
         </div>
       );
     }
@@ -64,8 +64,8 @@ export function TiresModule() {
                 display: 'flex', alignItems: 'center', gap: 6,
                 padding: '9px 16px', border: 'none', background: 'none', cursor: 'pointer',
                 fontWeight: 600, fontSize: 13, whiteSpace: 'nowrap',
-                color: tab === t.id ? '#C0392B' : '#6B7280',
-                borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+                color: tab === t.id ? '#00A9AC' : '#6B7280',
+                borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
                 marginBottom: -2,
               }}
             >

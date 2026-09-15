@@ -22,7 +22,7 @@ function ServiceTypeCard({ st, onEdit, onDelete }: { st: ServiceType; onEdit: ()
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap mb-1">
           <span style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{st.name}</span>
-          <span className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: st.requiresParts ? '#FDEDEC' : '#F0FDF4', color: st.requiresParts ? '#C0392B' : '#15803D' }}>
+          <span className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: st.requiresParts ? '#E6F7F7' : '#F0FDF4', color: st.requiresParts ? '#00A9AC' : '#15803D' }}>
             {st.requiresParts ? 'Parts-Install' : 'No-Parts'}
           </span>
           {st.onlineBookable && (
@@ -94,7 +94,7 @@ function ServiceTypeForm({ initial, onSave, onCancel }: {
   const set = <K extends keyof ServiceType>(k: K, v: ServiceType[K]) => setForm(f => ({ ...f, [k]: v }));
 
   return (
-    <div className="bg-white rounded-[10px] p-5" style={{ border: '2px solid #C0392B', boxShadow: '0 4px 16px rgba(192,57,43,0.12)' }}>
+    <div className="bg-white rounded-[10px] p-5" style={{ border: '2px solid #00A9AC', boxShadow: '0 4px 16px rgba(192,57,43,0.12)' }}>
       <div className="flex items-center justify-between mb-4">
         <h4 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A' }}>
           {initial?.id ? 'Edit Service Type' : 'New Service Type'}
@@ -149,7 +149,7 @@ function ServiceTypeForm({ initial, onSave, onCancel }: {
         <button
           onClick={() => { if (form.name) onSave(form); }}
           className="flex-1 py-2.5 rounded-[6px] text-sm text-white font-semibold"
-          style={{ background: '#C0392B' }}
+          style={{ background: '#00A9AC' }}
         >
           Save Service Type
         </button>
@@ -187,7 +187,7 @@ function TechnicianCard({ tech, onEdit }: { tech: Technician; onEdit: () => void
           <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{tech.email}</p>
           <div className="flex flex-wrap gap-1 mt-1">
             {tech.skills.map(s => (
-              <span key={s} className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: '#FDEDEC', color: '#C0392B' }}>{s}</span>
+              <span key={s} className="px-1.5 py-0.5 rounded text-xs font-semibold" style={{ background: '#E6F7F7', color: '#00A9AC' }}>{s}</span>
             ))}
           </div>
         </div>
@@ -288,7 +288,7 @@ function LocationCalendar() {
         <button
           onClick={() => { setSaved(true); setTimeout(() => setSaved(false), 2000); }}
           className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-sm text-white font-semibold"
-          style={{ background: saved ? '#27AE60' : '#C0392B' }}
+          style={{ background: saved ? '#27AE60' : '#00A9AC' }}
         >
           {saved ? <><CheckCircle2 size={14} /> Saved</> : 'Save Changes'}
         </button>
@@ -303,7 +303,7 @@ function LocationCalendar() {
               <label className="flex items-center gap-2 cursor-pointer shrink-0">
                 <div
                   className="w-9 h-5 rounded-full relative transition-colors cursor-pointer"
-                  style={{ background: !h.closed ? '#C0392B' : '#D1D5DB' }}
+                  style={{ background: !h.closed ? '#00A9AC' : '#D1D5DB' }}
                   onClick={() => setDay(dow, 'closed', !h.closed)}
                 >
                   <div className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow transition-all" style={{ left: !h.closed ? '18px' : '2px' }} />
@@ -393,9 +393,9 @@ export function ServiceSetup() {
             <button
               onClick={() => { setAddingService(true); setEditingService(null); }}
               className="flex items-center gap-2 px-4 py-2 rounded-[6px] text-white text-sm font-semibold"
-              style={{ background: '#C0392B' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+              style={{ background: '#00A9AC' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
             >
               <Plus size={15} /> Add Service
             </button>
@@ -444,9 +444,9 @@ export function ServiceSetup() {
             </div>
             <button
               className="flex items-center gap-2 px-4 py-2 rounded-[6px] text-white text-sm font-semibold"
-              style={{ background: '#C0392B' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+              style={{ background: '#00A9AC' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
             >
               <Plus size={15} /> Add Technician
             </button>

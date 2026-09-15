@@ -26,7 +26,7 @@ const STATE_CONFIG: Record<LifecycleState, { label: string; color: string; bg: s
   provisioning: { label: 'Provisioning', color: '#6B7280', bg: '#F9FAFB', border: '#E5E7EB', icon: Clock, description: 'Account is being set up' },
   active: { label: 'Active', color: '#27AE60', bg: '#F0FDF4', border: '#BBF7D0', icon: CheckCircle2, description: 'Storefront live, all features enabled' },
   suspended_billing: { label: 'Billing Suspended', color: '#F39C12', bg: '#FFF7ED', border: '#FED7AA', icon: AlertTriangle, description: 'Storefront + campaigns disabled; owner has read-only access' },
-  suspended_admin: { label: 'Admin Suspended', color: '#E74C3C', bg: '#FEF2F2', border: '#FECACA', icon: XCircle, description: 'All access disabled; owner notified via email' },
+  suspended_admin: { label: 'Admin Suspended', color: '#00BFC3', bg: '#F0FBFB', border: '#FECACA', icon: XCircle, description: 'All access disabled; owner notified via email' },
   archived: { label: 'Archived', color: '#6B7280', bg: '#F9FAFB', border: '#E5E7EB', icon: Archive, description: '30-day soft delete window; then permanent deletion' },
 };
 
@@ -153,13 +153,13 @@ export function LifecycleManagement() {
                 onClick={() => setSelectedTenant(isSelected ? null : tenant)}
                 className="w-full bg-white rounded-[8px] p-4 text-left transition-all"
                 style={{
-                  boxShadow: isSelected ? `0 0 0 2px #C0392B` : '0 1px 3px rgba(0,0,0,0.06)',
-                  border: isSelected ? '1.5px solid #C0392B' : '1.5px solid transparent',
+                  boxShadow: isSelected ? `0 0 0 2px #00A9AC` : '0 1px 3px rgba(0,0,0,0.06)',
+                  border: isSelected ? '1.5px solid #00A9AC' : '1.5px solid transparent',
                 }}
               >
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700, fontSize: '0.875rem' }}>
+                    <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700, fontSize: '0.875rem' }}>
                       {tenant.name[0]}
                     </div>
                     <div className="min-w-0">
@@ -203,7 +203,7 @@ export function LifecycleManagement() {
                 <>
                   <div className="p-5 border-b" style={{ borderColor: '#E5E7EB' }}>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#FDEDEC', color: '#C0392B', fontWeight: 700 }}>
+                      <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#E6F7F7', color: '#00A9AC', fontWeight: 700 }}>
                         {selectedTenant.name[0]}
                       </div>
                       <div>
@@ -329,7 +329,7 @@ export function LifecycleManagement() {
                   )}
 
                   {confirmModal.targetState === 'archived' && (
-                    <div className="p-3 rounded-[6px] mb-4" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
+                    <div className="p-3 rounded-[6px] mb-4" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
                       <p style={{ color: '#B91C1C', fontSize: '0.8125rem', fontWeight: 600 }}>
                         ⚠️ This will begin the 30-day deletion countdown
                       </p>

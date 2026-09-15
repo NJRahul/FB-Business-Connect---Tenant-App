@@ -5,7 +5,7 @@ import { formatCents } from '../../../lib/banking/types';
 import type { BankingAccount, BankingVault } from '../../../lib/banking/types';
 import { MOCK_CASHFLOW_30D, MOCK_UPCOMING_OBLIGATIONS } from './mockData';
 
-const VAULT_COLORS = ['#1A1A1A', '#C0392B', '#27AE60', '#F39C12', '#2980B9', '#8E44AD'];
+const VAULT_COLORS = ['#1A1A1A', '#00A9AC', '#27AE60', '#F39C12', '#2980B9', '#8E44AD'];
 
 interface AlertRule {
   id: string;
@@ -60,13 +60,13 @@ export function CashPosition({ account, vaults }: Props) {
           { label: 'Available',    value: totalAvailable,              sub: 'Across all vaults', color: '#1A1A1A', trend: null },
           { label: 'Pending',      value: account.balance_pending_cached, sub: 'Clearing in 1–2 days', color: '#6B7280', trend: null },
           { label: '30d Inflow',   value: totalInflow30d,              sub: 'Last 30 days',      color: '#27AE60', trend: 'up' },
-          { label: '30d Outflow',  value: totalOutflow30d,             sub: 'Last 30 days',      color: '#C0392B', trend: 'down' },
+          { label: '30d Outflow',  value: totalOutflow30d,             sub: 'Last 30 days',      color: '#00A9AC', trend: 'down' },
         ].map(w => (
           <div key={w.label} className="rounded-[10px] p-4" style={{ background: '#fff', border: '1px solid #E5E7EB', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
             <div className="flex items-center justify-between mb-1">
               <p style={{ fontSize: '0.75rem', fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{w.label}</p>
               {w.trend === 'up'   && <TrendingUp  size={14} style={{ color: '#27AE60' }} />}
-              {w.trend === 'down' && <TrendingDown size={14} style={{ color: '#C0392B' }} />}
+              {w.trend === 'down' && <TrendingDown size={14} style={{ color: '#00A9AC' }} />}
             </div>
             <p style={{ fontFeatureSettings: '"tnum"', fontVariantNumeric: 'tabular-nums', fontSize: '1.375rem', fontWeight: 700, color: w.color }}>
               {formatCents(w.value)}
@@ -110,7 +110,7 @@ export function CashPosition({ account, vaults }: Props) {
             <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>30-day cash flow</p>
             <div className="flex items-center gap-4 text-xs">
               <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full inline-block" style={{ background: '#27AE60' }} /> Inflow</span>
-              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full inline-block" style={{ background: '#C0392B' }} /> Outflow</span>
+              <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full inline-block" style={{ background: '#00A9AC' }} /> Outflow</span>
             </div>
           </div>
           <ResponsiveContainer width="100%" height={200}>
@@ -122,7 +122,7 @@ export function CashPosition({ account, vaults }: Props) {
                 contentStyle={{ fontSize: 12, border: '1px solid #E5E7EB', borderRadius: 6 }}
               />
               <Bar dataKey="inflow"  fill="#27AE60" radius={[2,2,0,0]} />
-              <Bar dataKey="outflow" fill="#C0392B" radius={[2,2,0,0]} />
+              <Bar dataKey="outflow" fill="#00A9AC" radius={[2,2,0,0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

@@ -132,13 +132,13 @@ export function DataImportPage() {
                     <span
                       className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold"
                       style={{
-                        background: isDone ? '#27AE60' : isCurrent ? '#C0392B' : '#E5E7EB',
+                        background: isDone ? '#27AE60' : isCurrent ? '#00A9AC' : '#E5E7EB',
                         color: isDone || isCurrent ? '#fff' : '#9CA3AF',
                       }}
                     >
                       {isDone ? <CheckCircle2 size={14} /> : i + 1}
                     </span>
-                    <span style={{ color: isCurrent ? '#C0392B' : isDone ? '#27AE60' : '#9CA3AF', fontSize: '0.875rem', fontWeight: isCurrent ? 600 : 400 }}>
+                    <span style={{ color: isCurrent ? '#00A9AC' : isDone ? '#27AE60' : '#9CA3AF', fontSize: '0.875rem', fontWeight: isCurrent ? 600 : 400 }}>
                       {labels[i]}
                     </span>
                   </div>
@@ -160,8 +160,8 @@ export function DataImportPage() {
                       onClick={() => setImportType(t.id)}
                       className="p-4 rounded-[8px] text-left transition-all"
                       style={{
-                        border: importType === t.id ? '2px solid #C0392B' : '2px solid #E5E7EB',
-                        background: importType === t.id ? '#FDEDEC' : '#fff',
+                        border: importType === t.id ? '2px solid #00A9AC' : '2px solid #E5E7EB',
+                        background: importType === t.id ? '#E6F7F7' : '#fff',
                       }}
                     >
                       <span style={{ fontSize: '1.5rem' }}>{t.icon}</span>
@@ -182,8 +182,8 @@ export function DataImportPage() {
                   onClick={() => fileInputRef.current?.click()}
                   className="rounded-[8px] p-10 flex flex-col items-center justify-center cursor-pointer transition-all"
                   style={{
-                    border: isDragging ? '2px solid #C0392B' : `2px dashed ${file ? '#27AE60' : '#E5E7EB'}`,
-                    background: isDragging ? '#FDEDEC' : file ? '#F0FDF4' : '#F9FAFB',
+                    border: isDragging ? '2px solid #00A9AC' : `2px dashed ${file ? '#27AE60' : '#E5E7EB'}`,
+                    background: isDragging ? '#E6F7F7' : file ? '#F0FDF4' : '#F9FAFB',
                   }}
                 >
                   <input
@@ -203,7 +203,7 @@ export function DataImportPage() {
                     </>
                   ) : (
                     <>
-                      <Upload size={32} style={{ color: isDragging ? '#C0392B' : '#9CA3AF', marginBottom: '12px' }} />
+                      <Upload size={32} style={{ color: isDragging ? '#00A9AC' : '#9CA3AF', marginBottom: '12px' }} />
                       <p style={{ color: '#1A1A1A', fontWeight: 600 }}>Drag & drop your file here</p>
                       <p style={{ color: '#6B7280', fontSize: '0.875rem', marginTop: '4px' }}>or click to browse</p>
                       <p style={{ color: '#9CA3AF', fontSize: '0.75rem', marginTop: '8px' }}>Supports CSV, XLSX, IIF, QBXML</p>
@@ -217,7 +217,7 @@ export function DataImportPage() {
                       type="checkbox"
                       checked={scheduleOffPeak}
                       onChange={e => setScheduleOffPeak(e.target.checked)}
-                      style={{ accentColor: '#C0392B' }}
+                      style={{ accentColor: '#00A9AC' }}
                     />
                     <div>
                       <span style={{ color: '#1A1A1A', fontSize: '0.875rem', fontWeight: 500 }}>Schedule for off-peak hours</span>
@@ -232,9 +232,9 @@ export function DataImportPage() {
                   onClick={() => file && setStep('mapping')}
                   disabled={!file}
                   className="flex items-center gap-2 px-6 py-2.5 rounded-[6px] text-white transition-colors"
-                  style={{ background: !file ? '#E5E7EB' : '#C0392B', fontWeight: 600, cursor: !file ? 'not-allowed' : 'pointer' }}
-                  onMouseEnter={e => { if (file) e.currentTarget.style.background = '#A93226'; }}
-                  onMouseLeave={e => { if (file) e.currentTarget.style.background = '#C0392B'; }}
+                  style={{ background: !file ? '#E5E7EB' : '#00A9AC', fontWeight: 600, cursor: !file ? 'not-allowed' : 'pointer' }}
+                  onMouseEnter={e => { if (file) e.currentTarget.style.background = '#007F82'; }}
+                  onMouseLeave={e => { if (file) e.currentTarget.style.background = '#00A9AC'; }}
                 >
                   Continue <ArrowRight size={16} />
                 </button>
@@ -305,9 +305,9 @@ export function DataImportPage() {
                 <button
                   onClick={handleStartImport}
                   className="flex items-center gap-2 px-6 py-2.5 rounded-[6px] text-white transition-colors"
-                  style={{ background: '#C0392B', fontWeight: 600 }}
-                  onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                  onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                  style={{ background: '#00A9AC', fontWeight: 600 }}
+                  onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                  onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
                 >
                   Start Import <ArrowRight size={16} />
                 </button>
@@ -318,8 +318,8 @@ export function DataImportPage() {
           {/* Importing step */}
           {step === 'importing' && (
             <div className="bg-white rounded-[8px] p-8 text-center" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: '#FDEDEC' }}>
-                <RefreshCw size={28} style={{ color: '#C0392B' }} className="animate-spin" />
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5" style={{ background: '#E6F7F7' }}>
+                <RefreshCw size={28} style={{ color: '#00A9AC' }} className="animate-spin" />
               </div>
               <h3 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>
                 Importing your data...
@@ -330,12 +330,12 @@ export function DataImportPage() {
               <div className="max-w-sm mx-auto">
                 <div className="flex justify-between mb-2">
                   <span style={{ color: '#6B7280', fontSize: '0.8125rem' }}>Progress</span>
-                  <span style={{ color: '#C0392B', fontWeight: 700, fontSize: '0.8125rem' }}>{importProgress}%</span>
+                  <span style={{ color: '#00A9AC', fontWeight: 700, fontSize: '0.8125rem' }}>{importProgress}%</span>
                 </div>
                 <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all"
-                    style={{ width: `${importProgress}%`, background: '#C0392B' }}
+                    style={{ width: `${importProgress}%`, background: '#00A9AC' }}
                   />
                 </div>
               </div>
@@ -354,7 +354,7 @@ export function DataImportPage() {
                   {[
                     { label: 'Imported', value: SAMPLE_RESULTS.filter(r => r.status === 'imported').length, color: '#27AE60', bg: '#F0FDF4' },
                     { label: 'Skipped (duplicate)', value: SAMPLE_RESULTS.filter(r => r.status === 'skipped').length, color: '#F39C12', bg: '#FFF7ED' },
-                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#E74C3C', bg: '#FEF2F2' },
+                    { label: 'Failed', value: SAMPLE_RESULTS.filter(r => r.status === 'failed').length, color: '#00BFC3', bg: '#F0FBFB' },
                   ].map(s => (
                     <div key={s.label} className="rounded-[8px] p-4 text-center" style={{ background: s.bg }}>
                       <p style={{ color: s.color, fontWeight: 700, fontSize: '1.75rem', fontFamily: 'Sora, sans-serif' }}>{s.value}</p>
@@ -381,7 +381,7 @@ export function DataImportPage() {
                             <span
                               className="px-2 py-0.5 rounded-[4px] text-xs font-semibold"
                               style={{
-                                background: r.status === 'imported' ? '#F0FDF4' : r.status === 'skipped' ? '#FFF7ED' : '#FEF2F2',
+                                background: r.status === 'imported' ? '#F0FDF4' : r.status === 'skipped' ? '#FFF7ED' : '#F0FBFB',
                                 color: r.status === 'imported' ? '#15803D' : r.status === 'skipped' ? '#92400E' : '#B91C1C',
                               }}
                             >
@@ -407,9 +407,9 @@ export function DataImportPage() {
                   <button
                     onClick={handleReset}
                     className="flex items-center gap-2 px-4 py-2 rounded-[6px] text-white transition-colors"
-                    style={{ background: '#C0392B', fontWeight: 600, fontSize: '0.875rem' }}
-                    onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-                    onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+                    style={{ background: '#00A9AC', fontWeight: 600, fontSize: '0.875rem' }}
+                    onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+                    onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
                   >
                     <Upload size={14} /> Import Another File
                   </button>
@@ -436,7 +436,7 @@ export function DataImportPage() {
                     <span
                       className="shrink-0 px-2 py-0.5 rounded-[4px] text-xs font-semibold"
                       style={{
-                        background: job.status === 'complete' ? '#F0FDF4' : job.status === 'failed' ? '#FEF2F2' : '#FFF7ED',
+                        background: job.status === 'complete' ? '#F0FDF4' : job.status === 'failed' ? '#F0FBFB' : '#FFF7ED',
                         color: job.status === 'complete' ? '#15803D' : job.status === 'failed' ? '#B91C1C' : '#92400E',
                       }}
                     >
@@ -447,7 +447,7 @@ export function DataImportPage() {
                     <div className="flex gap-3 mb-3">
                       <span style={{ color: '#27AE60', fontSize: '0.75rem', fontWeight: 500 }}>✓ {job.imported} imported</span>
                       {job.skipped > 0 && <span style={{ color: '#F39C12', fontSize: '0.75rem' }}>↷ {job.skipped} skipped</span>}
-                      {job.failed > 0 && <span style={{ color: '#E74C3C', fontSize: '0.75rem' }}>✗ {job.failed} failed</span>}
+                      {job.failed > 0 && <span style={{ color: '#00BFC3', fontSize: '0.75rem' }}>✗ {job.failed} failed</span>}
                     </div>
                   )}
                   {job.status === 'complete' && !isRollbackExpired(job.rollbackAvailableUntil) && (
@@ -457,7 +457,7 @@ export function DataImportPage() {
                         <span style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Rollback until {job.rollbackAvailableUntil}</span>
                       </div>
                       {rollbackTarget === job.id ? (
-                        <div className="rounded-[6px] p-3" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
+                        <div className="rounded-[6px] p-3" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
                           <p style={{ color: '#B91C1C', fontSize: '0.8125rem', fontWeight: 600, marginBottom: '8px' }}>
                             Roll back this import?
                           </p>
@@ -475,7 +475,7 @@ export function DataImportPage() {
                                 setRollbackTarget(null);
                               }}
                               className="flex-1 py-1.5 rounded text-xs font-semibold text-white"
-                              style={{ background: '#E74C3C' }}
+                              style={{ background: '#00BFC3' }}
                             >
                               Confirm Rollback
                             </button>
@@ -485,7 +485,7 @@ export function DataImportPage() {
                         <button
                           onClick={() => setRollbackTarget(job.id)}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-[4px] w-full justify-center"
-                          style={{ border: '1px solid #FECACA', color: '#E74C3C', fontSize: '0.75rem', fontWeight: 600, background: '#FEF2F2' }}
+                          style={{ border: '1px solid #FECACA', color: '#00BFC3', fontSize: '0.75rem', fontWeight: 600, background: '#F0FBFB' }}
                         >
                           <Trash2 size={12} /> Rollback Import
                         </button>
@@ -497,8 +497,8 @@ export function DataImportPage() {
                   )}
                   {job.status === 'failed' && (
                     <div className="flex items-center gap-1.5">
-                      <AlertCircle size={12} style={{ color: '#E74C3C' }} />
-                      <span style={{ color: '#E74C3C', fontSize: '0.75rem' }}>Upload format not recognized</span>
+                      <AlertCircle size={12} style={{ color: '#00BFC3' }} />
+                      <span style={{ color: '#00BFC3', fontSize: '0.75rem' }}>Upload format not recognized</span>
                     </div>
                   )}
                 </div>

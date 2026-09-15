@@ -65,7 +65,7 @@ function SignaturePad({ onSign }: { onSign: (signed: boolean) => void }) {
     ctx.beginPath();
     ctx.moveTo(lastPos.current!.x, lastPos.current!.y);
     ctx.lineTo(pos.x, pos.y);
-    ctx.strokeStyle = '#C0392B';
+    ctx.strokeStyle = '#00A9AC';
     ctx.lineWidth = 2.5;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';

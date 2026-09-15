@@ -13,7 +13,7 @@ const STATUS_STYLE: Record<InvoiceStatus, { bg: string; color: string; label: st
   estimate: { bg: '#EFF6FF', color: '#1D4ED8', label: 'Estimate', icon: <Edit2 size={11} /> },
   invoice:  { bg: '#FFF7ED', color: '#B45309', label: 'Invoice', icon: <Clock size={11} /> },
   order:    { bg: '#F0FDF4', color: '#15803D', label: 'Order', icon: <CheckCircle2 size={11} /> },
-  refunded: { bg: '#FDEDEC', color: '#C0392B', label: 'Refunded', icon: <DollarSign size={11} /> },
+  refunded: { bg: '#E6F7F7', color: '#00A9AC', label: 'Refunded', icon: <DollarSign size={11} /> },
   void:     { bg: '#F9FAFB', color: '#9CA3AF', label: 'Void', icon: <Lock size={11} /> },
 };
 
@@ -117,7 +117,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
             <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{invoice.customerEmail}</p>
           </div>
           <div className="text-right">
-            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#C0392B', fontSize: '1.5rem' }}>{fmtMoney(total)}</p>
+            <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#00A9AC', fontSize: '1.5rem' }}>{fmtMoney(total)}</p>
             <p style={{ color: '#9CA3AF', fontSize: '0.75rem' }}>Created {fmtDate(invoice.createdAt)}</p>
             {invoice.status === 'order' && invoice.paidAt && (
               <p style={{ color: '#27AE60', fontSize: '0.75rem', fontWeight: 600 }}>Paid {fmtDate(invoice.paidAt)}</p>
@@ -143,7 +143,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
             <button
               onClick={() => { setShowSent(true); setTimeout(() => setShowSent(false), 2000); }}
               className="flex items-center gap-1 px-2.5 py-1 rounded-[6px] text-xs font-semibold"
-              style={{ background: showSent ? '#27AE60' : '#C0392B', color: '#fff' }}
+              style={{ background: showSent ? '#27AE60' : '#00A9AC', color: '#fff' }}
             >
               {showSent ? <><CheckCircle2 size={11} /> Sent!</> : <><Send size={11} /> Send</>}
             </button>
@@ -170,7 +170,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
           {/* New line form */}
           {newLine && editable && (
             <div className="grid gap-2 py-2 items-center" style={{ gridTemplateColumns: '1fr 60px 90px 80px 24px' }}>
-              <input value={newDesc} onChange={e => setNewDesc(e.target.value)} placeholder="Description…" className="px-2 py-1 rounded text-sm" style={{ border: '1.5px solid #C0392B', outline: 'none' }} />
+              <input value={newDesc} onChange={e => setNewDesc(e.target.value)} placeholder="Description…" className="px-2 py-1 rounded text-sm" style={{ border: '1.5px solid #00A9AC', outline: 'none' }} />
               <input type="number" min="1" value={newQty} onChange={e => setNewQty(+e.target.value)} className="px-2 py-1 rounded text-sm text-center" style={{ border: '1px solid #E5E7EB', outline: 'none' }} />
               <input type="number" step="0.01" value={newPrice} onChange={e => setNewPrice(+e.target.value)} placeholder="0.00" className="px-2 py-1 rounded text-sm text-right" style={{ border: '1px solid #E5E7EB', outline: 'none' }} />
               <span />
@@ -179,7 +179,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
           )}
 
           {editable && !newLine && (
-            <button onClick={() => setNewLine(true)} className="flex items-center gap-1.5 mt-2 text-sm" style={{ color: '#C0392B' }}>
+            <button onClick={() => setNewLine(true)} className="flex items-center gap-1.5 mt-2 text-sm" style={{ color: '#00A9AC' }}>
               <Plus size={14} /> Add Line Item
             </button>
           )}
@@ -217,7 +217,7 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
           )}
           <div className="flex justify-between pt-2 mt-1" style={{ borderTop: '1px solid #E5E7EB' }}>
             <span style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>Total</span>
-            <span style={{ fontWeight: 700, color: '#C0392B', fontSize: '1.125rem' }}>{fmtMoney(total)}</span>
+            <span style={{ fontWeight: 700, color: '#00A9AC', fontSize: '1.125rem' }}>{fmtMoney(total)}</span>
           </div>
           {invoice.status === 'order' && (
             <div className="flex justify-between mt-1">
@@ -251,9 +251,9 @@ function InvoiceDetail({ invoice, onBack, onStatusChange }: {
             <button
               onClick={() => onStatusChange(invoice.id, nextStatus[invoice.status]!, lines)}
               className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-[6px] text-white font-semibold text-sm"
-              style={{ background: '#C0392B' }}
-              onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-              onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+              style={{ background: '#00A9AC' }}
+              onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+              onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
             >
               {nextLabel[invoice.status]} <ChevronRight size={14} />
             </button>
@@ -317,7 +317,7 @@ export function EstimateInvoice() {
               key={s}
               onClick={() => setFilterStatus(s)}
               className="px-3 py-1.5 rounded-[6px] text-sm font-medium"
-              style={{ background: filterStatus === s ? '#C0392B' : '#F3F4F6', color: filterStatus === s ? '#fff' : '#6B7280' }}
+              style={{ background: filterStatus === s ? '#00A9AC' : '#F3F4F6', color: filterStatus === s ? '#fff' : '#6B7280' }}
             >
               {s === 'all' ? 'All' : STATUS_STYLE[s].label}
             </button>
@@ -325,9 +325,9 @@ export function EstimateInvoice() {
         </div>
         <button
           className="flex items-center gap-1.5 px-4 py-2 rounded-[6px] text-white text-sm font-semibold"
-          style={{ background: '#C0392B' }}
-          onMouseEnter={e => (e.currentTarget.style.background = '#A93226')}
-          onMouseLeave={e => (e.currentTarget.style.background = '#C0392B')}
+          style={{ background: '#00A9AC' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#007F82')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#00A9AC')}
         >
           <Plus size={14} /> New Estimate
         </button>
@@ -353,7 +353,7 @@ export function EstimateInvoice() {
               <p style={{ color: '#9CA3AF', fontSize: '0.8125rem' }}>{fmtDate(inv.createdAt)} · {inv.lines.length} line{inv.lines.length !== 1 ? 's' : ''}</p>
             </div>
             <div className="text-right shrink-0">
-              <p style={{ fontWeight: 700, color: '#C0392B', fontSize: '1rem' }}>{fmtMoney(inv.total)}</p>
+              <p style={{ fontWeight: 700, color: '#00A9AC', fontSize: '1rem' }}>{fmtMoney(inv.total)}</p>
               {inv.balance > 0 && (
                 <p style={{ color: '#F59E0B', fontSize: '0.75rem', fontWeight: 600 }}>Balance: {fmtMoney(inv.balance)}</p>
               )}

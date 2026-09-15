@@ -9,7 +9,7 @@ const STATUS_COLOR: Record<NotificationStatus, { color: string; bg: string }> = 
   delivered: { color: '#15803D', bg: '#F0FDF4' },
   opened:    { color: '#7E22CE', bg: '#FDF4FF' },
   clicked:   { color: '#0F766E', bg: '#F0FDFA' },
-  failed:    { color: '#DC2626', bg: '#FEF2F2' },
+  failed:    { color: '#DC2626', bg: '#F0FBFB' },
   bounced:   { color: '#D97706', bg: '#FEF3C7' },
 };
 
@@ -51,7 +51,7 @@ export function OverviewView() {
 
       {/* Transactional failure alert */}
       {transactionalFailed.length > 0 && (
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#991B1B' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '12px 16px', borderRadius: 8, background: '#F0FBFB', border: '1px solid #80D4D5', color: '#005F62' }}>
           <AlertTriangle size={16} style={{ marginTop: 2, flexShrink: 0 }} />
           <div>
             <div style={{ fontWeight: 700, fontSize: 13 }}>Transactional delivery failures</div>

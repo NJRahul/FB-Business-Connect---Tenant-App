@@ -4,7 +4,7 @@ export const INITIAL_BRANDING: TenantBranding = {
   logoLightUrl: null,
   logoDarkUrl: null,
   faviconUrl: null,
-  primaryColor: '#C0392B',
+  primaryColor: '#00A9AC',
   secondaryColor: '#1A1A1A',
   accentColor: '#F39C12',
   customCss: `/* Custom CSS — scoped to your storefront only */\n\n.hero-banner {\n  /* Customize the hero section */\n}\n\n.book-cta-button {\n  /* Override the booking CTA */\n  border-radius: 4px;\n}\n`,

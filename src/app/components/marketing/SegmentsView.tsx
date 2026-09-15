@@ -86,11 +86,11 @@ function computeCount(filters: SegmentFilter[]): number {
 
 function FilterChip({ filter, onRemove }: { filter: SegmentFilter; onRemove: () => void }) {
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#FDEDEC', border: '1px solid #F5B7B1', borderRadius: 8, padding: '5px 10px', fontSize: 13, fontWeight: 600, color: '#C0392B' }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 8, padding: '5px 10px', fontSize: 13, fontWeight: 600, color: '#00A9AC' }}>
       <span style={{ color: '#6B7280', fontWeight: 400 }}>{filter.fieldLabel}</span>
       <span>{filter.operator.replace(/_/g, ' ')}</span>
       <span style={{ fontFamily: 'monospace' }}>{String(filter.value)}</span>
-      <button onClick={onRemove} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#C0392B', padding: 0, display: 'flex', alignItems: 'center' }}>
+      <button onClick={onRemove} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#00A9AC', padding: 0, display: 'flex', alignItems: 'center' }}>
         <X size={13} />
       </button>
     </div>
@@ -151,7 +151,7 @@ function AddFilterPopover({ onAdd, onClose }: { onAdd: (f: SegmentFilter) => voi
       </div>
       <div style={{ display: 'flex', gap: 8, marginTop: 14 }}>
         <button onClick={onClose} style={{ flex: 1, padding: '8px 0', border: '1px solid #E5E7EB', borderRadius: 7, fontSize: 13, cursor: 'pointer', background: '#fff' }}>Cancel</button>
-        <button onClick={handleAdd} style={{ flex: 2, padding: '8px 0', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>Add Filter</button>
+        <button onClick={handleAdd} style={{ flex: 2, padding: '8px 0', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 7, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>Add Filter</button>
       </div>
     </div>
   );
@@ -206,7 +206,7 @@ function SegmentBuilder({ initial, onSave, onCancel }: { initial?: Segment; onSa
           ))}
           <div style={{ position: 'relative' }}>
             <button onClick={() => setShowAddFilter(s => !s)}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '5px 12px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '5px 12px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
               <Plus size={14} /> Add Filter
             </button>
             {showAddFilter && <AddFilterPopover onAdd={f => setFilters(prev => [...prev, f])} onClose={() => setShowAddFilter(false)} />}
@@ -215,10 +215,10 @@ function SegmentBuilder({ initial, onSave, onCancel }: { initial?: Segment; onSa
       </div>
 
       {/* Segment size preview */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: '#FDEDEC', border: '1px solid #F5B7B1', borderRadius: 10, marginBottom: 16 }}>
-        <Users size={20} color="#C0392B" />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 16px', background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 10, marginBottom: 16 }}>
+        <Users size={20} color="#00A9AC" />
         <div>
-          <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 24, fontWeight: 800, color: '#C0392B', display: 'flex', alignItems: 'center', gap: 8 }}>
+          <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 24, fontWeight: 800, color: '#00A9AC', display: 'flex', alignItems: 'center', gap: 8 }}>
             {computing ? <RefreshCw size={18} style={{ animation: 'spin 1s linear infinite' }} /> : count}
             <span style={{ fontSize: 14, fontWeight: 400, color: '#6B7280' }}>customers match</span>
           </div>
@@ -229,7 +229,7 @@ function SegmentBuilder({ initial, onSave, onCancel }: { initial?: Segment; onSa
       <div style={{ display: 'flex', gap: 10 }}>
         <button onClick={onCancel} style={{ padding: '10px 20px', border: '1px solid #E5E7EB', borderRadius: 8, fontSize: 14, cursor: 'pointer', background: '#fff' }}>Cancel</button>
         <button onClick={handleSave} disabled={!name}
-          style={{ padding: '10px 20px', background: name ? '#C0392B' : '#E5E7EB', color: name ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: name ? 'pointer' : 'not-allowed' }}>
+          style={{ padding: '10px 20px', background: name ? '#00A9AC' : '#E5E7EB', color: name ? '#fff' : '#9CA3AF', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: name ? 'pointer' : 'not-allowed' }}>
           Save Segment
         </button>
       </div>
@@ -260,7 +260,7 @@ export function SegmentsView() {
           <div style={{ fontSize: 13, color: '#6B7280', marginTop: 2 }}>Reusable customer lists for campaigns. Membership recomputes ≤60 seconds from any data change.</div>
         </div>
         <button onClick={() => { setBuilding(true); setEditingSeg(null); }}
-          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px', background: '#C0392B', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
+          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '9px 16px', background: '#00A9AC', color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer' }}>
           <Plus size={14} /> New Segment
         </button>
       </div>
@@ -281,8 +281,8 @@ export function SegmentsView() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
         {segments.filter(s => s.isTemplate).map(seg => (
           <div key={seg.id} style={{ display: 'flex', alignItems: 'center', gap: 14, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10, padding: '14px 16px' }}>
-            <div style={{ width: 36, height: 36, background: '#FDEDEC', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <Users size={16} color="#C0392B" />
+            <div style={{ width: 36, height: 36, background: '#E6F7F7', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <Users size={16} color="#00A9AC" />
             </div>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: 700, fontSize: 14, color: '#1A1A1A' }}>{seg.name}</div>
@@ -297,7 +297,7 @@ export function SegmentsView() {
                 </div>
               )}
             </div>
-            <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#C0392B', flexShrink: 0 }}>{seg.memberCount}</div>
+            <div style={{ fontFamily: 'Sora, sans-serif', fontSize: 22, fontWeight: 800, color: '#00A9AC', flexShrink: 0 }}>{seg.memberCount}</div>
             <div style={{ fontSize: 12, color: '#9CA3AF', flexShrink: 0 }}>customers</div>
             <button onClick={() => { setEditingSeg(seg); setBuilding(false); }}
               style={{ padding: '6px 12px', border: '1px solid #E5E7EB', borderRadius: 7, fontSize: 12, cursor: 'pointer', background: '#fff', color: '#374151', flexShrink: 0 }}>
@@ -322,7 +322,7 @@ export function SegmentsView() {
                   {seg.filters.length > 0 && (
                     <div style={{ display: 'flex', gap: 6, marginTop: 6, flexWrap: 'wrap' }}>
                       {seg.filters.map(f => (
-                        <span key={f.id} style={{ background: '#FDEDEC', border: '1px solid #F5B7B1', borderRadius: 6, padding: '2px 8px', fontSize: 11, color: '#C0392B' }}>
+                        <span key={f.id} style={{ background: '#E6F7F7', border: '1px solid #80D4D5', borderRadius: 6, padding: '2px 8px', fontSize: 11, color: '#00A9AC' }}>
                           {f.fieldLabel} {f.operator.replace(/_/g, ' ')} {String(f.value)}
                         </span>
                       ))}
@@ -335,7 +335,7 @@ export function SegmentsView() {
                   <button onClick={() => { setEditingSeg(seg); setBuilding(false); }}
                     style={{ padding: '5px 10px', border: '1px solid #E5E7EB', borderRadius: 7, fontSize: 12, cursor: 'pointer', background: '#fff' }}>Edit</button>
                   <button onClick={() => setSegments(prev => prev.filter(s => s.id !== seg.id))}
-                    style={{ padding: '5px 8px', border: '1px solid #FCA5A5', borderRadius: 7, cursor: 'pointer', background: '#FEF2F2' }}>
+                    style={{ padding: '5px 8px', border: '1px solid #80D4D5', borderRadius: 7, cursor: 'pointer', background: '#F0FBFB' }}>
                     <Trash2 size={12} color="#DC2626" />
                   </button>
                 </div>

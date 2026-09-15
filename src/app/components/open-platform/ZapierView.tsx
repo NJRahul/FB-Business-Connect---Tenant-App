@@ -116,7 +116,7 @@ export function ZapierView() {
                 <div className="flex-1 min-w-0">
                   <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>{t.name}</p>
                   <p style={{ color: '#6B7280', fontSize: '0.8125rem', marginTop: '2px' }}>{t.desc}</p>
-                  <code style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#C0392B', marginTop: '6px', display: 'block' }}>{t.event}</code>
+                  <code style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#00A9AC', marginTop: '6px', display: 'block' }}>{t.event}</code>
                 </div>
               </div>
             </div>
@@ -129,8 +129,8 @@ export function ZapierView() {
           {ACTIONS.map(a => (
             <div key={a.id} className="bg-white rounded-[10px] p-4" style={{ border: '1px solid #E5E7EB' }}>
               <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0 mt-0.5" style={{ background: '#FDEDEC' }}>
-                  <ArrowRight size={14} style={{ color: '#C0392B' }} />
+                <div className="w-8 h-8 rounded-[6px] flex items-center justify-center shrink-0 mt-0.5" style={{ background: '#E6F7F7' }}>
+                  <ArrowRight size={14} style={{ color: '#00A9AC' }} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>{a.name}</p>

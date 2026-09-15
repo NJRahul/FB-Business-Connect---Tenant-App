@@ -26,7 +26,7 @@ const STATE_STYLE: Record<VisitState, { bg: string; border: string; text: string
   parts_ready:  { bg: '#F0FDF4', border: '#22C55E', text: '#15803D', label: 'Parts Ready' },
   en_route:     { bg: '#F5F3FF', border: '#8B5CF6', text: '#6D28D9', label: 'En Route' },
   on_site:      { bg: '#F5F3FF', border: '#7C3AED', text: '#5B21B6', label: 'On Site' },
-  in_progress:  { bg: '#FDEDEC', border: '#C0392B', text: '#C0392B', label: 'In Progress' },
+  in_progress:  { bg: '#E6F7F7', border: '#00A9AC', text: '#00A9AC', label: 'In Progress' },
   completed:    { bg: '#F0FDF4', border: '#27AE60', text: '#15803D', label: 'Completed' },
   no_show:      { bg: '#F9FAFB', border: '#9CA3AF', text: '#6B7280', label: 'No Show' },
   cancelled:    { bg: '#F9FAFB', border: '#D1D5DB', text: '#9CA3AF', label: 'Cancelled' },
@@ -70,7 +70,7 @@ function VisitCard({ visit, onClick, onDragStart }: {
       <div className="px-1.5 py-1 h-full flex flex-col justify-between overflow-hidden relative">
         {visit.atRisk && (
           <div className="absolute top-1.5 right-1.5">
-            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#C0392B' }} />
+            <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: '#00A9AC' }} />
           </div>
         )}
         <div>
@@ -111,7 +111,7 @@ function DetailPanel({ visit, onClose, onReassign }: {
       <div className="p-4 flex-1">
         <div className="flex items-center gap-2 mb-3">
           <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: s.bg, color: s.text, border: `1px solid ${s.border}` }}>{s.label}</span>
-          {visit.atRisk && <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#FDEDEC', color: '#C0392B' }}>⚠ At Risk</span>}
+          {visit.atRisk && <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#E6F7F7', color: '#00A9AC' }}>⚠ At Risk</span>}
         </div>
         <h4 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A', marginBottom: '2px' }}>{visit.customerName}</h4>
         <p style={{ color: '#9CA3AF', fontSize: '0.8125rem', marginBottom: '12px' }}>{visit.serviceTypeName}</p>
@@ -165,7 +165,7 @@ function DetailPanel({ visit, onClose, onReassign }: {
                     disabled={!targetTech}
                     onClick={() => { if (targetTech) { onReassign(visit.id, targetTech); setShowReassign(false); } }}
                     className="flex-1 py-2 rounded-[6px] text-sm text-white font-semibold"
-                    style={{ background: targetTech ? '#C0392B' : '#D1D5DB' }}
+                    style={{ background: targetTech ? '#00A9AC' : '#D1D5DB' }}
                   >
                     Confirm
                   </button>
@@ -201,7 +201,7 @@ function MapView({ visits, onSelect }: { visits: DispatchVisit[]; onSelect: (v: 
       {/* Visit pins */}
       {visits.filter(v => v.mapX !== undefined).map(v => {
         const s = STATE_STYLE[v.visitState];
-        const pinColor = v.atRisk ? '#C0392B' : v.visitState === 'completed' ? '#27AE60' : s.border;
+        const pinColor = v.atRisk ? '#00A9AC' : v.visitState === 'completed' ? '#27AE60' : s.border;
         return (
           <button
             key={v.id}
@@ -244,7 +244,7 @@ function MapView({ visits, onSelect }: { visits: DispatchVisit[]; onSelect: (v: 
         {[
           { color: '#3B82F6', label: 'Scheduled' },
           { color: '#F59E0B', label: 'Parts Pending' },
-          { color: '#C0392B', label: 'At Risk / Live' },
+          { color: '#00A9AC', label: 'At Risk / Live' },
           { color: '#27AE60', label: 'Completed' },
         ].map(l => (
           <div key={l.label} className="flex items-center gap-1.5 mb-0.5">
@@ -337,7 +337,7 @@ export function DispatchBoard() {
           <span style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#fff', fontSize: '0.9375rem' }}>Dispatch Board</span>
           <span style={{ color: '#6B7280', fontSize: '0.8125rem' }}>Sun, June 14 · 10:15 AM</span>
           {atRiskCount > 0 && (
-            <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#C0392B', color: '#fff' }}>
+            <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: '#00A9AC', color: '#fff' }}>
               <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               {atRiskCount} at risk
             </span>
@@ -357,10 +357,10 @@ export function DispatchBoard() {
           </select>
           {/* View toggle */}
           <div className="flex rounded overflow-hidden" style={{ border: '1px solid #374151' }}>
-            <button onClick={() => setViewMode('grid')} className="px-2.5 py-1 flex items-center gap-1 text-xs" style={{ background: viewMode === 'grid' ? '#C0392B' : '#2D2D2D', color: '#fff' }}>
+            <button onClick={() => setViewMode('grid')} className="px-2.5 py-1 flex items-center gap-1 text-xs" style={{ background: viewMode === 'grid' ? '#00A9AC' : '#2D2D2D', color: '#fff' }}>
               <Grid3X3 size={12} /> Grid
             </button>
-            <button onClick={() => setViewMode('map')} className="px-2.5 py-1 flex items-center gap-1 text-xs" style={{ background: viewMode === 'map' ? '#C0392B' : '#2D2D2D', color: '#fff' }}>
+            <button onClick={() => setViewMode('map')} className="px-2.5 py-1 flex items-center gap-1 text-xs" style={{ background: viewMode === 'map' ? '#00A9AC' : '#2D2D2D', color: '#fff' }}>
               <Map size={12} /> Map
             </button>
           </div>
@@ -424,8 +424,8 @@ export function DispatchBoard() {
                         <div key={h} className="absolute top-0 bottom-0" style={{ left: (h - DAY_START_H) * 60 * PX_PER_MIN, width: 1, background: '#F3F4F6' }} />
                       ))}
                       {/* Now line */}
-                      <div className="absolute top-0 bottom-0 z-10" style={{ left: nowLineLeft, width: 2, background: '#C0392B' }}>
-                        <div className="w-2 h-2 rounded-full -ml-0.5 -mt-1" style={{ background: '#C0392B' }} />
+                      <div className="absolute top-0 bottom-0 z-10" style={{ left: nowLineLeft, width: 2, background: '#00A9AC' }}>
+                        <div className="w-2 h-2 rounded-full -ml-0.5 -mt-1" style={{ background: '#00A9AC' }} />
                       </div>
                       {/* Visit cards */}
                       {visitsForTech(tech.id).map(v => (
@@ -472,7 +472,7 @@ export function DispatchBoard() {
               <button
                 onClick={() => { reassign(showConflict.visitId, showConflict.techId); setShowConflict(null); }}
                 className="flex-1 py-2 rounded-[6px] text-sm text-white font-semibold"
-                style={{ background: '#C0392B' }}
+                style={{ background: '#00A9AC' }}
               >
                 Override & Reassign
               </button>

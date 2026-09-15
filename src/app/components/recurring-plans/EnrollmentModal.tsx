@@ -129,12 +129,12 @@ function StepBilling({ selected, onSelect }: { selected: BillingOpt | null; onSe
             onClick={() => onSelect(opt.id)}
             className="w-full text-left rounded-[10px] p-4 flex items-center gap-4"
             style={{
-              border: selected === opt.id ? '2px solid #C0392B' : '1.5px solid #E5E7EB',
+              border: selected === opt.id ? '2px solid #00A9AC' : '1.5px solid #E5E7EB',
               background: selected === opt.id ? '#FEFEFE' : '#fff',
             }}
           >
             <div className="w-10 h-10 rounded-[8px] flex items-center justify-center shrink-0" style={{ background: '#F9FAFB', border: '1px solid #E5E7EB' }}>
-              <Icon size={20} style={{ color: selected === opt.id ? '#C0392B' : '#9CA3AF' }} />
+              <Icon size={20} style={{ color: selected === opt.id ? '#00A9AC' : '#9CA3AF' }} />
             </div>
             <div className="flex-1">
               <p style={{ fontWeight: 600, color: '#1A1A1A', fontSize: '0.9375rem' }}>{opt.label}</p>
@@ -143,8 +143,8 @@ function StepBilling({ selected, onSelect }: { selected: BillingOpt | null; onSe
             <div
               className="w-5 h-5 rounded-full flex items-center justify-center"
               style={{
-                border: `2px solid ${selected === opt.id ? '#C0392B' : '#D1D5DB'}`,
-                background: selected === opt.id ? '#C0392B' : 'transparent',
+                border: `2px solid ${selected === opt.id ? '#00A9AC' : '#D1D5DB'}`,
+                background: selected === opt.id ? '#00A9AC' : 'transparent',
               }}
             >
               {selected === opt.id && <Check size={11} color="#fff" strokeWidth={3} />}
@@ -255,7 +255,7 @@ export function EnrollmentModal({ customerName, onClose, onComplete }: Enrollmen
           <button
             onClick={onComplete}
             className="mt-6 w-full py-2.5 rounded-[8px] text-sm font-semibold text-white"
-            style={{ background: '#C0392B' }}
+            style={{ background: '#00A9AC' }}
           >
             Done
           </button>
@@ -286,18 +286,18 @@ export function EnrollmentModal({ customerName, onClose, onComplete }: Enrollmen
                 <div
                   className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
                   style={{
-                    background: i < step ? '#C0392B' : i === step ? '#C0392B' : '#F3F4F6',
+                    background: i < step ? '#00A9AC' : i === step ? '#00A9AC' : '#F3F4F6',
                     color: i <= step ? '#fff' : '#9CA3AF',
                   }}
                 >
                   {i < step ? <Check size={12} strokeWidth={3} /> : i + 1}
                 </div>
-                <span style={{ fontSize: '0.75rem', fontWeight: i === step ? 700 : 400, color: i === step ? '#C0392B' : i < step ? '#374151' : '#9CA3AF' }}>
+                <span style={{ fontSize: '0.75rem', fontWeight: i === step ? 700 : 400, color: i === step ? '#00A9AC' : i < step ? '#374151' : '#9CA3AF' }}>
                   {s}
                 </span>
               </div>
               {i < STEPS.length - 1 && (
-                <div className="flex-1 mx-2 h-px" style={{ background: i < step ? '#C0392B' : '#E5E7EB' }} />
+                <div className="flex-1 mx-2 h-px" style={{ background: i < step ? '#00A9AC' : '#E5E7EB' }} />
               )}
             </div>
           ))}
@@ -336,7 +336,7 @@ export function EnrollmentModal({ customerName, onClose, onComplete }: Enrollmen
             onClick={handleNext}
             disabled={!canAdvance}
             className="flex-1 py-2.5 rounded-[8px] text-sm font-semibold text-white flex items-center justify-center gap-2"
-            style={{ background: canAdvance ? '#C0392B' : '#F3F4F6', color: canAdvance ? '#fff' : '#D1D5DB', cursor: canAdvance ? 'pointer' : 'not-allowed' }}
+            style={{ background: canAdvance ? '#00A9AC' : '#F3F4F6', color: canAdvance ? '#fff' : '#D1D5DB', cursor: canAdvance ? 'pointer' : 'not-allowed' }}
           >
             {step === 3 ? 'Confirm & Enroll' : 'Continue'}
             {step < 3 && <ChevronRight size={15} />}

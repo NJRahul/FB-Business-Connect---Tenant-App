@@ -38,9 +38,9 @@ function IntervalChips({
           onClick={() => toggle(h)}
           style={{
             padding: '5px 12px', borderRadius: 99, border: '1.5px solid',
-            borderColor: intervals.includes(h) ? '#C0392B' : '#D1D5DB',
-            background: intervals.includes(h) ? '#FDEDEC' : '#fff',
-            color: intervals.includes(h) ? '#C0392B' : '#6B7280',
+            borderColor: intervals.includes(h) ? '#00A9AC' : '#D1D5DB',
+            background: intervals.includes(h) ? '#E6F7F7' : '#fff',
+            color: intervals.includes(h) ? '#00A9AC' : '#6B7280',
             fontWeight: 600, fontSize: 12, cursor: 'pointer',
           }}
         >
@@ -64,10 +64,10 @@ function IntervalChips({
         </button>
       </div>
       {intervals.filter(h => !PRESET_INTERVALS.includes(h)).map(h => (
-        <div key={h} style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 99, background: '#FDEDEC', border: '1.5px solid #C0392B' }}>
-          <span style={{ fontSize: 12, color: '#C0392B', fontWeight: 600 }}>{h}h</span>
+        <div key={h} style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 10px', borderRadius: 99, background: '#E6F7F7', border: '1.5px solid #00A9AC' }}>
+          <span style={{ fontSize: 12, color: '#00A9AC', fontWeight: 600 }}>{h}h</span>
           <button onClick={() => toggle(h)} style={{ border: 'none', background: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
-            <X size={10} color="#C0392B" />
+            <X size={10} color="#00A9AC" />
           </button>
         </div>
       ))}
@@ -97,7 +97,7 @@ function ServiceConfigRow({ config: initial }: { config: ReminderConfig }) {
           onClick={e => { e.stopPropagation(); setConfig(c => ({ ...c, enabled: !c.enabled })); }}
           style={{
             width: 36, height: 20, borderRadius: 99, position: 'relative', cursor: 'pointer', flexShrink: 0,
-            background: config.enabled ? '#C0392B' : '#D1D5DB', transition: 'background 0.2s',
+            background: config.enabled ? '#00A9AC' : '#D1D5DB', transition: 'background 0.2s',
           }}
         >
           <div style={{
@@ -118,7 +118,7 @@ function ServiceConfigRow({ config: initial }: { config: ReminderConfig }) {
 
         <div style={{ display: 'flex', gap: 4 }}>
           {config.intervals.map(h => (
-            <span key={h} style={{ padding: '2px 8px', borderRadius: 99, background: config.enabled ? '#FDEDEC' : '#F3F4F6', color: config.enabled ? '#C0392B' : '#9CA3AF', fontSize: 11, fontWeight: 600 }}>
+            <span key={h} style={{ padding: '2px 8px', borderRadius: 99, background: config.enabled ? '#E6F7F7' : '#F3F4F6', color: config.enabled ? '#00A9AC' : '#9CA3AF', fontSize: 11, fontWeight: 600 }}>
               {h}h
             </span>
           ))}
@@ -152,7 +152,7 @@ function ServiceConfigRow({ config: initial }: { config: ReminderConfig }) {
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 12 }}>
             <button
               onClick={save}
-              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : '#C0392B', color: '#fff', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}
+              style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : '#00A9AC', color: '#fff', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}
             >
               {saved ? <><Check size={14} /> Saved</> : 'Save Config'}
             </button>
@@ -191,8 +191,8 @@ export function RemindersView() {
             style={{
               padding: '10px 18px', border: 'none', background: 'none', cursor: 'pointer',
               fontWeight: 600, fontSize: 13,
-              color: tab === t.id ? '#C0392B' : '#6B7280',
-              borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+              color: tab === t.id ? '#00A9AC' : '#6B7280',
+              borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
               marginBottom: -2,
             }}
           >
@@ -222,7 +222,7 @@ export function RemindersView() {
                 </div>
                 <div
                   onClick={() => setMorningEnabled(v => !v)}
-                  style={{ width: 36, height: 20, borderRadius: 99, position: 'relative', cursor: 'pointer', background: morningEnabled ? '#C0392B' : '#D1D5DB', transition: 'background 0.2s', flexShrink: 0 }}
+                  style={{ width: 36, height: 20, borderRadius: 99, position: 'relative', cursor: 'pointer', background: morningEnabled ? '#00A9AC' : '#D1D5DB', transition: 'background 0.2s', flexShrink: 0 }}
                 >
                   <div style={{ position: 'absolute', top: 2, left: morningEnabled ? 18 : 2, width: 16, height: 16, borderRadius: 99, background: '#fff', transition: 'left 0.2s' }} />
                 </div>
@@ -235,7 +235,7 @@ export function RemindersView() {
                 </div>
                 <div
                   onClick={() => setMorningSuppressCompleted(v => !v)}
-                  style={{ width: 36, height: 20, borderRadius: 99, position: 'relative', cursor: 'pointer', background: morningSuppressCompleted ? '#C0392B' : '#D1D5DB', transition: 'background 0.2s', flexShrink: 0 }}
+                  style={{ width: 36, height: 20, borderRadius: 99, position: 'relative', cursor: 'pointer', background: morningSuppressCompleted ? '#00A9AC' : '#D1D5DB', transition: 'background 0.2s', flexShrink: 0 }}
                 >
                   <div style={{ position: 'absolute', top: 2, left: morningSuppressCompleted ? 18 : 2, width: 16, height: 16, borderRadius: 99, background: '#fff', transition: 'left 0.2s' }} />
                 </div>
@@ -245,7 +245,7 @@ export function RemindersView() {
             <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 16 }}>
               <button
                 onClick={saveGlobal}
-                style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : '#C0392B', color: '#fff', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}
+                style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : '#00A9AC', color: '#fff', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}
               >
                 {saved ? <><Check size={14} /> Saved</> : 'Save Global Settings'}
               </button>

@@ -60,7 +60,7 @@ const GBB_PACKAGES = [
     inclusions: ['Premium brand tires', 'Install + balance + alignment', 'Free rotations (24 mo)', '3-yr road hazard', 'Nitrogen fill'],
     highlight: 'Best value long-term',
     recommended: true,
-    color: '#C0392B',
+    color: '#00A9AC',
   },
 ];
 
@@ -166,7 +166,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
           <div className="flex items-center gap-2.5">
             <h2 style={{ fontFamily: 'Sora, sans-serif', color: '#1A1A1A', fontWeight: 700, fontSize: '1.125rem' }}>Your Cart</h2>
             {items.length > 0 && (
-              <span className="px-2 py-0.5 rounded-full text-white" style={{ background: '#C0392B', fontSize: '0.75rem', fontWeight: 700 }}>
+              <span className="px-2 py-0.5 rounded-full text-white" style={{ background: '#00A9AC', fontSize: '0.75rem', fontWeight: 700 }}>
                 {items.length}
               </span>
             )}
@@ -181,7 +181,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
             <span style={{ fontSize: '3rem' }}>🛒</span>
             <p className="mt-4" style={{ color: '#1A1A1A', fontWeight: 600, fontSize: '1.0625rem' }}>Your cart is empty</p>
             <p className="mt-2" style={{ color: '#9CA3AF', fontSize: '0.875rem' }}>Add tires from the catalog to get started</p>
-            <button onClick={onClose} className="mt-5 px-5 py-2.5 rounded-[6px] text-white" style={{ background: '#C0392B', fontWeight: 600 }}>
+            <button onClick={onClose} className="mt-5 px-5 py-2.5 rounded-[6px] text-white" style={{ background: '#00A9AC', fontWeight: 600 }}>
               Browse Catalog
             </button>
           </div>
@@ -192,13 +192,13 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
               <button
                 onClick={() => setShowGBB(v => !v)}
                 className="w-full flex items-center justify-between px-5 py-3.5"
-                style={{ color: '#1A1A1A', background: '#FDEDEC' }}
+                style={{ color: '#1A1A1A', background: '#E6F7F7' }}
               >
                 <div className="flex items-center gap-2">
-                  <Star size={15} style={{ color: '#C0392B' }} />
-                  <span style={{ fontWeight: 600, fontSize: '0.9375rem', color: '#C0392B' }}>Good–Better–Best Packages</span>
+                  <Star size={15} style={{ color: '#00A9AC' }} />
+                  <span style={{ fontWeight: 600, fontSize: '0.9375rem', color: '#00A9AC' }}>Good–Better–Best Packages</span>
                 </div>
-                {showGBB ? <ChevronUp size={16} style={{ color: '#C0392B' }} /> : <ChevronDown size={16} style={{ color: '#C0392B' }} />}
+                {showGBB ? <ChevronUp size={16} style={{ color: '#00A9AC' }} /> : <ChevronDown size={16} style={{ color: '#00A9AC' }} />}
               </button>
               {showGBB && (
                 <div className="px-5 pb-4 pt-2 grid grid-cols-3 gap-2">
@@ -209,11 +209,11 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                       className="relative rounded-[8px] p-3 text-left transition-all"
                       style={{
                         border: `2px solid ${selectedPackage === pkg.id ? pkg.color : '#E5E7EB'}`,
-                        background: selectedPackage === pkg.id ? (pkg.recommended ? '#FDEDEC' : '#F9FAFB') : '#fff',
+                        background: selectedPackage === pkg.id ? (pkg.recommended ? '#E6F7F7' : '#F9FAFB') : '#fff',
                       }}
                     >
                       {pkg.recommended && (
-                        <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded text-white whitespace-nowrap" style={{ background: '#C0392B', fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+                        <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded text-white whitespace-nowrap" style={{ background: '#00A9AC', fontSize: '0.5625rem', fontWeight: 700, letterSpacing: '0.05em' }}>
                           REC.
                         </span>
                       )}
@@ -255,8 +255,8 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                           <span style={{ color: '#27AE60', fontSize: '0.6875rem', fontWeight: 500 }}>✓ In stock locally</span>
                         )}
                       </div>
-                      <button onClick={() => onRemove(item.id)} className="shrink-0 p-1" style={{ color: '#F5B7B1' }}>
-                        <Trash2 size={15} style={{ color: '#C0392B', opacity: 0.6 }} />
+                      <button onClick={() => onRemove(item.id)} className="shrink-0 p-1" style={{ color: '#80D4D5' }}>
+                        <Trash2 size={15} style={{ color: '#00A9AC', opacity: 0.6 }} />
                       </button>
                     </div>
 
@@ -269,7 +269,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                             onClick={() => onUpdateQty(item.id, q)}
                             className="w-8 h-8 rounded-full text-sm font-semibold transition-all"
                             style={{
-                              background: item.qty === q ? '#C0392B' : '#F3F4F6',
+                              background: item.qty === q ? '#00A9AC' : '#F3F4F6',
                               color: item.qty === q ? '#fff' : '#6B7280',
                             }}
                           >
@@ -330,14 +330,14 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                     onClick={handlePromoApply}
                     disabled={promoLoading || !promoInput.trim()}
                     className="px-3 py-2 rounded-[6px] text-white transition-colors shrink-0"
-                    style={{ background: promoLoading || !promoInput.trim() ? '#9CA3AF' : '#C0392B', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
+                    style={{ background: promoLoading || !promoInput.trim() ? '#9CA3AF' : '#00A9AC', fontWeight: 600, fontSize: '0.875rem', whiteSpace: 'nowrap' }}
                   >
                     {promoLoading ? '...' : 'Apply'}
                   </button>
                 </div>
               )}
               {promoError && (
-                <p className="mt-1.5 flex items-center gap-1.5" style={{ color: '#E74C3C', fontSize: '0.75rem' }}>
+                <p className="mt-1.5 flex items-center gap-1.5" style={{ color: '#00BFC3', fontSize: '0.75rem' }}>
                   <Info size={12} />{promoError}
                 </p>
               )}
@@ -377,14 +377,14 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                       onClick={() => { if (overrideAmount && overrideReason) { setOverrideSubmitted(true); setOverrideOpen(false); } }}
                       disabled={!overrideAmount || !overrideReason}
                       className="w-full py-1.5 rounded text-white text-sm font-semibold"
-                      style={{ background: !overrideAmount || !overrideReason ? '#9CA3AF' : '#C0392B' }}
+                      style={{ background: !overrideAmount || !overrideReason ? '#9CA3AF' : '#00A9AC' }}
                     >
                       Apply Override
                     </button>
                   </div>
                 )}
                 {overrideSubmitted && (
-                  <div className="mt-2 flex items-center justify-between px-3 py-2 rounded-[6px]" style={{ background: '#FEF2F2', border: '1px solid #FECACA' }}>
+                  <div className="mt-2 flex items-center justify-between px-3 py-2 rounded-[6px]" style={{ background: '#F0FBFB', border: '1px solid #FECACA' }}>
                     <span style={{ color: '#B91C1C', fontSize: '0.75rem', fontWeight: 600 }}>
                       Override: -${parseFloat(overrideAmount).toFixed(2)} · {overrideReason}
                     </span>
@@ -404,7 +404,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                 { label: `Disposal fee (R ${DISPOSAL_FEE_PER_TIRE}/tire)`, amount: disposalFee, color: '#6B7280' },
                 ...(calloutFeeApplies ? [{ label: 'Trip charge', amount: 75, color: '#F39C12' }] : []),
                 ...(appliedPromo ? [{ label: `Promo (${appliedPromo.code})`, amount: -promoDiscount, color: '#27AE60' }] : []),
-                ...(overrideSubmitted && managerDiscount > 0 ? [{ label: 'Manager discount', amount: -managerDiscount, color: '#E74C3C' }] : []),
+                ...(overrideSubmitted && managerDiscount > 0 ? [{ label: 'Manager discount', amount: -managerDiscount, color: '#00BFC3' }] : []),
                 { label: `Tax (${(TAX_RATE * 100).toFixed(2)}%)`, amount: tax, color: '#6B7280' },
               ].map(row => (
                 <div key={row.label} className="flex justify-between">
@@ -416,7 +416,7 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
               ))}
               <div className="flex justify-between pt-2 border-t" style={{ borderColor: '#E5E7EB' }}>
                 <span style={{ color: '#1A1A1A', fontWeight: 700, fontSize: '1rem' }}>Total</span>
-                <span style={{ color: '#C0392B', fontWeight: 800, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif' }}>
+                <span style={{ color: '#00A9AC', fontWeight: 800, fontSize: '1.125rem', fontFamily: 'Sora, sans-serif' }}>
                   ${(grandTotal + (calloutFeeApplies ? 75 : 0)).toFixed(2)}
                 </span>
               </div>
@@ -450,8 +450,8 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="px-2 py-0.5 rounded-[4px]" style={{ background: '#FDEDEC', color: '#C0392B', fontSize: '0.6875rem', fontWeight: 600 }}>{f.badge}</span>
-                          <button className="px-3 py-1.5 rounded-[6px] text-sm font-semibold" style={{ border: '1.5px solid #C0392B', color: '#C0392B', background: '#fff' }}>
+                          <span className="px-2 py-0.5 rounded-[4px]" style={{ background: '#E6F7F7', color: '#00A9AC', fontSize: '0.6875rem', fontWeight: 600 }}>{f.badge}</span>
+                          <button className="px-3 py-1.5 rounded-[6px] text-sm font-semibold" style={{ border: '1.5px solid #00A9AC', color: '#00A9AC', background: '#fff' }}>
                             Apply
                           </button>
                         </div>
@@ -471,9 +471,9 @@ export function CartPanel({ open, onClose, items, onUpdateQty, onRemove, onCheck
               onClick={handleCheckout}
               disabled={validating}
               className="w-full py-3.5 rounded-[6px] text-white flex items-center justify-center gap-2 transition-colors"
-              style={{ background: validating ? '#9CA3AF' : '#C0392B', fontWeight: 700, fontSize: '1rem' }}
-              onMouseEnter={e => { if (!validating) e.currentTarget.style.background = '#A93226'; }}
-              onMouseLeave={e => { if (!validating) e.currentTarget.style.background = '#C0392B'; }}
+              style={{ background: validating ? '#9CA3AF' : '#00A9AC', fontWeight: 700, fontSize: '1rem' }}
+              onMouseEnter={e => { if (!validating) e.currentTarget.style.background = '#007F82'; }}
+              onMouseLeave={e => { if (!validating) e.currentTarget.style.background = '#00A9AC'; }}
             >
               {validating ? (
                 <>

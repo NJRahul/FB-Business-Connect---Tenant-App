@@ -19,8 +19,8 @@ function MFAModal({ onConfirm, onClose }: { onConfirm: () => void; onClose: () =
     <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.45)' }}>
       <div className="bg-white rounded-[12px] p-6 shadow-xl" style={{ width: 360 }}>
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#FEF2F2' }}>
-            <Lock size={18} style={{ color: '#C0392B' }} />
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: '#F0FBFB' }}>
+            <Lock size={18} style={{ color: '#00A9AC' }} />
           </div>
           <div>
             <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>MFA Required</p>
@@ -37,12 +37,12 @@ function MFAModal({ onConfirm, onClose }: { onConfirm: () => void; onClose: () =
           placeholder="000000"
           autoFocus
           className="w-full text-center py-3 rounded-[8px] text-xl font-mono tracking-[0.3em]"
-          style={{ border: `1.5px solid ${error ? '#C0392B' : '#E5E7EB'}`, outline: 'none', letterSpacing: '0.4em' }}
+          style={{ border: `1.5px solid ${error ? '#00A9AC' : '#E5E7EB'}`, outline: 'none', letterSpacing: '0.4em' }}
         />
-        {error && <p style={{ color: '#C0392B', fontSize: '0.8125rem', marginTop: 6, textAlign: 'center' }}>Invalid code. (Demo: use 123456)</p>}
+        {error && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 6, textAlign: 'center' }}>Invalid code. (Demo: use 123456)</p>}
         <div className="flex gap-2 mt-4">
           <button onClick={onClose} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#F3F4F6', color: '#374151' }}>Cancel</button>
-          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#C0392B', color: '#fff' }}>Verify</button>
+          <button onClick={submit} className="flex-1 py-2.5 rounded-[8px] font-semibold" style={{ background: '#00A9AC', color: '#fff' }}>Verify</button>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ function VaultCard({ vault, selected, onClick }: { vault: BankingVault; selected
         <div className="flex justify-center mb-3">
           <svg width={54} height={54} style={{ transform: 'rotate(-90deg)' }}>
             <circle cx={27} cy={27} r={r} fill="none" stroke={selected ? '#333' : '#E5E7EB'} strokeWidth={4} />
-            <circle cx={27} cy={27} r={r} fill="none" stroke={selected ? '#fff' : '#C0392B'} strokeWidth={4}
+            <circle cx={27} cy={27} r={r} fill="none" stroke={selected ? '#fff' : '#00A9AC'} strokeWidth={4}
               strokeDasharray={circ} strokeDashoffset={offset} strokeLinecap="round" />
           </svg>
         </div>
@@ -178,9 +178,9 @@ function VaultTransferModal({ vaults, onClose, onTransfer }: {
             <label style={{ fontSize: '0.8125rem', fontWeight: 600, color: '#374151', display: 'block', marginBottom: 4 }}>Amount</label>
             <div className="relative">
               <span style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#9CA3AF' }}>$</span>
-              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00" className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#C0392B' : '#E5E7EB'}`, outline: 'none' }} />
+              <input type="number" value={amount} onChange={e => setAmount(e.target.value)} placeholder="0.00" className="w-full px-3 py-2 rounded-[6px]" style={{ paddingLeft: 24, border: `1px solid ${insufficient ? '#00A9AC' : '#E5E7EB'}`, outline: 'none' }} />
             </div>
-            {insufficient && <p style={{ color: '#C0392B', fontSize: '0.8125rem', marginTop: 4 }}>Insufficient balance. Available: {formatCents(fromVault!.balance_cached)}</p>}
+            {insufficient && <p style={{ color: '#00A9AC', fontSize: '0.8125rem', marginTop: 4 }}>Insufficient balance. Available: {formatCents(fromVault!.balance_cached)}</p>}
           </div>
         </div>
         <div className="flex gap-2 mt-6">

@@ -10,7 +10,7 @@ const STATUS_CFG: Record<string, { label: string; color: string; bg: string; ico
   sent:      { label: 'Sent',      color: '#27AE60', bg: '#F0FDF4', icon: <CheckCircle2 size={13} style={{ color: '#27AE60' }} /> },
   pending:   { label: 'Pending',   color: '#F39C12', bg: '#FFF8E1', icon: <Clock size={13} style={{ color: '#F39C12' }} /> },
   snoozed:   { label: 'Snoozed',   color: '#6B7280', bg: '#F3F4F6', icon: <Clock size={13} style={{ color: '#6B7280' }} /> },
-  cancelled: { label: 'Cancelled', color: '#E74C3C', bg: '#FEF2F2', icon: <AlertTriangle size={13} style={{ color: '#E74C3C' }} /> },
+  cancelled: { label: 'Cancelled', color: '#00BFC3', bg: '#F0FBFB', icon: <AlertTriangle size={13} style={{ color: '#00BFC3' }} /> },
 };
 
 function daysUntil(dateStr: string): number {
@@ -21,8 +21,8 @@ function PolicyExpiryCard({ policy }: { policy: InsurancePolicy }) {
   const days = daysUntil(policy.expiry_date);
   const urgency = days <= 7 ? 'high' : days <= 14 ? 'med' : 'low';
   const borderColor = urgency === 'high' ? '#FECACA' : urgency === 'med' ? '#FDE68A' : '#BBF7D0';
-  const badgeColor = urgency === 'high' ? '#C0392B' : urgency === 'med' ? '#F39C12' : '#27AE60';
-  const badgeBg = urgency === 'high' ? '#FEF2F2' : urgency === 'med' ? '#FFF8E1' : '#F0FDF4';
+  const badgeColor = urgency === 'high' ? '#00A9AC' : urgency === 'med' ? '#F39C12' : '#27AE60';
+  const badgeBg = urgency === 'high' ? '#F0FBFB' : urgency === 'med' ? '#FFF8E1' : '#F0FDF4';
 
   if (policy.status !== 'active' && policy.status !== 'pending') return null;
   if (days > 60) return null;

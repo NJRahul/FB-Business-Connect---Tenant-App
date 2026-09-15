@@ -59,8 +59,8 @@ export function RecurringPlansModule() {
               display: 'flex', alignItems: 'center', gap: 6,
               padding: '10px 18px', border: 'none', background: 'none', cursor: 'pointer',
               fontWeight: 600, fontSize: 13,
-              color: tab === t.id ? '#C0392B' : '#6B7280',
-              borderBottom: tab === t.id ? '2px solid #C0392B' : '2px solid transparent',
+              color: tab === t.id ? '#00A9AC' : '#6B7280',
+              borderBottom: tab === t.id ? '2px solid #00A9AC' : '2px solid transparent',
               marginBottom: -2,
             }}
           >

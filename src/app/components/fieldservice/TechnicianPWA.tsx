@@ -22,7 +22,7 @@ const NEXT_LABEL: Partial<Record<VisitState, string>> = {
   en_route: 'I\'ve Arrived', on_site: 'Start Service', in_progress: 'Mark Complete',
 };
 const NEXT_COLOR: Partial<Record<VisitState, string>> = {
-  scheduled: '#C0392B', parts_ready: '#C0392B',
+  scheduled: '#00A9AC', parts_ready: '#00A9AC',
   en_route: '#7C3AED', on_site: '#2980B9', in_progress: '#27AE60',
 };
 
@@ -61,7 +61,7 @@ function SignaturePad({ onSave, onClose }: { onSave: (data: string) => void; onC
     const rect = canvas.getBoundingClientRect();
     const pos = getPos(e, rect);
     ctx.lineTo(pos.x, pos.y);
-    ctx.strokeStyle = '#C0392B';
+    ctx.strokeStyle = '#00A9AC';
     ctx.lineWidth = 2.5;
     ctx.lineCap = 'round';
     ctx.stroke();
@@ -90,7 +90,7 @@ function SignaturePad({ onSave, onClose }: { onSave: (data: string) => void; onC
           <h4 style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#1A1A1A' }}>Customer Signature</h4>
           <button onClick={onClose}><X size={18} style={{ color: '#9CA3AF' }} /></button>
         </div>
-        <p style={{ color: '#C0392B', fontSize: '0.8125rem', fontWeight: 600, textAlign: 'center', marginBottom: '8px' }}>
+        <p style={{ color: '#00A9AC', fontSize: '0.8125rem', fontWeight: 600, textAlign: 'center', marginBottom: '8px' }}>
           Sign below to confirm service completion
         </p>
         <canvas
@@ -155,9 +155,9 @@ function PhotoPanel({ visitId, visitRequiresParts, onClose }: { visitId: string;
     <div className="fixed inset-0 z-50 flex flex-col" style={{ background: '#111827' }}>
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
-          <Camera size={18} style={{ color: '#C0392B' }} />
+          <Camera size={18} style={{ color: '#00A9AC' }} />
           <span style={{ color: '#fff', fontWeight: 700, fontFamily: 'Sora, sans-serif' }}>Visit Photos</span>
-          <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: met ? '#27AE60' : '#C0392B', color: '#fff' }}>
+          <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: met ? '#27AE60' : '#00A9AC', color: '#fff' }}>
             {capturedCount}{REQUIRED > 0 ? `/${REQUIRED}` : ''} captured
           </span>
         </div>
@@ -166,8 +166,8 @@ function PhotoPanel({ visitId, visitRequiresParts, onClose }: { visitId: string;
 
       {!met && REQUIRED > 0 && (
         <div className="mx-4 mb-3 p-2.5 rounded-[6px] flex items-center gap-2" style={{ background: '#7F1D1D' }}>
-          <AlertTriangle size={14} style={{ color: '#FCA5A5' }} />
-          <p style={{ color: '#FCA5A5', fontSize: '0.8125rem' }}>
+          <AlertTriangle size={14} style={{ color: '#80D4D5' }} />
+          <p style={{ color: '#80D4D5', fontSize: '0.8125rem' }}>
             Parts-Install requires minimum {REQUIRED} photos. {REQUIRED - capturedCount} more needed.
           </p>
         </div>
@@ -224,7 +224,7 @@ function PhotoPanel({ visitId, visitRequiresParts, onClose }: { visitId: string;
                 <p style={{ color: '#F9FAFB', fontWeight: 600, fontSize: '0.875rem' }}>{opt.label}</p>
                 <p style={{ color: '#6B7280', fontSize: '0.75rem' }}>Compress to ≤2MB · EXIF stripped</p>
               </div>
-              <Camera size={16} style={{ color: '#C0392B' }} />
+              <Camera size={16} style={{ color: '#00A9AC' }} />
             </button>
           ))}
         </div>
@@ -264,7 +264,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
 
   const stateColors: Partial<Record<VisitState, string>> = {
     scheduled: '#3B82F6', en_route: '#8B5CF6', on_site: '#2980B9',
-    in_progress: '#C0392B', completed: '#27AE60', parts_ready: '#22C55E', parts_pending: '#F59E0B',
+    in_progress: '#00A9AC', completed: '#27AE60', parts_ready: '#22C55E', parts_pending: '#F59E0B',
   };
   const dotColor = stateColors[visit.visitState] ?? '#9CA3AF';
 
@@ -273,7 +273,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
       className="rounded-[12px] overflow-hidden mb-3"
       style={{
         background: isCurrent ? '#1A1A1A' : '#111827',
-        border: isCurrent ? '1.5px solid #C0392B' : '1px solid #1F2937',
+        border: isCurrent ? '1.5px solid #00A9AC' : '1px solid #1F2937',
         boxShadow: isCurrent ? '0 0 0 3px rgba(192,57,43,0.2)' : 'none',
       }}
     >
@@ -285,7 +285,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
           <p style={{ color: '#6B7280', fontSize: '0.8125rem' }}>{visit.serviceTypeName} · {fmtTime(visit.scheduledStart)}</p>
         </div>
         {visit.visitState === 'completed' && <CheckCircle2 size={18} style={{ color: '#27AE60', flexShrink: 0 }} />}
-        {isCurrent && <span className="px-1.5 py-0.5 rounded text-xs font-bold shrink-0" style={{ background: '#C0392B', color: '#fff' }}>NOW</span>}
+        {isCurrent && <span className="px-1.5 py-0.5 rounded text-xs font-bold shrink-0" style={{ background: '#00A9AC', color: '#fff' }}>NOW</span>}
       </button>
 
       {/* Expanded content */}
@@ -341,11 +341,11 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
               style={{ background: '#1F2937', border: '1px solid #374151' }}
             >
               <div className="flex items-center gap-2">
-                <Camera size={16} style={{ color: '#C0392B' }} />
+                <Camera size={16} style={{ color: '#00A9AC' }} />
                 <span style={{ color: '#D1D5DB', fontSize: '0.875rem', fontWeight: 600 }}>Photos</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: photoCount >= requiredPhotos ? '#27AE60' : '#C0392B', color: '#fff' }}>
+                <span className="px-2 py-0.5 rounded-full text-xs font-bold" style={{ background: photoCount >= requiredPhotos ? '#27AE60' : '#00A9AC', color: '#fff' }}>
                   {photoCount}{requiredPhotos > 0 ? `/${requiredPhotos}` : ''}
                 </span>
                 {photoCount < requiredPhotos && <AlertTriangle size={13} style={{ color: '#F59E0B' }} />}
@@ -361,7 +361,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
               style={{ background: '#1F2937', border: '1px solid #374151' }}
             >
               <div className="flex items-center gap-2">
-                <PenLine size={16} style={{ color: sigSaved ? '#27AE60' : '#C0392B' }} />
+                <PenLine size={16} style={{ color: sigSaved ? '#27AE60' : '#00A9AC' }} />
                 <span style={{ color: '#D1D5DB', fontSize: '0.875rem', fontWeight: 600 }}>Customer Signature</span>
               </div>
               {sigSaved ? <CheckCircle2 size={16} style={{ color: '#27AE60' }} /> : <span style={{ color: '#6B7280', fontSize: '0.75rem' }}>Required</span>}
@@ -390,7 +390,7 @@ function PWAVisitCard({ visit, isCurrent, onStateChange }: {
                     key={r}
                     onClick={() => setReco(reco === r ? '' : r)}
                     className="px-2.5 py-1 rounded-full text-xs font-medium"
-                    style={{ background: reco === r ? '#C0392B' : '#1F2937', color: reco === r ? '#fff' : '#9CA3AF', border: `1px solid ${reco === r ? '#C0392B' : '#374151'}` }}
+                    style={{ background: reco === r ? '#00A9AC' : '#1F2937', color: reco === r ? '#fff' : '#9CA3AF', border: `1px solid ${reco === r ? '#00A9AC' : '#374151'}` }}
                   >
                     {r}
                   </button>
@@ -453,7 +453,7 @@ export function TechnicianPWA() {
       <div className="px-4 py-3 mb-4 rounded-[10px]" style={{ background: '#111827' }}>
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: '#C0392B' }}>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: '#00A9AC' }}>
               {tech.name.split(' ').map(n => n[0]).join('')}
             </div>
             <div>
@@ -466,8 +466,8 @@ export function TechnicianPWA() {
             className="flex items-center gap-1 px-2 py-1 rounded-full"
             style={{ background: online ? '#064E3B' : '#7F1D1D' }}
           >
-            {online ? <Wifi size={13} style={{ color: '#34D399' }} /> : <WifiOff size={13} style={{ color: '#FCA5A5' }} />}
-            <span style={{ color: online ? '#34D399' : '#FCA5A5', fontSize: '0.75rem', fontWeight: 600 }}>{online ? 'Online' : 'Offline'}</span>
+            {online ? <Wifi size={13} style={{ color: '#34D399' }} /> : <WifiOff size={13} style={{ color: '#80D4D5' }} />}
+            <span style={{ color: online ? '#34D399' : '#80D4D5', fontSize: '0.75rem', fontWeight: 600 }}>{online ? 'Online' : 'Offline'}</span>
           </button>
         </div>
         {!online && pendingActions > 0 && (
@@ -486,7 +486,7 @@ export function TechnicianPWA() {
             <p style={{ color: '#6B7280', fontSize: '0.6875rem' }}>Revenue</p>
           </div>
           <div>
-            <p style={{ color: '#C0392B', fontWeight: 700, fontSize: '1rem', fontFamily: 'Sora, sans-serif' }}>{visits.filter(v => !['completed','cancelled'].includes(v.visitState)).length}</p>
+            <p style={{ color: '#00A9AC', fontWeight: 700, fontSize: '1rem', fontFamily: 'Sora, sans-serif' }}>{visits.filter(v => !['completed','cancelled'].includes(v.visitState)).length}</p>
             <p style={{ color: '#6B7280', fontSize: '0.6875rem' }}>Remaining</p>
           </div>
         </div>

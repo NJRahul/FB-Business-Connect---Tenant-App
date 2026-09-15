@@ -16,7 +16,7 @@ const CATEGORY_LABEL: Record<NotificationCategory, string> = {
 const CATEGORY_COLOR: Record<NotificationCategory, { color: string; bg: string }> = {
   'transactional-customer': { color: '#2563EB', bg: '#EFF6FF' },
   'transactional-staff':    { color: '#7E22CE', bg: '#FDF4FF' },
-  marketing:                { color: '#C0392B', bg: '#FDEDEC' },
+  marketing:                { color: '#00A9AC', bg: '#E6F7F7' },
   system:                   { color: '#6B7280', bg: '#F3F4F6' },
 };
 
@@ -108,7 +108,7 @@ function EditModal({ template, onClose }: EditModalProps) {
               value={body}
               onChange={e => setBody(e.target.value)}
               rows={8}
-              style={{ width: '100%', padding: '10px 12px', border: `1px solid ${bodyErrors.length ? '#FCA5A5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
+              style={{ width: '100%', padding: '10px 12px', border: `1px solid ${bodyErrors.length ? '#80D4D5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
             />
             {bodyErrors.length > 0 && (
               <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4 }}>
@@ -131,7 +131,7 @@ function EditModal({ template, onClose }: EditModalProps) {
                 value={smsText}
                 onChange={e => setSmsText(e.target.value)}
                 rows={3}
-                style={{ width: '100%', padding: '10px 12px', border: `1px solid ${smsErrors.length ? '#FCA5A5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
+                style={{ width: '100%', padding: '10px 12px', border: `1px solid ${smsErrors.length ? '#80D4D5' : '#D1D5DB'}`, borderRadius: 8, fontSize: 13, fontFamily: 'monospace', resize: 'vertical', outline: 'none', boxSizing: 'border-box' }}
               />
               {smsErrors.length > 0 && (
                 <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginTop: 4 }}>
@@ -155,7 +155,7 @@ function EditModal({ template, onClose }: EditModalProps) {
           <button
             onClick={handleSave}
             disabled={!canSave || saved}
-            style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : canSave ? '#C0392B' : '#D1D5DB', color: '#fff', fontWeight: 600, fontSize: 13, cursor: canSave && !saved ? 'pointer' : 'default', display: 'flex', alignItems: 'center', gap: 6 }}
+            style={{ padding: '8px 16px', borderRadius: 8, border: 'none', background: saved ? '#15803D' : canSave ? '#00A9AC' : '#D1D5DB', color: '#fff', fontWeight: 600, fontSize: 13, cursor: canSave && !saved ? 'pointer' : 'default', display: 'flex', alignItems: 'center', gap: 6 }}
           >
             {saved ? <><Check size={14} /> Saved</> : 'Save Template'}
           </button>
@@ -264,8 +264,8 @@ export function TemplatesView() {
             onClick={() => setActiveCategory(cat.id)}
             style={{
               padding: '9px 16px', border: 'none', background: 'none', cursor: 'pointer',
-              fontWeight: 600, fontSize: 12, color: activeCategory === cat.id ? '#C0392B' : '#6B7280',
-              borderBottom: activeCategory === cat.id ? '2px solid #C0392B' : '2px solid transparent',
+              fontWeight: 600, fontSize: 12, color: activeCategory === cat.id ? '#00A9AC' : '#6B7280',
+              borderBottom: activeCategory === cat.id ? '2px solid #00A9AC' : '2px solid transparent',
               marginBottom: -2,
             }}
           >

@@ -83,7 +83,7 @@ export function KPIView() {
               )}
 
               <div style={{ marginTop: 14 }}>
-                <Sparkline13 values={k.history13w} color={statusColor !== '#6B7280' ? statusColor : '#C0392B'} goodDir={k.goodDirection} />
+                <Sparkline13 values={k.history13w} color={statusColor !== '#6B7280' ? statusColor : '#00A9AC'} goodDir={k.goodDirection} />
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
                   <span style={{ fontSize: 10, color: '#9CA3AF' }}>13 weeks ago</span>
                   <span style={{ fontSize: 10, color: '#9CA3AF' }}>Now</span>

@@ -26,7 +26,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
       <div style={{ background: '#F3F4F6', padding: '32px 16px' }}>
         <div style={{ maxWidth: '560px', margin: '0 auto', background: '#fff', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }}>
           {/* Brand header */}
-          <div style={{ background: '#C0392B', padding: '28px 32px', textAlign: 'center' }}>
+          <div style={{ background: '#00A9AC', padding: '28px 32px', textAlign: 'center' }}>
             <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.625rem', color: '#fff', letterSpacing: '-0.02em' }}>
               FB Business Connect
             </p>
@@ -50,12 +50,12 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
                 <div>
                   <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '1rem' }}>{enrollment.planName}</p>
-                  <span style={{ display: 'inline-block', padding: '2px 10px', borderRadius: '99px', background: '#FDEDEC', color: '#C0392B', fontSize: '0.75rem', fontWeight: 700, marginTop: '4px' }}>
+                  <span style={{ display: 'inline-block', padding: '2px 10px', borderRadius: '99px', background: '#E6F7F7', color: '#00A9AC', fontSize: '0.75rem', fontWeight: 700, marginTop: '4px' }}>
                     {enrollment.tierName}
                   </span>
                 </div>
                 <div style={{ textAlign: 'right' }}>
-                  <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.5rem', color: '#C0392B' }}>
+                  <p style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, fontSize: '1.5rem', color: '#00A9AC' }}>
                     ${enrollment.tierPrice.toFixed(2)}
                   </p>
                   <p style={{ color: '#9CA3AF', fontSize: '0.75rem', textTransform: 'capitalize' }}>per {enrollment.billingCadence}</p>
@@ -96,7 +96,7 @@ function EmailPreview({ enrollment }: { enrollment: PlanEnrollment }) {
 
             {/* CTA buttons */}
             <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
-              <a href="#" style={{ flex: 1, display: 'block', background: '#C0392B', color: '#fff', textAlign: 'center', padding: '13px', borderRadius: '8px', fontWeight: 700, fontSize: '0.9375rem', textDecoration: 'none' }}>
+              <a href="#" style={{ flex: 1, display: 'block', background: '#00A9AC', color: '#fff', textAlign: 'center', padding: '13px', borderRadius: '8px', fontWeight: 700, fontSize: '0.9375rem', textDecoration: 'none' }}>
                 Manage Membership
               </a>
               <a href="#" style={{ flex: 1, display: 'block', background: '#fff', color: '#374151', textAlign: 'center', padding: '13px', borderRadius: '8px', fontWeight: 600, fontSize: '0.9375rem', textDecoration: 'none', border: '1.5px solid #E5E7EB' }}>
@@ -160,7 +160,7 @@ export function RenewalNoticeView() {
                 key={e.id}
                 onClick={() => setSelectedId(e.id)}
                 className="w-full text-left rounded-[10px] p-3 transition-all"
-                style={{ border: isSelected ? '2px solid #C0392B' : '1.5px solid #E5E7EB', background: isSelected ? '#FFF8F8' : '#fff' }}
+                style={{ border: isSelected ? '2px solid #00A9AC' : '1.5px solid #E5E7EB', background: isSelected ? '#FFF8F8' : '#fff' }}
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
@@ -193,7 +193,7 @@ export function RenewalNoticeView() {
         <div className="lg:col-span-2">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
-              <Mail size={16} style={{ color: '#C0392B' }} />
+              <Mail size={16} style={{ color: '#00A9AC' }} />
               <p style={{ fontWeight: 700, color: '#1A1A1A', fontSize: '0.9375rem' }}>Email Preview</p>
             </div>
             <div className="flex gap-2">
@@ -203,7 +203,7 @@ export function RenewalNoticeView() {
               <button
                 onClick={() => setSent(s => new Set([...s, selectedId]))}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-[6px] text-sm font-semibold text-white"
-                style={{ background: sent.has(selectedId) ? '#6B7280' : '#C0392B' }}
+                style={{ background: sent.has(selectedId) ? '#6B7280' : '#00A9AC' }}
                 disabled={sent.has(selectedId)}
               >
                 {sent.has(selectedId) ? <CheckCircle2 size={13} /> : <Send size={13} />}

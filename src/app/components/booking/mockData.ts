@@ -81,7 +81,7 @@ export const TECHNICIANS: Technician[] = [
     skills: ['Tire Technician', 'TPMS Specialist'],
     customerFacing: true,
     serviceArea: ['75001', '75002', '75006', '75010', '75019'],
-    color: '#C0392B',
+    color: '#00A9AC',
     availability: [
       { dayOfWeek: 1, startTime: '08:00', endTime: '17:00', lunchStart: '12:00', lunchEnd: '13:00' },
       { dayOfWeek: 2, startTime: '08:00', endTime: '17:00', lunchStart: '12:00', lunchEnd: '13:00' },
